@@ -28,10 +28,10 @@ export async function getSitesIndexFromFirestore(): Promise<IndexSettlement[]> {
 }
 
 /**
- * Lazy-loads a detailed site JSON directly from Firebase Storage under `atlas/sites/${cleanId}.json`.
- * Firebase Storage is the sole authoritative source for full archaeological monographs.
- * Attempts client Storage download (getBytes / getDownloadURL) and falls back to same-origin Storage proxy if browser CORS blocks client fetch.
- * Returns null if the site is not present in Firebase Storage.
+ * Lazy-loads a detailed site JSON through the same-origin server endpoint.
+ * Firebase Storage remains the sole authoritative source for full archaeological monographs.
+ * The server streams atlas/sites/{id}.json with Cloud Run credentials, avoiding browser CORS retries.
+ * Returns null when the canonical Storage object does not exist.
  */
 export async function fetchSiteDetailFromStorage(cleanId: string): Promise<SiteDetail | null> {
   const controller = new AbortController();
