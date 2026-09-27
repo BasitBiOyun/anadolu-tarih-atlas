@@ -365,33 +365,36 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
             )}
 
             {/* 2. Interactive Chronology & Phases */}
-            <section className="space-y-4">
-              <h2 className="font-serif text-lg sm:text-xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2 flex items-center gap-2">
-                <CalendarBlank size={22} className="text-[#8A4526]" />
+            <section className="space-y-5">
+              <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2.5 flex items-center gap-2">
+                <CalendarBlank size={24} className="text-[#8A4526]" />
                 {t('Kronoloji & Evreler', 'Chronology & Phases')}
               </h2>
 
-              {/* Visual Timeline Bar */}
-              <div className="p-4 bg-[#FAF7F0] border border-[#E2D6C0]">
+              {/* Wide visual chronology: breaks out of the prose column without widening body text */}
+              <div
+                className="relative left-1/2 -translate-x-1/2"
+                style={{ width: 'min(1180px, calc(100vw - 2rem))' }}
+              >
                 <Timeline settlement={settlement} />
               </div>
 
               {/* Editorial Chronology Paragraphs */}
               {hasChronology && (
-                <div className="space-y-3.5 pt-2">
+                <div className="space-y-4 pt-2">
                   {Array.isArray(settlement.chronology) ? (
                     settlement.chronology.map((paragraph, idx) => (
                       <RichParagraphRenderer
                         key={idx}
                         item={paragraph}
-                        className="font-prose text-base sm:text-[16px] leading-relaxed text-[#332A21]"
-                        titleClassName="font-serif font-bold text-base text-[#1C1712]"
+                        className="font-prose text-[17px] sm:text-[18px] leading-[1.75] text-[#332A21]"
+                        titleClassName="font-serif font-bold text-lg text-[#1C1712]"
                       />
                     ))
                   ) : (
                     <RichParagraphRenderer
                       item={settlement.chronology}
-                      className="font-prose text-base sm:text-[16px] leading-relaxed text-[#332A21]"
+                      className="font-prose text-[17px] sm:text-[18px] leading-[1.75] text-[#332A21]"
                     />
                   )}
                 </div>
