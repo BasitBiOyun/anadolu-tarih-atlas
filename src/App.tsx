@@ -20,6 +20,7 @@ import { SettlementPanel, DetailLoadStatus } from './components/SettlementPanel'
 import { SettlementFullPageView } from './components/SettlementFullPageView';
 import { AboutModal } from './components/AboutModal';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
+import { ThemeProvider } from './context/ThemeContext';
 
 function AtlasApp() {
   const { lang, t } = useLanguage();
@@ -322,8 +323,10 @@ function AtlasApp() {
 
 export default function App() {
   return (
-    <LanguageProvider>
-      <AtlasApp />
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <AtlasApp />
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }

@@ -15,6 +15,7 @@ import { getProvinceCentroid } from '../utils/provinceCentroids';
 import { SETTLEMENT_LABEL_OVERRIDES } from '../config/labelPlacements';
 import { getFormattedProvinceLabel } from '../utils/turkishCasing';
 import { useLanguage } from '../context/LanguageContext';
+import { AtlasTheme, useTheme } from '../context/ThemeContext';
 import {
   Plus,
   Minus,
@@ -95,21 +96,102 @@ function processTurkeyGeo(geo: any) {
   };
 }
 
-// Minimal Blank MapLibre Style (NO external raster tiles, NO Mapbox, NO Google Maps)
-const BASE_MAP_STYLE: maplibregl.StyleSpecification = {
-  version: 8,
-  glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
-  sources: {},
-  layers: [
-    {
-      id: 'background',
-      type: 'background',
-      paint: {
-        'background-color': '#DFE9E6' // Water / sea base color matching our aesthetic
+const MAP_THEME = {
+  light: {
+    water: '#DFE9E6',
+    surrounding: '#E4DDD2',
+    surroundingLine: '#D5CCBD',
+    land: '#ECE5D8',
+    landHover: '#F6F0E6',
+    landLine: '#D6CBBC',
+    label: '#241D17',
+    labelStrong: '#140E0A',
+    labelMuted: '#5A4B3A',
+    halo: '#FAF7F2',
+    sea: '#446663',
+    seaSecondary: '#688C89',
+    seaHalo: '#DFE9E6',
+    markerStroke: '#FFFFFF',
+    selectedRing: '#1A1510'
+  },
+  dark: {
+    water: '#111B1C',
+    surrounding: '#191B19',
+    surroundingLine: '#353832',
+    land: '#25231F',
+    landHover: '#302C25',
+    landLine: '#484238',
+    label: '#E5DCCF',
+    labelStrong: '#FFF7EC',
+    labelMuted: '#CABDAD',
+    halo: '#151310',
+    sea: '#86AAA5',
+    seaSecondary: '#698F8B',
+    seaHalo: '#111B1C',
+    markerStroke: '#F4ECE1',
+    selectedRing: '#F0D9C5'
+  }
+} as const;
+
+function getBaseMapStyle(theme: AtlasTheme): maplibregl.StyleSpecification {
+  return {
+    version: 8,
+    glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
+    sources: {},
+    layers: [
+      {
+        id: 'background',
+        type: 'background',
+        paint: {
+          'background-color': MAP_THEME[theme].water
+        }
       }
-    }
-  ]
-};
+    ]
+  };
+}
+
+function applyAtlasMapTheme(map: maplibregl.Map, theme: AtlasTheme) {
+  const palette = MAP_THEME[theme];
+  const setPaint = (layerId: string, property: string, value: any) => {
+    if (map.getLayer(layerId)) map.setPaintProperty(layerId, property, value);
+  };
+
+  setPaint('background', 'background-color', palette.water);
+  setPaint('surrounding-fill', 'fill-color', palette.surrounding);
+  setPaint('surrounding-line', 'line-color', palette.surroundingLine);
+  setPaint(
+    'turkey-fill',
+    'fill-color',
+    [
+      'case',
+      ['boolean', ['feature-state', 'hover'], false],
+      palette.landHover,
+      palette.land
+    ] as any
+  );
+  setPaint('turkey-line', 'line-color', palette.landLine);
+
+  setPaint('turkey-hover-label', 'text-color', palette.labelMuted);
+  setPaint('turkey-hover-label', 'text-halo-color', palette.halo);
+  setPaint('sea-labels-title', 'text-color', palette.sea);
+  setPaint('sea-labels-title', 'text-halo-color', palette.seaHalo);
+  setPaint('sea-labels-title-marmara', 'text-color', palette.sea);
+  setPaint('sea-labels-title-marmara', 'text-halo-color', palette.seaHalo);
+  setPaint('sea-labels-subtitle', 'text-color', palette.seaSecondary);
+  setPaint('sea-labels-subtitle', 'text-halo-color', palette.seaHalo);
+  setPaint('sea-labels-subtitle-marmara', 'text-color', palette.seaSecondary);
+  setPaint('sea-labels-subtitle-marmara', 'text-halo-color', palette.seaHalo);
+
+  setPaint('sites-selected-ring', 'circle-stroke-color', palette.selectedRing);
+  setPaint('sites-circle', 'circle-stroke-color', palette.markerStroke);
+  setPaint('sites-center-dot', 'circle-color', palette.markerStroke);
+  setPaint('sites-labels-custom', 'text-color', palette.label);
+  setPaint('sites-labels-custom', 'text-halo-color', palette.halo);
+  setPaint('sites-labels', 'text-color', palette.label);
+  setPaint('sites-labels', 'text-halo-color', palette.halo);
+  setPaint('sites-selected-label', 'text-color', palette.labelStrong);
+  setPaint('sites-selected-label', 'text-halo-color', palette.halo);
+}
 
 export const AtlasMap: React.FC<AtlasMapProps> = ({
   settlements,
@@ -118,6 +200,7 @@ export const AtlasMap: React.FC<AtlasMapProps> = ({
   focusTarget
 }) => {
   const { lang, t } = useLanguage();
+  const { theme } = useTheme();
   const langRef = useRef<'tr' | 'en'>(lang);
   useEffect(() => {
     langRef.current = lang;
@@ -252,7 +335,7 @@ export const AtlasMap: React.FC<AtlasMapProps> = ({
 
     const map = new maplibregl.Map({
       container: mapContainerRef.current,
-      style: BASE_MAP_STYLE,
+      style: getBaseMapStyle(theme),
       center: ANATOLIA_DEFAULT_CENTER,
       zoom: ANATOLIA_DEFAULT_ZOOM,
       minZoom: 4,
@@ -916,6 +999,23 @@ export const AtlasMap: React.FC<AtlasMapProps> = ({
       mapRef.current = null;
     };
   }, []); // Run only once to initialize WebGL map instance
+
+  // Keep the cartographic palette synchronized with the UI theme without recreating the map.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+
+    const applyTheme = () => applyAtlasMapTheme(map, theme);
+    if (map.isStyleLoaded()) {
+      applyTheme();
+      return;
+    }
+
+    map.once('load', applyTheme);
+    return () => {
+      map.off('load', applyTheme);
+    };
+  }, [theme]);
 
   // 2. Update Sites GeoJSON Source when settlements list or selection changes
   useEffect(() => {

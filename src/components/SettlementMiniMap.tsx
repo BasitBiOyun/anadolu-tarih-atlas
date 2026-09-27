@@ -9,6 +9,7 @@ import {
   getCachedSurroundingGeo
 } from '../utils/mapData';
 import { useLanguage } from '../context/LanguageContext';
+import { AtlasTheme, useTheme } from '../context/ThemeContext';
 import { ArrowSquareOut, Plus, Minus, Copy, Check, Compass } from '@phosphor-icons/react';
 
 interface SettlementMiniMapProps {
@@ -17,20 +18,60 @@ interface SettlementMiniMapProps {
   hideHeader?: boolean;
 }
 
-const BASE_MINI_STYLE: maplibregl.StyleSpecification = {
-  version: 8,
-  glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
-  sources: {},
-  layers: [
-    {
-      id: 'background',
-      type: 'background',
-      paint: {
-        'background-color': '#DFE9E6'
+const MINI_MAP_THEME = {
+  light: {
+    water: '#DFE9E6',
+    surrounding: '#E4DDD2',
+    surroundingLine: '#D5CCBD',
+    land: '#ECE5D8',
+    landLine: '#D6CBBC',
+    site: '#8A4526',
+    siteStroke: '#FAF6EE'
+  },
+  dark: {
+    water: '#111B1C',
+    surrounding: '#191B19',
+    surroundingLine: '#353832',
+    land: '#25231F',
+    landLine: '#484238',
+    site: '#D0784F',
+    siteStroke: '#F4ECE1'
+  }
+} as const;
+
+function getMiniStyle(theme: AtlasTheme): maplibregl.StyleSpecification {
+  return {
+    version: 8,
+    glyphs: 'https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf',
+    sources: {},
+    layers: [
+      {
+        id: 'background',
+        type: 'background',
+        paint: {
+          'background-color': MINI_MAP_THEME[theme].water
+        }
       }
-    }
-  ]
-};
+    ]
+  };
+}
+
+function applyMiniMapTheme(map: maplibregl.Map, theme: AtlasTheme) {
+  const palette = MINI_MAP_THEME[theme];
+  const setPaint = (layerId: string, property: string, value: any) => {
+    if (map.getLayer(layerId)) map.setPaintProperty(layerId, property, value);
+  };
+
+  setPaint('background', 'background-color', palette.water);
+  setPaint('surrounding-fill', 'fill-color', palette.surrounding);
+  setPaint('surrounding-line', 'line-color', palette.surroundingLine);
+  setPaint('turkey-fill', 'fill-color', palette.land);
+  setPaint('turkey-line', 'line-color', palette.landLine);
+  setPaint('site-ring', 'circle-color', palette.site);
+  setPaint('site-ring', 'circle-stroke-color', palette.site);
+  setPaint('site-dot', 'circle-color', palette.site);
+  setPaint('site-dot', 'circle-stroke-color', palette.siteStroke);
+}
 
 export const SettlementMiniMap: React.FC<SettlementMiniMapProps> = ({
   settlement,
@@ -38,6 +79,7 @@ export const SettlementMiniMap: React.FC<SettlementMiniMapProps> = ({
   hideHeader = false
 }) => {
   const { t } = useLanguage();
+  const { theme } = useTheme();
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
 
@@ -85,7 +127,7 @@ export const SettlementMiniMap: React.FC<SettlementMiniMapProps> = ({
 
     const map = new maplibregl.Map({
       container: mapContainerRef.current,
-      style: BASE_MINI_STYLE,
+      style: getMiniStyle(theme),
       center: [settlement.longitude, settlement.latitude],
       zoom: 7.2,
       minZoom: 4,
@@ -208,6 +250,22 @@ export const SettlementMiniMap: React.FC<SettlementMiniMapProps> = ({
       mapRef.current = null;
     };
   }, []);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+
+    const applyTheme = () => applyMiniMapTheme(map, theme);
+    if (map.isStyleLoaded()) {
+      applyTheme();
+      return;
+    }
+
+    map.once('load', applyTheme);
+    return () => {
+      map.off('load', applyTheme);
+    };
+  }, [theme]);
 
   // Update Turkey GeoJSON when loaded
   useEffect(() => {
