@@ -17,34 +17,34 @@ interface AboutModalProps {
   periodCount: number;
 }
 
-const principleCards = [
+const featureCards = [
   {
     icon: MapTrifold,
-    titleTr: 'Mekân',
-    titleEn: 'Space',
-    textTr: 'Yerleşimleri yalnızca bir liste olarak değil, Anadolu’nun coğrafi ilişkileri içinde okumak.',
-    textEn: 'Read sites not as a list, but through their geographic relationships across Anatolia.'
+    titleTr: 'Harita',
+    titleEn: 'Map',
+    textTr: 'Yerleşimlerin Anadolu içindeki konumunu ve birbirleriyle olan coğrafi ilişkilerini görün.',
+    textEn: 'See where sites sit within Anatolia and how their locations relate to one another.'
   },
   {
     icon: CalendarBlank,
     titleTr: 'Zaman',
     titleEn: 'Time',
-    textTr: 'Farklı yerleşim evrelerini aynı kronolojik çerçevede karşılaştırılabilir hâle getirmek.',
-    textEn: 'Make different occupation phases comparable within a shared chronological framework.'
-  },
-  {
-    icon: Books,
-    titleTr: 'Kaynak',
-    titleEn: 'Evidence',
-    textTr: 'İddiaları kaynakça, DOI, PDF ve yayın bilgileriyle izlenebilir kılmak.',
-    textEn: 'Keep claims traceable through bibliography, DOI, PDF and publication metadata.'
+    textTr: 'Bir yerleşimin farklı dönemlerdeki kullanımını ve uzun zaman içindeki değişimini izleyin.',
+    textEn: 'Follow a site across its different phases and place those phases in a wider chronology.'
   },
   {
     icon: BookOpen,
-    titleTr: 'Monografi',
-    titleEn: 'Monograph',
-    textTr: 'Her yerleşimi kısa bir pin açıklamasından çıkarıp araştırılabilir bir dijital dosyaya dönüştürmek.',
-    textEn: 'Turn each site from a map pin into a researchable digital dossier.'
+    titleTr: 'Yerleşim sayfaları',
+    titleEn: 'Site pages',
+    textTr: 'Kronoloji, buluntular, kazı geçmişi, bilimsel tartışmalar, görseller ve ziyaret bilgilerini birlikte inceleyin.',
+    textEn: 'Explore chronology, finds, research history, scholarly debates, images and visitor information in one place.'
+  },
+  {
+    icon: Books,
+    titleTr: 'Kaynakça',
+    titleEn: 'Sources',
+    textTr: 'Metindeki bilgilerin hangi yayınlara dayandığını görün ve erişilebilen kaynaklara doğrudan ulaşın.',
+    textEn: 'Trace information back to the publications behind it and open available sources directly.'
   }
 ] as const;
 
@@ -63,7 +63,6 @@ export const AboutModal: React.FC<AboutModalProps> = ({
 
     previousFocusRef.current =
       document.activeElement instanceof HTMLElement ? document.activeElement : null;
-
     requestAnimationFrame(() => closeButtonRef.current?.focus());
 
     return () => {
@@ -83,13 +82,13 @@ export const AboutModal: React.FC<AboutModalProps> = ({
         role="dialog"
         aria-modal="true"
         aria-labelledby="atlas-about-title"
-        className="flex h-[94dvh] w-full max-w-[1180px] flex-col overflow-hidden border border-[#D9CEBC] bg-[#FAF7F2] text-[#262018] shadow-[0_36px_90px_-28px_rgba(25,18,13,0.65)] sm:h-auto sm:max-h-[90dvh]"
+        className="flex h-[94dvh] w-full max-w-[1120px] flex-col overflow-hidden border border-[#D9CEBC] bg-[#FAF7F2] text-[#262018] shadow-[0_36px_90px_-28px_rgba(25,18,13,0.65)] sm:h-auto sm:max-h-[90dvh]"
         onClick={event => event.stopPropagation()}
       >
         <header className="flex shrink-0 items-center justify-between gap-4 border-b border-[#E8DFD0] bg-[#F4EFE6] px-4 py-3 sm:px-6 sm:py-4">
           <div className="min-w-0">
             <div className="font-sans text-[9px] font-bold uppercase tracking-[0.16em] text-[#9A765C] sm:text-[10px]">
-              {t('Proje Rehberi', 'Project Guide')}
+              {t('Atlas Hakkında', 'About the Atlas')}
             </div>
             <div className="mt-0.5 flex min-w-0 items-center gap-2">
               <Compass size={20} className="shrink-0 text-[#8A4526]" />
@@ -114,78 +113,70 @@ export const AboutModal: React.FC<AboutModalProps> = ({
         </header>
 
         <div className="min-h-0 flex-1 overflow-y-auto">
-          <div className="grid lg:grid-cols-[330px_minmax(0,1fr)]">
+          <div className="grid lg:grid-cols-[320px_minmax(0,1fr)]">
             <aside className="border-b border-[#E8DFD0] bg-[#F8F2E9] p-5 sm:p-7 lg:sticky lg:top-0 lg:h-full lg:border-b-0 lg:border-r lg:border-[#E8DFD0] lg:p-8">
               <div className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9A765C]">
-                {t('Harita · Zaman · Kaynak · Monografi', 'Map · Time · Evidence · Monograph')}
+                {t('Anadolu · Mekân · Zaman', 'Anatolia · Place · Time')}
               </div>
 
-              <h3 className="mt-3 font-serif text-3xl font-bold leading-[0.98] tracking-[-0.02em] text-[#1A1510] sm:text-4xl">
+              <h3 className="mt-3 font-serif text-3xl font-bold leading-[1.02] tracking-[-0.02em] text-[#1A1510] sm:text-4xl">
                 {t(
-                  'Anadolu’nun tarihini pinlerle değil, bağlamla okumak.',
-                  'Reading Anatolia through context, not just pins.'
+                  'Anadolu’nun geçmişini harita üzerinde, zaman içinde okumak.',
+                  'Explore Anatolia as a landscape shaped across time.'
                 )}
               </h3>
 
               <p className="mt-4 font-prose text-[15px] leading-[1.72] text-[#4A3F33]">
                 {t(
-                  'Anadolu Tarih Atlası; arkeolojik ve tarihî alanları mekân, kronoloji, buluntular, araştırma tarihi, bilimsel tartışmalar, görsel belge ve kaynakça katmanlarını tek bir harita deneyiminde birleştiren çift dilli bir dijital atlas projesidir.',
-                  'The Anatolian Historical Atlas is a bilingual digital atlas that brings geography, chronology, finds, research history, scholarly debate, visual documentation and bibliography together in a single map-first experience.'
+                  'Anadolu Tarih Atlası, arkeolojik ve tarihî alanları tek bir haritada bir araya getirir. Amacı yalnızca bu yerlerin nerede olduğunu göstermek değil; hangi dönemlerde yaşadıklarını, neden önemli olduklarını ve bugün onlar hakkında neler bildiğimizi anlaşılır bir bütün içinde sunmaktır.',
+                  'The Anatolian Historical Atlas brings archaeological and historical places together in a shared spatial and chronological view. It is designed for exploration: where a place is, when it mattered, what has been found there, and how our understanding of it has developed.'
                 )}
               </p>
 
-              <div className="mt-6 grid grid-cols-3 border border-[#D9CEBC] bg-[#FAF7F2]">
+              <div className="mt-6 grid grid-cols-2 border border-[#D9CEBC] bg-[#FAF7F2]">
                 <div className="border-r border-[#D9CEBC] px-3 py-3 text-center">
                   <div className="font-serif text-xl font-bold text-[#1A1510]">{siteCount}</div>
                   <div className="mt-0.5 font-sans text-[8px] font-bold uppercase tracking-[0.12em] text-[#8A7A68]">
-                    {t('Yayında', 'Published')}
+                    {t('Yerleşim', 'Sites')}
                   </div>
                 </div>
-                <div className="border-r border-[#D9CEBC] px-3 py-3 text-center">
+                <div className="px-3 py-3 text-center">
                   <div className="font-serif text-xl font-bold text-[#1A1510]">{periodCount}</div>
                   <div className="mt-0.5 font-sans text-[8px] font-bold uppercase tracking-[0.12em] text-[#8A7A68]">
                     {t('Dönem', 'Periods')}
                   </div>
                 </div>
-                <div className="px-3 py-3 text-center">
-                  <div className="font-serif text-xl font-bold text-[#1A1510]">TR/EN</div>
-                  <div className="mt-0.5 font-sans text-[8px] font-bold uppercase tracking-[0.12em] text-[#8A7A68]">
-                    {t('Çift Dil', 'Bilingual')}
-                  </div>
-                </div>
               </div>
 
-              <div className="mt-5 border-l-2 border-[#8A4526] bg-[#F4EBDD] px-4 py-3">
-                <div className="font-sans text-[9px] font-bold uppercase tracking-[0.14em] text-[#9A765C]">
-                  {t('Yayın Modeli', 'Publishing Model')}
-                </div>
-                <p className="mt-1 font-prose text-sm leading-relaxed text-[#5A493A]">
-                  {t(
-                    'Atlas tamamlanmış bir katalog değil, doğrulanmış monografiler eklendikçe büyüyen yaşayan bir araştırma altyapısıdır.',
-                    'The atlas is not a finished catalogue; it is a living research infrastructure that grows as verified monographs are published.'
-                  )}
-                </p>
-              </div>
+              <p className="mt-5 border-l-2 border-[#8A4526] pl-4 font-prose text-sm leading-relaxed text-[#5A493A]">
+                {t(
+                  'Atlas yeni yerleşimler eklendikçe genişleyecek. İçerik sayısı arttıkça dönemler ve bölgeler arasında karşılaştırma yapmak da daha anlamlı hâle gelecek.',
+                  'The atlas will continue to grow as new sites are added, making comparisons across regions and periods increasingly useful.'
+                )}
+              </p>
             </aside>
 
-            <div className="space-y-10 p-5 sm:p-7 lg:p-9">
+            <div className="space-y-9 p-5 sm:p-7 lg:p-9">
               <section>
                 <div className="font-sans text-[10px] font-bold uppercase tracking-[0.16em] text-[#9A765C]">
-                  01 · {t('Ne yapıyoruz?', 'What are we building?')}
+                  01 · {t('Atlas ne sunuyor?', 'What can you explore?')}
                 </div>
                 <h3 className="mt-1 font-serif text-2xl font-bold text-[#1A1510] sm:text-3xl">
-                  {t('Haritadan dijital monografiye', 'From map to digital monograph')}
+                  {t(
+                    'Bir yerleşime farklı açılardan bakabilmek.',
+                    'A fuller view of each place.'
+                  )}
                 </h3>
 
                 <p className="mt-4 max-w-3xl font-prose text-[16px] leading-[1.75] text-[#42372A] sm:text-[17px]">
                   {t(
-                    'Amaç yalnızca “nerede?” sorusunu cevaplamak değil. Bir yerleşimi açtığınızda ne zaman iskân edildiğini, hangi dönemlerden geçtiğini, neden önemli olduğunu, hangi buluntuların öne çıktığını, kazı ve araştırma tarihinin nasıl geliştiğini, hangi bilimsel tartışmaların sürdüğünü ve bunların hangi yayınlara dayandığını tek bir yerde görebilmelisiniz.',
-                    'The goal is not merely to answer “where?”. Opening a site should reveal when it was occupied, which phases it passed through, why it matters, which finds define it, how research developed, which scholarly debates remain open, and which publications support those claims.'
+                    'Aynı yer hakkında coğrafya, kronoloji, önemli buluntular, kazı geçmişi, bilimsel görüşler ve kaynakça çoğu zaman farklı yerlerde karşımıza çıkar. Atlas bu bilgileri birbirinden koparmadan, gerektiğinde ayrıntıya inebileceğiniz tek bir okuma düzeninde buluşturmayı hedefliyor.',
+                    'Information about a site is often scattered across maps, excavation reports, articles and catalogues. The atlas brings those strands together so that geography, chronology, discoveries and scholarship can be read side by side.'
                   )}
                 </p>
 
                 <div className="mt-5 grid auto-rows-fr gap-3 sm:grid-cols-2 xl:grid-cols-4">
-                  {principleCards.map(({ icon: Icon, titleTr, titleEn, textTr, textEn }) => (
+                  {featureCards.map(({ icon: Icon, titleTr, titleEn, textTr, textEn }) => (
                     <article
                       key={titleEn}
                       className="border border-[#DDD0BE] bg-[#FCF9F3] p-4 sm:p-5"
@@ -206,77 +197,40 @@ export const AboutModal: React.FC<AboutModalProps> = ({
 
               <section className="border-t border-[#E8DFD0] pt-8">
                 <div className="font-sans text-[10px] font-bold uppercase tracking-[0.16em] text-[#9A765C]">
-                  02 · {t('Nasıl kullanılır?', 'How does it work?')}
+                  02 · {t('Nasıl kullanılır?', 'How to use it')}
                 </div>
                 <h3 className="mt-1 font-serif text-2xl font-bold text-[#1A1510]">
-                  {t('Harita önce gelir; ayrıntı ihtiyaç oldukça açılır.', 'The map comes first; detail opens when needed.')}
+                  {t(
+                    'Haritada gezin, dönemi daraltın, merak ettiğiniz yere girin.',
+                    'Browse the map, narrow the period, then open a place that catches your attention.'
+                  )}
                 </h3>
 
-                <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                <div className="mt-5 grid gap-3 sm:grid-cols-3">
                   {[
                     {
                       no: '01',
-                      tr: 'Haritada dönem, konum ve yerleşim adları üzerinden alanları keşfedin.',
-                      en: 'Explore sites through period, location and settlement names on the map.'
+                      tr: 'Arama ve dönem filtreleriyle haritadaki alanı daraltın ya da doğrudan harita üzerinde gezin.',
+                      en: 'Use search and period filters, or simply explore the map.'
                     },
                     {
                       no: '02',
-                      tr: 'Bir yerleşimi seçtiğinizde hızlı özet paneli ve temel kronoloji açılır.',
-                      en: 'Selecting a site opens a fast summary panel with its core chronology.'
+                      tr: 'Bir yerleşime dokunduğunuzda temel bilgiler ve kronoloji hızlıca açılır.',
+                      en: 'Open a site for a concise overview of its location, dates and significance.'
                     },
                     {
                       no: '03',
-                      tr: 'Ayrıntılı görünüm, tam monografiyi yalnızca ihtiyaç olduğunda yükler.',
-                      en: 'The detailed view loads the full monograph only when you ask for it.'
-                    },
-                    {
-                      no: '04',
-                      tr: 'Metin içindeki kaynak numaraları doğrudan bibliyografik kayda bağlanır.',
-                      en: 'Inline source numbers connect directly to the relevant bibliographic record.'
+                      tr: 'Daha ayrıntılı okumak istediğinizde tam yerleşim sayfasına geçin; kaynakları ve görselleri oradan inceleyin.',
+                      en: 'Move into the full site page when you want the deeper research, bibliography and visual material.'
                     }
                   ].map(item => (
                     <div
                       key={item.no}
-                      className="grid grid-cols-[42px_minmax(0,1fr)] gap-3 border-b border-[#E8DFD0] py-3"
+                      className="border-t border-[#E8DFD0] pt-3 sm:border-l sm:border-t-0 sm:pl-4 sm:pt-0"
                     >
-                      <div className="font-mono text-[10px] font-bold text-[#A18C77]">{item.no}</div>
-                      <div className="font-prose text-[15px] leading-[1.65] text-[#4A3F33]">
+                      <div className="font-mono text-[9px] font-bold text-[#A18C77]">{item.no}</div>
+                      <div className="mt-1 font-prose text-[15px] leading-[1.65] text-[#4A3F33]">
                         {lang === 'tr' ? item.tr : item.en}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              <section className="border-t border-[#E8DFD0] pt-8">
-                <div className="font-sans text-[10px] font-bold uppercase tracking-[0.16em] text-[#9A765C]">
-                  03 · {t('Monografi standardı', 'Monograph standard')}
-                </div>
-                <h3 className="mt-1 font-serif text-2xl font-bold text-[#1A1510]">
-                  {t('Her yerleşimde aynı soruları soruyoruz.', 'We ask the same core questions of every site.')}
-                </h3>
-
-                <div className="mt-5 grid grid-cols-2 gap-px border border-[#D9CEBC] bg-[#D9CEBC] sm:grid-cols-3">
-                  {[
-                    ['Genel Bakış', 'Overview'],
-                    ['Kronoloji', 'Chronology'],
-                    ['Arkeolojik Anlam', 'Significance'],
-                    ['Buluntular', 'Finds'],
-                    ['Kazı Tarihi', 'Research History'],
-                    ['Bilimsel Tartışmalar', 'Scholarly Debates'],
-                    ['Görsel Arşiv', 'Visual Archive'],
-                    ['Coğrafya', 'Geography'],
-                    ['Ziyaret', 'Visitor Information'],
-                    ['Yakın Noktalar', 'Nearby Places'],
-                    ['Katılım', 'Participation'],
-                    ['Kaynakça', 'Bibliography']
-                  ].map(([tr, en], index) => (
-                    <div key={en} className="bg-[#FCF9F3] px-3 py-3.5 sm:px-4">
-                      <div className="font-mono text-[9px] text-[#A18C77]">
-                        {String(index + 1).padStart(2, '0')}
-                      </div>
-                      <div className="mt-1 font-serif text-sm font-bold text-[#2B231B] sm:text-base">
-                        {lang === 'tr' ? tr : en}
                       </div>
                     </div>
                   ))}
@@ -290,24 +244,29 @@ export const AboutModal: React.FC<AboutModalProps> = ({
                   </div>
                   <div>
                     <div className="font-sans text-[9px] font-bold uppercase tracking-[0.14em] text-[#9A765C]">
-                      04 · {t('Bilimsel İlke', 'Research Principle')}
+                      03 · {t('İçerik yaklaşımı', 'Editorial approach')}
                     </div>
                     <h3 className="mt-1 font-serif text-xl font-bold text-[#1A1510]">
-                      {t('Belirsizlik saklanmaz, veri uydurulmaz.', 'Uncertainty is preserved; data is not invented.')}
+                      {t(
+                        'Bilinenle bilinmeyeni birbirine karıştırmamak.',
+                        'Keep evidence, interpretation and uncertainty distinct.'
+                      )}
                     </h3>
                     <p className="mt-2 font-prose text-[15px] leading-[1.72] text-[#514335]">
                       {t(
-                        'Tarihleme bilinmiyorsa boş bırakılır. Kaynaklar teknik kimliklerle değil, yazar, yıl, eser ve yayın bilgileriyle gösterilir. Rekonstrüksiyonlar görsel olarak açıkça işaretlenir. Bir bilimsel tartışmada uzlaşı, kanıt ve görüş ayrılıkları mümkün olduğunca birbirinden ayrılır.',
-                        'Unknown dates are left unknown. Sources are shown as readable bibliographic records rather than internal IDs. Reconstructions are explicitly marked. Where scholarly debate exists, consensus, evidence and disagreement are kept distinct whenever the source material allows it.'
+                        'Tarihi kesin olmayan bir veri kesinmiş gibi yazılmaz. Bilimsel görüş ayrılıkları tek bir hükme indirgenmez. Rekonstrüksiyonlar açıkça belirtilir. Kaynaklar mümkün olduğu ölçüde yazar, eser ve yayın bilgileriyle birlikte gösterilir. Amaç, okurun hem anlatıyı rahatça takip edebilmesi hem de isterse bilginin kaynağına ulaşabilmesidir.',
+                        'Dates are not presented as exact when the evidence is uncertain. Competing scholarly interpretations are not flattened into a single answer. Reconstructions are identified as such, and bibliographic information is provided wherever possible so readers can follow the evidence further.'
                       )}
                     </p>
                   </div>
                 </div>
               </section>
 
-              <footer className="flex flex-col gap-2 border-t border-[#E8DFD0] pt-5 font-sans text-[10px] text-[#8A7A68] sm:flex-row sm:items-center sm:justify-between">
-                <span>{t('Anadolu Tarih Atlası · Çift dilli dijital araştırma atlası', 'Anatolian Historical Atlas · Bilingual digital research atlas')}</span>
-                <span>{t('Harita merkezli · Kaynak izlenebilir · Sürekli genişleyen', 'Map-first · Traceable sources · Continuously expanding')}</span>
+              <footer className="border-t border-[#E8DFD0] pt-5 font-sans text-[10px] text-[#8A7A68]">
+                {t(
+                  'Anadolu Tarih Atlası · Türkçe ve İngilizce',
+                  'Anatolian Historical Atlas · Turkish and English'
+                )}
               </footer>
             </div>
           </div>

@@ -21,6 +21,7 @@ import { SettlementFullPageView } from './components/SettlementFullPageView';
 import { AboutModal } from './components/AboutModal';
 import { DeepTimeTimeline } from './components/DeepTimeTimeline';
 import { DiscoverControl } from './components/DiscoverControl';
+import { AtlasHUD } from './components/AtlasHUD';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -306,6 +307,14 @@ function AtlasApp() {
             onSelectSettlement={handleSelectSettlement}
             focusTarget={mapFocusTarget}
             bottomUiInset={showDeepTimeTimeline}
+          />
+        )}
+
+        {showDeepTimeTimeline && (
+          <AtlasHUD
+            selectedPeriods={selectedPeriods}
+            filteredCount={filteredSettlements.length}
+            totalCount={allSettlements.length}
           />
         )}
 

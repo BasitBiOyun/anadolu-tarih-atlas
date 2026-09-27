@@ -7,9 +7,11 @@ import { useTheme } from '../context/ThemeContext';
 import {
   Compass,
   Info,
+  List,
   Moon,
   SlidersHorizontal,
-  Sun
+  Sun,
+  X
 } from '@phosphor-icons/react';
 
 interface HeaderProps {
@@ -40,6 +42,7 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenAboutModal
 }) => {
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { lang, setLang, t } = useLanguage();
   const { theme, toggleTheme } = useTheme();
 
@@ -48,38 +51,31 @@ export const Header: React.FC<HeaderProps> = ({
       ? t('Açık temaya geç', 'Switch to light theme')
       : t('Koyu temaya geç', 'Switch to dark theme');
 
+  const openAbout = () => {
+    setMobileMenuOpen(false);
+    onOpenAboutModal();
+  };
+
   return (
-    <header className="shrink-0 bg-[#FAF7F2] border-b border-[#E0D5C3] select-none z-30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 space-y-3 md:space-y-0">
+    <header className="z-30 shrink-0 select-none border-b border-[#E0D5C3] bg-[#FAF7F2]">
+      <div className="mx-auto max-w-7xl space-y-2.5 px-3 py-2.5 sm:px-6 sm:py-3 md:space-y-0">
         <div className="flex items-center justify-between gap-3">
           <div className="min-w-0 shrink">
-            <h1 className="flex min-w-0 items-center gap-2 font-serif text-xl font-bold tracking-tight text-[#1A1510] sm:text-2xl">
-              <Compass size={22} weight="regular" className="shrink-0 text-[#8A4526]" />
+            <h1 className="flex min-w-0 items-center gap-2 font-serif text-lg font-bold tracking-tight text-[#1A1510] sm:text-2xl">
+              <Compass size={21} weight="regular" className="shrink-0 text-[#8A4526]" />
               <span className="truncate">{t('Anadolu Tarih Atlası', 'Anatolian Historical Atlas')}</span>
             </h1>
           </div>
 
-          <div className="flex shrink-0 items-center gap-2 md:hidden">
-            <button
-              type="button"
-              onClick={toggleTheme}
-              className="flex min-h-[40px] min-w-[40px] items-center justify-center border border-[#D9CEBC] bg-[#F4EFE6] text-[#4A3F33] transition-colors hover:bg-[#EAE2D3] hover:text-[#1A1510]"
-              aria-label={themeLabel}
-              title={themeLabel}
-              aria-pressed={theme === 'dark'}
-            >
-              {theme === 'dark' ? <Sun size={17} weight="regular" /> : <Moon size={17} weight="regular" />}
-            </button>
-
-            <button
-              type="button"
-              onClick={onOpenAboutModal}
-              className="flex min-h-[40px] min-w-[40px] items-center justify-center border border-[#D9CEBC] bg-[#F4EFE6] text-[#4A3F33]"
-              aria-label={t('Atlas Hakkında', 'About Atlas')}
-            >
-              <Info size={17} weight="regular" />
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(current => !current)}
+            className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#D9CEBC] bg-[#F4EFE6] text-[#4A3F33] md:hidden"
+            aria-label={t('Dil, tema ve atlas bilgileri', 'Language, theme and atlas information')}
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <X size={18} /> : <List size={19} />}
+          </button>
 
           <div className="hidden items-center gap-2.5 md:flex">
             <div className="w-80 shrink-0">
@@ -125,20 +121,68 @@ export const Header: React.FC<HeaderProps> = ({
               title={themeLabel}
               aria-pressed={theme === 'dark'}
             >
-              {theme === 'dark' ? <Sun size={17} weight="regular" /> : <Moon size={17} weight="regular" />}
+              {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
             </button>
 
             <button
               type="button"
               onClick={onOpenAboutModal}
               className="inline-flex w-[118px] shrink-0 items-center justify-center gap-1.5 border border-[#D9CEBC] bg-[#F4EFE6] py-2 font-serif text-xs text-[#4A3F33] transition-colors hover:bg-[#EAE2D3] hover:text-[#1A1510]"
-              title={t('Atlas rehberi ve metodoloji', 'Atlas guide and methodology')}
+              title={t('Atlas hakkında', 'About the atlas')}
             >
-              <Info size={16} weight="regular" className="text-[#8A4526]" />
-              <span>{t('Atlas Rehberi', 'Atlas Guide')}</span>
+              <Info size={16} className="text-[#8A4526]" />
+              <span>{t('Atlas Hakkında', 'About')}</span>
             </button>
           </div>
         </div>
+
+        {mobileMenuOpen && (
+          <div className="grid grid-cols-[auto_minmax(0,1fr)] gap-2 border border-[#E0D5C3] bg-[#F6F1E8]/70 p-2 md:hidden">
+            <div className="inline-flex items-center border border-[#D9CEBC] bg-[#F4EFE6] p-0.5 font-serif text-xs">
+              <button
+                type="button"
+                onClick={() => setLang('tr')}
+                className={`min-h-9 min-w-10 px-2 font-semibold ${
+                  lang === 'tr' ? 'bg-[#8A4526] text-[#FAF7F2]' : 'text-[#695B4A]'
+                }`}
+              >
+                TR
+              </button>
+              <button
+                type="button"
+                onClick={() => setLang('en')}
+                className={`min-h-9 min-w-10 px-2 font-semibold ${
+                  lang === 'en' ? 'bg-[#8A4526] text-[#FAF7F2]' : 'text-[#695B4A]'
+                }`}
+              >
+                EN
+              </button>
+            </div>
+
+            <div className="grid min-w-0 grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={toggleTheme}
+                className="inline-flex min-h-10 min-w-0 items-center justify-center gap-2 border border-[#D9CEBC] bg-[#F4EFE6] px-2 font-sans text-[10px] font-semibold text-[#4A3F33]"
+                aria-label={themeLabel}
+              >
+                {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+                <span className="truncate">
+                  {theme === 'dark' ? t('Açık tema', 'Light') : t('Koyu tema', 'Dark')}
+                </span>
+              </button>
+
+              <button
+                type="button"
+                onClick={openAbout}
+                className="inline-flex min-h-10 min-w-0 items-center justify-center gap-2 border border-[#D9CEBC] bg-[#F4EFE6] px-2 font-sans text-[10px] font-semibold text-[#4A3F33]"
+              >
+                <Info size={16} className="shrink-0 text-[#8A4526]" />
+                <span className="truncate">{t('Atlas Hakkında', 'About')}</span>
+              </button>
+            </div>
+          </div>
+        )}
 
         <div className="flex items-center gap-2 md:hidden">
           <div className="min-w-0 flex-1">
@@ -149,51 +193,24 @@ export const Header: React.FC<HeaderProps> = ({
             />
           </div>
 
-          <div className="inline-flex w-[68px] shrink-0 items-center justify-center border border-[#D9CEBC] bg-[#F4EFE6] p-0.5 font-serif text-xs shadow-2xs">
-            <button
-              type="button"
-              onClick={() => setLang('tr')}
-              className={`w-[30px] py-1.5 text-center text-[11px] font-semibold tracking-wider transition-colors ${
-                lang === 'tr'
-                  ? 'bg-[#8A4526] text-[#FAF7F2] shadow-xs'
-                  : 'text-[#695B4A] hover:text-[#1A1510]'
-              }`}
-              aria-label="Türkçe"
-            >
-              TR
-            </button>
-            <button
-              type="button"
-              onClick={() => setLang('en')}
-              className={`w-[30px] py-1.5 text-center text-[11px] font-semibold tracking-wider transition-colors ${
-                lang === 'en'
-                  ? 'bg-[#8A4526] text-[#FAF7F2] shadow-xs'
-                  : 'text-[#695B4A] hover:text-[#1A1510]'
-              }`}
-              aria-label="English"
-            >
-              EN
-            </button>
-          </div>
-
           <button
             type="button"
             onClick={() => setMobileFilterOpen(current => !current)}
-            className="flex min-h-[40px] min-w-[40px] shrink-0 items-center justify-center border border-[#D9CEBC] bg-[#F4EFE6] text-[#4A3F33]"
+            className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#D9CEBC] bg-[#F4EFE6] text-[#4A3F33]"
             aria-label={t('Dönem filtrelerini aç', 'Toggle period filters')}
             aria-expanded={mobileFilterOpen}
           >
-            <SlidersHorizontal size={17} weight="regular" />
+            <SlidersHorizontal size={17} />
           </button>
         </div>
       </div>
 
       <div
-        className={`border-t border-[#E8DFD0] bg-[#F6F1E8]/70 px-4 py-2 sm:px-6 ${
+        className={`border-t border-[#E8DFD0] bg-[#F6F1E8]/70 px-3 py-2 sm:px-6 ${
           mobileFilterOpen ? 'block' : 'hidden md:block'
         }`}
       >
-        <div className="max-w-7xl mx-auto flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <PeriodFilter
             selectedPeriods={selectedPeriods}
             onTogglePeriod={onTogglePeriod}

@@ -621,3 +621,12 @@ html[data-theme="dark"] [role="dialog"] h5,
 html[data-theme="dark"] [role="dialog"] h6 {
   color: #FFF8EF !important;
 }
+
+
+/* Strong serif labels in dark mode
+   A few visually important titles are div/span elements rather than semantic
+   heading tags. Guarantee their contrast as well. */
+html[data-theme="dark"] .font-serif.font-bold,
+html[data-theme="dark"] .font-serif.font-semibold {
+  color: #F4EDE3 !important;
+}

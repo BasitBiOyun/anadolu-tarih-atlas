@@ -77,7 +77,7 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
     .join(', ');
 
   const selectionLabel = (() => {
-    if (isAllSelected) return t('Tüm Zamanlar', 'All time');
+    if (isAllSelected) return t('Tüm Zamanlar', 'All periods');
     if (selectedConfigs.length === 1) {
       return lang === 'tr' ? selectedConfigs[0].shortTr : selectedConfigs[0].shortEn;
     }
@@ -110,7 +110,7 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
 
   return (
     <section
-      aria-label={t('Derin Zaman Zaman Çizelgesi', 'Deep Time Timeline')}
+      aria-label={t('Derin Zaman Çizelgesi', 'Deep Time Timeline')}
       className="pointer-events-auto absolute inset-x-3 bottom-3 z-20 mx-auto max-w-[1180px] border border-[#D9CEBC] bg-[#FAF7F2]/95 shadow-[0_22px_60px_-28px_rgba(32,23,17,0.45)] backdrop-blur-md sm:inset-x-5 sm:bottom-4"
     >
       <div className="flex items-center gap-3 border-b border-[#E8DFD0] px-3 py-2.5 sm:px-4">
@@ -120,7 +120,7 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
             {t('Derin Zaman', 'Deep Time')}
           </div>
           <div className="mt-0.5 font-serif text-xs font-semibold text-[#57493A]">
-            {t('Kronolojik mercek', 'Chronological lens')}
+            {t('Kronolojik görünüm', 'Chronological view')}
           </div>
         </div>
 
@@ -137,41 +137,39 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
             </div>
           </div>
 
-          <div className="mt-1 flex items-center gap-2">
+          <div className="mt-1 grid grid-cols-[32px_minmax(0,1fr)_32px] items-center gap-2">
             <button
               type="button"
               onClick={() => commitCursor(cursorIndex - 1)}
-              className="flex h-8 w-8 shrink-0 touch-manipulation items-center justify-center border border-[#D9CEBC] bg-[#F4EFE6] text-[#57493A] transition-colors hover:bg-[#EAE2D3]"
+              className="flex h-8 w-8 touch-manipulation items-center justify-center border border-[#D9CEBC] bg-[#F4EFE6] text-[#57493A] transition-colors hover:bg-[#EAE2D3]"
               aria-label={t('Önceki döneme git', 'Go to previous period')}
             >
               <CaretLeft size={14} weight="bold" />
             </button>
 
-            <div className="relative min-w-0 flex-1">
-              <input
-                className={`deep-time-range h-8 w-full touch-pan-x ${
-                  isAllSelected ? 'deep-time-range--all' : ''
-                }`}
-                type="range"
-                min={0}
-                max={Math.max(0, periods.length - 1)}
-                step={1}
-                value={cursorIndex}
-                onChange={event => commitCursor(Number(event.target.value))}
-                aria-label={t('Zaman çizelgesinde gezin', 'Scrub through the timeline')}
-                style={
-                  {
-                    '--deep-time-gradient': `linear-gradient(90deg, ${periodGradient})`,
-                    '--deep-time-progress': `${sliderProgress}%`
-                  } as React.CSSProperties
-                }
-              />
-            </div>
+            <input
+              className={`deep-time-range h-8 w-full touch-pan-x ${
+                isAllSelected ? 'deep-time-range--all' : ''
+              }`}
+              type="range"
+              min={0}
+              max={Math.max(0, periods.length - 1)}
+              step={1}
+              value={cursorIndex}
+              onChange={event => commitCursor(Number(event.target.value))}
+              aria-label={t('Zaman çizelgesinde gezin', 'Scrub through the timeline')}
+              style={
+                {
+                  '--deep-time-gradient': `linear-gradient(90deg, ${periodGradient})`,
+                  '--deep-time-progress': `${sliderProgress}%`
+                } as React.CSSProperties
+              }
+            />
 
             <button
               type="button"
               onClick={() => commitCursor(cursorIndex + 1)}
-              className="flex h-8 w-8 shrink-0 touch-manipulation items-center justify-center border border-[#D9CEBC] bg-[#F4EFE6] text-[#57493A] transition-colors hover:bg-[#EAE2D3]"
+              className="flex h-8 w-8 touch-manipulation items-center justify-center border border-[#D9CEBC] bg-[#F4EFE6] text-[#57493A] transition-colors hover:bg-[#EAE2D3]"
               aria-label={t('Sonraki döneme git', 'Go to next period')}
             >
               <CaretRight size={14} weight="bold" />
@@ -188,23 +186,25 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
             {t('Haritadaki yer', 'Sites on map')}
           </div>
         </div>
+      </div>
 
+      <div className="flex touch-pan-x items-center gap-1 overflow-x-auto overscroll-x-contain px-3 py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:px-4">
         <button
           type="button"
           onClick={onSelectAll}
-          className={`flex min-h-9 shrink-0 touch-manipulation items-center gap-1.5 border px-2.5 font-sans text-[9px] font-bold uppercase tracking-[0.08em] transition-colors sm:px-3 sm:text-[10px] ${
+          className={`inline-flex min-h-8 shrink-0 touch-manipulation items-center gap-1.5 border px-2.5 font-sans text-[9px] font-bold uppercase tracking-[0.08em] transition-colors sm:text-[10px] ${
             isAllSelected
               ? 'border-[#8A4526] bg-[#8A4526] text-[#FAF7F2]'
               : 'border-[#D9CEBC] bg-[#F4EFE6] text-[#57493A] hover:bg-[#EAE2D3]'
           }`}
           aria-pressed={isAllSelected}
         >
-          <ArrowCounterClockwise size={13} />
-          <span className="hidden min-[390px]:inline">{t('Tüm Zamanlar', 'All Time')}</span>
+          <ArrowCounterClockwise size={12} />
+          <span>{t('Tüm Zamanlar', 'All Periods')}</span>
         </button>
-      </div>
 
-      <div className="flex touch-pan-x items-center gap-1 overflow-x-auto overscroll-x-contain px-3 py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:px-4">
+        <span className="h-5 w-px shrink-0 bg-[#E8DFD0]" aria-hidden="true" />
+
         {ERAS.map(era => {
           const eraActive =
             era.periodIds.length === selectedPeriods.length &&
