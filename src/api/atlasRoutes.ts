@@ -1,17 +1,5 @@
 import { Router, Request, Response } from 'express';
-import {
-  collection,
-  doc,
-  getDocs,
-  getDoc,
-  setDoc,
-  updateDoc,
-  query,
-  where,
-  limit as firestoreLimit,
-  runTransaction
-} from 'firebase/firestore';
-import { db } from '../config/firebase';
+import { serverDb } from './serverFirestore';
 import {
   uploadMonographToStorage,
   testStorageCRUD,
@@ -20,9 +8,21 @@ import {
   ATLAS_STORAGE_BUCKET
 } from './serverStorage';
 import { validateSiteJson } from '../validation/siteValidator';
-import { sanitizeForFirestore } from '../data/firebaseBackend';
 
 export const atlasRouter = Router();
+
+function sanitizeForFirestore(obj: any): any {
+  if (obj === null || obj === undefined) return null;
+  if (Array.isArray(obj)) return obj.map(item => sanitizeForFirestore(item));
+  if (typeof obj === 'object') {
+    const result: Record<string, any> = {};
+    for (const [key, value] of Object.entries(obj)) {
+      if (value !== undefined) result[key] = sanitizeForFirestore(value);
+    }
+    return result;
+  }
+  return obj;
+}
 
 // Bearer token authentication middleware for external research workers
 // Fails closed if ATLAS_INGESTION_TOKEN is not configured in the server environment.
@@ -68,12 +68,11 @@ atlasRouter.post('/claim', async (req: Request, res: Response) => {
     const claimLimit = Math.min(Math.max(Number(requestedLimit) || 1, 1), 20);
 
     // Query candidate pending items in research_queue
-    const q = query(
-      collection(db, 'research_queue'),
-      where('status', '==', 'pending'),
-      firestoreLimit(claimLimit * 2)
-    );
-    const candidateSnap = await getDocs(q);
+    const q = serverDb
+      .collection('research_queue')
+      .where('status', '==', 'pending')
+      .limit(claimLimit * 2);
+    const candidateSnap = await q.get();
 
     if (candidateSnap.empty) {
       return res.json({
@@ -87,16 +86,16 @@ atlasRouter.post('/claim', async (req: Request, res: Response) => {
     const claimedItems: Array<{ id: string; name: any; province: any; priority: string }> = [];
 
     // Execute atomic claim in a Firestore transaction ensuring ALL reads occur before ANY writes
-    await runTransaction(db, async transaction => {
+    await serverDb.runTransaction(async transaction => {
       // 1. Phase 1: All reads
       const validPendingDocs: Array<{ docRef: any; data: any; id: string }> = [];
       for (const docSnap of candidateSnap.docs) {
         if (validPendingDocs.length >= claimLimit) break;
 
-        const docRef = doc(db, 'research_queue', docSnap.id);
+        const docRef = serverDb.collection('research_queue').doc(docSnap.id);
         const freshSnap = await transaction.get(docRef);
 
-        if (freshSnap.exists() && freshSnap.data().status === 'pending') {
+        if (freshSnap.exists && freshSnap.data().status === 'pending') {
           validPendingDocs.push({
             docRef,
             data: freshSnap.data(),
@@ -171,7 +170,7 @@ atlasRouter.post('/upload', async (req: Request, res: Response) => {
     // Record rejected attempt in research_jobs if siteId is present
     if (siteId) {
       const failedJobId = `job_fail_${siteId}_${Date.now()}`;
-      await setDoc(doc(db, 'research_jobs', failedJobId), {
+      await serverDb.collection('research_jobs').doc(failedJobId).set({
         id: failedJobId,
         workerId,
         siteId,
@@ -204,10 +203,8 @@ atlasRouter.post('/upload', async (req: Request, res: Response) => {
     console.error(`[API /upload] CRITICAL: Storage persistence failed for "${siteId}":`, storageErr);
 
     // Fail transactional semantics: do NOT mark queue completed; set status to 'needs_review'
-    const queueDocRef = doc(db, 'research_queue', siteId);
-    await setDoc(
-      queueDocRef,
-      {
+    const queueDocRef = serverDb.collection('research_queue').doc(siteId);
+    await queueDocRef.set({
         id: siteId,
         name: site.content?.tr?.name || siteId,
         province: site.content?.tr?.province || '',
@@ -221,7 +218,7 @@ atlasRouter.post('/upload', async (req: Request, res: Response) => {
 
     // Record job failure in research_jobs
     const failedJobId = `job_${siteId}_failed_${Date.now()}`;
-    await setDoc(doc(db, 'research_jobs', failedJobId), {
+    await serverDb.collection('research_jobs').doc(failedJobId).set({
       id: failedJobId,
       workerId,
       siteId,
@@ -276,14 +273,12 @@ atlasRouter.post('/upload', async (req: Request, res: Response) => {
     };
 
     // Update sites_index document in Firestore
-    const indexDocRef = doc(db, 'sites_index', siteId);
-    await setDoc(indexDocRef, sanitizeForFirestore(indexDoc), { merge: true });
+    const indexDocRef = serverDb.collection('sites_index').doc(siteId);
+    await indexDocRef.set(sanitizeForFirestore(indexDoc), { merge: true });
 
     // 4. Mark research_queue task as completed
-    const queueDocRef = doc(db, 'research_queue', siteId);
-    await setDoc(
-      queueDocRef,
-      {
+    const queueDocRef = serverDb.collection('research_queue').doc(siteId);
+    await queueDocRef.set({
         id: siteId,
         name: site.content.tr.name,
         province: site.content.tr.province || '',
@@ -292,14 +287,12 @@ atlasRouter.post('/upload', async (req: Request, res: Response) => {
         completedAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
         lastError: null
-      },
-      { merge: true }
-    );
+      }, { merge: true });
 
     // 5. Record successful job in research_jobs
     const completedAt = new Date().toISOString();
     const jobId = `job_${siteId}_${Date.now()}`;
-    await setDoc(doc(db, 'research_jobs', jobId), {
+    await serverDb.collection('research_jobs').doc(jobId).set({
       id: jobId,
       workerId,
       siteId,
@@ -346,21 +339,21 @@ atlasRouter.post('/fail', async (req: Request, res: Response) => {
       });
     }
 
-    const queueDocRef = doc(db, 'research_queue', siteId);
-    const snap = await getDoc(queueDocRef);
+    const queueDocRef = serverDb.collection('research_queue').doc(siteId);
+    const snap = await queueDocRef.get();
 
     const now = new Date().toISOString();
     const targetStatus = action === 'retry' ? 'pending' : 'needs_review';
 
-    if (snap.exists()) {
-      await updateDoc(queueDocRef, {
+    if (snap.exists) {
+      await queueDocRef.update({
         status: targetStatus,
         assignedWorker: action === 'retry' ? null : workerId,
         lastError: reason,
         updatedAt: now
       });
     } else {
-      await setDoc(queueDocRef, {
+      await queueDocRef.set({
         id: siteId,
         name: siteId,
         status: targetStatus,
@@ -373,7 +366,7 @@ atlasRouter.post('/fail', async (req: Request, res: Response) => {
 
     // Record job failure event in research_jobs
     const jobId = `job_err_${siteId}_${Date.now()}`;
-    await setDoc(doc(db, 'research_jobs', jobId), {
+    await serverDb.collection('research_jobs').doc(jobId).set({
       id: jobId,
       workerId,
       siteId,
