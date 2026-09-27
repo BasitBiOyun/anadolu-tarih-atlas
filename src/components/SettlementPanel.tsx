@@ -427,18 +427,6 @@ export const SettlementPanel: React.FC<SettlementPanelProps> = ({
                         <p className="font-prose text-xs text-[#42372A] leading-relaxed">
                           {find.description}
                         </p>
-                        {find.sourceIds && find.sourceIds.length > 0 && (
-                          <div className="flex flex-wrap items-center gap-1 pt-1">
-                            <span className="font-serif text-[10px] text-[#786957] font-medium">
-                              {t('Kaynak:', 'Source:')}
-                            </span>
-                            {find.sourceIds.map((sid, sidx) => (
-                              <span key={sidx} className="px-1.5 py-0.5 bg-[#EAE0D0] text-[#635342] border border-[#D8CABE] font-mono text-[9px] rounded-2xs">
-                                [{sid}]
-                              </span>
-                            ))}
-                          </div>
-                        )}
                       </div>
                     ))}
                   </div>
@@ -513,16 +501,6 @@ export const SettlementPanel: React.FC<SettlementPanelProps> = ({
                     <p className="font-prose text-xs text-[#3D3226] leading-relaxed">
                       {debate.text || debate.scholarlyDebate || debate.consensus || debate.evidence}
                     </p>
-                    {debate.sourceIds && debate.sourceIds.length > 0 && (
-                      <div className="flex flex-wrap items-center gap-1 text-[10px] font-mono text-[#7D6E5D] pt-0.5">
-                        <span className="font-serif font-medium text-[#6B5D4E]">{t('Kaynak:', 'Source:')}</span>
-                        {debate.sourceIds.map((sid, sidx) => (
-                          <span key={sidx} className="px-1.5 py-0.5 bg-[#ECE2D4] border border-[#DDD0BF]">
-                            [{sid}]
-                          </span>
-                        ))}
-                      </div>
-                    )}
                   </div>
                 ))}
               </div>
@@ -576,18 +554,6 @@ export const SettlementPanel: React.FC<SettlementPanelProps> = ({
                       {t('Ulaşım: ', 'Getting There: ')}
                     </span>
                     <span className="font-prose text-[#3D3327] leading-relaxed">{geography.gettingThere}</span>
-                  </div>
-                )}
-                {geography.sourceIds && geography.sourceIds.length > 0 && (
-                  <div className="flex flex-wrap items-center gap-1 pt-1.5 border-t border-[#EAE0D0]">
-                    <span className="font-serif text-[10px] text-[#786957] font-medium">
-                      {t('Kaynaklar:', 'Sources:')}
-                    </span>
-                    {geography.sourceIds.map((sid, sidx) => (
-                      <span key={sidx} className="px-1.5 py-0.5 bg-[#EAE0D0] text-[#635342] border border-[#D8CABE] font-mono text-[9px] rounded-2xs">
-                        [{sid}]
-                      </span>
-                    ))}
                   </div>
                 )}
               </div>
@@ -710,19 +676,6 @@ export const SettlementPanel: React.FC<SettlementPanelProps> = ({
                 </div>
               )}
 
-              {/* Visit Sources */}
-              {visit.sourceIds && visit.sourceIds.length > 0 && (
-                <div className="flex flex-wrap items-center gap-1 pt-1">
-                  <span className="font-serif text-[10px] text-[#786957] font-medium">
-                    {t('Kaynaklar:', 'Sources:')}
-                  </span>
-                  {visit.sourceIds.map((sid, sidx) => (
-                    <span key={sidx} className="px-1.5 py-0.5 bg-[#EAE0D0] text-[#635342] border border-[#D8CABE] font-mono text-[9px] rounded-2xs">
-                      [{sid}]
-                    </span>
-                  ))}
-                </div>
-              )}
             </section>
           )}
 
