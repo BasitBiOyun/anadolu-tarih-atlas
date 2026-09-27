@@ -325,6 +325,78 @@ atlasRouter.post('/upload', async (req: Request, res: Response) => {
 });
 
 /**
+ * POST /api/atlas/maintenance/retain-index
+ *
+ * Protected maintenance endpoint for reconciling stale Firestore map records.
+ * It only prunes sites_index documents. Canonical Storage monographs are never
+ * deleted by this operation.
+ */
+atlasRouter.post('/maintenance/retain-index', async (req: Request, res: Response) => {
+  try {
+    const rawIds = req.body?.siteIds;
+    if (!Array.isArray(rawIds) || rawIds.length === 0) {
+      return res.status(400).json({
+        error: 'siteIds must be a non-empty array of canonical site IDs.'
+      });
+    }
+
+    const siteIds = Array.from(
+      new Set(
+        rawIds
+          .filter((id: unknown): id is string => typeof id === 'string')
+          .map((id: string) => id.trim())
+          .filter((id: string) => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id))
+      )
+    );
+
+    if (siteIds.length !== rawIds.length) {
+      return res.status(400).json({
+        error: 'Every siteIds entry must be a unique lowercase hyphenated site ID.'
+      });
+    }
+
+    const keep = new Set(siteIds);
+    const snapshot = await serverDb.collection('sites_index').get();
+    const removed: string[] = [];
+
+    let batch = serverDb.batch();
+    let operations = 0;
+
+    for (const docSnap of snapshot.docs) {
+      if (keep.has(docSnap.id)) continue;
+
+      batch.delete(docSnap.ref);
+      removed.push(docSnap.id);
+      operations += 1;
+
+      if (operations === 450) {
+        await batch.commit();
+        batch = serverDb.batch();
+        operations = 0;
+      }
+    }
+
+    if (operations > 0) {
+      await batch.commit();
+    }
+
+    return res.json({
+      success: true,
+      retained: siteIds,
+      retainedCount: siteIds.length,
+      removed,
+      removedCount: removed.length
+    });
+  } catch (err: any) {
+    console.error('[API /maintenance/retain-index] Error pruning sites_index:', err);
+    return res.status(500).json({
+      error: 'Failed to reconcile sites_index.',
+      details: err?.message || String(err)
+    });
+  }
+});
+
+/**
  * POST /api/atlas/fail
  * Allows a worker to return a claimed record back to the queue or
  * mark it as needing review with an explanatory error reason.
