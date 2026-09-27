@@ -41,26 +41,33 @@ app.get('/api/health', (req, res) => {
 app.get('/api/sites/:siteId', async (req, res) => {
   try {
     const rawId = req.params.siteId;
-    const cleanId = rawId.replace(/^sites\//, '').replace(/\.json$/, '');
+    const cleanId = rawId.replace(/\.json$/, '');
+
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(cleanId)) {
+      return res.status(400).json({ error: 'Invalid site id.' });
+    }
+
     const bucket = serverStorage.bucket(ATLAS_STORAGE_BUCKET);
     const objectPath = `${STORAGE_SITES_PATH}/${cleanId}.json`;
     const file = bucket.file(objectPath);
 
-    const [exists] = await file.exists();
-    if (!exists) {
+    // One Storage round trip only. Avoid exists() followed by download(), which
+    // doubles latency on every cold detail request.
+    const [data] = await file.download();
+
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
+    res.setHeader('Cache-Control', 'public, max-age=300, stale-while-revalidate=86400');
+    return res.send(data);
+  } catch (err: any) {
+    if (Number(err?.code) === 404) {
       return res.status(404).json({
-        error: `Monograph for "${cleanId}" not found in Firebase Storage at "${objectPath}".`
+        error: `Monograph for "${req.params.siteId}" was not found.`
       });
     }
 
-    const [data] = await file.download();
-    res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    res.setHeader('Cache-Control', 'public, max-age=3600');
-    return res.send(data);
-  } catch (err: any) {
     console.error(`[API] Error reading site monograph from Firebase Storage for ${req.params.siteId}:`, err);
     return res.status(500).json({
-      error: `Failed to load monograph from Firebase Storage: ${err?.message || String(err)}`
+      error: 'Failed to load monograph from Firebase Storage.'
     });
   }
 });
