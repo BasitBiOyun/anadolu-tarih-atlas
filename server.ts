@@ -3,6 +3,7 @@ import path from 'path';
 import { createServer as createViteServer } from 'vite';
 import dotenv from 'dotenv';
 import { atlasRouter } from './src/api/atlasRoutes';
+import { serverDb } from './src/api/serverFirestore';
 import { serverStorage, ATLAS_STORAGE_BUCKET, STORAGE_SITES_PATH } from './src/api/serverStorage';
 
 dotenv.config();
@@ -68,6 +69,111 @@ app.get('/api/sites/:siteId', async (req, res) => {
     console.error(`[API] Error reading site monograph from Firebase Storage for ${req.params.siteId}:`, err);
     return res.status(500).json({
       error: 'Failed to load monograph from Firebase Storage.'
+    });
+  }
+});
+
+
+// Public published-site index.
+// Firebase Storage is authoritative for whether a site exists in the atlas.
+// Firestore is used only as lightweight metadata for Storage objects that
+// actually exist under atlas/sites/*.json.
+app.get('/api/site-index', async (req, res) => {
+  try {
+    const bucket = serverStorage.bucket(ATLAS_STORAGE_BUCKET);
+    const prefix = `${STORAGE_SITES_PATH}/`;
+
+    const [files] = await bucket.getFiles({ prefix });
+
+    const siteIds = Array.from(
+      new Set(
+        files
+          .map(file => file.name)
+          .filter(name => name.startsWith(prefix) && name.endsWith('.json'))
+          .map(name => name.slice(prefix.length, -5))
+          .filter(id => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id))
+      )
+    ).sort();
+
+    if (siteIds.length === 0) {
+      res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=120');
+      return res.json([]);
+    }
+
+    const indexedById = new Map<string, any>();
+
+    // Fetch Firestore metadata only for IDs that physically exist in Storage.
+    // Chunking keeps this safe as the atlas grows to hundreds/thousands of sites.
+    for (let i = 0; i < siteIds.length; i += 200) {
+      const chunk = siteIds.slice(i, i + 200);
+      const refs = chunk.map(id => serverDb.collection('sites_index').doc(id));
+      const snapshots = await serverDb.getAll(...refs);
+
+      snapshots.forEach(snapshot => {
+        if (snapshot.exists) {
+          indexedById.set(snapshot.id, {
+            ...snapshot.data(),
+            id: snapshot.id
+          });
+        }
+      });
+    }
+
+    const publishedIndex: any[] = [];
+
+    for (const siteId of siteIds) {
+      const indexed = indexedById.get(siteId);
+      if (indexed) {
+        publishedIndex.push(indexed);
+        continue;
+      }
+
+      // Defensive fallback: if Storage contains a canonical monograph but its
+      // Firestore index document is missing, derive the lightweight metadata
+      // directly from the monograph instead of hiding a published site.
+      try {
+        const file = bucket.file(`${prefix}${siteId}.json`);
+        const [buffer] = await file.download();
+        const site = JSON.parse(buffer.toString('utf8'));
+
+        const chronology = Array.isArray(site?.core?.chronology)
+          ? site.core.chronology
+          : [];
+
+        publishedIndex.push({
+          id: siteId,
+          nameTR: site?.content?.tr?.name || siteId,
+          nameEN: site?.content?.en?.name || site?.content?.tr?.name || siteId,
+          alternativeNamesTR: site?.content?.tr?.alternativeNames || [],
+          alternativeNamesEN: site?.content?.en?.alternativeNames || [],
+          province: site?.content?.tr?.province || '',
+          district: site?.content?.tr?.district || '',
+          latitude: site?.core?.coordinates?.latitude,
+          longitude: site?.core?.coordinates?.longitude,
+          siteType: site?.core?.siteType || site?.content?.tr?.siteTypeLabel || 'other',
+          periodIds: chronology.map((entry: any) => entry.periodId).filter(Boolean),
+          startYear: site?.core?.dateRange?.startYear ?? chronology[0]?.startYear ?? null,
+          endYear:
+            site?.core?.dateRange?.endYear ??
+            chronology[chronology.length - 1]?.endYear ??
+            null,
+          importance: site?.core?.visibility?.importance ?? 2,
+          minZoom: site?.core?.visibility?.minZoom ?? 1.8,
+          featured: site?.core?.visibility?.featured ?? false,
+          storagePath: `${prefix}${siteId}.json`
+        });
+      } catch (fallbackError) {
+        console.error(`[API /site-index] Failed to derive metadata for ${siteId}:`, fallbackError);
+      }
+    }
+
+    res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=120');
+    res.setHeader('X-Atlas-Site-Count', String(publishedIndex.length));
+    return res.json(publishedIndex);
+  } catch (err: any) {
+    console.error('[API /site-index] Failed to build published Storage index:', err);
+    return res.status(500).json({
+      error: 'Failed to load published site index from Firebase Storage.'
     });
   }
 });

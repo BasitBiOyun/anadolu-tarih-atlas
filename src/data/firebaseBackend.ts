@@ -1,30 +1,24 @@
-import { collection, getDocs } from 'firebase/firestore';
-import { db, STORAGE_SITES_PATH } from '../config/firebase';
 import { IndexSettlement, SiteDetail } from '../types/settlement';
 
-export { STORAGE_SITES_PATH };
+export const STORAGE_SITES_PATH = 'atlas/sites';
 
 /**
- * Fetches all index records from Firestore collection 'sites_index'.
+ * Loads the published atlas index through the same-origin Cloud Run API.
+ * Firebase Storage is authoritative for site existence; the server returns
+ * metadata only for JSON monographs that physically exist under atlas/sites/.
  */
 export async function getSitesIndexFromFirestore(): Promise<IndexSettlement[]> {
-  const sitesRef = collection(db, 'sites_index');
-  const snapshot = await getDocs(sitesRef);
-
-  if (snapshot.empty) {
-    return [];
-  }
-
-  const items: IndexSettlement[] = [];
-  snapshot.forEach(docSnap => {
-    const data = docSnap.data() as IndexSettlement;
-    items.push({
-      ...data,
-      id: docSnap.id
-    });
+  const response = await fetch('/api/site-index', {
+    method: 'GET',
+    headers: { Accept: 'application/json' }
   });
 
-  return items;
+  if (!response.ok) {
+    throw new Error(`Published site index request failed with HTTP ${response.status}`);
+  }
+
+  const items = await response.json();
+  return Array.isArray(items) ? items : [];
 }
 
 /**
