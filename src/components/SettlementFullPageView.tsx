@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Settlement } from '../types/settlement';
 import { Timeline } from './Timeline';
 import { ImageGallery } from './ImageGallery';
 import { Sources } from './Sources';
+import { CitationProvider, CitationRefs } from './CitationSystem';
 import { SettlementMiniMap } from './SettlementMiniMap';
 import { RichParagraphRenderer, hasRichContent } from './RichTextRenderer';
 import { getPeriodConfig, getPeriodColor, getPeriodLabel } from '../config/periods';
-import { getPrimaryPeriod } from '../utils/chronology';
+import { formatDateRange, getPrimaryPeriod } from '../utils/chronology';
 import { useLanguage } from '../context/LanguageContext';
 import {
   ArrowLeft,
@@ -54,6 +55,33 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
   onRetry
 }) => {
   const { lang, t } = useLanguage();
+  const [activeSection, setActiveSection] = useState('overview');
+
+  useEffect(() => {
+    if (!settlement?.isLoadedDetail) return;
+
+    const root = document.querySelector<HTMLElement>('[data-monograph-scroll]');
+    if (!root) return;
+
+    const observed = Array.from(root.querySelectorAll<HTMLElement>('[data-monograph-section]'));
+    const observer = new IntersectionObserver(
+      entries => {
+        const visible = entries
+          .filter(entry => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        const id = visible[0]?.target.getAttribute('data-monograph-section');
+        if (id) setActiveSection(id);
+      },
+      {
+        root,
+        rootMargin: '-18% 0px -68% 0px',
+        threshold: [0.05, 0.2, 0.45]
+      }
+    );
+
+    observed.forEach(element => observer.observe(element));
+    return () => observer.disconnect();
+  }, [settlement?.id, settlement?.isLoadedDetail, lang]);
 
   // Handle loading, errors, or unmigrated/index-only settlement before full monograph load
   if (!settlement || isLoading || status === 'loading' || status === 'error' || status === 'not_found' || !settlement.isLoadedDetail) {
@@ -186,6 +214,38 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
   // Participation
   const hasParticipation = Boolean(settlement.participation && settlement.participation.length > 0);
 
+  const heroStartYear =
+    settlement.startYear ??
+    settlement.occupation?.startYear ??
+    (settlement.occupation?.startBCE ? -Math.abs(settlement.occupation.startBCE) : undefined);
+  const heroEndYear =
+    settlement.endYear ??
+    settlement.occupation?.endYear ??
+    (settlement.occupation?.endBCE ? -Math.abs(settlement.occupation.endBCE) : undefined);
+  const heroDateRange = formatDateRange(heroStartYear, heroEndYear, lang);
+
+  const sectionNav = [
+    hasOverview && { id: 'overview', label: t('Genel Bakış', 'Overview') },
+    { id: 'chronology', label: t('Kronoloji', 'Chronology') },
+    hasImportance && { id: 'importance', label: t('Arkeolojik Anlam', 'Significance') },
+    hasDiscoveries && { id: 'discoveries', label: t('Buluntular', 'Discoveries') },
+    (hasHistory || hasCurrentStatus) && { id: 'history', label: t('Kazı Tarihi', 'Research History') },
+    hasResearchDebates && { id: 'research', label: t('Tartışmalar', 'Debates') },
+    hasImages && { id: 'gallery', label: t('Görseller', 'Gallery') },
+    hasGeography && { id: 'geography', label: t('Coğrafya', 'Geography') },
+    hasVisit && { id: 'visit', label: t('Ziyaret', 'Visit') },
+    hasNearbyPlaces && { id: 'nearby', label: t('Yakın Noktalar', 'Nearby') },
+    hasParticipation && { id: 'participation', label: t('Katılım', 'Participation') },
+    hasSources && { id: 'sources', label: t('Kaynakça', 'Bibliography') }
+  ].filter(Boolean) as Array<{ id: string; label: string }>;
+
+  const scrollToSection = (id: string) => {
+    document.getElementById(`section-${id}`)?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
+
   return (
     <div
       role="dialog"
@@ -238,91 +298,160 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
       </header>
 
       {/* Main Full-Page Editorial Reading Body */}
-      <main className="flex-1 overflow-y-auto">
-          {/* Hero Article Header Container */}
-          <div className="max-w-4xl mx-auto px-4 sm:px-8 pt-8 pb-6 border-b border-[#E8DFC8]">
-            {/* Province / District / Modern Place */}
-            <div className="flex flex-wrap items-center gap-2 text-sm font-sans tracking-wide uppercase text-[#857564] mb-2 font-medium">
-              <span className="inline-flex items-center gap-1.5">
-                <MapPin size={16} weight="fill" className="text-[#8A4526]" />
-                {settlement.province}
-                {settlement.district ? ` · ${settlement.district}` : ''}
-              </span>
-              {settlement.modernPlace && (
-                <span className="normal-case font-serif text-sm text-[#695B4A]">
-                  ({settlement.modernPlace})
-                </span>
-              )}
-            </div>
+      <main data-monograph-scroll className="flex-1 overflow-y-auto scroll-smooth">
+          {/* Premium monograph hero */}
+          <div className="mx-auto max-w-[1240px] px-4 pb-8 pt-8 sm:px-8 sm:pt-10">
+            <div className="relative overflow-hidden border-y border-[#DCCFBC] bg-[#FCF9F3] px-5 py-7 shadow-[0_24px_60px_-48px_rgba(42,31,22,0.65)] sm:px-8 sm:py-9 lg:px-10">
+              <div
+                className="absolute inset-y-0 left-0 w-1.5"
+                style={{ backgroundColor: primaryColor }}
+                aria-hidden="true"
+              />
 
-            {/* Giant Title */}
-            <h1 className="font-serif font-bold text-[#140F0A] text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight mb-3">
-              {settlement.name}
-            </h1>
-
-            {/* Alternative Names */}
-            {settlement.alternativeNames && settlement.alternativeNames.length > 0 && (
-              <p className="text-sm sm:text-base font-serif italic text-[#706251] mb-4">
-                {t('Diğer adları / literatür: ', 'Alternative names / references: ')}{settlement.alternativeNames.join(', ')}
-              </p>
-            )}
-
-            {/* Period Badges */}
-            <div className="flex flex-wrap items-center gap-2 mt-4">
-              {settlement.periodDetails && settlement.periodDetails.length > 0 ? (
-                settlement.periodDetails.map(pd => {
-                  const cfg = getPeriodConfig(pd.periodId || pd.period);
-                  const periodLabel = getPeriodLabel(pd.periodId || pd.period, lang);
-                  return (
-                    <span
-                      key={pd.period}
-                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-serif font-medium px-3 py-1 border shadow-xs"
-                      style={{
-                        backgroundColor: cfg.bgLight,
-                        borderColor: cfg.borderColor,
-                        color: cfg.color
-                      }}
-                    >
-                      <span
-                        className="w-2 h-2 rounded-full"
-                        style={{ backgroundColor: cfg.color }}
-                      />
-                      {periodLabel}
+              <div className="grid gap-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(320px,0.7fr)] lg:items-end">
+                <div>
+                  <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-[#7F6F5D] sm:text-xs">
+                    <span className="inline-flex items-center gap-1.5">
+                      <MapPin size={15} weight="fill" className="text-[#8A4526]" />
+                      {settlement.province}
+                      {settlement.district ? ` · ${settlement.district}` : ''}
                     </span>
-                  );
-                })
-              ) : (
-                settlement.periods.map(period => {
-                  const cfg = getPeriodConfig(period);
-                  const periodLabel = getPeriodLabel(period, lang);
-                  return (
-                    <span
-                      key={period}
-                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-serif font-medium px-3 py-1 border shadow-xs"
-                      style={{
-                        backgroundColor: cfg.bgLight,
-                        borderColor: cfg.borderColor,
-                        color: cfg.color
-                      }}
-                    >
-                      <span
-                        className="w-2 h-2 rounded-full"
-                        style={{ backgroundColor: cfg.color }}
-                      />
-                      {periodLabel}
-                    </span>
-                  );
-                })
-              )}
+                    {settlement.modernPlace && <span>· {settlement.modernPlace}</span>}
+                    {settlement.unescoStatus && (
+                      <span className="border border-[#CDBEA8] bg-[#F2E9DC] px-2 py-0.5 text-[#735039]">
+                        UNESCO · {settlement.unescoStatus}
+                      </span>
+                    )}
+                  </div>
+
+                  <h1 className="max-w-4xl font-serif text-4xl font-bold leading-[0.98] tracking-[-0.025em] text-[#150F0A] sm:text-5xl lg:text-6xl">
+                    {settlement.name}
+                  </h1>
+
+                  {settlement.alternativeNames?.length > 0 && (
+                    <p className="mt-3 max-w-3xl font-serif text-sm italic leading-relaxed text-[#756656] sm:text-base">
+                      {t('Literatürde: ', 'In the literature: ')}
+                      {settlement.alternativeNames.join(', ')}
+                    </p>
+                  )}
+
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {(settlement.periodDetails?.length ? settlement.periodDetails : settlement.periods).slice(0, 5).map((entry: any) => {
+                      const periodId = typeof entry === 'string' ? entry : entry.periodId || entry.period;
+                      const cfg = getPeriodConfig(periodId);
+                      return (
+                        <span
+                          key={periodId}
+                          className="inline-flex items-center gap-2 border px-3 py-1.5 font-serif text-xs font-semibold sm:text-sm"
+                          style={{
+                            backgroundColor: cfg.bgLight,
+                            borderColor: cfg.borderColor,
+                            color: cfg.color
+                          }}
+                        >
+                          <span className="h-2 w-2 rounded-full" style={{ backgroundColor: cfg.color }} />
+                          {getPeriodLabel(periodId, lang)}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 border border-[#E1D6C6] bg-[#F8F2E9]">
+                  <div className="border-b border-r border-[#E1D6C6] p-4 sm:p-5">
+                    <div className="font-sans text-[9px] font-semibold uppercase tracking-[0.14em] text-[#8C7A67] sm:text-[10px]">
+                      {t('Tarih Aralığı', 'Date Range')}
+                    </div>
+                    <div className="mt-1.5 font-serif text-base font-bold leading-snug text-[#2A211A] sm:text-lg">
+                      {heroDateRange}
+                    </div>
+                  </div>
+                  <div className="border-b border-[#E1D6C6] p-4 sm:p-5">
+                    <div className="font-sans text-[9px] font-semibold uppercase tracking-[0.14em] text-[#8C7A67] sm:text-[10px]">
+                      {t('Alan Türü', 'Site Type')}
+                    </div>
+                    <div className="mt-1.5 font-serif text-base font-bold leading-snug text-[#2A211A] sm:text-lg">
+                      {Array.isArray(settlement.siteType) ? settlement.siteType.join(', ') : settlement.siteType}
+                    </div>
+                  </div>
+                  <div className="border-r border-[#E1D6C6] p-4 sm:p-5">
+                    <div className="font-sans text-[9px] font-semibold uppercase tracking-[0.14em] text-[#8C7A67] sm:text-[10px]">
+                      {t('Dönem', 'Periods')}
+                    </div>
+                    <div className="mt-1.5 font-serif text-2xl font-bold text-[#2A211A]">
+                      {settlement.periods.length}
+                    </div>
+                  </div>
+                  <div className="p-4 sm:p-5">
+                    <div className="font-sans text-[9px] font-semibold uppercase tracking-[0.14em] text-[#8C7A67] sm:text-[10px]">
+                      {t('Akademik Kaynak', 'Academic Sources')}
+                    </div>
+                    <div className="mt-1.5 font-serif text-2xl font-bold text-[#2A211A]">
+                      {settlement.sources.length}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Article Two-Column / Wide Layout */}
-          <div className="max-w-4xl mx-auto px-4 sm:px-8 py-8 space-y-10">
+          {/* Monograph reading layout */}
+          <div className="mx-auto max-w-[1280px] px-4 pb-10 sm:px-8">
+            <div className="sticky top-0 z-20 -mx-4 mb-8 overflow-x-auto border-y border-[#E2D7C7] bg-[#F9F5EC]/95 px-4 py-2 backdrop-blur-md lg:hidden">
+              <div className="flex min-w-max gap-1.5">
+                {sectionNav.map((item, index) => (
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => scrollToSection(item.id)}
+                    className={`border px-3 py-1.5 font-sans text-[10px] font-semibold uppercase tracking-[0.08em] transition-colors ${
+                      activeSection === item.id
+                        ? 'border-[#8A4526] bg-[#8A4526] text-[#FFF9F1]'
+                        : 'border-[#D8CBBB] bg-[#FCF9F3] text-[#6F6051]'
+                    }`}
+                  >
+                    {String(index + 1).padStart(2, '0')} · {item.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid gap-10 lg:grid-cols-[190px_minmax(0,1fr)] xl:gap-14">
+              <aside className="hidden lg:block">
+                <nav className="sticky top-6 border-l border-[#D9CCBA] py-2">
+                  <div className="mb-3 pl-4 font-sans text-[10px] font-bold uppercase tracking-[0.16em] text-[#9A806B]">
+                    {t('Monografi', 'Monograph')}
+                  </div>
+                  <div className="space-y-0.5">
+                    {sectionNav.map((item, index) => (
+                      <button
+                        key={item.id}
+                        type="button"
+                        onClick={() => scrollToSection(item.id)}
+                        className={`group flex w-full items-center gap-3 border-l-2 px-4 py-2 text-left transition-all ${
+                          activeSection === item.id
+                            ? '-ml-px border-[#8A4526] bg-[#F1E7DA] text-[#2A2018]'
+                            : '-ml-px border-transparent text-[#786958] hover:bg-[#F6EFE5] hover:text-[#2A2018]'
+                        }`}
+                      >
+                        <span className="w-5 font-mono text-[9px] text-[#A28F7B]">
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                        <span className="font-serif text-[13px] font-semibold leading-tight">
+                          {item.label}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </nav>
+              </aside>
+
+              <CitationProvider sources={settlement.sources}>
+                <div className="min-w-0 space-y-16">
             {/* Top Interactive Mini Map & Quick Coordinates */}
-            <div className="bg-[#FAF7F0] border border-[#E2D6C0] p-4 sm:p-5 shadow-xs">
+            <div className="border border-[#DDD0BD] bg-[#FCF9F3] p-5 shadow-[0_18px_42px_-34px_rgba(42,31,22,0.55)] sm:p-6">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 mb-3 border-b border-[#E8DFC8] gap-2">
-                <span className="font-serif text-sm font-bold uppercase tracking-wider text-[#736554] flex items-center gap-1.5">
+                <span className="flex items-center gap-2 font-serif text-base font-bold text-[#392E24] sm:text-lg">
                   <MapPin size={18} className="text-[#8A4526]" />
                   {t('Konum ve Koordinatlar', 'Location & Coordinates')}
                 </span>
@@ -339,8 +468,8 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 
             {/* 1. Overview */}
             {hasOverview && (
-              <section className="space-y-4">
-                <h2 className="font-serif text-lg sm:text-xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2 flex items-center gap-2">
+              <section id="section-overview" data-monograph-section="overview" className="max-w-[840px] scroll-mt-24 space-y-5">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2 flex items-center gap-2">
                   <BookOpen size={22} className="text-[#8A4526]" />
                   {t('Genel Bakış', 'Overview')}
                 </h2>
@@ -350,14 +479,14 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                       <RichParagraphRenderer
                         key={idx}
                         item={paragraph}
-                        className="font-prose text-base sm:text-[17px] leading-relaxed text-[#2B231B]"
+                        className="font-prose text-[17px] sm:text-[18px] leading-[1.75] text-[#2B231B]"
                         titleClassName="font-serif font-bold text-base text-[#1C1712]"
                       />
                     ))
                   ) : (
                     <RichParagraphRenderer
                       item={settlement.overview}
-                      className="font-prose text-base sm:text-[17px] leading-relaxed text-[#2B231B]"
+                      className="font-prose text-[17px] sm:text-[18px] leading-[1.75] text-[#2B231B]"
                     />
                   )}
                 </div>
@@ -365,7 +494,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
             )}
 
             {/* 2. Interactive Chronology & Phases */}
-            <section className="space-y-5">
+            <section id="section-chronology" data-monograph-section="chronology" className="scroll-mt-24 space-y-6">
               <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2.5 flex items-center gap-2">
                 <CalendarBlank size={24} className="text-[#8A4526]" />
                 {t('Kronoloji & Evreler', 'Chronology & Phases')}
@@ -403,8 +532,8 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 
             {/* 3. Archaeological Significance */}
             {hasImportance && (
-              <section className="space-y-4">
-                <h2 className="font-serif text-lg sm:text-xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2 flex items-center gap-2">
+              <section id="section-importance" data-monograph-section="importance" className="max-w-[840px] scroll-mt-24 space-y-5">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2 flex items-center gap-2">
                   <Info size={22} className="text-[#8A4526]" />
                   {t('Neden Önemli? (Arkeolojik Anlamı)', 'Why It Matters (Significance)')}
                 </h2>
@@ -414,14 +543,14 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                       <RichParagraphRenderer
                         key={idx}
                         item={paragraph}
-                        className="font-prose text-base sm:text-[16px] leading-relaxed text-[#2B231B]"
+                        className="font-prose text-[17px] sm:text-[18px] leading-[1.75] text-[#2B231B]"
                         titleClassName="font-serif font-bold text-base text-[#1C1712]"
                       />
                     ))
                   ) : (
                     <RichParagraphRenderer
                       item={settlement.importance}
-                      className="font-prose text-base sm:text-[16px] leading-relaxed text-[#2B231B]"
+                      className="font-prose text-[17px] sm:text-[18px] leading-[1.75] text-[#2B231B]"
                     />
                   )}
                 </div>
@@ -430,8 +559,8 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 
             {/* 4. Discoveries & Key Finds */}
             {hasDiscoveries && (
-              <section className="space-y-4">
-                <h2 className="font-serif text-lg sm:text-xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
+              <section id="section-discoveries" data-monograph-section="discoveries" className="scroll-mt-24 space-y-6">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
                   {t('Başlıca Bulgular ve Eserler', 'Key Discoveries & Finds')}
                 </h2>
 
@@ -443,42 +572,67 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                         <RichParagraphRenderer
                           key={idx}
                           item={paragraph}
-                          className="font-prose text-base sm:text-[16px] leading-relaxed text-[#2B231B]"
+                          className="font-prose text-[17px] sm:text-[18px] leading-[1.75] text-[#2B231B]"
                           titleClassName="font-serif font-bold text-base text-[#1C1712]"
                         />
                       ))
                     ) : (
                       <RichParagraphRenderer
                         item={settlement.discoveries}
-                        className="font-prose text-base sm:text-[16px] leading-relaxed text-[#2B231B]"
+                        className="font-prose text-[17px] sm:text-[18px] leading-[1.75] text-[#2B231B]"
                       />
                     )}
                   </div>
                 )}
 
-                {/* Key Finds Structured Cards */}
+                {/* Key Finds — editorial artifact cards */}
                 {settlement.keyFinds && settlement.keyFinds.length > 0 && (
-                  <div className="pt-2 space-y-3">
-                    <div className="text-xs sm:text-sm font-serif font-bold tracking-wider uppercase text-[#8A4526]">
-                      {t('Önemli Eser ve Yapılar', 'Key Artifacts and Structures')}
+                  <div className="space-y-4 pt-2">
+                    <div className="flex items-end justify-between border-b border-[#E2D6C6] pb-2">
+                      <div>
+                        <div className="font-sans text-[10px] font-semibold uppercase tracking-[0.15em] text-[#9A765C]">
+                          {t('Seçilmiş Kayıtlar', 'Selected Records')}
+                        </div>
+                        <div className="mt-0.5 font-serif text-lg font-bold text-[#2A211A]">
+                          {t('Önemli Eser ve Yapılar', 'Key Artifacts and Structures')}
+                        </div>
+                      </div>
+                      <div className="font-mono text-[10px] text-[#9A8A77]">
+                        {settlement.keyFinds.length} {t('kayıt', 'records')}
+                      </div>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+
+                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                       {settlement.keyFinds.map((find, idx) => (
-                        <div key={idx} className="p-4 bg-[#FAF7F0] border border-[#E0D5C3] space-y-1.5 shadow-xs">
-                          <div className="flex items-baseline justify-between gap-2">
-                            <span className="font-serif font-bold text-sm sm:text-base text-[#1C1712]">
-                              {find.name}
+                        <article
+                          key={idx}
+                          className="group relative overflow-hidden border border-[#DDD0BE] bg-[#FCF9F3] p-5 shadow-[0_16px_34px_-30px_rgba(35,27,20,0.7)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#C8B69F] hover:shadow-[0_22px_42px_-30px_rgba(35,27,20,0.6)] sm:p-6"
+                        >
+                          <div
+                            className="absolute left-0 top-0 h-1 w-full opacity-85"
+                            style={{ backgroundColor: primaryColor }}
+                            aria-hidden="true"
+                          />
+
+                          <div className="mb-4 flex items-start justify-between gap-3">
+                            <span className="font-mono text-[10px] font-semibold tracking-[0.14em] text-[#A18C77]">
+                              {String(idx + 1).padStart(2, '0')}
                             </span>
                             {find.period && (
-                              <span className="text-xs font-serif italic text-[#786957] shrink-0">
+                              <span className="border border-[#DED1C0] bg-[#F4ECE1] px-2 py-1 font-serif text-[11px] italic text-[#6F5F4E]">
                                 {find.period}
                               </span>
                             )}
                           </div>
-                          <p className="font-prose text-sm text-[#42372A] leading-relaxed">
+
+                          <h3 className="font-serif text-xl font-bold leading-tight text-[#1C1611] sm:text-2xl">
+                            {find.name}
+                          </h3>
+                          <p className="mt-3 font-prose text-[16px] leading-[1.72] text-[#46392E] sm:text-[17px]">
                             {find.description}
+                            <CitationRefs sourceIds={find.sourceIds} />
                           </p>
-                        </div>
+                        </article>
                       ))}
                     </div>
                   </div>
@@ -488,8 +642,8 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 
             {/* 5. Excavation History */}
             {(hasHistory || hasCurrentStatus) && (
-              <section className="space-y-4">
-                <h2 className="font-serif text-lg sm:text-xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
+              <section id="section-history" data-monograph-section="history" className="max-w-[840px] scroll-mt-24 space-y-5">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
                   {t('Araştırma / Kazı Tarihi', 'Research / Excavation History')}
                 </h2>
                 <div className="space-y-3.5">
@@ -498,14 +652,14 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                       <RichParagraphRenderer
                         key={idx}
                         item={paragraph}
-                        className="font-prose text-base sm:text-[16px] leading-relaxed text-[#2E251D]"
+                        className="font-prose text-[17px] sm:text-[18px] leading-[1.75] text-[#2E251D]"
                         titleClassName="font-serif font-bold text-base text-[#1C1712]"
                       />
                     ))
                   ) : (
                     <RichParagraphRenderer
                       item={settlement.excavationHistory}
-                      className="font-prose text-base sm:text-[16px] leading-relaxed text-[#2E251D]"
+                      className="font-prose text-[17px] sm:text-[18px] leading-[1.75] text-[#2E251D]"
                     />
                   )}
                 </div>
@@ -539,30 +693,87 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 
             {/* 5b. Research & Debates */}
             {hasResearchDebates && settlement.researchDebates && (
-              <section className="space-y-4">
-                <h2 className="font-serif text-lg sm:text-xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2 flex items-center gap-2">
-                  <BookOpen size={22} className="text-[#8A4526]" />
-                  {t('Araştırma ve Bilimsel Tartışmalar', 'Research & Scholarly Debates')}
-                </h2>
-                <div className="grid grid-cols-1 gap-3.5">
-                  {settlement.researchDebates.map((debate, idx) => (
-                    <div key={idx} className="p-4 bg-[#FAF7F0] border border-[#E0D5C3] space-y-2 shadow-xs">
-                      <h3 className="font-serif font-bold text-base text-[#1C1712]">
-                        {debate.title || debate.topic}
-                      </h3>
-                      <p className="font-prose text-sm sm:text-[15px] text-[#3D3226] leading-relaxed">
-                        {debate.text || debate.scholarlyDebate || debate.consensus || debate.evidence}
-                      </p>
-                    </div>
-                  ))}
+              <section id="section-research" data-monograph-section="research" className="scroll-mt-24 space-y-6">
+                <div className="border-b border-[#E2D8C7] pb-3">
+                  <div className="font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-[#9A765C]">
+                    {t('Akademik Katman', 'Scholarly Layer')}
+                  </div>
+                  <h2 className="mt-1 flex items-center gap-2 font-serif text-xl font-bold tracking-tight text-[#1A1510] sm:text-2xl">
+                    <BookOpen size={24} className="text-[#8A4526]" />
+                    {t('Araştırma ve Bilimsel Tartışmalar', 'Research & Scholarly Debates')}
+                  </h2>
+                </div>
+
+                <div className="grid grid-cols-1 gap-5">
+                  {settlement.researchDebates.map((debate, idx) => {
+                    const mainText = debate.text || debate.scholarlyDebate;
+                    const consensus = debate.consensus && debate.consensus !== mainText ? debate.consensus : null;
+                    const evidence = debate.evidence && debate.evidence !== mainText && debate.evidence !== consensus
+                      ? debate.evidence
+                      : null;
+
+                    return (
+                      <article
+                        key={idx}
+                        className="border border-[#DCCFBD] bg-[#FCF9F3] shadow-[0_18px_40px_-34px_rgba(35,27,20,0.65)]"
+                      >
+                        <div className="grid gap-5 p-5 sm:p-6 lg:grid-cols-[84px_minmax(0,1fr)]">
+                          <div className="flex h-16 w-16 items-center justify-center border border-[#D7C8B5] bg-[#F1E6D8] font-serif text-xl font-bold text-[#8A4526]">
+                            {String(idx + 1).padStart(2, '0')}
+                          </div>
+
+                          <div className="min-w-0">
+                            <div className="font-sans text-[10px] font-semibold uppercase tracking-[0.14em] text-[#9A765C]">
+                              {t('Bilimsel Tartışma', 'Scholarly Debate')}
+                            </div>
+                            <h3 className="mt-1 font-serif text-xl font-bold leading-tight text-[#1C1712] sm:text-2xl">
+                              {debate.title || debate.topic || t('Araştırma Problemi', 'Research Question')}
+                            </h3>
+
+                            {mainText && (
+                              <p className="mt-3 font-prose text-[16px] leading-[1.75] text-[#3D3226] sm:text-[17px]">
+                                {mainText}
+                                <CitationRefs sourceIds={debate.sourceIds || debate.citations} />
+                              </p>
+                            )}
+
+                            {(consensus || evidence) && (
+                              <div className="mt-5 grid gap-3 md:grid-cols-2">
+                                {consensus && (
+                                  <div className="border-l-2 border-[#58775A] bg-[#F1F5EF] p-4">
+                                    <div className="font-sans text-[9px] font-bold uppercase tracking-[0.14em] text-[#58775A]">
+                                      {t('Mevcut Uzlaşı', 'Current Consensus')}
+                                    </div>
+                                    <p className="mt-1.5 font-prose text-sm leading-relaxed text-[#3E4A3D]">
+                                      {consensus}
+                                    </p>
+                                  </div>
+                                )}
+                                {evidence && (
+                                  <div className="border-l-2 border-[#A26A3D] bg-[#F8F1E8] p-4">
+                                    <div className="font-sans text-[9px] font-bold uppercase tracking-[0.14em] text-[#8A5A35]">
+                                      {t('Başlıca Kanıt', 'Key Evidence')}
+                                    </div>
+                                    <p className="mt-1.5 font-prose text-sm leading-relaxed text-[#4E4034]">
+                                      {evidence}
+                                    </p>
+                                  </div>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </article>
+                    );
+                  })}
                 </div>
               </section>
             )}
 
             {/* 6. Gallery */}
             {hasImages && (
-              <section className="space-y-4">
-                <h2 className="font-serif text-lg sm:text-xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
+              <section id="section-gallery" data-monograph-section="gallery" className="scroll-mt-24 space-y-5">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
                   {t('Görsel Arşiv', 'Visual Archive')}
                 </h2>
                 <ImageGallery
@@ -574,12 +785,12 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 
             {/* 7. Geography */}
             {hasGeography && geography && (
-              <section className="space-y-4">
-                <h2 className="font-serif text-lg sm:text-xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
+              <section id="section-geography" data-monograph-section="geography" className="scroll-mt-24 space-y-5">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
                   {t('Coğrafi Konum & Çevre', 'Geography & Environment')}
                 </h2>
                 {geography.summary && (
-                  <p className="font-prose text-base sm:text-[16px] leading-relaxed text-[#2B231B]">
+                  <p className="font-prose text-[17px] sm:text-[18px] leading-[1.75] text-[#2B231B]">
                     {geography.summary}
                   </p>
                 )}
@@ -614,8 +825,8 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 
             {/* 8. Visit Information */}
             {hasVisit && visit && (
-              <section className="space-y-4">
-                <h2 className="font-serif text-lg sm:text-xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
+              <section id="section-visit" data-monograph-section="visit" className="scroll-mt-24 space-y-5">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
                   {t('Ziyaret Bilgileri', 'Visitor Information')}
                 </h2>
 
@@ -745,8 +956,8 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 
             {/* 9. Nearby Places */}
             {hasNearbyPlaces && settlement.nearbyPlaces && settlement.nearbyPlaces.length > 0 && (
-              <section className="space-y-4">
-                <h2 className="font-serif text-lg sm:text-xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
+              <section id="section-nearby" data-monograph-section="nearby" className="scroll-mt-24 space-y-5">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
                   {t('Yakın Kültür Noktaları & Müzeler', 'Nearby Sites & Museums')}
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
@@ -793,8 +1004,8 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 
             {/* 10. Participation & Programs */}
             {hasParticipation && settlement.participation && settlement.participation.length > 0 && (
-              <section className="space-y-4">
-                <h2 className="font-serif text-lg sm:text-xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
+              <section id="section-participation" data-monograph-section="participation" className="scroll-mt-24 space-y-5">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
                   {t('Katılım & Gönüllülük Programları', 'Participation & Volunteer Programmes')}
                 </h2>
                 <div className="space-y-3">
@@ -840,8 +1051,8 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 
             {/* 11. Sources / Bibliography */}
             {hasSources && (
-              <section className="space-y-4 pt-4 border-t border-[#E8DFC8]">
-                <h2 className="font-serif text-lg sm:text-xl font-bold tracking-tight text-[#1A1510] pb-2">
+              <section id="section-sources" data-monograph-section="sources" className="scroll-mt-24 space-y-5 border-t border-[#E8DFC8] pt-6">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] pb-2">
                   {t('Kaynakça & Yayınlar', 'Sources & Bibliography')}
                 </h2>
                 <Sources sources={settlement.sources} />
@@ -857,6 +1068,9 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                 <ArrowLeft size={20} weight="bold" />
                 <span>{t('Haritaya Geri Dön', 'Back to Map')}</span>
               </button>
+            </div>
+                </div>
+              </CitationProvider>
             </div>
           </div>
         </main>

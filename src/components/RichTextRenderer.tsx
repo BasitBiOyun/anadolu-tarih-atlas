@@ -1,9 +1,7 @@
 import React from 'react';
 import { ContentParagraph } from '../types/settlement';
+import { CitationRefs } from './CitationSystem';
 
-/**
- * Safely tests whether a section (string, array of strings, or array of rich objects) has content.
- */
 export function hasRichContent(val?: any): boolean {
   if (!val) return false;
   if (Array.isArray(val)) {
@@ -33,9 +31,6 @@ export function hasRichContent(val?: any): boolean {
   return false;
 }
 
-/**
- * Safely extracts a plain string from either a string or a rich object.
- */
 export function extractStringText(val?: any): string {
   if (!val) return '';
   if (typeof val === 'string') return val;
@@ -51,16 +46,10 @@ interface RichParagraphRendererProps {
   titleClassName?: string;
 }
 
-/**
- * Renders an archaeological content item safely whether it is a raw string
- * or a Schema 4 rich object { title?, text, sourceIds? }.
- * Internal source IDs are intentionally not rendered inline; readable citations
- * and outbound links are presented in the bibliography section.
- */
 export const RichParagraphRenderer: React.FC<RichParagraphRendererProps> = ({
   item,
-  className = 'font-prose text-[13px] sm:text-sm leading-relaxed text-[#2B231B]',
-  titleClassName = 'font-serif font-bold text-xs sm:text-sm text-[#1C1712]'
+  className = 'font-prose text-[17px] leading-[1.75] text-[#2B231B]',
+  titleClassName = 'font-serif font-bold text-lg text-[#1C1712]'
 }) => {
   if (!item) return null;
 
@@ -70,11 +59,17 @@ export const RichParagraphRenderer: React.FC<RichParagraphRendererProps> = ({
 
   const title = item.title || item.topic;
   const text = item.text || item.scholarlyDebate || item.consensus || item.evidence;
+  const sourceIds = item.sourceIds || item.citations;
 
   return (
-    <div className="space-y-1.5">
+    <div className="space-y-2">
       {title && <h4 className={titleClassName}>{title}</h4>}
-      {text && <p className={className}>{text}</p>}
+      {text && (
+        <p className={className}>
+          {text}
+          <CitationRefs sourceIds={sourceIds} />
+        </p>
+      )}
     </div>
   );
 };
