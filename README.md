@@ -1,39 +1,47 @@
-# Anadolu Tarih Atlası, Temel 20 Alan Paketi
+# Anadolu Tarih Atlası
 
-Bu paket önceki data dosyalarının yerine tek başına kullanılmak üzere hazırlanmıştır.
+Anadolu'nun arkeolojik ve tarihî alanlarını dönem, konum ve yerleşim bazında incelemek için geliştirilen çift dilli (TR/EN) harita uygulamasıdır.
 
-## İçerik
-- `index.json`: Harita, arama, filtre ve zoom görünürlüğü için hafif indeks
-- `periods.json`: TR ve EN dönem adlarının tek kaynağı
-- `sites/*.json`: 20 alanın ayrı TR ve EN ayrıntılı dosyaları
+## Üretim mimarisi
 
-## Kurallar
-- Uygulama başlangıçta yalnızca `index.json` ve `periods.json` yüklemelidir.
-- Ayrıntılı site dosyaları kullanıcı alanı açınca lazy-load edilmelidir.
-- Arayüzde ham period ID gösterilmemelidir. Örneğin `lower_palaeolithic` yerine aktif dile göre `Alt Paleolitik` veya `Lower Palaeolithic` gösterilmelidir.
-- `startYear` ve `endYear` bazı kayıtlarda `null` olabilir. Bu, yanlış tarih uydurmamak içindir.
-- Site dosyalarındaki kullanıcı metinlerinde noktalı virgül ve uzun tire kullanılmamıştır.
-- Atlasın kronolojik kapsamını daraltan ifadeler kullanılmamıştır.
-- `coordinatePrecision` varsa iç metadata olarak kalmalıdır ve kullanıcıya gösterilmemelidir.
+Uygulamanın veri kaynağı GitHub içindeki yerel site JSON dosyaları değildir.
 
-## 20 alan
-1. Kocabaş Hominin Buluntu Alanı
-2. Gediz Erken Pleistosen Buluntu Alanı
-3. Dursunlu
-4. Kaletepe Deresi 3
-5. Yarımburgaz Mağarası
-6. Karain Mağarası
-7. Üçağızlı Mağarası
-8. Öküzini Mağarası
-9. Beldibi Mağarası
-10. Direkli Mağarası
-11. Hallan Çemi Höyüğü
-12. Körtik Tepe
-13. Boncuklu Tarla
-14. Göbekli Tepe
-15. Karahantepe
-16. Nevalı Çori
-17. Çayönü Tepesi
-18. Aşıklı Höyük
-19. Çatalhöyük
-20. Arslantepe Höyüğü
+- **Firestore `sites_index`**: Harita, arama, dönem filtreleri ve görünürlük için hafif indeks.
+- **Firebase Storage `atlas/sites/{siteId}.json`**: Her alanın kanonik, ayrıntılı ve çift dilli monografisi.
+- **`GET /api/sites/:siteId`**: Cloud Run üzerinden Storage'daki monografiyi aynı origin üzerinden sunar.
+- **Firestore `research_queue`**: Araştırma kuyruğu; istemciye kapalıdır.
+- **Firestore `research_jobs`**: Araştırma/ingestion telemetrisi; istemciye kapalıdır.
+- **`/api/atlas/*`**: Bearer token ile korunan server-side ingestion API'si.
+
+Frontend ilk açılışta yalnızca hafif Firestore indeksini yükler. Ayrıntılı monografi kullanıcı bir alanı açtığında lazy-load edilir ve oturum içinde bellekte cache'lenir.
+
+## Güncel üretim başlangıç seti
+
+Canlı Firestore indeksinde şu beş kanonik alan bulunmaktadır:
+
+1. Alacahöyük (`alacahoyuk`)
+2. Ani (`ani`)
+3. Aphrodisias (`aphrodisias`)
+4. Arslantepe (`arslantepe`)
+5. Aşıklı Höyük (`asikli-hoyuk`)
+
+Yeni alanlar yerel frontend veri dosyası eklenerek değil, doğrulanan monografinin ingestion API üzerinden Storage'a ve `sites_index` koleksiyonuna yazılmasıyla eklenir.
+
+## İçerik ilkeleri
+
+- Arayüzde ham period ID veya internal source ID gösterilmez.
+- Kaynakça kullanıcıya yazar, yıl, eser adı, yayın bilgisi ve mevcutsa URL/DOI/PDF bağlantısıyla gösterilir.
+- `startYear` ve `endYear` bilinmiyorsa `null` bırakılabilir; tarih uydurulmaz.
+- Ayrıntılı arkeolojik içerik için Firebase Storage kanonik kaynaktır.
+- Firestore browser tarafından yalnızca `sites_index` okumalarına açıktır; ingestion yazmaları server-side yapılır.
+
+## Geliştirme
+
+```bash
+npm ci
+npm run lint
+npm run build
+npm run dev
+```
+
+Deployment ve Cloud Run gereksinimleri için `DEPLOYMENT.md` dosyasına bakın.
