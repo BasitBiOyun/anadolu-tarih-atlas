@@ -53,7 +53,7 @@ export const CitationRefs: React.FC<{ sourceIds?: string[] }> = ({ sourceIds }) 
         const link = getSourceLink(source);
 
         return (
-          <span key={index} className="group relative inline-flex align-super">
+          <span key={index} className="group/citation relative z-0 inline-flex align-super hover:z-[80] focus-within:z-[80]">
             <button
               type="button"
               className="relative -top-[0.28em] inline-flex min-w-[18px] items-center justify-center border-b border-[#A95B35] px-0.5 font-sans text-[10px] font-bold leading-4 text-[#8A4526] outline-none transition-colors hover:text-[#5F2D18] focus-visible:bg-[#F1E5D8] sm:text-[11px]"
@@ -64,7 +64,7 @@ export const CitationRefs: React.FC<{ sourceIds?: string[] }> = ({ sourceIds }) 
 
             <span
               role="tooltip"
-              className="pointer-events-none invisible absolute bottom-[calc(100%+9px)] left-1/2 z-50 w-[min(320px,80vw)] -translate-x-1/2 border border-[#D7C8B5] bg-[#FFFDF8] p-3.5 text-left opacity-0 shadow-[0_20px_50px_-26px_rgba(35,27,20,0.75)] transition-all duration-150 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100"
+              className="pointer-events-none invisible absolute bottom-[calc(100%+5px)] left-1/2 z-[100] w-[min(320px,80vw)] -translate-x-1/2 border border-[#D7C8B5] bg-[#FFFDF8] p-3.5 text-left opacity-0 shadow-[0_24px_60px_-24px_rgba(35,27,20,0.82)] transition-all duration-150 after:absolute after:-bottom-2 after:left-0 after:h-2 after:w-full after:content-[''] group-hover/citation:pointer-events-auto group-hover/citation:visible group-hover/citation:opacity-100 group-focus-within/citation:pointer-events-auto group-focus-within/citation:visible group-focus-within/citation:opacity-100"
             >
               <span className="mb-1 block font-sans text-[10px] font-semibold uppercase tracking-[0.14em] text-[#9A765C]">
                 {t(`Kaynak ${index + 1}`, `Source ${index + 1}`)}

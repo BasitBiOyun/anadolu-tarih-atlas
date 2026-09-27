@@ -603,7 +603,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                       {settlement.keyFinds.map((find, idx) => (
                         <article
                           key={idx}
-                          className="group relative h-full overflow-hidden border border-[#DDD0BE] bg-[#FCF9F3] p-5 shadow-[0_16px_34px_-30px_rgba(35,27,20,0.7)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#C8B69F] hover:shadow-[0_22px_42px_-30px_rgba(35,27,20,0.6)] sm:p-6"
+                          className="group relative z-0 h-full overflow-visible border border-[#DDD0BE] bg-[#FCF9F3] p-5 shadow-[0_16px_34px_-30px_rgba(35,27,20,0.7)] transition-all duration-200 hover:z-30 hover:-translate-y-0.5 hover:border-[#C8B69F] hover:shadow-[0_22px_42px_-30px_rgba(35,27,20,0.6)] focus-within:z-30 sm:p-6"
                         >
                           <div
                             className="absolute left-0 top-0 h-1 w-full opacity-85"
