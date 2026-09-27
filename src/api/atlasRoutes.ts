@@ -1,12 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { serverDb } from './serverFirestore';
-import {
-  uploadMonographToStorage,
-  testStorageCRUD,
-  siteExistsInStorage,
-  STORAGE_SITES_PATH,
-  ATLAS_STORAGE_BUCKET
-} from './serverStorage';
+import { uploadMonographToStorage } from './serverStorage';
 import { validateSiteJson } from '../validation/siteValidator';
 
 export const atlasRouter = Router();
