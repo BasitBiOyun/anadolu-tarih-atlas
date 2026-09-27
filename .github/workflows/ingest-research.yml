@@ -1,0 +1,42 @@
+name: Ingest researched sites
+
+on:
+  push:
+    branches: [research-ingest]
+    paths:
+      - 'research/sites/*.json'
+      - 'scripts/ingest-directory.mjs'
+      - '.github/workflows/ingest-research.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    env:
+      ATLAS_INGESTION_BASE_URL: ${{ vars.ATLAS_INGESTION_BASE_URL }}
+      ATLAS_INGESTION_TOKEN: ${{ secrets.ATLAS_INGESTION_TOKEN }}
+      ATLAS_WORKER_ID: github-actions-${{ github.run_id }}
+
+    steps:
+      - name: Checkout research branch
+        uses: actions/checkout@v4
+
+      - name: Validate required configuration
+        shell: bash
+        run: |
+          if [ -z "$ATLAS_INGESTION_BASE_URL" ]; then
+            echo "::error::Repository variable ATLAS_INGESTION_BASE_URL is not configured."
+            exit 1
+          fi
+          if [ -z "$ATLAS_INGESTION_TOKEN" ]; then
+            echo "::error::Repository secret ATLAS_INGESTION_TOKEN is not configured."
+            exit 1
+          fi
+
+      - name: Ingest researched site JSONs
+        run: node scripts/ingest-directory.mjs research/sites
