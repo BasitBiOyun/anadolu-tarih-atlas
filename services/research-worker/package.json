@@ -24,6 +24,7 @@
   "devDependencies": {
     "@types/node": "^22.14.0",
     "firebase-tools": "^15.31.0",
+    "picomatch": "^4.0.7",
     "typescript": "^5.9.3"
   },
   "engines": {

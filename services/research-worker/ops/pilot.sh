@@ -12,7 +12,7 @@ DATABASE=ai-studio-anadolutarihnces-f71dcc77-2c3d-464d-a885-67c82d256cf1
 RUNTIME=atlas-research-worker@hiddenfeed.iam.gserviceaccount.com
 TAG="$(git rev-parse --short=12 HEAD)"
 cd "$WORKER"
-npm ci --no-audit --no-fund
+npm ci --no-audit --no-fund --allow-scripts=esbuild,protobufjs,re2,@google/genai
 npm test
 npm run check
 npm run audit
