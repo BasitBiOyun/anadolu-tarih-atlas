@@ -3,6 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "allowScripts": {
+    "@google/genai": true,
+    "esbuild": true,
+    "protobufjs": true,
+    "re2": true
+  },
   "scripts": {
     "test": "tsx --test test/*.test.ts",
     "check": "tsc --noEmit",
