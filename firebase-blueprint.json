@@ -1,0 +1,96 @@
+{
+  "entities": {
+    "sites_index": {
+      "title": "Sites Index",
+      "description": "Lightweight index documents for archaeological and historical sites used for fast initial map rendering and multi-criteria search",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique slug identifier for the archaeological site" },
+        "file": { "type": "string", "description": "Storage path to detailed site JSON in atlas/sites/" },
+        "name": {
+          "type": "object",
+          "properties": {
+            "tr": { "type": "string" },
+            "en": { "type": "string" }
+          },
+          "required": ["tr", "en"]
+        },
+        "province": {
+          "type": "object",
+          "properties": {
+            "tr": { "type": "string" },
+            "en": { "type": "string" }
+          }
+        },
+        "district": {
+          "type": "object",
+          "properties": {
+            "tr": { "type": "string" },
+            "en": { "type": "string" }
+          }
+        },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "siteType": { "type": "string" },
+        "periods": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "startYear": { "type": "number" },
+        "endYear": { "type": "number" },
+        "importance": { "type": "number" },
+        "minZoom": { "type": "number" },
+        "featured": { "type": "boolean" }
+      },
+      "required": ["id", "name", "latitude", "longitude", "periods"]
+    },
+    "research_queue": {
+      "title": "Research Queue",
+      "description": "Queued archaeological sites and topics awaiting deep monograph research, source validation, and radiocarbon alignment",
+      "type": "object",
+      "properties": {
+        "siteId": { "type": "string", "description": "Identifier of the site to research" },
+        "siteName": { "type": "string", "description": "Name of the site" },
+        "priority": { "type": "string", "enum": ["low", "normal", "high", "urgent"] },
+        "status": { "type": "string", "enum": ["pending", "in_progress", "completed", "failed"] },
+        "targetTopics": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["siteId", "priority", "status", "createdAt"]
+    },
+    "research_jobs": {
+      "title": "Research Jobs",
+      "description": "Active and completed automated archaeological research jobs, bibliography aggregation, and synthesis tasks",
+      "type": "object",
+      "properties": {
+        "siteId": { "type": "string" },
+        "status": { "type": "string", "enum": ["queued", "running", "completed", "failed"] },
+        "progress": { "type": "number" },
+        "step": { "type": "string" },
+        "logs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "resultSummary": { "type": "string" },
+        "startedAt": { "type": "string" },
+        "completedAt": { "type": "string" }
+      },
+      "required": ["siteId", "status", "startedAt"]
+    }
+  },
+  "storage": {
+    "buckets": [
+      {
+        "name": "default",
+        "paths": {
+          "atlas/sites/": "Full bilingual archaeological monograph detail JSON files lazy-loaded per site"
+        }
+      }
+    ]
+  }
+}

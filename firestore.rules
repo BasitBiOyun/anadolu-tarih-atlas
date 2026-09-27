@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // sites_index: Public read access for atlas map viewers; write for synchronization
+    match /sites_index/{siteId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // research_queue: Archaeological research tasks queue
+    match /research_queue/{queueId} {
+      allow read, write: if true;
+    }
+
+    // research_jobs: Execution status and logs for archaeological research jobs
+    match /research_jobs/{jobId} {
+      allow read, write: if true;
+    }
+  }
+}

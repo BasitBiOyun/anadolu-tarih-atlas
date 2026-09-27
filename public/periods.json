@@ -1,0 +1,230 @@
+{
+  "version": 1,
+  "groups": [
+    {
+      "id": "deep_time",
+      "label": {
+        "tr": "Erken İnsanlık ve Paleolitik",
+        "en": "Early Humanity and Palaeolithic"
+      },
+      "periods": [
+        "early_pleistocene",
+        "lower_palaeolithic",
+        "middle_palaeolithic",
+        "upper_palaeolithic",
+        "epipalaeolithic"
+      ]
+    },
+    {
+      "id": "neolithic_chalcolithic",
+      "label": {
+        "tr": "Neolitik ve Kalkolitik",
+        "en": "Neolithic and Chalcolithic"
+      },
+      "periods": [
+        "neolithic",
+        "chalcolithic"
+      ]
+    },
+    {
+      "id": "bronze_age",
+      "label": {
+        "tr": "Tunç Çağı",
+        "en": "Bronze Age"
+      },
+      "periods": [
+        "early_bronze_age",
+        "middle_bronze_age",
+        "late_bronze_age"
+      ]
+    },
+    {
+      "id": "iron_age",
+      "label": {
+        "tr": "Demir Çağı",
+        "en": "Iron Age"
+      },
+      "periods": [
+        "iron_age"
+      ]
+    },
+    {
+      "id": "classical_antiquity",
+      "label": {
+        "tr": "Klasik Antik Çağ",
+        "en": "Classical Antiquity"
+      },
+      "periods": [
+        "archaic",
+        "classical",
+        "hellenistic",
+        "roman"
+      ]
+    },
+    {
+      "id": "late_antiquity_medieval",
+      "label": {
+        "tr": "Geç Antik Çağ ve Orta Çağ",
+        "en": "Late Antiquity and Medieval"
+      },
+      "periods": [
+        "late_antiquity",
+        "byzantine",
+        "seljuk",
+        "beyliks"
+      ]
+    },
+    {
+      "id": "ottoman",
+      "label": {
+        "tr": "Osmanlı",
+        "en": "Ottoman"
+      },
+      "periods": [
+        "ottoman"
+      ]
+    }
+  ],
+  "periods": {
+    "early_pleistocene": {
+      "label": {
+        "tr": "Erken Pleistosen / İlk Hominin Kanıtları",
+        "en": "Early Pleistocene / Earliest Hominin Evidence"
+      },
+      "order": 10
+    },
+    "lower_palaeolithic": {
+      "label": {
+        "tr": "Alt Paleolitik",
+        "en": "Lower Palaeolithic"
+      },
+      "order": 20
+    },
+    "middle_palaeolithic": {
+      "label": {
+        "tr": "Orta Paleolitik",
+        "en": "Middle Palaeolithic"
+      },
+      "order": 30
+    },
+    "upper_palaeolithic": {
+      "label": {
+        "tr": "Üst Paleolitik",
+        "en": "Upper Palaeolithic"
+      },
+      "order": 40
+    },
+    "epipalaeolithic": {
+      "label": {
+        "tr": "Epipaleolitik",
+        "en": "Epipalaeolithic"
+      },
+      "order": 50
+    },
+    "neolithic": {
+      "label": {
+        "tr": "Neolitik",
+        "en": "Neolithic"
+      },
+      "order": 60
+    },
+    "chalcolithic": {
+      "label": {
+        "tr": "Kalkolitik",
+        "en": "Chalcolithic"
+      },
+      "order": 70
+    },
+    "early_bronze_age": {
+      "label": {
+        "tr": "Erken Tunç Çağı",
+        "en": "Early Bronze Age"
+      },
+      "order": 80
+    },
+    "middle_bronze_age": {
+      "label": {
+        "tr": "Orta Tunç Çağı",
+        "en": "Middle Bronze Age"
+      },
+      "order": 90
+    },
+    "late_bronze_age": {
+      "label": {
+        "tr": "Geç Tunç Çağı",
+        "en": "Late Bronze Age"
+      },
+      "order": 100
+    },
+    "iron_age": {
+      "label": {
+        "tr": "Demir Çağı",
+        "en": "Iron Age"
+      },
+      "order": 110
+    },
+    "archaic": {
+      "label": {
+        "tr": "Arkaik Dönem",
+        "en": "Archaic Period"
+      },
+      "order": 120
+    },
+    "classical": {
+      "label": {
+        "tr": "Klasik Dönem",
+        "en": "Classical Period"
+      },
+      "order": 130
+    },
+    "hellenistic": {
+      "label": {
+        "tr": "Helenistik Dönem",
+        "en": "Hellenistic Period"
+      },
+      "order": 140
+    },
+    "roman": {
+      "label": {
+        "tr": "Roma Dönemi",
+        "en": "Roman Period"
+      },
+      "order": 150
+    },
+    "late_antiquity": {
+      "label": {
+        "tr": "Geç Antik Çağ",
+        "en": "Late Antiquity"
+      },
+      "order": 160
+    },
+    "byzantine": {
+      "label": {
+        "tr": "Bizans Dönemi",
+        "en": "Byzantine Period"
+      },
+      "order": 170
+    },
+    "seljuk": {
+      "label": {
+        "tr": "Selçuklu Dönemi",
+        "en": "Seljuk Period"
+      },
+      "order": 180
+    },
+    "beyliks": {
+      "label": {
+        "tr": "Anadolu Beylikleri",
+        "en": "Anatolian Beyliks"
+      },
+      "order": 190
+    },
+    "ottoman": {
+      "label": {
+        "tr": "Osmanlı Dönemi",
+        "en": "Ottoman Period"
+      },
+      "order": 200
+    }
+  }
+}

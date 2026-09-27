@@ -1,0 +1,6 @@
+{
+  "name": "Anadolu Tarihöncesi Atlası",
+  "description": "Prehistoric Anatolia Atlas - An interactive academic archaeological atlas of Anatolian settlements from the Paleolithic to Late Bronze Age.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
