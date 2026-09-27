@@ -769,10 +769,15 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 
             {/* 6. Gallery */}
             {hasImages && (
-              <section id="section-gallery" data-monograph-section="gallery" className="scroll-mt-24 space-y-5">
-                <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
-                  {t('Görsel Arşiv', 'Visual Archive')}
-                </h2>
+              <section id="section-gallery" data-monograph-section="gallery" className="scroll-mt-24 space-y-6">
+                <div className="border-b border-[#E2D8C7] pb-3">
+                  <div className="font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-[#9A765C]">
+                    {t('Görsel Katman', 'Visual Layer')}
+                  </div>
+                  <h2 className="mt-1 font-serif text-xl font-bold tracking-tight text-[#1A1510] sm:text-2xl">
+                    {t('Görsel Arşiv', 'Visual Archive')}
+                  </h2>
+                </div>
                 <ImageGallery
                   images={settlement.images}
                   settlementName={settlement.name}
