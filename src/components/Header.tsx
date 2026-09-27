@@ -3,7 +3,7 @@ import { Settlement, PeriodId } from '../types/settlement';
 import { Search } from './Search';
 import { PeriodFilter } from './PeriodFilter';
 import { useLanguage } from '../context/LanguageContext';
-import { Compass, Info, SlidersHorizontal, Database } from '@phosphor-icons/react';
+import { Compass, Info, SlidersHorizontal } from '@phosphor-icons/react';
 
 interface HeaderProps {
   settlements: Settlement[];
@@ -17,7 +17,6 @@ interface HeaderProps {
   totalCount: number;
   filteredCount: number;
   onOpenAboutModal: () => void;
-  onOpenPipelineModal?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -31,8 +30,7 @@ export const Header: React.FC<HeaderProps> = ({
   periodCounts,
   totalCount,
   filteredCount,
-  onOpenAboutModal,
-  onOpenPipelineModal
+  onOpenAboutModal
 }) => {
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
   const { lang, setLang, t } = useLanguage();
@@ -89,16 +87,6 @@ export const Header: React.FC<HeaderProps> = ({
               <span>{t('Dönemler', 'Periods')}</span>
             </button>
 
-            {onOpenPipelineModal && (
-              <button
-                onClick={onOpenPipelineModal}
-                className="min-h-[38px] min-w-[38px] flex items-center justify-center text-[#4A3F33] border border-[#D9CEBC] bg-[#F4EFE6] shrink-0"
-                aria-label={t('Araştırma Veritabanı', 'Research Database')}
-              >
-                <Database size={16} weight="regular" className="text-[#8A4526]" />
-              </button>
-            )}
-
             <button
               onClick={onOpenAboutModal}
               className="min-h-[38px] min-w-[38px] flex items-center justify-center text-[#4A3F33] border border-[#D9CEBC] bg-[#F4EFE6] shrink-0"
@@ -146,17 +134,6 @@ export const Header: React.FC<HeaderProps> = ({
               EN
             </button>
           </div>
-
-          {onOpenPipelineModal && (
-            <button
-              onClick={onOpenPipelineModal}
-              className="hidden md:inline-flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-serif text-[#4A3F33] hover:text-[#1A1510] bg-[#F4EFE6] hover:bg-[#EAE2D3] border border-[#D9CEBC] transition-colors shrink-0"
-              title={t('Firestore Araştırma Havuzu ve Storage', 'Firestore Research Pipeline & Storage')}
-            >
-              <Database size={15} weight="regular" className="text-[#8A4526]" />
-              <span>{t('Veritabanı', 'Database')}</span>
-            </button>
-          )}
 
           <button
             onClick={onOpenAboutModal}
