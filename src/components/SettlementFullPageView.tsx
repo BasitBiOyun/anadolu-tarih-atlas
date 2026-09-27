@@ -286,9 +286,18 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
   ].filter(Boolean) as Array<{ id: string; label: string }>;
 
   const scrollToSection = (id: string) => {
-    document.getElementById(`section-${id}`)?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
+    const root = document.querySelector<HTMLElement>('[data-monograph-scroll]');
+    const target = document.getElementById(`section-${id}`);
+    if (!root || !target) return;
+
+    const rootRect = root.getBoundingClientRect();
+    const targetRect = target.getBoundingClientRect();
+    const stickyNavOffset = window.matchMedia('(max-width: 1023px)').matches ? 58 : 20;
+    const top = root.scrollTop + targetRect.top - rootRect.top - stickyNavOffset;
+
+    root.scrollTo({
+      top: Math.max(0, top),
+      behavior: 'smooth'
     });
   };
 
@@ -304,7 +313,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
       role="dialog"
       aria-modal="true"
       aria-label={settlement.name}
-      className="fixed inset-0 z-50 flex flex-col bg-[#F9F5EC] text-[#241F1A] overflow-hidden select-text animate-in fade-in duration-150"
+      className="fixed inset-0 z-50 flex h-[100dvh] max-h-[100dvh] flex-col overflow-hidden bg-[#F9F5EC] text-[#241F1A] select-text animate-in fade-in duration-150"
     >
       {/* Top Fixed Header with Back to Map Button */}
       <header className="shrink-0 h-16 px-4 sm:px-8 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E2D8C7] flex items-center justify-between gap-4 z-20 shadow-xs">
@@ -383,7 +392,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                     )}
                   </div>
 
-                  <h1 className="max-w-4xl font-serif text-4xl font-bold leading-[0.98] tracking-[-0.025em] text-[#150F0A] sm:text-5xl lg:text-6xl">
+                  <h1 className="max-w-4xl break-words font-serif text-3xl font-bold leading-[1.02] tracking-[-0.02em] text-[#150F0A] min-[420px]:text-4xl sm:text-5xl lg:text-6xl">
                     {settlement.name}
                   </h1>
 
@@ -456,7 +465,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 
           {/* Monograph reading layout */}
           <div className="mx-auto max-w-[1420px] px-4 pb-10 sm:px-8">
-            <div className="sticky top-0 z-20 -mx-4 mb-8 overflow-x-auto border-y border-[#E2D7C7] bg-[#F9F5EC]/95 px-4 py-2 backdrop-blur-md lg:hidden">
+            <div className="sticky top-0 z-20 -mx-4 mb-7 touch-pan-x snap-x snap-mandatory overflow-x-auto overscroll-x-contain border-y border-[#E2D7C7] bg-[#F9F5EC]/95 px-4 py-2 backdrop-blur-md [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:hidden">
               <div className="flex min-w-max gap-1.5">
                 {sectionNav.map((item, index) => (
                   <button
@@ -464,7 +473,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                     type="button"
                     onClick={() => scrollToSection(item.id)}
                     aria-current={activeSection === item.id ? 'location' : undefined}
-                    className={`border px-3 py-1.5 focus-visible:ring-2 focus-visible:ring-[#8A4526]/35 focus-visible:ring-offset-1 font-sans text-[10px] font-semibold uppercase tracking-[0.08em] transition-colors ${
+                    className={`min-h-10 shrink-0 snap-center touch-manipulation border px-3 py-1.5 focus-visible:ring-2 focus-visible:ring-[#8A4526]/35 focus-visible:ring-offset-1 font-sans text-[10px] font-semibold uppercase tracking-[0.08em] transition-colors ${
                       activeSection === item.id
                         ? 'border-[#8A4526] bg-[#8A4526] text-[#FFF9F1]'
                         : 'border-[#D8CBBB] bg-[#FCF9F3] text-[#6F6051]'
@@ -508,7 +517,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
               </aside>
 
               <CitationProvider sources={settlement.sources}>
-                <div className="min-w-0 space-y-16">
+                <div className="min-w-0 space-y-12 sm:space-y-16">
             {/* Top Interactive Mini Map & Quick Coordinates */}
             <div className="border border-[#DDD0BD] bg-[#FCF9F3] p-5 shadow-[0_18px_42px_-34px_rgba(42,31,22,0.55)] sm:p-6">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 mb-3 border-b border-[#E8DFC8] gap-2">

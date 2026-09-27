@@ -70,3 +70,22 @@
     scroll-behavior: auto !important;
   }
 }
+
+
+/* Mobile interaction polish */
+button,
+a {
+  touch-action: manipulation;
+}
+
+@media (max-width: 639px) {
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .font-prose,
+  .font-serif,
+  .font-sans {
+    overflow-wrap: anywhere;
+  }
+}

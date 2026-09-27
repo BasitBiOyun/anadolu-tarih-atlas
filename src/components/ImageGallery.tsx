@@ -175,7 +175,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images, settlementNa
 
                 <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
                   <div className="flex items-end justify-between gap-4">
-                    <div className="min-w-0">
+                    <div className="min-w-0 max-w-[45vw] sm:max-w-none">
                       {image.caption && (
                         <p
                           className={
@@ -212,7 +212,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images, settlementNa
         </div>
 
         {images.length > 1 && (
-          <div className="flex gap-2 overflow-x-auto border-y border-[#E7DDCF] py-2.5">
+          <div className="flex touch-pan-x gap-2 overflow-x-auto overscroll-x-contain border-y border-[#E7DDCF] py-2.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {images.map((image, index) => (
               <button
                 key={'thumb-' + image.url + '-' + index}
@@ -240,7 +240,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images, settlementNa
       {modalOpen && (
         <div
           data-gallery-lightbox="true"
-          className="fixed inset-0 z-[120] flex flex-col bg-[#0D0B09]/96 text-white backdrop-blur-md"
+          className="fixed inset-0 z-[120] flex h-[100dvh] max-h-[100dvh] flex-col bg-[#0D0B09]/96 text-white backdrop-blur-md"
           role="dialog"
           aria-modal="true"
           aria-label={t('Görsel arşiv görüntüleyici', 'Visual archive viewer')}
@@ -260,7 +260,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images, settlementNa
           }}
         >
           <header
-            className="flex min-h-16 shrink-0 items-center justify-between gap-4 border-b border-white/10 px-4 py-3 sm:px-6"
+            className="flex min-h-14 shrink-0 items-center justify-between gap-2 border-b border-white/10 px-3 py-2.5 sm:min-h-16 sm:gap-4 sm:px-6 sm:py-3"
             onClick={event => event.stopPropagation()}
           >
             <div className="min-w-0">
@@ -284,7 +284,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images, settlementNa
               >
                 <MagnifyingGlassMinus size={17} />
               </button>
-              <div className="min-w-[50px] text-center font-mono text-[10px] text-white/55">
+              <div className="hidden min-w-[50px] text-center font-mono text-[10px] text-white/55 sm:block">
                 {Math.round(zoom * 100)}%
               </div>
               <button
@@ -308,7 +308,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images, settlementNa
             </div>
           </header>
 
-          <div className="grid min-h-0 flex-1 lg:grid-cols-[minmax(0,1fr)_330px]">
+          <div className="grid min-h-0 flex-1 grid-rows-[minmax(0,1fr)_auto] lg:grid-cols-[minmax(0,1fr)_330px] lg:grid-rows-1">
             <div
               className="relative flex min-h-0 items-center justify-center overflow-auto p-3 sm:p-6"
               onClick={event => event.stopPropagation()}
@@ -345,7 +345,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images, settlementNa
             </div>
 
             <aside
-              className="max-h-[42vh] overflow-y-auto border-t border-white/10 bg-[#15110E] p-5 lg:max-h-none lg:border-l lg:border-t-0 lg:p-6"
+              className="max-h-[34dvh] overflow-y-auto border-t border-white/10 bg-[#15110E] p-4 lg:max-h-none lg:border-l lg:border-t-0 lg:p-6"
               onClick={event => event.stopPropagation()}
             >
               <div className="font-sans text-[9px] font-bold uppercase tracking-[0.15em] text-[#C49370]">

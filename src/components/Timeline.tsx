@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Settlement, OccupationPeriod, SettlementPeriodDetail } from '../types/settlement';
 import { getPeriodConfig, getPeriodColor } from '../data/periods';
 import { formatYear, formatDateRange, sortPeriodsChronologically } from '../utils/chronology';
@@ -95,6 +95,7 @@ function formatDuration(startYear: number, endYear: number, lang: 'tr' | 'en'): 
 
 export const Timeline: React.FC<TimelineProps> = (props) => {
   const { lang, t } = useLanguage();
+  const [activeMobileSegment, setActiveMobileSegment] = useState<Segment | null>(null);
 
   const settlement = props.settlement;
   const occupation = props.occupation || settlement?.occupation || { startBCE: 0, endBCE: 0 };
@@ -210,7 +211,7 @@ export const Timeline: React.FC<TimelineProps> = (props) => {
         </div>
       </div>
 
-      <div className="mt-5 grid auto-rows-fr grid-cols-3 gap-2 sm:gap-3">
+      <div className="mt-5 grid auto-rows-fr grid-cols-1 gap-2 min-[420px]:grid-cols-3 sm:gap-3">
         <div className="flex min-h-[72px] flex-col justify-between border border-[#E7DDCD] bg-[#F8F2E9] px-3 py-3 sm:min-h-[78px] sm:px-4">
           <div className="font-sans text-[9px] font-semibold uppercase tracking-[0.12em] text-[#897967] sm:text-[10px]">
             {t('Başlangıç', 'Start')}
@@ -248,7 +249,10 @@ export const Timeline: React.FC<TimelineProps> = (props) => {
             </div>
           </div>
           <div className="font-sans text-[10px] text-[#9A8A77] sm:text-[11px]">
-            {t('Bir evrenin üzerine gelin veya odaklanın', 'Hover or focus a phase for details')}
+            <span className="sm:hidden">{t('Bir evreye dokunun', 'Tap a phase')}</span>
+            <span className="hidden sm:inline">
+              {t('Bir evrenin üzerine gelin veya odaklanın', 'Hover or focus a phase for details')}
+            </span>
           </div>
         </div>
 
@@ -261,9 +265,17 @@ export const Timeline: React.FC<TimelineProps> = (props) => {
               <div key={`${tick}-${index}`} className="absolute inset-y-0" style={{ left: `${left}%` }}>
                 <div className="h-[104px] w-px bg-[#DDD1C0] sm:h-[124px]" />
                 <div
-                  className={`absolute top-[112px] -translate-x-1/2 whitespace-nowrap font-mono text-[10px] font-medium text-[#776858] sm:top-[132px] sm:text-[11px] ${
+                  className={`absolute top-[112px] whitespace-nowrap font-mono text-[10px] font-medium text-[#776858] sm:top-[132px] sm:text-[11px] ${
                     hideOnMobile ? 'hidden sm:block' : ''
                   }`}
+                  style={{
+                    transform:
+                      index === 0
+                        ? 'translateX(0)'
+                        : index === ticks.length - 1
+                          ? 'translateX(-100%)'
+                          : 'translateX(-50%)'
+                  }}
                 >
                   {formatYear(tick, lang)}
                 </div>
@@ -294,7 +306,8 @@ export const Timeline: React.FC<TimelineProps> = (props) => {
                   <button
                     key={`${segment.id}-${segment.startYear}-${segment.endYear}`}
                     type="button"
-                    className="group absolute top-1/2 h-[34px] -translate-y-1/2 border shadow-[0_6px_18px_-12px_rgba(30,24,19,0.8)] outline-none transition-all duration-200 hover:z-20 hover:h-[40px] focus-visible:z-20 focus-visible:h-[40px] focus-visible:ring-2 focus-visible:ring-[#8A4526]/35 sm:h-[38px] sm:hover:h-[44px] sm:focus-visible:h-[44px]"
+                    onClick={() => setActiveMobileSegment(segment)}
+                    className="group absolute top-1/2 h-[38px] touch-manipulation -translate-y-1/2 border shadow-[0_6px_18px_-12px_rgba(30,24,19,0.8)] outline-none transition-all duration-200 hover:z-20 hover:h-[40px] focus-visible:z-20 focus-visible:h-[40px] focus-visible:ring-2 focus-visible:ring-[#8A4526]/35 sm:h-[38px] sm:hover:h-[44px] sm:focus-visible:h-[44px]"
                     style={{
                       left: `${segment.left}%`,
                       width: `${segment.width}%`,
@@ -310,7 +323,7 @@ export const Timeline: React.FC<TimelineProps> = (props) => {
                     )}
 
                     <span
-                      className="pointer-events-none invisible absolute bottom-[calc(100%+10px)] z-30 w-[230px] border border-[#D8C9B5] bg-[#FFFDF8] p-3 text-left opacity-0 shadow-[0_18px_42px_-24px_rgba(32,24,18,0.75)] transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-visible:visible group-focus-visible:opacity-100"
+                      className="pointer-events-none invisible absolute bottom-[calc(100%+10px)] z-30 hidden w-[230px] border border-[#D8C9B5] bg-[#FFFDF8] p-3 text-left opacity-0 shadow-[0_18px_42px_-24px_rgba(32,24,18,0.75)] transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-visible:visible group-focus-visible:opacity-100 sm:block"
                       style={tooltipStyle}
                     >
                       <span className="block font-serif text-sm font-bold text-[#201913]">
@@ -349,6 +362,31 @@ export const Timeline: React.FC<TimelineProps> = (props) => {
             </div>
           </div>
         </div>
+
+        {activeMobileSegment && (
+          <div className="mt-3 border border-[#D8C9B5] bg-[#FFFDF8] p-3.5 sm:hidden">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <div className="font-sans text-[9px] font-bold uppercase tracking-[0.14em] text-[#9A765C]">
+                  {t('Seçili Evre', 'Selected Phase')}
+                </div>
+                <div className="mt-1 font-serif text-base font-bold text-[#251E18]">
+                  {activeMobileSegment.name}
+                </div>
+                <div className="mt-1 font-mono text-[11px] text-[#6D5D4C]">
+                  {formatDateRange(activeMobileSegment.startYear, activeMobileSegment.endYear, lang)}
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setActiveMobileSegment(null)}
+                className="min-h-10 min-w-10 touch-manipulation border border-[#E0D4C4] px-2 font-sans text-[10px] font-semibold text-[#6D5D4C]"
+              >
+                {t('Kapat', 'Close')}
+              </button>
+            </div>
+          </div>
+        )}
       </div>
 
       {periodSegments.length > 0 && (
