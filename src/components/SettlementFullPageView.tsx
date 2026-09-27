@@ -475,18 +475,6 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                           <p className="font-prose text-sm text-[#42372A] leading-relaxed">
                             {find.description}
                           </p>
-                          {find.sourceIds && find.sourceIds.length > 0 && (
-                            <div className="flex flex-wrap items-center gap-1.5 pt-1.5 border-t border-[#EAE0D0]">
-                              <span className="font-serif text-[11px] text-[#786957] font-medium">
-                                {t('Kaynak:', 'Source:')}
-                              </span>
-                              {find.sourceIds.map((sid, sidx) => (
-                                <span key={sidx} className="px-1.5 py-0.5 bg-[#EAE0D0] text-[#635342] border border-[#D8CABE] font-mono text-[10px] rounded-2xs">
-                                  [{sid}]
-                                </span>
-                              ))}
-                            </div>
-                          )}
                         </div>
                       ))}
                     </div>
@@ -562,16 +550,6 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                       <p className="font-prose text-sm sm:text-[15px] text-[#3D3226] leading-relaxed">
                         {debate.text || debate.scholarlyDebate || debate.consensus || debate.evidence}
                       </p>
-                      {debate.sourceIds && debate.sourceIds.length > 0 && (
-                        <div className="text-xs font-mono text-[#7D6E5D] flex flex-wrap gap-1.5 items-center pt-1.5 border-t border-[#EDE4D6]">
-                          <span className="font-serif font-semibold text-[#5C4F40]">{t('Kaynaklar:', 'Sources:')}</span>
-                          {debate.sourceIds.map((sid, sidx) => (
-                            <span key={sidx} className="px-2 py-0.5 bg-[#EAE0D0] border border-[#D8CABE] rounded-xs">
-                              [{sid}]
-                            </span>
-                          ))}
-                        </div>
-                      )}
                     </div>
                   ))}
                 </div>
@@ -625,18 +603,6 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                         {t('Ulaşım Bilgisi', 'Getting There')}
                       </span>
                       <p className="font-prose text-[#3D3327] leading-relaxed">{geography.gettingThere}</p>
-                    </div>
-                  )}
-                  {geography.sourceIds && geography.sourceIds.length > 0 && (
-                    <div className="sm:col-span-2 flex flex-wrap items-center gap-1.5 pt-2 border-t border-[#E8DFC8]">
-                      <span className="font-serif text-xs font-semibold text-[#5C4F40]">
-                        {t('Kaynaklar:', 'Sources:')}
-                      </span>
-                      {geography.sourceIds.map((sid, sidx) => (
-                        <span key={sidx} className="px-2 py-0.5 bg-[#EAE0D0] border border-[#D8CABE] font-mono text-xs rounded-xs text-[#635342]">
-                          [{sid}]
-                        </span>
-                      ))}
                     </div>
                   )}
                 </div>
@@ -771,19 +737,6 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                   </div>
                 )}
 
-                {/* Visit Sources */}
-                {visit.sourceIds && visit.sourceIds.length > 0 && (
-                  <div className="flex flex-wrap items-center gap-1.5 pt-2 border-t border-[#E8DFC8]">
-                    <span className="font-serif text-xs font-semibold text-[#5C4F40]">
-                      {t('Kaynaklar:', 'Sources:')}
-                    </span>
-                    {visit.sourceIds.map((sid, sidx) => (
-                      <span key={sidx} className="px-2 py-0.5 bg-[#EAE0D0] border border-[#D8CABE] font-mono text-xs rounded-xs text-[#635342]">
-                        [{sid}]
-                      </span>
-                    ))}
-                  </div>
-                )}
               </section>
             )}
 
