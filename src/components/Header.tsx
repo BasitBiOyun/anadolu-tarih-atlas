@@ -3,14 +3,11 @@ import { Settlement } from '../types/settlement';
 import { Search } from './Search';
 import { PeriodFilter } from './PeriodFilter';
 import { useLanguage } from '../context/LanguageContext';
-import { useTheme } from '../context/ThemeContext';
 import {
   Compass,
   Info,
   List,
-  Moon,
   SlidersHorizontal,
-  Sun,
   X
 } from '@phosphor-icons/react';
 
@@ -44,12 +41,6 @@ export const Header: React.FC<HeaderProps> = ({
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { lang, setLang, t } = useLanguage();
-  const { theme, toggleTheme } = useTheme();
-
-  const themeLabel =
-    theme === 'dark'
-      ? t('Açık temaya geç', 'Switch to light theme')
-      : t('Koyu temaya geç', 'Switch to dark theme');
 
   const openAbout = () => {
     setMobileMenuOpen(false);
@@ -71,7 +62,7 @@ export const Header: React.FC<HeaderProps> = ({
             type="button"
             onClick={() => setMobileMenuOpen(current => !current)}
             className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#D9CEBC] bg-[#F4EFE6] text-[#4A3F33] md:hidden"
-            aria-label={t('Dil, tema ve atlas bilgileri', 'Language, theme and atlas information')}
+            aria-label={t('Dil ve atlas bilgileri', 'Language and atlas information')}
             aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={18} /> : <List size={19} />}
@@ -113,16 +104,6 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
             </div>
 
-            <button
-              type="button"
-              onClick={toggleTheme}
-              className="inline-flex h-[34px] w-[42px] shrink-0 items-center justify-center border border-[#D9CEBC] bg-[#F4EFE6] text-[#4A3F33] transition-colors hover:bg-[#EAE2D3] hover:text-[#1A1510]"
-              aria-label={themeLabel}
-              title={themeLabel}
-              aria-pressed={theme === 'dark'}
-            >
-              {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
-            </button>
 
             <button
               type="button"
@@ -159,28 +140,14 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
             </div>
 
-            <div className="grid min-w-0 grid-cols-2 gap-2">
-              <button
-                type="button"
-                onClick={toggleTheme}
-                className="inline-flex min-h-10 min-w-0 items-center justify-center gap-2 border border-[#D9CEBC] bg-[#F4EFE6] px-2 font-sans text-[10px] font-semibold text-[#4A3F33]"
-                aria-label={themeLabel}
-              >
-                {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-                <span className="truncate">
-                  {theme === 'dark' ? t('Açık tema', 'Light') : t('Koyu tema', 'Dark')}
-                </span>
-              </button>
-
-              <button
-                type="button"
-                onClick={openAbout}
-                className="inline-flex min-h-10 min-w-0 items-center justify-center gap-2 border border-[#D9CEBC] bg-[#F4EFE6] px-2 font-sans text-[10px] font-semibold text-[#4A3F33]"
-              >
-                <Info size={16} className="shrink-0 text-[#8A4526]" />
-                <span className="truncate">{t('Atlas Hakkında', 'About')}</span>
-              </button>
-            </div>
+            <button
+              type="button"
+              onClick={openAbout}
+              className="inline-flex min-h-10 min-w-0 items-center justify-center gap-2 border border-[#D9CEBC] bg-[#F4EFE6] px-3 font-sans text-[10px] font-semibold text-[#4A3F33]"
+            >
+              <Info size={16} className="shrink-0 text-[#8A4526]" />
+              <span className="truncate">{t('Atlas Hakkında', 'About the Atlas')}</span>
+            </button>
           </div>
         )}
 

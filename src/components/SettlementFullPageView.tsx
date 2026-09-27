@@ -9,7 +9,6 @@ import { RichParagraphRenderer, hasRichContent } from './RichTextRenderer';
 import { getPeriodConfig, getPeriodColor, getPeriodLabel } from '../config/periods';
 import { formatDateRange, getPrimaryPeriod } from '../utils/chronology';
 import { useLanguage } from '../context/LanguageContext';
-import { useTheme } from '../context/ThemeContext';
 import { getPeriodChipStyle, getPeriodDotColor, getThemeAccentColor } from '../utils/themeStyles';
 import {
   ArrowLeft,
@@ -29,9 +28,7 @@ import {
   Buildings,
   Books,
   Compass,
-  ArrowUp,
-  Moon,
-  Sun
+  ArrowUp
 } from '@phosphor-icons/react';
 import { DetailLoadStatus } from './SettlementPanel';
 
@@ -68,7 +65,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
   onRetry
 }) => {
   const { lang, t } = useLanguage();
-  const { theme, toggleTheme } = useTheme();
+  const theme = 'light' as const;
   const [activeSection, setActiveSection] = useState('overview');
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -352,17 +349,6 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                 : settlement.siteType}
             </span>
           )}
-
-          <button
-            type="button"
-            onClick={toggleTheme}
-            className="flex h-10 w-10 items-center justify-center border border-[#E2D8C7] bg-[#F4EFE6] text-[#736554] transition-colors hover:bg-[#EFE7D8] hover:text-[#1A1510] focus-visible:ring-2 focus-visible:ring-[#8A4526]/35 focus-visible:ring-offset-2"
-            title={theme === 'dark' ? t('Açık temaya geç', 'Switch to light theme') : t('Koyu temaya geç', 'Switch to dark theme')}
-            aria-label={theme === 'dark' ? t('Açık temaya geç', 'Switch to light theme') : t('Koyu temaya geç', 'Switch to dark theme')}
-            aria-pressed={theme === 'dark'}
-          >
-            {theme === 'dark' ? <Sun size={19} /> : <Moon size={19} />}
-          </button>
 
           <button
             onClick={onBackToMap}

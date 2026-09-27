@@ -23,7 +23,6 @@ import { DeepTimeTimeline } from './components/DeepTimeTimeline';
 import { DiscoverControl } from './components/DiscoverControl';
 import { AtlasHUD } from './components/AtlasHUD';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
-import { ThemeProvider } from './context/ThemeContext';
 
 function AtlasApp() {
   const { lang, t } = useLanguage();
@@ -383,10 +382,8 @@ function AtlasApp() {
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <LanguageProvider>
-        <AtlasApp />
-      </LanguageProvider>
-    </ThemeProvider>
+    <LanguageProvider>
+      <AtlasApp />
+    </LanguageProvider>
   );
 }

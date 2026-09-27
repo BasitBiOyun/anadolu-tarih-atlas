@@ -4,18 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#FAF7F2" />
-    <script>
-      try {
-        var savedAtlasTheme = localStorage.getItem('atlas-theme');
-        var atlasTheme = savedAtlasTheme === 'dark' ? 'dark' : 'light';
-        document.documentElement.dataset.theme = atlasTheme;
-        document.documentElement.style.colorScheme = atlasTheme;
-        document.querySelector('meta[name="theme-color"]').setAttribute(
-          'content',
-          atlasTheme === 'dark' ? '#11100E' : '#FAF7F2'
-        );
-      } catch (_) {}
-    </script>
     <title>Anadolu Tarih Atlası — Anatolian Historical Atlas</title>
     <meta name="description" content="Anatolian Historical Atlas - An interactive academic archaeological atlas of Anatolian sites from the earliest hominin evidence through the Ottoman era." />
     <meta property="og:title" content="Anadolu Tarih Atlası — Anatolian Historical Atlas" />
