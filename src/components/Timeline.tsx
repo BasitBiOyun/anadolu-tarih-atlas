@@ -3,6 +3,8 @@ import { Settlement, OccupationPeriod, SettlementPeriodDetail } from '../types/s
 import { getPeriodConfig, getPeriodColor } from '../data/periods';
 import { formatYear, formatDateRange, sortPeriodsChronologically } from '../utils/chronology';
 import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
+import { getThemeAccentColor } from '../utils/themeStyles';
 
 interface TimelineProps {
   settlement?: Settlement;
@@ -95,6 +97,7 @@ function formatDuration(startYear: number, endYear: number, lang: 'tr' | 'en'): 
 
 export const Timeline: React.FC<TimelineProps> = (props) => {
   const { lang, t } = useLanguage();
+  const { theme } = useTheme();
   const [activeMobileSegment, setActiveMobileSegment] = useState<Segment | null>(null);
 
   const settlement = props.settlement;
@@ -311,8 +314,8 @@ export const Timeline: React.FC<TimelineProps> = (props) => {
                     style={{
                       left: `${segment.left}%`,
                       width: `${segment.width}%`,
-                      backgroundColor: segment.color,
-                      borderColor: segment.borderColor
+                      backgroundColor: getThemeAccentColor(segment.color, theme),
+                      borderColor: theme === 'dark' ? getThemeAccentColor(segment.borderColor, theme) : segment.borderColor
                     }}
                     aria-label={`${segment.name}: ${formatDateRange(segment.startYear, segment.endYear, lang)}`}
                   >
@@ -342,7 +345,7 @@ export const Timeline: React.FC<TimelineProps> = (props) => {
                 style={{
                   left: `${occupationLeft}%`,
                   width: `${occupationWidth}%`,
-                  backgroundColor: fallbackColor
+                  backgroundColor: getThemeAccentColor(fallbackColor, theme)
                 }}
               />
             )}
@@ -402,7 +405,7 @@ export const Timeline: React.FC<TimelineProps> = (props) => {
               >
                 <span
                   className="h-9 w-1.5 shrink-0"
-                  style={{ backgroundColor: segment.color }}
+                  style={{ backgroundColor: getThemeAccentColor(segment.color, theme) }}
                   aria-hidden="true"
                 />
                 <div className="min-w-0">

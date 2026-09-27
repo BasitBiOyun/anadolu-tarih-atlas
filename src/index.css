@@ -393,3 +393,206 @@ html[data-theme="dark"] .deep-time-range::-moz-range-thumb {
   background: #171411;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
 }
+
+
+/* Dark mode contrast hardening
+   Every remaining hard-coded atlas foreground/background/border color is
+   explicitly mapped here so legacy parchment utilities cannot disappear on
+   the museum-dark surface. */
+html[data-theme="dark"] .text-\[\#241E19\],
+html[data-theme="dark"] .text-\[\#241F1A\],
+html[data-theme="dark"] .text-\[\#1B1612\],
+html[data-theme="dark"] .text-\[\#1E1710\],
+html[data-theme="dark"] .text-\[\#1C1611\],
+html[data-theme="dark"] .text-\[\#241C16\],
+html[data-theme="dark"] .text-\[\#392E24\],
+html[data-theme="dark"] .text-\[\#4A3F33\],
+html[data-theme="dark"] .text-\[\#42372B\],
+html[data-theme="dark"] .text-\[\#4A3D2F\],
+html[data-theme="dark"] .text-\[\#54483C\],
+html[data-theme="dark"] .text-\[\#5C4B3B\],
+html[data-theme="dark"] .text-\[\#5E5142\],
+html[data-theme="dark"] .text-\[\#6A4C39\],
+html[data-theme="dark"] .text-\[\#6B5A49\],
+html[data-theme="dark"] .text-\[\#6C5B4A\],
+html[data-theme="dark"] .text-\[\#6D4934\],
+html[data-theme="dark"] .text-\[\#6E5B49\],
+html[data-theme="dark"] .text-\[\#6E5D4B\],
+html[data-theme="dark"] .text-\[\#6F5F4E\],
+html[data-theme="dark"] .text-\[\#6F6051\],
+html[data-theme="dark"] .text-\[\#706150\],
+html[data-theme="dark"] .text-\[\#736453\],
+html[data-theme="dark"] .text-\[\#736655\],
+html[data-theme="dark"] .text-\[\#735039\],
+html[data-theme="dark"] .text-\[\#786957\],
+html[data-theme="dark"] .text-\[\#786A59\],
+html[data-theme="dark"] .text-\[\#786D5F\],
+html[data-theme="dark"] .text-\[\#7D6E5D\],
+html[data-theme="dark"] .text-\[\#7F6F5D\],
+html[data-theme="dark"] .text-\[\#8C7A67\],
+html[data-theme="dark"] .text-\[\#9B8772\],
+html[data-theme="dark"] .text-\[\#A89C8C\] {
+  color: #C9BDAF !important;
+}
+
+html[data-theme="dark"] .text-\[\#5F2D18\],
+html[data-theme="dark"] .text-\[\#8A5A35\],
+html[data-theme="dark"] .text-\[\#C49370\] {
+  color: #D9A07C !important;
+}
+
+html[data-theme="dark"] .text-\[\#7A3E26\],
+html[data-theme="dark"] .text-red-700 {
+  color: #F0A08A !important;
+}
+
+html[data-theme="dark"] .text-\[\#D36E5F\] {
+  color: #F18B7E !important;
+}
+
+html[data-theme="dark"] .text-\[\#58775A\],
+html[data-theme="dark"] .text-\[\#3E4A3D\],
+html[data-theme="dark"] .text-\[\#2D5A1E\],
+html[data-theme="dark"] .text-emerald-700,
+html[data-theme="dark"] .text-emerald-800 {
+  color: #A9D0A2 !important;
+}
+
+html[data-theme="dark"] .text-\[\#7A5720\] {
+  color: #D9B46B !important;
+}
+
+html[data-theme="dark"] .text-\[\#E7C7C0\] {
+  color: #E7C7C0 !important;
+}
+
+html[data-theme="dark"] .text-\[\#FFF9F1\] {
+  color: #FFF9F1 !important;
+}
+
+/* Remaining parchment fills */
+html[data-theme="dark"] .bg-\[\#DFE9E6\] {
+  background-color: #111B1C !important;
+}
+
+html[data-theme="dark"] .bg-\[\#F1E5D8\],
+html[data-theme="dark"] .bg-\[\#F5EBDD\],
+html[data-theme="dark"] .bg-\[\#EDE4D8\],
+html[data-theme="dark"] .bg-\[\#E5DBCB\],
+html[data-theme="dark"] .bg-\[\#F2ECE0\],
+html[data-theme="dark"] .bg-\[\#F4EEE4\],
+html[data-theme="dark"] .bg-\[\#ECE2D0\],
+html[data-theme="dark"] .bg-\[\#F4E9E2\],
+html[data-theme="dark"] .bg-\[\#E8DED0\],
+html[data-theme="dark"] .bg-\[\#F2E9DC\],
+html[data-theme="dark"] .bg-\[\#F6EFE5\],
+html[data-theme="dark"] .bg-\[\#D9CCBA\],
+html[data-theme="dark"] .bg-\[\#EFE4D2\],
+html[data-theme="dark"] .bg-\[\#F2E8DB\],
+html[data-theme="dark"] .bg-\[\#EFE6D8\],
+html[data-theme="dark"] .bg-\[\#E5D9C7\],
+html[data-theme="dark"] .bg-\[\#F6EFE3\],
+html[data-theme="dark"] .bg-\[\#E8DDD0\],
+html[data-theme="dark"] .bg-\[\#F8EEE5\],
+html[data-theme="dark"] .bg-\[\#F1E1D4\],
+html[data-theme="dark"] .bg-\[\#F7F2EA\],
+html[data-theme="dark"] .bg-\[\#EEE5D8\],
+html[data-theme="dark"] .bg-\[\#F7F1E7\],
+html[data-theme="dark"] .bg-\[\#DDD1C0\],
+html[data-theme="dark"] .bg-\[\#BCAE9A\],
+html[data-theme="dark"] .bg-\[\#EDE4D6\],
+html[data-theme="dark"] .bg-\[\#FAF6EF\] {
+  background-color: #24201A !important;
+}
+
+html[data-theme="dark"] .bg-\[\#5E5142\] {
+  background-color: #75685A !important;
+}
+
+html[data-theme="dark"] .bg-\[\#1B1714\] { background-color: #1B1714 !important; }
+html[data-theme="dark"] .bg-\[\#0D0B09\] { background-color: #0D0B09 !important; }
+html[data-theme="dark"] .bg-\[\#15110E\] { background-color: #15110E !important; }
+html[data-theme="dark"] .bg-\[\#271815\] { background-color: #271815 !important; }
+html[data-theme="dark"] .bg-\[\#7B2D23\] { background-color: #7B2D23 !important; }
+html[data-theme="dark"] .bg-\[\#72371E\],
+html[data-theme="dark"] .bg-\[\#70361C\] { background-color: #7C4028 !important; }
+
+html[data-theme="dark"] .bg-\[\#4E7B42\],
+html[data-theme="dark"] .bg-\[\#3E7A2A\] {
+  background-color: #315B31 !important;
+}
+
+html[data-theme="dark"] .bg-\[\#7D7366\] {
+  background-color: #4B453E !important;
+}
+
+html[data-theme="dark"] .bg-\[\#A3752C\] {
+  background-color: #765723 !important;
+}
+
+/* Remaining borders */
+html[data-theme="dark"] .border-\[\#C8B69E\],
+html[data-theme="dark"] .border-\[\#EBE3D5\],
+html[data-theme="dark"] .border-\[\#E8D4C4\],
+html[data-theme="dark"] .border-\[\#5E5142\],
+html[data-theme="dark"] .border-\[\#A95B35\],
+html[data-theme="dark"] .border-\[\#D2C2AE\],
+html[data-theme="dark"] .border-\[\#C8B69F\],
+html[data-theme="dark"] .border-\[\#E7DDCF\],
+html[data-theme="dark"] .border-\[\#B8A892\],
+html[data-theme="dark"] .border-\[\#C8BAA5\],
+html[data-theme="dark"] .border-\[\#DDD2C0\],
+html[data-theme="dark"] .border-\[\#D5C7B2\],
+html[data-theme="dark"] .border-\[\#DDD3C2\],
+html[data-theme="dark"] .border-\[\#C4B69F\],
+html[data-theme="dark"] .border-\[\#CDBEA8\],
+html[data-theme="dark"] .border-\[\#D8CBBB\],
+html[data-theme="dark"] .border-\[\#D9CCBA\],
+html[data-theme="dark"] .border-\[\#DDD0BD\],
+html[data-theme="dark"] .border-\[\#E2D6C6\],
+html[data-theme="dark"] .border-\[\#D3C3AF\],
+html[data-theme="dark"] .border-\[\#DCCFBD\],
+html[data-theme="dark"] .border-\[\#D5CBC0\],
+html[data-theme="dark"] .border-\[\#D2C3AF\],
+html[data-theme="dark"] .border-\[\#DFCDB7\],
+html[data-theme="dark"] .border-\[\#E6DCCD\],
+html[data-theme="dark"] .border-\[\#D0B79F\],
+html[data-theme="dark"] .border-\[\#D8CEBE\],
+html[data-theme="dark"] .border-\[\#D8C7B0\],
+html[data-theme="dark"] .border-\[\#D4C8B8\],
+html[data-theme="dark"] .border-\[\#CDBCA7\],
+html[data-theme="dark"] .border-\[\#E1CBBB\],
+html[data-theme="dark"] .border-\[\#E3D8C7\] {
+  border-color: #4A4036 !important;
+}
+
+html[data-theme="dark"] .border-\[\#A94738\],
+html[data-theme="dark"] .border-\[\#C77A4D\],
+html[data-theme="dark"] .border-\[\#E5CEC0\],
+html[data-theme="dark"] .border-\[\#A26A3D\],
+html[data-theme="dark"] .border-\[\#D8C194\],
+html[data-theme="dark"] .border-\[\#D9BD8B\] {
+  border-color: #7E5A43 !important;
+}
+
+html[data-theme="dark"] .border-\[\#58775A\],
+html[data-theme="dark"] .border-\[\#8BAE72\],
+html[data-theme="dark"] .border-\[\#A8BE99\] {
+  border-color: #557355 !important;
+}
+
+/* Static white utility surfaces are buttons/cards in light mode, not intended
+   to become white islands in dark mode. */
+html[data-theme="dark"] .bg-white {
+  background-color: #2B251F !important;
+}
+
+
+/* Final neutral foregrounds found by the component-wide dark-theme audit. */
+html[data-theme="dark"] .text-\[\#695C4D\],
+html[data-theme="dark"] .text-\[\#3D3328\],
+html[data-theme="dark"] .text-\[\#6E6152\],
+html[data-theme="dark"] .text-\[\#4E4034\],
+html[data-theme="dark"] .text-\[\#695F54\] {
+  color: #C9BDAF !important;
+}

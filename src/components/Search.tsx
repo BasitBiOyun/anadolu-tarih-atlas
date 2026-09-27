@@ -4,6 +4,8 @@ import { getPrimaryPeriod } from '../utils/chronology';
 import { getPeriodColor, getPeriodConfig, getPeriodLabel } from '../config/periods';
 import { useLanguage } from '../context/LanguageContext';
 import { filterSettlements } from '../utils/search';
+import { getPeriodChipStyle, getPeriodDotColor } from '../utils/themeStyles';
+import { useTheme } from '../context/ThemeContext';
 import { MagnifyingGlass, X } from '@phosphor-icons/react';
 
 interface SearchProps {
@@ -23,6 +25,7 @@ export const Search: React.FC<SearchProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const { lang, t } = useLanguage();
+  const { theme } = useTheme();
 
   // Filter matching settlements using Turkish-aware, diacritic-insensitive normalization
   const results = query.trim()
@@ -129,7 +132,7 @@ export const Search: React.FC<SearchProps> = ({
                 <div className="flex items-start gap-2">
                   <span
                     className="w-2 h-2 rounded-full shrink-0 mt-1"
-                    style={{ backgroundColor: periodColor }}
+                    style={{ backgroundColor: getPeriodDotColor(periodColor, theme) }}
                     aria-hidden="true"
                   />
                   <div className="flex-1 min-w-0">
@@ -166,11 +169,7 @@ export const Search: React.FC<SearchProps> = ({
                             <span
                               key={periodId}
                               className="inline-flex items-center text-[10px] font-medium px-1.5 py-0.5 border"
-                              style={{
-                                color: periodCfg.color,
-                                borderColor: `${periodCfg.color}45`,
-                                backgroundColor: periodCfg.bgLight || `${periodCfg.color}12`
-                              }}
+                              style={getPeriodChipStyle(periodCfg, theme)}
                             >
                               {label}
                             </span>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { ERAS, PERIODS, getPeriodConfig, getEraConfig, CHRONOLOGICAL_PERIOD_IDS } from '../data/periods';
 import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
+import { getPeriodChipStyle, getPeriodDotColor } from '../utils/themeStyles';
 import { CaretDown, CaretUp, Check } from '@phosphor-icons/react';
 
 interface PeriodFilterProps {
@@ -23,6 +25,7 @@ export const PeriodFilter: React.FC<PeriodFilterProps> = ({
   filteredCount
 }) => {
   const { lang, t } = useLanguage();
+  const { theme } = useTheme();
   const [expandedEraId, setExpandedEraId] = useState<string | null>(null);
 
   const isAllSelected =
@@ -118,7 +121,7 @@ export const PeriodFilter: React.FC<PeriodFilterProps> = ({
               >
                 <span
                   className="w-2 h-2 rounded-full shrink-0"
-                  style={{ backgroundColor: firstPeriodCfg.color }}
+                  style={{ backgroundColor: getPeriodDotColor(firstPeriodCfg.color, theme) }}
                 />
                 <span>{eraName}</span>
                 <span className="text-[10px] font-mono tabular-nums opacity-75">
@@ -183,16 +186,12 @@ export const PeriodFilter: React.FC<PeriodFilterProps> = ({
                     ? 'font-medium shadow-2xs'
                     : 'opacity-55 hover:opacity-100 bg-[#FAF7F2] text-[#695B4A] border-[#DDD3C2]'
                 }`}
-                style={{
-                  backgroundColor: isSelected ? config.bgLight : undefined,
-                  borderColor: isSelected ? config.borderColor : undefined,
-                  color: isSelected ? config.color : undefined
-                }}
+                style={isSelected ? getPeriodChipStyle(config, theme) : undefined}
                 title={lang === 'en' ? config.nameEn : config.nameTr}
               >
                 <span
                   className="w-1.5 h-1.5 rounded-full shrink-0"
-                  style={{ backgroundColor: config.color }}
+                  style={{ backgroundColor: getPeriodDotColor(config.color, theme) }}
                 />
                 <span>{periodLabel}</span>
                 <span className="text-[9.5px] font-mono tabular-nums opacity-75">

@@ -13,6 +13,8 @@ import {
 } from '../data/periods';
 import { formatDateRange } from '../utils/chronology';
 import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
+import { getPeriodDotColor, getThemeAccentColor } from '../utils/themeStyles';
 
 interface DeepTimeTimelineProps {
   selectedPeriods: string[];
@@ -32,6 +34,7 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
   totalCount
 }) => {
   const { lang, t } = useLanguage();
+  const { theme } = useTheme();
 
   const periods = useMemo(
     () => [...PERIODS].sort((a, b) => a.order - b.order),
@@ -68,7 +71,8 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
     .map((period, index) => {
       const start = (index / periods.length) * 100;
       const end = ((index + 1) / periods.length) * 100;
-      return `${period.color} ${start}%, ${period.color} ${end}%`;
+      const color = getThemeAccentColor(period.color, theme);
+      return `${color} ${start}%, ${color} ${end}%`;
     })
     .join(', ');
 
@@ -226,7 +230,7 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
             >
               <span
                 className="h-2 w-2 shrink-0 rounded-full"
-                style={{ backgroundColor: firstPeriod.color }}
+                style={{ backgroundColor: getPeriodDotColor(firstPeriod.color, theme) }}
               />
               <span>{lang === 'tr' ? era.shortTr : era.shortEn}</span>
               <span className="font-mono text-[8px] opacity-65">{count}</span>

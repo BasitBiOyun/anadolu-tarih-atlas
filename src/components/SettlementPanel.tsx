@@ -8,6 +8,8 @@ import { RichParagraphRenderer, hasRichContent } from './RichTextRenderer';
 import { getPeriodConfig, getPeriodColor, getPeriodLabel } from '../config/periods';
 import { getPrimaryPeriod } from '../utils/chronology';
 import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
+import { getPeriodChipStyle, getPeriodDotColor } from '../utils/themeStyles';
 import {
   X,
   ArrowSquareOut,
@@ -56,6 +58,7 @@ export const SettlementPanel: React.FC<SettlementPanelProps> = ({
   onRetry
 }) => {
   const { lang, t } = useLanguage();
+  const { theme } = useTheme();
 
   if (!settlement) return null;
 
@@ -167,15 +170,11 @@ export const SettlementPanel: React.FC<SettlementPanelProps> = ({
                   <span
                     key={pd.period}
                     className="inline-flex items-center gap-1 text-[11px] font-serif font-medium px-2 py-0.5 border"
-                    style={{
-                      backgroundColor: cfg.bgLight,
-                      borderColor: cfg.borderColor,
-                      color: cfg.color
-                    }}
+                    style={getPeriodChipStyle(cfg, theme)}
                   >
                     <span
                       className="w-1.5 h-1.5 rounded-full"
-                      style={{ backgroundColor: cfg.color }}
+                      style={{ backgroundColor: getPeriodDotColor(cfg.color, theme) }}
                     />
                     {periodLabel}
                   </span>
@@ -189,15 +188,11 @@ export const SettlementPanel: React.FC<SettlementPanelProps> = ({
                   <span
                     key={period}
                     className="inline-flex items-center gap-1 text-[11px] font-serif font-medium px-2 py-0.5 border"
-                    style={{
-                      backgroundColor: cfg.bgLight,
-                      borderColor: cfg.borderColor,
-                      color: cfg.color
-                    }}
+                    style={getPeriodChipStyle(cfg, theme)}
                   >
                     <span
                       className="w-1.5 h-1.5 rounded-full"
-                      style={{ backgroundColor: cfg.color }}
+                      style={{ backgroundColor: getPeriodDotColor(cfg.color, theme) }}
                     />
                     {periodLabel}
                   </span>

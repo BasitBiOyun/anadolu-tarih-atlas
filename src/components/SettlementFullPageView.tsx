@@ -10,6 +10,7 @@ import { getPeriodConfig, getPeriodColor, getPeriodLabel } from '../config/perio
 import { formatDateRange, getPrimaryPeriod } from '../utils/chronology';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
+import { getPeriodChipStyle, getPeriodDotColor, getThemeAccentColor } from '../utils/themeStyles';
 import {
   ArrowLeft,
   X,
@@ -387,7 +388,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
             <div className="relative overflow-hidden border-y border-[#DCCFBC] bg-[#FCF9F3] px-5 py-7 shadow-[0_24px_60px_-48px_rgba(42,31,22,0.65)] sm:px-8 sm:py-9 lg:px-10">
               <div
                 className="absolute inset-y-0 left-0 w-1.5"
-                style={{ backgroundColor: primaryColor }}
+                style={{ backgroundColor: getThemeAccentColor(primaryColor, theme) }}
                 aria-hidden="true"
               />
 
@@ -426,13 +427,9 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                         <span
                           key={periodId}
                           className="inline-flex items-center gap-2 border px-3 py-1.5 font-serif text-xs font-semibold sm:text-sm"
-                          style={{
-                            backgroundColor: cfg.bgLight,
-                            borderColor: cfg.borderColor,
-                            color: cfg.color
-                          }}
+                          style={getPeriodChipStyle(cfg, theme)}
                         >
-                          <span className="h-2 w-2 rounded-full" style={{ backgroundColor: cfg.color }} />
+                          <span className="h-2 w-2 rounded-full" style={{ backgroundColor: getPeriodDotColor(cfg.color, theme) }} />
                           {getPeriodLabel(periodId, lang)}
                         </span>
                       );
@@ -692,7 +689,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                         >
                           <div
                             className="absolute left-0 top-0 h-1 w-full opacity-85"
-                            style={{ backgroundColor: primaryColor }}
+                            style={{ backgroundColor: getThemeAccentColor(primaryColor, theme) }}
                             aria-hidden="true"
                           />
 

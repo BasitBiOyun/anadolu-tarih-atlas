@@ -16,6 +16,7 @@ import { SETTLEMENT_LABEL_OVERRIDES } from '../config/labelPlacements';
 import { getFormattedProvinceLabel } from '../utils/turkishCasing';
 import { useLanguage } from '../context/LanguageContext';
 import { AtlasTheme, useTheme } from '../context/ThemeContext';
+import { getPeriodChipStyle, getPeriodDotColor } from '../utils/themeStyles';
 import {
   Plus,
   Minus,
@@ -1205,15 +1206,11 @@ export const AtlasMap: React.FC<AtlasMapProps> = ({
                       <span
                         key={pd.period}
                         className="inline-flex items-center gap-1 text-[9px] font-medium px-1.5 py-0.5 border"
-                        style={{
-                          backgroundColor: cfg.bgLight,
-                          color: cfg.color,
-                          borderColor: cfg.borderColor
-                        }}
+                        style={getPeriodChipStyle(cfg, theme)}
                       >
                         <span
                           className="w-1.5 h-1.5 rounded-full"
-                          style={{ backgroundColor: cfg.color }}
+                          style={{ backgroundColor: getPeriodDotColor(cfg.color, theme) }}
                         />
                         {periodLabel}
                       </span>
@@ -1226,15 +1223,11 @@ export const AtlasMap: React.FC<AtlasMapProps> = ({
                       <span
                         key={period}
                         className="inline-flex items-center gap-1 text-[9px] font-medium px-1.5 py-0.5 border"
-                        style={{
-                          backgroundColor: config.bgLight,
-                          color: config.color,
-                          borderColor: config.borderColor
-                        }}
+                        style={getPeriodChipStyle(config, theme)}
                       >
                         <span
                           className="w-1.5 h-1.5 rounded-full"
-                          style={{ backgroundColor: config.color }}
+                          style={{ backgroundColor: getPeriodDotColor(config.color, theme) }}
                         />
                         {periodLabel}
                       </span>
