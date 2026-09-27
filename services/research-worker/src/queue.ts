@@ -49,7 +49,7 @@ export class Queue {
       tx.set(quota,{claimed:(hourDoc.data()?.claimed??0)+1, updatedAt:now});
       tx.create(this.store.doc(`research_jobs/${token}`),{siteId:doc.id, status:'researching', startedAt:now, attempt:claim.attempts});
       return claim as unknown as Claim;
-    });
+    },{maxAttempts:15});
   }
   async fenced<T>(claim: Claim, action: (tx: any, data:any)=>T, now=Date.now()): Promise<T> {
     return this.store.runTransaction(async tx => {
