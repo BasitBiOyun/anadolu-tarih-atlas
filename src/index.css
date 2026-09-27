@@ -596,3 +596,28 @@ html[data-theme="dark"] .text-\[\#4E4034\],
 html[data-theme="dark"] .text-\[\#695F54\] {
   color: #C9BDAF !important;
 }
+
+
+/* Dark heading readability guarantee
+   Section titles are semantic headings throughout the atlas. Give every one
+   a guaranteed high-contrast foreground in dark mode, independent of legacy
+   parchment utility classes or nested card styles. */
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6 {
+  color: #F4EDE3 !important;
+  text-shadow: none;
+}
+
+/* Keep headings legible even inside status, editorial and overlay surfaces. */
+html[data-theme="dark"] [role="dialog"] h1,
+html[data-theme="dark"] [role="dialog"] h2,
+html[data-theme="dark"] [role="dialog"] h3,
+html[data-theme="dark"] [role="dialog"] h4,
+html[data-theme="dark"] [role="dialog"] h5,
+html[data-theme="dark"] [role="dialog"] h6 {
+  color: #FFF8EF !important;
+}

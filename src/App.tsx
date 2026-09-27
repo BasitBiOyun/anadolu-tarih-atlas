@@ -20,6 +20,7 @@ import { SettlementPanel, DetailLoadStatus } from './components/SettlementPanel'
 import { SettlementFullPageView } from './components/SettlementFullPageView';
 import { AboutModal } from './components/AboutModal';
 import { DeepTimeTimeline } from './components/DeepTimeTimeline';
+import { DiscoverControl } from './components/DiscoverControl';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -43,6 +44,7 @@ function AtlasApp() {
   const [detailError, setDetailError] = useState<string | null>(null);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [isFullScreenView, setIsFullScreenView] = useState(false);
+  const [lastDiscoveredId, setLastDiscoveredId] = useState<string | null>(null);
 
   const [mapFocusTarget, setMapFocusTarget] = useState<{
     center: [number, number];
@@ -225,6 +227,27 @@ function AtlasApp() {
     });
   }, []);
 
+  const handleDiscoverRandom = useCallback(() => {
+    if (!filteredSettlements.length) return;
+
+    const candidates =
+      filteredSettlements.length > 1 && lastDiscoveredId
+        ? filteredSettlements.filter(site => site.id !== lastDiscoveredId)
+        : filteredSettlements;
+
+    const pool = candidates.length ? candidates : filteredSettlements;
+    const picked = pool[Math.floor(Math.random() * pool.length)];
+    if (!picked) return;
+
+    setLastDiscoveredId(picked.id);
+    setMapFocusTarget({
+      center: [picked.longitude, picked.latitude],
+      zoom: 8.2,
+      timestamp: Date.now()
+    });
+    void handleSelectSettlement(picked);
+  }, [filteredSettlements, lastDiscoveredId, handleSelectSettlement]);
+
   const showDeepTimeTimeline =
     !isLoadingIndex &&
     !isPanelOpen &&
@@ -283,6 +306,13 @@ function AtlasApp() {
             onSelectSettlement={handleSelectSettlement}
             focusTarget={mapFocusTarget}
             bottomUiInset={showDeepTimeTimeline}
+          />
+        )}
+
+        {showDeepTimeTimeline && (
+          <DiscoverControl
+            onDiscover={handleDiscoverRandom}
+            availableCount={filteredSettlements.length}
           />
         )}
 

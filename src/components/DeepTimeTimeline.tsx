@@ -77,7 +77,7 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
     .join(', ');
 
   const selectionLabel = (() => {
-    if (isAllSelected) return t('Tüm zaman', 'All time');
+    if (isAllSelected) return t('Tüm Zamanlar', 'All time');
     if (selectedConfigs.length === 1) {
       return lang === 'tr' ? selectedConfigs[0].shortTr : selectedConfigs[0].shortEn;
     }
@@ -200,7 +200,7 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
           aria-pressed={isAllSelected}
         >
           <ArrowCounterClockwise size={13} />
-          <span className="hidden min-[390px]:inline">{t('Tüm Zaman', 'All Time')}</span>
+          <span className="hidden min-[390px]:inline">{t('Tüm Zamanlar', 'All Time')}</span>
         </button>
       </div>
 
