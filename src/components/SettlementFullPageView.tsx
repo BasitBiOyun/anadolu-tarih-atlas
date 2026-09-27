@@ -18,7 +18,15 @@ import {
   BookOpen,
   Info,
   Warning,
-  ArrowClockwise
+  ArrowClockwise,
+  MapTrifold,
+  Clock,
+  Ticket,
+  Phone,
+  NavigationArrow,
+  Buildings,
+  Books,
+  Compass
 } from '@phosphor-icons/react';
 import { DetailLoadStatus } from './SettlementPanel';
 
@@ -173,6 +181,11 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
   const hasResearchDebates = Boolean(settlement.researchDebates && settlement.researchDebates.length > 0);
   const hasImages = settlement.images && settlement.images.length > 0;
   const hasSources = settlement.sources && settlement.sources.length > 0;
+  const sourcePdfCount = settlement.sources.filter(source => Boolean(source.pdfUrl?.trim())).length;
+  const sourceDoiCount = settlement.sources.filter(source => Boolean(source.doi?.trim())).length;
+  const sourceLinkedCount = settlement.sources.filter(source =>
+    Boolean(source.url?.trim() || source.pdfUrl?.trim() || source.doi?.trim())
+  ).length;
 
   // Geography
   const geography = settlement.geography;
@@ -787,39 +800,80 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 
             {/* 7. Geography */}
             {hasGeography && geography && (
-              <section id="section-geography" data-monograph-section="geography" className="scroll-mt-24 space-y-5">
-                <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
-                  {t('Coğrafi Konum & Çevre', 'Geography & Environment')}
-                </h2>
+              <section id="section-geography" data-monograph-section="geography" className="scroll-mt-24 space-y-6">
+                <div className="flex flex-col gap-3 border-b border-[#E2D8C7] pb-3 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <div className="font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-[#9A765C]">
+                      {t('Mekânsal Bağlam', 'Spatial Context')}
+                    </div>
+                    <h2 className="mt-1 flex items-center gap-2 font-serif text-xl font-bold tracking-tight text-[#1A1510] sm:text-2xl">
+                      <MapTrifold size={24} className="text-[#8A4526]" />
+                      {t('Coğrafi Konum & Çevre', 'Geography & Environment')}
+                    </h2>
+                  </div>
+                  <div className="font-mono text-[10px] text-[#8F7D69]">
+                    {settlement.latitude.toFixed(5)}° N · {settlement.longitude.toFixed(5)}° E
+                  </div>
+                </div>
+
                 {geography.summary && (
-                  <p className="font-prose text-[17px] sm:text-[18px] leading-[1.75] text-[#2B231B]">
-                    {geography.summary}
-                  </p>
+                  <div className="border-l-2 border-[#8A4526] bg-[#F8F2E9] px-5 py-4 sm:px-6">
+                    <p className="max-w-[900px] font-prose text-[17px] leading-[1.75] text-[#2B231B] sm:text-[18px]">
+                      {geography.summary}
+                    </p>
+                  </div>
                 )}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-sm">
+
+                <div className="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-3">
                   {geography.landscape && (
-                    <div className="p-3.5 bg-[#FAF7F0] border border-[#E5DAC8] space-y-1">
-                      <span className="font-serif font-bold text-[#42372A] block">
+                    <article className="flex min-h-[190px] flex-col border border-[#DDD0BE] bg-[#FCF9F3] p-5 shadow-[0_16px_34px_-30px_rgba(35,27,20,0.65)] sm:p-6">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex h-10 w-10 items-center justify-center border border-[#D8C9B5] bg-[#F2E8DA] text-[#8A4526]">
+                          <Compass size={19} />
+                        </div>
+                        <span className="font-mono text-[9px] font-semibold tracking-[0.14em] text-[#A18C77]">01</span>
+                      </div>
+                      <h3 className="mt-5 font-serif text-lg font-bold text-[#2A211A]">
                         {t('Doğal Çevre & Peyzaj', 'Landscape')}
-                      </span>
-                      <p className="font-prose text-[#3D3327] leading-relaxed">{geography.landscape}</p>
-                    </div>
+                      </h3>
+                      <p className="mt-2 font-prose text-[15px] leading-[1.7] text-[#4A3D31] sm:text-base">
+                        {geography.landscape}
+                      </p>
+                    </article>
                   )}
+
                   {geography.distanceFromNearestCenter && (
-                    <div className="p-3.5 bg-[#FAF7F0] border border-[#E5DAC8] space-y-1">
-                      <span className="font-serif font-bold text-[#42372A] block">
+                    <article className="flex min-h-[190px] flex-col border border-[#DDD0BE] bg-[#FCF9F3] p-5 shadow-[0_16px_34px_-30px_rgba(35,27,20,0.65)] sm:p-6">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex h-10 w-10 items-center justify-center border border-[#D8C9B5] bg-[#F2E8DA] text-[#8A4526]">
+                          <Buildings size={19} />
+                        </div>
+                        <span className="font-mono text-[9px] font-semibold tracking-[0.14em] text-[#A18C77]">02</span>
+                      </div>
+                      <h3 className="mt-5 font-serif text-lg font-bold text-[#2A211A]">
                         {t('Merkeze Mesafe', 'Distance from Center')}
-                      </span>
-                      <p className="font-prose text-[#3D3327] leading-relaxed">{geography.distanceFromNearestCenter}</p>
-                    </div>
+                      </h3>
+                      <p className="mt-2 font-prose text-[15px] leading-[1.7] text-[#4A3D31] sm:text-base">
+                        {geography.distanceFromNearestCenter}
+                      </p>
+                    </article>
                   )}
+
                   {geography.gettingThere && (
-                    <div className="sm:col-span-2 p-3.5 bg-[#FAF7F0] border border-[#E5DAC8] space-y-1">
-                      <span className="font-serif font-bold text-[#42372A] block">
+                    <article className="flex min-h-[190px] flex-col border border-[#DDD0BE] bg-[#FCF9F3] p-5 shadow-[0_16px_34px_-30px_rgba(35,27,20,0.65)] sm:p-6">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex h-10 w-10 items-center justify-center border border-[#D8C9B5] bg-[#F2E8DA] text-[#8A4526]">
+                          <NavigationArrow size={19} />
+                        </div>
+                        <span className="font-mono text-[9px] font-semibold tracking-[0.14em] text-[#A18C77]">03</span>
+                      </div>
+                      <h3 className="mt-5 font-serif text-lg font-bold text-[#2A211A]">
                         {t('Ulaşım Bilgisi', 'Getting There')}
-                      </span>
-                      <p className="font-prose text-[#3D3327] leading-relaxed">{geography.gettingThere}</p>
-                    </div>
+                      </h3>
+                      <p className="mt-2 font-prose text-[15px] leading-[1.7] text-[#4A3D31] sm:text-base">
+                        {geography.gettingThere}
+                      </p>
+                    </article>
                   )}
                 </div>
               </section>
@@ -827,178 +881,244 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 
             {/* 8. Visit Information */}
             {hasVisit && visit && (
-              <section id="section-visit" data-monograph-section="visit" className="scroll-mt-24 space-y-5">
-                <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
-                  {t('Ziyaret Bilgileri', 'Visitor Information')}
-                </h2>
+              <section id="section-visit" data-monograph-section="visit" className="scroll-mt-24 space-y-6">
+                <div className="flex flex-col gap-3 border-b border-[#E2D8C7] pb-3 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <div className="font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-[#9A765C]">
+                      {t('Saha Rehberi', 'Field Guide')}
+                    </div>
+                    <h2 className="mt-1 font-serif text-xl font-bold tracking-tight text-[#1A1510] sm:text-2xl">
+                      {t('Ziyaret Bilgileri', 'Visitor Information')}
+                    </h2>
+                  </div>
 
-                {/* Visit Status Badge */}
+                  {visit.lastChecked && (
+                    <div className="font-sans text-[10px] text-[#8A7A68] sm:text-[11px]">
+                      {t('Son kontrol', 'Last checked')} · {visit.lastChecked}
+                    </div>
+                  )}
+                </div>
+
                 {visit.statusLabel && (
-                  <div className="flex items-center gap-2">
-                    <span
-                      className={`inline-flex items-center gap-2 px-3 py-1.5 text-sm font-serif font-medium border ${
-                        visit.status === 'open'
-                          ? 'bg-[#EDF5E8] border-[#8BAE72] text-[#2D5A1E]'
-                          : visit.status === 'submerged'
-                            ? 'bg-[#F2EFEA] border-[#D4C8B8] text-[#695F54]'
-                            : 'bg-[#FAF3E6] border-[#D9BD8B] text-[#7A5720]'
-                      }`}
-                    >
+                  <div
+                    className={`flex flex-col gap-3 border px-5 py-4 sm:flex-row sm:items-center sm:justify-between ${
+                      visit.status === 'open'
+                        ? 'border-[#A8BE99] bg-[#F0F5EC]'
+                        : visit.status === 'submerged'
+                          ? 'border-[#D5CBC0] bg-[#F2EFEB]'
+                          : 'border-[#D8C194] bg-[#F8F1E5]'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
                       <span
-                        className={`w-2.5 h-2.5 rounded-full ${
+                        className={`h-3 w-3 rounded-full ${
                           visit.status === 'open'
-                            ? 'bg-[#3E7A2A]'
+                            ? 'bg-[#4E7B42]'
                             : visit.status === 'submerged'
                               ? 'bg-[#7D7366]'
                               : 'bg-[#A3752C]'
                         }`}
                       />
-                      {visit.statusLabel}
-                    </span>
-                  </div>
-                )}
-
-                {/* Visit Details Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                  {hasVisitHours && visit.hours && (
-                    <div className="p-3.5 bg-[#FAF7F0] border border-[#EFE8DC]">
-                      <span className="text-[#80705E] font-medium block text-xs uppercase tracking-wider mb-1">
-                        {t('Ziyaret Saatleri', 'Opening Hours')}
-                      </span>
-                      <span className="font-sans font-medium text-[#241D17]">
-                        {visit.hours.open} – {visit.hours.close}
-                        {visit.hours.boxOfficeClose && (
-                          <span className="text-[#736554] text-xs block font-normal mt-0.5">
-                            ({t('Gişe kapanışı:', 'Box office closes:')} {visit.hours.boxOfficeClose})
-                          </span>
-                        )}
-                      </span>
+                      <div>
+                        <div className="font-sans text-[9px] font-bold uppercase tracking-[0.14em] text-[#847565]">
+                          {t('Ziyaret Durumu', 'Visitor Status')}
+                        </div>
+                        <div className="mt-0.5 font-serif text-lg font-bold text-[#2B231B]">
+                          {visit.statusLabel}
+                        </div>
+                      </div>
                     </div>
-                  )}
 
-                  {hasClosedDays && visit.closedDays && (
-                    <div className="p-3.5 bg-[#FAF7F0] border border-[#EFE8DC]">
-                      <span className="text-[#80705E] font-medium block text-xs uppercase tracking-wider mb-1">
-                        {t('Kapalı Günler', 'Closed Days')}
-                      </span>
-                      <span className="font-sans font-medium text-[#241D17]">
-                        {visit.closedDays.join(', ')}
-                      </span>
-                    </div>
-                  )}
-
-                  {hasMuseumPass && (
-                    <div className="p-3.5 bg-[#FAF7F0] border border-[#EFE8DC]">
-                      <span className="text-[#80705E] font-medium block text-xs uppercase tracking-wider mb-1">
-                        {t('Müzekart', 'Museum Pass')}
-                      </span>
-                      <span className="font-sans font-medium text-[#241D17]">
-                        {visit.museumPass ? t('Geçerlidir', 'Valid / Accepted') : t('Geçerli değildir', 'Not Accepted')}
-                      </span>
-                    </div>
-                  )}
-
-                  {hasAddress && visit.address && (
-                    <div className="p-3.5 bg-[#FAF7F0] border border-[#EFE8DC]">
-                      <span className="text-[#80705E] font-medium block text-xs uppercase tracking-wider mb-1">
-                        {t('Adres', 'Address')}
-                      </span>
-                      <span className="font-sans text-[#241D17]">
-                        {visit.address}
-                      </span>
-                    </div>
-                  )}
-
-                  {hasPhone && visit.phone && (
-                    <div className="p-3.5 bg-[#FAF7F0] border border-[#EFE8DC]">
-                      <span className="text-[#80705E] font-medium block text-xs uppercase tracking-wider mb-1">
-                        {t('Telefon', 'Phone')}
-                      </span>
-                      <a
-                        href={`tel:${visit.phone.replace(/\s+/g, '')}`}
-                        className="font-mono text-[#8A4526] hover:underline"
-                      >
-                        {visit.phone}
-                      </a>
-                    </div>
-                  )}
-
-                  {hasOfficialUrl && visit.officialUrl && (
-                    <div className="p-3.5 bg-[#FAF7F0] border border-[#EFE8DC]">
-                      <span className="text-[#80705E] font-medium block text-xs uppercase tracking-wider mb-1">
-                        {t('Resmî Sayfa', 'Official Site')}
-                      </span>
+                    {hasOfficialUrl && visit.officialUrl && (
                       <a
                         href={visit.officialUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 font-serif text-[#8A4526] hover:underline"
+                        className="inline-flex items-center gap-1.5 self-start border border-[#D2C3AF] bg-[#FFFDF8] px-3 py-2 font-sans text-[10px] font-semibold text-[#6A4C39] transition-colors hover:bg-white sm:self-auto"
                       >
-                        <span>{t('Resmî Ziyaretçi Portalı', 'Official Visitor Portal')}</span>
-                        <ArrowSquareOut size={14} weight="regular" />
+                        {t('Resmî ziyaret sayfası', 'Official visitor page')}
+                        <ArrowSquareOut size={13} />
                       </a>
-                    </div>
+                    )}
+                  </div>
+                )}
+
+                <div className="grid auto-rows-fr grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
+                  {hasVisitHours && visit.hours && (
+                    <article className="flex min-h-[132px] flex-col border border-[#E1D6C6] bg-[#FCF9F3] p-5">
+                      <div className="flex items-center gap-2 text-[#8A4526]">
+                        <Clock size={18} />
+                        <span className="font-sans text-[9px] font-bold uppercase tracking-[0.14em]">
+                          {t('Ziyaret Saatleri', 'Opening Hours')}
+                        </span>
+                      </div>
+                      <div className="mt-auto pt-4 font-serif text-lg font-bold text-[#241D17]">
+                        {visit.hours.open} – {visit.hours.close}
+                      </div>
+                      {visit.hours.boxOfficeClose && (
+                        <div className="mt-1 font-sans text-[10px] text-[#756656]">
+                          {t('Gişe kapanışı', 'Box office closes')} · {visit.hours.boxOfficeClose}
+                        </div>
+                      )}
+                    </article>
+                  )}
+
+                  {hasClosedDays && visit.closedDays && (
+                    <article className="flex min-h-[132px] flex-col border border-[#E1D6C6] bg-[#FCF9F3] p-5">
+                      <div className="flex items-center gap-2 text-[#8A4526]">
+                        <Clock size={18} />
+                        <span className="font-sans text-[9px] font-bold uppercase tracking-[0.14em]">
+                          {t('Kapalı Günler', 'Closed Days')}
+                        </span>
+                      </div>
+                      <div className="mt-auto pt-4 font-serif text-lg font-bold text-[#241D17]">
+                        {visit.closedDays.join(', ')}
+                      </div>
+                    </article>
+                  )}
+
+                  {hasMuseumPass && (
+                    <article className="flex min-h-[132px] flex-col border border-[#E1D6C6] bg-[#FCF9F3] p-5">
+                      <div className="flex items-center gap-2 text-[#8A4526]">
+                        <Ticket size={18} />
+                        <span className="font-sans text-[9px] font-bold uppercase tracking-[0.14em]">
+                          {t('Müzekart', 'Museum Pass')}
+                        </span>
+                      </div>
+                      <div className="mt-auto pt-4 font-serif text-lg font-bold text-[#241D17]">
+                        {visit.museumPass ? t('Geçerli', 'Accepted') : t('Geçerli değil', 'Not accepted')}
+                      </div>
+                    </article>
+                  )}
+
+                  {hasAddress && visit.address && (
+                    <article className="flex min-h-[132px] flex-col border border-[#E1D6C6] bg-[#FCF9F3] p-5">
+                      <div className="flex items-center gap-2 text-[#8A4526]">
+                        <MapPin size={18} />
+                        <span className="font-sans text-[9px] font-bold uppercase tracking-[0.14em]">
+                          {t('Adres', 'Address')}
+                        </span>
+                      </div>
+                      <div className="mt-auto pt-4 font-serif text-base font-bold leading-snug text-[#241D17]">
+                        {visit.address}
+                      </div>
+                    </article>
+                  )}
+
+                  {hasPhone && visit.phone && (
+                    <article className="flex min-h-[132px] flex-col border border-[#E1D6C6] bg-[#FCF9F3] p-5">
+                      <div className="flex items-center gap-2 text-[#8A4526]">
+                        <Phone size={18} />
+                        <span className="font-sans text-[9px] font-bold uppercase tracking-[0.14em]">
+                          {t('Telefon', 'Phone')}
+                        </span>
+                      </div>
+                      <a
+                        href={`tel:${visit.phone.replace(/\s+/g, '')}`}
+                        className="mt-auto pt-4 font-mono text-sm font-semibold text-[#8A4526] hover:underline"
+                      >
+                        {visit.phone}
+                      </a>
+                    </article>
+                  )}
+
+                  {hasOfficialUrl && visit.officialUrl && (
+                    <article className="flex min-h-[132px] flex-col border border-[#E1D6C6] bg-[#FCF9F3] p-5">
+                      <div className="flex items-center gap-2 text-[#8A4526]">
+                        <ArrowSquareOut size={18} />
+                        <span className="font-sans text-[9px] font-bold uppercase tracking-[0.14em]">
+                          {t('Resmî Sayfa', 'Official Site')}
+                        </span>
+                      </div>
+                      <a
+                        href={visit.officialUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-auto inline-flex items-center gap-1.5 pt-4 font-serif text-base font-bold text-[#6D4934] hover:underline"
+                      >
+                        {t('Ziyaret portalını aç', 'Open visitor portal')}
+                        <ArrowSquareOut size={14} />
+                      </a>
+                    </article>
                   )}
                 </div>
 
-                {/* Visitor Note Callout */}
                 {hasVisitorNote && visit.visitorNote && (
-                  <div className="p-4 bg-[#FAF5EC] border-l-3 border-[#8A4526] text-sm">
-                    <span className="font-serif font-bold text-[#42372A] block mb-1">
+                  <div className="border-l-2 border-[#8A4526] bg-[#F8F2E9] px-5 py-4 sm:px-6">
+                    <div className="font-sans text-[9px] font-bold uppercase tracking-[0.14em] text-[#9A765C]">
                       {t('Ziyaretçi Notu', 'Visitor Note')}
-                    </span>
-                    <p className="font-prose text-[#3D3327] leading-relaxed">
+                    </div>
+                    <p className="mt-2 max-w-[900px] font-prose text-[15px] leading-[1.72] text-[#43372C] sm:text-base">
                       {visit.visitorNote}
                     </p>
                   </div>
                 )}
-
               </section>
             )}
 
             {/* 9. Nearby Places */}
             {hasNearbyPlaces && settlement.nearbyPlaces && settlement.nearbyPlaces.length > 0 && (
-              <section id="section-nearby" data-monograph-section="nearby" className="scroll-mt-24 space-y-5">
-                <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
-                  {t('Yakın Kültür Noktaları & Müzeler', 'Nearby Sites & Museums')}
-                </h2>
-                <div className="grid auto-rows-fr grid-cols-1 gap-3.5 sm:grid-cols-2">
+              <section id="section-nearby" data-monograph-section="nearby" className="scroll-mt-24 space-y-6">
+                <div className="flex items-end justify-between gap-4 border-b border-[#E2D8C7] pb-3">
+                  <div>
+                    <div className="font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-[#9A765C]">
+                      {t('Çevresel Ağ', 'Cultural Network')}
+                    </div>
+                    <h2 className="mt-1 font-serif text-xl font-bold tracking-tight text-[#1A1510] sm:text-2xl">
+                      {t('Yakın Kültür Noktaları & Müzeler', 'Nearby Sites & Museums')}
+                    </h2>
+                  </div>
+                  <div className="font-mono text-[10px] text-[#8F7D69]">
+                    {settlement.nearbyPlaces.length} {t('nokta', 'places')}
+                  </div>
+                </div>
+
+                <div className="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
                   {settlement.nearbyPlaces.map((place, idx) => (
-                    <div key={idx} className="h-full p-4 bg-[#FAF7F0] border border-[#E5DAC8] space-y-1.5 shadow-xs">
-                      <div className="flex items-baseline justify-between gap-2">
-                        <div className="flex items-center gap-1.5 flex-wrap">
-                          <span className="font-serif font-bold text-sm sm:text-base text-[#1F1914]">{place.name}</span>
-                          {place.type && (
-                            <span className="text-[11px] font-mono px-1.5 py-0.5 bg-[#EFE4D2] text-[#6E5D4B] border border-[#DFCDB7]">
-                              {getPlaceTypeLabel(place.type, lang)}
-                            </span>
-                          )}
-                        </div>
+                    <article
+                      key={idx}
+                      className="flex h-full min-h-[200px] flex-col border border-[#DDD0BE] bg-[#FCF9F3] p-5 shadow-[0_16px_34px_-30px_rgba(35,27,20,0.65)] transition-colors hover:border-[#C8B69F] sm:p-6"
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <span className="font-mono text-[9px] font-semibold tracking-[0.14em] text-[#A18C77]">
+                          {String(idx + 1).padStart(2, '0')}
+                        </span>
                         {place.distance && (
-                          <span className="font-serif text-xs text-[#80705E] shrink-0 font-medium">
+                          <span className="border border-[#DED1C0] bg-[#F4ECE1] px-2 py-1 font-sans text-[9px] font-semibold text-[#6C5B4A]">
                             {place.distance}
                           </span>
                         )}
                       </div>
+
+                      <div className="mt-5 flex flex-wrap items-center gap-2">
+                        <h3 className="font-serif text-xl font-bold leading-tight text-[#1F1914]">
+                          {place.name}
+                        </h3>
+                        {place.type && (
+                          <span className="border border-[#DFCDB7] bg-[#EFE4D2] px-2 py-0.5 font-sans text-[9px] font-semibold uppercase tracking-[0.08em] text-[#6E5D4B]">
+                            {getPlaceTypeLabel(place.type, lang)}
+                          </span>
+                        )}
+                      </div>
+
                       {place.note && (
-                        <p className="font-prose text-xs sm:text-sm text-[#42372A] leading-relaxed">
+                        <p className="mt-3 font-prose text-[15px] leading-[1.68] text-[#473A2E]">
                           {place.note}
                         </p>
                       )}
+
                       {place.url && (
-                        <div className="pt-1">
-                          <a
-                            href={place.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-xs font-serif font-medium text-[#8A4526] hover:underline"
-                          >
-                            <span>{t('Detaylı Bilgi', 'Details & Links')}</span>
-                            <ArrowSquareOut size={13} weight="regular" />
-                          </a>
-                        </div>
+                        <a
+                          href={place.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-auto inline-flex items-center gap-1.5 pt-5 font-sans text-[10px] font-semibold text-[#8A4526] hover:underline"
+                        >
+                          {t('Detaylı bilgi', 'Details & Links')}
+                          <ArrowSquareOut size={13} />
+                        </a>
                       )}
-                    </div>
+                    </article>
                   ))}
                 </div>
               </section>
@@ -1053,10 +1173,47 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 
             {/* 11. Sources / Bibliography */}
             {hasSources && (
-              <section id="section-sources" data-monograph-section="sources" className="scroll-mt-24 space-y-5 border-t border-[#E8DFC8] pt-6">
-                <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] pb-2">
-                  {t('Kaynakça & Yayınlar', 'Sources & Bibliography')}
-                </h2>
+              <section id="section-sources" data-monograph-section="sources" className="scroll-mt-24 space-y-6 border-t border-[#E8DFC8] pt-7">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <div className="font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-[#9A765C]">
+                      {t('Araştırma Aparatı', 'Research Apparatus')}
+                    </div>
+                    <h2 className="mt-1 flex items-center gap-2 font-serif text-xl font-bold tracking-tight text-[#1A1510] sm:text-2xl">
+                      <Books size={24} className="text-[#8A4526]" />
+                      {t('Kaynakça & Yayınlar', 'Sources & Bibliography')}
+                    </h2>
+                  </div>
+
+                  <div className="grid grid-cols-3 border border-[#E0D4C4] bg-[#F8F2E9]">
+                    <div className="min-w-[82px] border-r border-[#E0D4C4] px-3 py-2 text-center">
+                      <div className="font-mono text-sm font-bold text-[#2A211A]">{settlement.sources.length}</div>
+                      <div className="mt-0.5 font-sans text-[8px] font-bold uppercase tracking-[0.12em] text-[#8E7B67]">
+                        {t('Kaynak', 'Sources')}
+                      </div>
+                    </div>
+                    <div className="min-w-[82px] border-r border-[#E0D4C4] px-3 py-2 text-center">
+                      <div className="font-mono text-sm font-bold text-[#2A211A]">{sourceDoiCount}</div>
+                      <div className="mt-0.5 font-sans text-[8px] font-bold uppercase tracking-[0.12em] text-[#8E7B67]">
+                        DOI
+                      </div>
+                    </div>
+                    <div className="min-w-[82px] px-3 py-2 text-center">
+                      <div className="font-mono text-sm font-bold text-[#2A211A]">{sourcePdfCount}</div>
+                      <div className="mt-0.5 font-sans text-[8px] font-bold uppercase tracking-[0.12em] text-[#8E7B67]">
+                        PDF
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="border-l-2 border-[#D0B79F] pl-4 font-prose text-sm leading-relaxed text-[#6B5B4B]">
+                  {t(
+                    `Toplam ${settlement.sources.length} bibliyografik kaydın ${sourceLinkedCount} tanesi çevrim içi bir kaynağa, DOI kaydına veya PDF belgesine bağlanmaktadır.`,
+                    `${sourceLinkedCount} of ${settlement.sources.length} bibliographic records include an online source, DOI record, or PDF document.`
+                  )}
+                </div>
+
                 <Sources sources={settlement.sources} />
               </section>
             )}

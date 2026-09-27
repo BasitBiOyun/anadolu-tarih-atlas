@@ -284,7 +284,7 @@ export const SettlementMiniMap: React.FC<SettlementMiniMapProps> = ({
       )}
 
       {/* Embedded Map Container */}
-      <div className="relative h-[190px] sm:h-[205px] w-full overflow-hidden border border-[#D8CEBE] bg-[#DFE9E6] shadow-xs select-none">
+      <div className="relative h-[250px] w-full overflow-hidden border border-[#D8CEBE] bg-[#DFE9E6] shadow-[0_18px_40px_-34px_rgba(35,27,20,0.65)] select-none sm:h-[280px]">
         {/* Subtle decorative corner label */}
         <div className="absolute top-2 left-2 z-10 pointer-events-none px-2 py-0.5 bg-[#FAF7F2]/90 backdrop-blur-xs border border-[#D5C9B5] text-[10px] font-serif text-[#695B4A]">
           {settlement.province} / {settlement.district}
@@ -326,11 +326,11 @@ export const SettlementMiniMap: React.FC<SettlementMiniMapProps> = ({
         )}
 
         {/* Action Buttons: "Ana haritada göster" + External map + Copy coordinates */}
-        <div className="flex flex-wrap items-center gap-2 pt-1">
+        <div className="grid grid-cols-1 gap-2 pt-1 sm:grid-cols-3">
           <button
             type="button"
             onClick={() => onShowOnMainMap(settlement)}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#8A4526] hover:bg-[#70361C] text-[#FAF7F2] font-serif text-xs font-medium shadow-xs transition-colors cursor-pointer"
+            className="inline-flex min-h-10 items-center justify-center gap-1.5 bg-[#8A4526] px-3 py-2 text-[#FAF7F2] font-serif text-xs font-medium shadow-xs transition-colors hover:bg-[#70361C] cursor-pointer"
           >
             <Compass size={14} weight="regular" />
             <span>{t('Ana haritada göster', 'Show on main map')}</span>
@@ -340,7 +340,7 @@ export const SettlementMiniMap: React.FC<SettlementMiniMapProps> = ({
             href={externalMapUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 px-2.5 py-1.5 border border-[#D5C9B5] bg-[#FAF7F2] hover:bg-white text-[#57493A] font-serif text-xs transition-colors cursor-pointer"
+            className="inline-flex min-h-10 items-center justify-center gap-1.5 border border-[#D5C9B5] bg-[#FAF7F2] px-3 py-2 text-[#57493A] font-serif text-xs transition-colors hover:bg-white cursor-pointer"
             title={t('Google Haritalar üzerinde aç', 'Open on Google Maps')}
           >
             <ArrowSquareOut size={13} weight="regular" />
@@ -350,7 +350,7 @@ export const SettlementMiniMap: React.FC<SettlementMiniMapProps> = ({
           <button
             type="button"
             onClick={handleCopyCoords}
-            className="inline-flex items-center gap-1 px-2.5 py-1.5 border border-[#D5C9B5] bg-[#FAF7F2] hover:bg-white text-[#57493A] font-serif text-xs transition-colors cursor-pointer"
+            className="inline-flex min-h-10 items-center justify-center gap-1.5 border border-[#D5C9B5] bg-[#FAF7F2] px-3 py-2 text-[#57493A] font-serif text-xs transition-colors hover:bg-white cursor-pointer"
             title={t('Koordinatları kopyalamak için tıklayın', 'Click to copy coordinates')}
           >
             {copiedCoords ? (
