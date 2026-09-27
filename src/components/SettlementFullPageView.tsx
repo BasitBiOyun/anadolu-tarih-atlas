@@ -652,49 +652,111 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 
             {/* 5. Excavation History */}
             {(hasHistory || hasCurrentStatus) && (
-              <section id="section-history" data-monograph-section="history" className="max-w-[840px] scroll-mt-24 space-y-5">
-                <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
-                  {t('Araştırma / Kazı Tarihi', 'Research / Excavation History')}
-                </h2>
-                <div className="space-y-3.5">
-                  {Array.isArray(settlement.excavationHistory) ? (
-                    settlement.excavationHistory.map((paragraph, idx) => (
-                      <RichParagraphRenderer
-                        key={idx}
-                        item={paragraph}
-                        className="font-prose text-[17px] sm:text-[18px] leading-[1.75] text-[#2E251D]"
-                        titleClassName="font-serif font-bold text-base text-[#1C1712]"
-                      />
-                    ))
-                  ) : (
-                    <RichParagraphRenderer
-                      item={settlement.excavationHistory}
-                      className="font-prose text-[17px] sm:text-[18px] leading-[1.75] text-[#2E251D]"
-                    />
+              <section id="section-history" data-monograph-section="history" className="scroll-mt-24 space-y-6">
+                <div className="flex flex-col gap-3 border-b border-[#E2D8C7] pb-3 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <div className="font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-[#9A765C]">
+                      {t('Araştırma Tarihi', 'Research History')}
+                    </div>
+                    <h2 className="mt-1 flex items-center gap-2 font-serif text-xl font-bold tracking-tight text-[#1A1510] sm:text-2xl">
+                      <BookOpen size={24} className="text-[#8A4526]" />
+                      {t('Araştırma / Kazı Tarihi', 'Research / Excavation History')}
+                    </h2>
+                  </div>
+
+                  {Array.isArray(settlement.excavationHistory) && settlement.excavationHistory.length > 0 && (
+                    <div className="font-mono text-[10px] text-[#8F7D69]">
+                      {settlement.excavationHistory.length} {t('araştırma kaydı', 'research records')}
+                    </div>
                   )}
                 </div>
 
-                {/* Current Status */}
-                {hasCurrentStatus && (
-                  <div className="p-3.5 bg-[#FAF7F0] border-l-3 border-[#8A4526] text-sm font-sans text-[#5C4D3D] flex flex-col gap-1.5">
-                    <span className="font-serif font-bold text-[#332A21]">
-                      {t('Güncel Durum:', 'Current Status:')}
-                    </span>
-                    <div className="space-y-1.5">
-                      {Array.isArray(settlement.currentStatus) ? (
-                        settlement.currentStatus.map((item, idx) => (
-                          <RichParagraphRenderer
+                {hasHistory && (
+                  <div className="relative">
+                    <div
+                      className="absolute bottom-8 left-[21px] top-8 hidden w-px bg-[#D9CCBA] sm:block"
+                      aria-hidden="true"
+                    />
+
+                    <div className="space-y-4">
+                      {(Array.isArray(settlement.excavationHistory)
+                        ? settlement.excavationHistory
+                        : [settlement.excavationHistory]
+                      ).map((item, idx) => {
+                        const isRich = typeof item === 'object' && item !== null;
+                        const itemTitle = isRich
+                          ? (item.title || item.topic)
+                          : null;
+                        const itemText = isRich
+                          ? (item.text || item.scholarlyDebate || item.consensus || item.evidence)
+                          : item;
+                        const itemSources = isRich
+                          ? (item.sourceIds || item.citations)
+                          : undefined;
+
+                        return (
+                          <article
                             key={idx}
-                            item={item}
-                            className="font-prose text-sm text-[#524436] leading-relaxed"
-                          />
-                        ))
-                      ) : (
-                        <RichParagraphRenderer
-                          item={settlement.currentStatus}
-                          className="font-prose text-sm text-[#524436] leading-relaxed"
-                        />
-                      )}
+                            className="relative grid gap-4 border border-[#DDD0BE] bg-[#FCF9F3] p-5 shadow-[0_16px_34px_-30px_rgba(35,27,20,0.65)] sm:grid-cols-[44px_minmax(0,1fr)] sm:gap-5 sm:p-6"
+                          >
+                            <div className="relative z-10 flex h-11 w-11 items-center justify-center border border-[#D3C3AF] bg-[#F1E6D8] font-mono text-[10px] font-bold text-[#8A4526]">
+                              {String(idx + 1).padStart(2, '0')}
+                            </div>
+
+                            <div className="min-w-0">
+                              <div className="font-sans text-[9px] font-bold uppercase tracking-[0.14em] text-[#9A765C]">
+                                {t('Araştırma Evresi', 'Research Phase')}
+                              </div>
+
+                              {itemTitle && (
+                                <h3 className="mt-1 font-serif text-lg font-bold leading-tight text-[#211A14] sm:text-xl">
+                                  {itemTitle}
+                                </h3>
+                              )}
+
+                              {itemText && (
+                                <p className="mt-2 font-prose text-[16px] leading-[1.75] text-[#43372C] sm:text-[17px]">
+                                  {itemText}
+                                  <CitationRefs sourceIds={itemSources} />
+                                </p>
+                              )}
+                            </div>
+                          </article>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {hasCurrentStatus && (
+                  <div className="border border-[#D6C8B5] bg-[#F4EBDD] shadow-[0_16px_34px_-30px_rgba(35,27,20,0.65)]">
+                    <div className="grid gap-4 p-5 sm:grid-cols-[44px_minmax(0,1fr)] sm:gap-5 sm:p-6">
+                      <div className="flex h-11 w-11 items-center justify-center border border-[#C8B69E] bg-[#FFF9F0] text-[#8A4526]">
+                        <Info size={20} />
+                      </div>
+
+                      <div>
+                        <div className="font-sans text-[9px] font-bold uppercase tracking-[0.14em] text-[#9A765C]">
+                          {t('Bugünkü Durum', 'Current Research Status')}
+                        </div>
+                        <h3 className="mt-1 font-serif text-lg font-bold text-[#2B231B]">
+                          {t('Güncel araştırma ve koruma durumu', 'Current research and conservation status')}
+                        </h3>
+
+                        <div className="mt-3 space-y-3">
+                          {(Array.isArray(settlement.currentStatus)
+                            ? settlement.currentStatus
+                            : [settlement.currentStatus]
+                          ).map((item, idx) => (
+                            <RichParagraphRenderer
+                              key={idx}
+                              item={item}
+                              className="font-prose text-[15px] leading-[1.72] text-[#514335] sm:text-base"
+                              titleClassName="font-serif text-base font-bold text-[#332A21]"
+                            />
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 )}
@@ -1126,47 +1188,86 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 
             {/* 10. Participation & Programs */}
             {hasParticipation && settlement.participation && settlement.participation.length > 0 && (
-              <section id="section-participation" data-monograph-section="participation" className="scroll-mt-24 space-y-5">
-                <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
-                  {t('Katılım & Gönüllülük Programları', 'Participation & Volunteer Programmes')}
-                </h2>
-                <div className="space-y-3">
+              <section id="section-participation" data-monograph-section="participation" className="scroll-mt-24 space-y-6">
+                <div className="flex flex-col gap-3 border-b border-[#E2D8C7] pb-3 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <div className="font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-[#9A765C]">
+                      {t('Saha Katılımı', 'Field Participation')}
+                    </div>
+                    <h2 className="mt-1 font-serif text-xl font-bold tracking-tight text-[#1A1510] sm:text-2xl">
+                      {t('Katılım & Gönüllülük Programları', 'Participation & Volunteer Programmes')}
+                    </h2>
+                  </div>
+
+                  <div className="font-mono text-[10px] text-[#8F7D69]">
+                    {settlement.participation.length} {t('program', 'programmes')}
+                  </div>
+                </div>
+
+                <div className="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2">
                   {settlement.participation.map((item, idx) => (
-                    <div key={idx} className="p-4 bg-[#FAF7F0] border border-[#E5DAC8] space-y-2">
-                      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1.5">
-                        <span className="font-serif font-bold text-sm sm:text-base text-[#1F1914]">{item.title}</span>
+                    <article
+                      key={idx}
+                      className="flex h-full min-h-[230px] flex-col border border-[#DDD0BE] bg-[#FCF9F3] p-5 shadow-[0_16px_34px_-30px_rgba(35,27,20,0.65)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#C8B69F] hover:shadow-[0_22px_42px_-30px_rgba(35,27,20,0.6)] sm:p-6"
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <span className="font-mono text-[10px] font-semibold tracking-[0.14em] text-[#A18C77]">
+                          {String(idx + 1).padStart(2, '0')}
+                        </span>
+
                         {item.status && (
-                          <span className="text-xs font-sans font-medium px-2.5 py-0.5 bg-[#E8DDD0] text-[#5C4D3D] self-start sm:self-auto">
+                          <span className="border border-[#D8C9B5] bg-[#F2E8DB] px-2.5 py-1 font-sans text-[9px] font-bold uppercase tracking-[0.08em] text-[#6E5B49]">
                             {item.status}
                           </span>
                         )}
                       </div>
+
+                      <h3 className="mt-5 font-serif text-xl font-bold leading-tight text-[#1F1914] sm:text-2xl">
+                        {item.title}
+                      </h3>
+
                       {item.period && (
-                        <div className="text-xs sm:text-sm font-serif text-[#8A4526]">
-                          <span className="font-medium">{t('Dönem: ', 'Season / Period: ')}</span>
-                          <span>{item.period}</span>
+                        <div className="mt-3 flex items-center gap-2 border-l-2 border-[#8A4526] pl-3">
+                          <CalendarBlank size={15} className="shrink-0 text-[#8A4526]" />
+                          <div>
+                            <div className="font-sans text-[8px] font-bold uppercase tracking-[0.12em] text-[#9A765C]">
+                              {t('Dönem / Sezon', 'Season / Period')}
+                            </div>
+                            <div className="mt-0.5 font-serif text-sm font-semibold text-[#5A493A]">
+                              {item.period}
+                            </div>
+                          </div>
                         </div>
                       )}
+
                       {item.note && (
-                        <p className="font-prose text-sm text-[#42372A] leading-relaxed">
+                        <p className="mt-4 font-prose text-[15px] leading-[1.7] text-[#473A2E] sm:text-base">
                           {item.note}
                         </p>
                       )}
+
                       {item.url && (
-                        <div className="pt-1">
-                          <a
-                            href={item.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-xs font-serif font-medium text-[#8A4526] hover:underline"
-                          >
-                            <span>{t('Başvuru & Detay (GönüllüyüzBiz)', 'Application & Details')}</span>
-                            <ArrowSquareOut size={13} weight="regular" />
-                          </a>
-                        </div>
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-auto inline-flex items-center justify-between gap-3 border-t border-[#E6DCCD] pt-5 font-sans text-[10px] font-semibold text-[#8A4526] hover:text-[#5F2D18]"
+                        >
+                          <span>{t('Program ayrıntılarını aç', 'Open programme details')}</span>
+                          <ArrowSquareOut size={14} />
+                        </a>
                       )}
-                    </div>
+                    </article>
                   ))}
+                </div>
+
+                <div className="border-l-2 border-[#D0B79F] bg-[#F8F2E9] px-5 py-4">
+                  <p className="font-prose text-sm leading-relaxed text-[#655646]">
+                    {t(
+                      'Katılım programlarının dönem, kontenjan ve başvuru koşulları değişebilir. Varsa bağlantılı resmî sayfa üzerinden güncel ayrıntıları doğrulayın.',
+                      'Participation periods, capacity and application requirements may change. When available, verify current details through the linked official page.'
+                    )}
+                  </p>
                 </div>
               </section>
             )}
