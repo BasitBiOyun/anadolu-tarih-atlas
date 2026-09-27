@@ -19,7 +19,6 @@ import { AtlasMap } from './components/AtlasMap';
 import { SettlementPanel, DetailLoadStatus } from './components/SettlementPanel';
 import { SettlementFullPageView } from './components/SettlementFullPageView';
 import { AboutModal } from './components/AboutModal';
-import { ResearchPipelineModal } from './components/ResearchPipelineModal';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 
 function AtlasApp() {
@@ -51,7 +50,6 @@ function AtlasApp() {
 
   // Modals
   const [aboutModalOpen, setAboutModalOpen] = useState(false);
-  const [pipelineModalOpen, setPipelineModalOpen] = useState(false);
 
   // Keep HTML document title & language tag synced
   useEffect(() => {
@@ -231,8 +229,6 @@ function AtlasApp() {
       if (e.key === 'Escape') {
         if (aboutModalOpen) {
           setAboutModalOpen(false);
-        } else if (pipelineModalOpen) {
-          setPipelineModalOpen(false);
         } else if (isFullScreenView) {
           setIsFullScreenView(false);
         } else if (isPanelOpen) {
@@ -242,7 +238,7 @@ function AtlasApp() {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [aboutModalOpen, pipelineModalOpen, isFullScreenView, isPanelOpen, handleClosePanel]);
+  }, [aboutModalOpen, isFullScreenView, isPanelOpen, handleClosePanel]);
 
   return (
     <div className="relative w-screen h-screen flex flex-col overflow-hidden bg-[#FAF6EE] text-[#24211D]">
@@ -259,7 +255,6 @@ function AtlasApp() {
         totalCount={allSettlements.length}
         filteredCount={filteredSettlements.length}
         onOpenAboutModal={() => setAboutModalOpen(true)}
-        onOpenPipelineModal={() => setPipelineModalOpen(true)}
       />
 
       {/* Main Map Viewport */}
@@ -320,13 +315,6 @@ function AtlasApp() {
       <AboutModal
         isOpen={aboutModalOpen}
         onClose={() => setAboutModalOpen(false)}
-      />
-
-      {/* Firebase Research Pipeline Modal (Firestore sites_index, research_queue, research_jobs) */}
-      <ResearchPipelineModal
-        isOpen={pipelineModalOpen}
-        onClose={() => setPipelineModalOpen(false)}
-        indexedCount={allSettlements.length}
       />
     </div>
   );
