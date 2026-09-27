@@ -316,6 +316,8 @@ function AtlasApp() {
       <AboutModal
         isOpen={aboutModalOpen}
         onClose={() => setAboutModalOpen(false)}
+        siteCount={allSettlements.length}
+        periodCount={CHRONOLOGICAL_PERIOD_IDS.length}
       />
     </div>
   );

@@ -131,11 +131,11 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               type="button"
               onClick={onOpenAboutModal}
-              className="inline-flex w-[128px] shrink-0 items-center justify-center gap-1.5 border border-[#D9CEBC] bg-[#F4EFE6] py-2 font-serif text-xs text-[#4A3F33] transition-colors hover:bg-[#EAE2D3] hover:text-[#1A1510]"
-              title={t('Atlas Metodolojisi ve Hakkında', 'Atlas Methodology and About')}
+              className="inline-flex w-[118px] shrink-0 items-center justify-center gap-1.5 border border-[#D9CEBC] bg-[#F4EFE6] py-2 font-serif text-xs text-[#4A3F33] transition-colors hover:bg-[#EAE2D3] hover:text-[#1A1510]"
+              title={t('Atlas rehberi ve metodoloji', 'Atlas guide and methodology')}
             >
               <Info size={16} weight="regular" className="text-[#8A4526]" />
-              <span>{t('Atlas Hakkında', 'About Atlas')}</span>
+              <span>{t('Atlas Rehberi', 'Atlas Guide')}</span>
             </button>
           </div>
         </div>
