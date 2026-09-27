@@ -45,11 +45,6 @@ export const Sources: React.FC<SourcesProps> = ({ sources }) => {
               <div className="flex items-start justify-between gap-2">
                 <div className="space-y-0.5">
                   <div className="text-[#211B15] font-serif text-[13px] leading-snug">
-                    {(src.id || src.citationKey) && (
-                      <span className="inline-block px-1.5 py-0.5 mr-1.5 text-[10px] font-mono font-semibold bg-[#EAE0D0] text-[#635342] border border-[#D8CABE] rounded-2xs align-middle">
-                        [{src.id || src.citationKey}]
-                      </span>
-                    )}
                     <span className="font-semibold">{authorText}</span>
                     {src.year ? ` (${src.year}). ` : '. '}
                     <span className="italic text-[#3D3327]">"{src.title}"</span>
