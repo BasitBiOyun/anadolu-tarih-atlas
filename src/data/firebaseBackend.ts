@@ -4,36 +4,6 @@ import { IndexSettlement, SiteDetail } from '../types/settlement';
 
 export { STORAGE_SITES_PATH };
 
-export interface ResearchQueueDoc {
-  id: string;
-  siteId: string;
-  siteName: { tr: string; en: string };
-  priority: 'low' | 'normal' | 'high' | 'urgent';
-  status: 'pending' | 'in_progress' | 'completed' | 'failed';
-  targetTopics: string[];
-  notes?: string;
-  requestedBy?: string;
-  createdAt: string;
-  updatedAt: string;
-}
-
-export interface ResearchJobDoc {
-  id: string;
-  siteId: string;
-  siteName: string;
-  status: 'queued' | 'running' | 'completed' | 'failed';
-  progress: number;
-  step: string;
-  logs: Array<{
-    timestamp: string;
-    level: 'info' | 'warn' | 'success' | 'error';
-    message: string;
-  }>;
-  resultSummary?: string;
-  startedAt: string;
-  completedAt?: string;
-}
-
 /**
  * Fetches all index records from Firestore collection 'sites_index'.
  */
@@ -85,36 +55,3 @@ export async function fetchSiteDetailFromStorage(cleanId: string): Promise<SiteD
     window.clearTimeout(timeoutId);
   }
 }
-
-/**
- * Retrieves the live research queue from Firestore.
- */
-export async function getResearchQueue(): Promise<ResearchQueueDoc[]> {
-  try {
-    const queueRef = collection(db, 'research_queue');
-    const snap = await getDocs(queueRef);
-    const list: ResearchQueueDoc[] = [];
-    snap.forEach(d => list.push({ ...d.data(), id: d.id } as ResearchQueueDoc));
-    return list;
-  } catch (err) {
-    console.error('Error fetching research_queue:', err);
-    return [];
-  }
-}
-
-/**
- * Retrieves research jobs from Firestore.
- */
-export async function getResearchJobs(): Promise<ResearchJobDoc[]> {
-  try {
-    const jobsRef = collection(db, 'research_jobs');
-    const snap = await getDocs(jobsRef);
-    const list: ResearchJobDoc[] = [];
-    snap.forEach(d => list.push({ ...d.data(), id: d.id } as ResearchJobDoc));
-    return list;
-  } catch (err) {
-    console.error('Error fetching research_jobs:', err);
-    return [];
-  }
-}
-
