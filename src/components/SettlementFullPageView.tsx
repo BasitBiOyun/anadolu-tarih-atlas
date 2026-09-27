@@ -26,7 +26,8 @@ import {
   NavigationArrow,
   Buildings,
   Books,
-  Compass
+  Compass,
+  ArrowUp
 } from '@phosphor-icons/react';
 import { DetailLoadStatus } from './SettlementPanel';
 
@@ -64,6 +65,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 }) => {
   const { lang, t } = useLanguage();
   const [activeSection, setActiveSection] = useState('overview');
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     if (!settlement?.isLoadedDetail) return;
@@ -91,6 +93,37 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
     return () => observer.disconnect();
   }, [settlement?.id, settlement?.isLoadedDetail, lang]);
 
+  useEffect(() => {
+    if (!settlement?.isLoadedDetail) return;
+    const root = document.querySelector<HTMLElement>('[data-monograph-scroll]');
+    if (!root) return;
+
+    const updateProgress = () => {
+      const maxScroll = root.scrollHeight - root.clientHeight;
+      setScrollProgress(maxScroll > 0 ? Math.min(1, Math.max(0, root.scrollTop / maxScroll)) : 0);
+    };
+
+    updateProgress();
+    root.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    return () => {
+      root.removeEventListener('scroll', updateProgress);
+      window.removeEventListener('resize', updateProgress);
+    };
+  }, [settlement?.id, settlement?.isLoadedDetail]);
+
+  useEffect(() => {
+    if (!settlement?.isLoadedDetail) return;
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      if (document.querySelector('[data-gallery-lightbox="true"]')) return;
+      onBackToMap();
+    };
+
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [settlement?.id, settlement?.isLoadedDetail, onBackToMap]);
+
   // Handle loading, errors, or unmigrated/index-only settlement before full monograph load
   if (!settlement || isLoading || status === 'loading' || status === 'error' || status === 'not_found' || !settlement.isLoadedDetail) {
     return (
@@ -100,10 +133,10 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
         aria-label={t('Detaylar Yükleniyor', 'Loading Details')}
         className="fixed inset-0 z-50 flex flex-col bg-[#F9F5EC] text-[#241F1A] overflow-hidden"
       >
-        <header className="shrink-0 h-16 px-4 sm:px-8 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E2D8C7] flex items-center justify-between gap-4 z-20 shadow-xs">
+        <header className="relative z-30 flex h-14 shrink-0 items-center justify-between gap-3 border-b border-[#E2D8C7] bg-[#FAF7F2]/95 px-3 shadow-xs backdrop-blur-md sm:h-16 sm:px-6 lg:px-8">
           <button
             onClick={onBackToMap}
-            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 text-sm font-serif font-semibold text-[#1A1510] bg-[#ECE2D0] hover:bg-[#DFCDB4] border border-[#D5C2A4] transition-all cursor-pointer shadow-xs active:scale-98"
+            className="inline-flex min-h-10 items-center gap-2 border border-[#D5C2A4] bg-[#ECE2D0] px-3 py-1.5 font-serif text-sm font-semibold text-[#1A1510] shadow-xs transition-all hover:bg-[#DFCDB4] active:scale-98 focus-visible:ring-2 focus-visible:ring-[#8A4526]/35 focus-visible:ring-offset-2 sm:px-4"
             aria-label={t('Haritaya Geri Dön', 'Back to Map')}
           >
             <ArrowLeft size={18} weight="bold" className="text-[#8A4526]" />
@@ -259,6 +292,13 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
     });
   };
 
+  const scrollToTop = () => {
+    document.querySelector<HTMLElement>('[data-monograph-scroll]')?.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div
       role="dialog"
@@ -282,17 +322,17 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
           <div className="h-5 w-px bg-[#D5C2A4] hidden sm:block" />
 
           {/* Quick Breadcrumb in header */}
-          <div className="min-w-0 truncate hidden md:flex items-center gap-2 text-xs font-serif text-[#786A59]">
-            <span>{settlement.province}</span>
-            {settlement.district && <span>· {settlement.district}</span>}
-            <span>·</span>
-            <span className="font-semibold text-[#1A1510] truncate">{settlement.name}</span>
+          <div className="min-w-0 items-center gap-2 truncate font-serif text-xs text-[#786A59] sm:flex">
+            <span className="hidden md:inline">{settlement.province}</span>
+            {settlement.district && <span className="hidden md:inline">· {settlement.district}</span>}
+            <span className="hidden md:inline">·</span>
+            <span className="truncate font-semibold text-[#1A1510]">{settlement.name}</span>
           </div>
         </div>
 
         <div className="flex items-center gap-2">
           {settlement.siteType && (
-            <span className="inline-flex items-center px-2.5 py-1 text-xs font-serif font-bold uppercase tracking-wider bg-[#F4E9DF] text-[#8A4526] border border-[#E8D4C4]">
+            <span className="hidden items-center border border-[#E8D4C4] bg-[#F4E9DF] px-2.5 py-1 font-serif text-xs font-bold uppercase tracking-wider text-[#8A4526] lg:inline-flex">
               {Array.isArray(settlement.siteType)
                 ? settlement.siteType.join(', ')
                 : settlement.siteType}
@@ -301,17 +341,23 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
 
           <button
             onClick={onBackToMap}
-            className="p-2 text-[#736554] hover:text-[#1A1510] hover:bg-[#EFE7D8] transition-colors rounded-none"
+            className="flex h-10 w-10 items-center justify-center text-[#736554] transition-colors hover:bg-[#EFE7D8] hover:text-[#1A1510] focus-visible:ring-2 focus-visible:ring-[#8A4526]/35 focus-visible:ring-offset-2"
             title={t('Kapat ve Haritaya Dön (Esc)', 'Close and Back to Map (Esc)')}
             aria-label={t('Kapat ve Haritaya Dön', 'Close and Back to Map')}
           >
             <X size={22} weight="regular" />
           </button>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#E8DED0]" aria-hidden="true">
+          <div
+            className="h-full origin-left bg-[#8A4526] transition-transform duration-150 motion-reduce:transition-none"
+            style={{ transform: `scaleX(${scrollProgress})` }}
+          />
+        </div>
       </header>
 
       {/* Main Full-Page Editorial Reading Body */}
-      <main data-monograph-scroll className="flex-1 overflow-y-auto scroll-smooth">
+      <main data-monograph-scroll className="flex-1 overscroll-contain overflow-y-auto scroll-smooth">
           {/* Premium monograph hero */}
           <div className="mx-auto max-w-[1420px] px-4 pb-8 pt-8 sm:px-8 sm:pt-10">
             <div className="relative overflow-hidden border-y border-[#DCCFBC] bg-[#FCF9F3] px-5 py-7 shadow-[0_24px_60px_-48px_rgba(42,31,22,0.65)] sm:px-8 sm:py-9 lg:px-10">
@@ -370,8 +416,8 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                   </div>
                 </div>
 
-                <div className="grid min-h-[272px] grid-cols-2 grid-rows-2 border border-[#E1D6C6] bg-[#F8F2E9]">
-                  <div className="flex min-h-[136px] flex-col justify-between border-b border-r border-[#E1D6C6] p-4 sm:p-5">
+                <div className="grid grid-cols-1 border border-[#E1D6C6] bg-[#F8F2E9] sm:min-h-[272px] sm:grid-cols-2 sm:grid-rows-2">
+                  <div className="flex min-h-[108px] flex-col justify-between border-b border-[#E1D6C6] p-4 sm:min-h-[136px] sm:border-r sm:p-5">
                     <div className="font-sans text-[9px] font-semibold uppercase tracking-[0.14em] text-[#8C7A67] sm:text-[10px]">
                       {t('Tarih Aralığı', 'Date Range')}
                     </div>
@@ -379,7 +425,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                       {heroDateRange}
                     </div>
                   </div>
-                  <div className="flex min-h-[136px] flex-col justify-between border-b border-[#E1D6C6] p-4 sm:p-5">
+                  <div className="flex min-h-[108px] flex-col justify-between border-b border-[#E1D6C6] p-4 sm:min-h-[136px] sm:p-5">
                     <div className="font-sans text-[9px] font-semibold uppercase tracking-[0.14em] text-[#8C7A67] sm:text-[10px]">
                       {t('Alan Türü', 'Site Type')}
                     </div>
@@ -387,7 +433,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                       {Array.isArray(settlement.siteType) ? settlement.siteType.join(', ') : settlement.siteType}
                     </div>
                   </div>
-                  <div className="flex min-h-[136px] flex-col justify-between border-r border-[#E1D6C6] p-4 sm:p-5">
+                  <div className="flex min-h-[108px] flex-col justify-between border-b border-[#E1D6C6] p-4 sm:min-h-[136px] sm:border-b-0 sm:border-r sm:p-5">
                     <div className="font-sans text-[9px] font-semibold uppercase tracking-[0.14em] text-[#8C7A67] sm:text-[10px]">
                       {t('Dönem', 'Periods')}
                     </div>
@@ -395,7 +441,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                       {settlement.periods.length}
                     </div>
                   </div>
-                  <div className="flex min-h-[136px] flex-col justify-between p-4 sm:p-5">
+                  <div className="flex min-h-[108px] flex-col justify-between p-4 sm:min-h-[136px] sm:p-5">
                     <div className="font-sans text-[9px] font-semibold uppercase tracking-[0.14em] text-[#8C7A67] sm:text-[10px]">
                       {t('Akademik Kaynak', 'Academic Sources')}
                     </div>
@@ -417,7 +463,8 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                     key={item.id}
                     type="button"
                     onClick={() => scrollToSection(item.id)}
-                    className={`border px-3 py-1.5 font-sans text-[10px] font-semibold uppercase tracking-[0.08em] transition-colors ${
+                    aria-current={activeSection === item.id ? 'location' : undefined}
+                    className={`border px-3 py-1.5 focus-visible:ring-2 focus-visible:ring-[#8A4526]/35 focus-visible:ring-offset-1 font-sans text-[10px] font-semibold uppercase tracking-[0.08em] transition-colors ${
                       activeSection === item.id
                         ? 'border-[#8A4526] bg-[#8A4526] text-[#FFF9F1]'
                         : 'border-[#D8CBBB] bg-[#FCF9F3] text-[#6F6051]'
@@ -441,7 +488,8 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                         key={item.id}
                         type="button"
                         onClick={() => scrollToSection(item.id)}
-                        className={`group flex w-full items-center gap-3 border-l-2 px-4 py-2 text-left transition-all ${
+                        aria-current={activeSection === item.id ? 'location' : undefined}
+                        className={`group flex w-full items-center focus-visible:ring-2 focus-visible:ring-[#8A4526]/30 focus-visible:ring-inset gap-3 border-l-2 px-4 py-2 text-left transition-all ${
                           activeSection === item.id
                             ? '-ml-px border-[#8A4526] bg-[#F1E7DA] text-[#2A2018]'
                             : '-ml-px border-transparent text-[#786958] hover:bg-[#F6EFE5] hover:text-[#2A2018]'
@@ -1319,16 +1367,44 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
               </section>
             )}
 
-            {/* Bottom Back-to-Map Action Bar */}
-            <div className="pt-8 pb-12 text-center">
-              <button
-                onClick={onBackToMap}
-                className="inline-flex items-center gap-2.5 px-6 py-3 text-base font-serif font-bold text-[#FAF6EE] bg-[#8A4526] hover:bg-[#72371E] transition-all cursor-pointer shadow-md hover:shadow-lg active:scale-98"
-              >
-                <ArrowLeft size={20} weight="bold" />
-                <span>{t('Haritaya Geri Dön', 'Back to Map')}</span>
-              </button>
-            </div>
+            {/* Monograph end-cap */}
+            <footer className="pb-10 pt-10 sm:pb-14">
+              <div className="border-y border-[#DCCFBC] bg-[#F4EBDD] px-5 py-6 sm:px-7 sm:py-7">
+                <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="min-w-0">
+                    <div className="font-sans text-[9px] font-bold uppercase tracking-[0.16em] text-[#9A765C]">
+                      {t('Monografi Sonu', 'End of Monograph')}
+                    </div>
+                    <div className="mt-1 font-serif text-xl font-bold text-[#241C16] sm:text-2xl">
+                      {settlement.name}
+                    </div>
+                    <div className="mt-1 font-prose text-sm text-[#6B5A49]">
+                      {settlement.province}{settlement.district ? ` · ${settlement.district}` : ''}
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                    <button
+                      type="button"
+                      onClick={scrollToTop}
+                      className="inline-flex min-h-11 items-center justify-center gap-2 border border-[#D1C0AA] bg-[#FFF9F0] px-4 py-2.5 font-serif text-sm font-bold text-[#5C4B3B] transition-colors hover:bg-white focus-visible:ring-2 focus-visible:ring-[#8A4526]/35 focus-visible:ring-offset-2"
+                    >
+                      <ArrowUp size={17} weight="bold" />
+                      {t('Başa Dön', 'Back to Top')}
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={onBackToMap}
+                      className="inline-flex min-h-11 items-center justify-center gap-2 bg-[#8A4526] px-5 py-2.5 font-serif text-sm font-bold text-[#FFF9F1] shadow-sm transition-all hover:bg-[#72371E] active:scale-98 focus-visible:ring-2 focus-visible:ring-[#8A4526]/40 focus-visible:ring-offset-2"
+                    >
+                      <ArrowLeft size={18} weight="bold" />
+                      {t('Haritaya Dön', 'Back to Map')}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </footer>
                 </div>
               </CitationProvider>
             </div>

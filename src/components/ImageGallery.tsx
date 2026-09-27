@@ -36,6 +36,8 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images, settlementNa
   const [modalOpen, setModalOpen] = useState(false);
   const [zoom, setZoom] = useState(1);
   const touchStartX = useRef<number | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
 
   const currentImage = images?.[currentIndex];
   const previewImages = useMemo(() => images?.slice(0, 3) || [], [images]);
@@ -59,6 +61,13 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images, settlementNa
   useEffect(() => {
     if (!modalOpen) return;
 
+    previousFocusRef.current = document.activeElement instanceof HTMLElement
+      ? document.activeElement
+      : null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(() => closeButtonRef.current?.focus());
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setModalOpen(false);
       if (event.key === 'ArrowLeft' && images.length > 1) goPrevious();
@@ -72,7 +81,11 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images, settlementNa
     };
 
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+      previousFocusRef.current?.focus();
+    };
   }, [modalOpen, images.length]);
 
   if (!images?.length || !currentImage) {
@@ -125,7 +138,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images, settlementNa
                 ? 'aspect-[16/9]'
                 : isPrimary
                   ? 'aspect-[16/10] sm:row-span-2 sm:aspect-auto sm:min-h-[520px]'
-                  : 'aspect-[16/9] sm:aspect-auto sm:min-h-0'
+                  : 'hidden aspect-[16/9] sm:block sm:aspect-auto sm:min-h-0'
             ].join(' ');
 
             return (
@@ -226,6 +239,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images, settlementNa
 
       {modalOpen && (
         <div
+          data-gallery-lightbox="true"
           className="fixed inset-0 z-[120] flex flex-col bg-[#0D0B09]/96 text-white backdrop-blur-md"
           role="dialog"
           aria-modal="true"
@@ -253,7 +267,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images, settlementNa
               <div className="font-serif text-sm font-bold text-white sm:text-base">
                 {settlementName}
               </div>
-              <div className="mt-0.5 font-mono text-[10px] text-white/55 sm:text-[11px]">
+              <div aria-live="polite" className="mt-0.5 font-mono text-[10px] text-white/55 sm:text-[11px]">
                 {String(currentIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
                 <span className="mx-2">·</span>
                 {currentTypeLabel}
@@ -283,9 +297,10 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images, settlementNa
                 <MagnifyingGlassPlus size={17} />
               </button>
               <button
+                ref={closeButtonRef}
                 type="button"
                 onClick={() => setModalOpen(false)}
-                className="ml-1 flex h-9 w-9 items-center justify-center border border-white/10 text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+                className="ml-1 flex h-9 w-9 items-center justify-center border border-white/10 text-white/80 transition-colors hover:bg-white/10 hover:text-white focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D0B09]"
                 aria-label={t('Kapat', 'Close')}
               >
                 <X size={19} />
@@ -330,7 +345,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({ images, settlementNa
             </div>
 
             <aside
-              className="border-t border-white/10 bg-[#15110E] p-5 lg:border-l lg:border-t-0 lg:p-6"
+              className="max-h-[42vh] overflow-y-auto border-t border-white/10 bg-[#15110E] p-5 lg:max-h-none lg:border-l lg:border-t-0 lg:p-6"
               onClick={event => event.stopPropagation()}
             >
               <div className="font-sans text-[9px] font-bold uppercase tracking-[0.15em] text-[#C49370]">
