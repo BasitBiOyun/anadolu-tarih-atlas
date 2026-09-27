@@ -19,6 +19,7 @@ import { AtlasMap } from './components/AtlasMap';
 import { SettlementPanel, DetailLoadStatus } from './components/SettlementPanel';
 import { SettlementFullPageView } from './components/SettlementFullPageView';
 import { AboutModal } from './components/AboutModal';
+import { DeepTimeTimeline } from './components/DeepTimeTimeline';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -224,6 +225,12 @@ function AtlasApp() {
     });
   }, []);
 
+  const showDeepTimeTimeline =
+    !isLoadingIndex &&
+    !isPanelOpen &&
+    !isFullScreenView &&
+    !aboutModalOpen;
+
   // Global escape key handler to close panel / modal / fullscreen
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -275,6 +282,18 @@ function AtlasApp() {
             selectedSettlement={activeSettlement}
             onSelectSettlement={handleSelectSettlement}
             focusTarget={mapFocusTarget}
+            bottomUiInset={showDeepTimeTimeline}
+          />
+        )}
+
+        {showDeepTimeTimeline && (
+          <DeepTimeTimeline
+            selectedPeriods={selectedPeriods}
+            onSelectPeriods={handleSelectPeriods}
+            onSelectAll={handleSelectAllPeriods}
+            periodCounts={periodCounts}
+            filteredCount={filteredSettlements.length}
+            totalCount={allSettlements.length}
           />
         )}
 

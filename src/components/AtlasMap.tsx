@@ -29,6 +29,7 @@ interface AtlasMapProps {
   selectedSettlement: Settlement | null;
   onSelectSettlement: (settlement: Settlement) => void;
   focusTarget?: { center: [number, number]; zoom: number; timestamp: number } | null;
+  bottomUiInset?: boolean;
 }
 
 // Center of Anatolia in geographic coordinates [lng, lat]
@@ -197,7 +198,8 @@ export const AtlasMap: React.FC<AtlasMapProps> = ({
   settlements,
   selectedSettlement,
   onSelectSettlement,
-  focusTarget
+  focusTarget,
+  bottomUiInset = false
 }) => {
   const { lang, t } = useLanguage();
   const { theme } = useTheme();
@@ -1268,7 +1270,11 @@ export const AtlasMap: React.FC<AtlasMapProps> = ({
       )}
 
       {/* Cartographic Compass Rose & Scale Bar (Bottom-Left) */}
-      <div className="absolute bottom-5 left-5 z-20 pointer-events-none select-none flex flex-col items-center">
+      <div
+        className={`absolute left-5 z-20 pointer-events-none select-none flex flex-col items-center transition-[bottom] duration-200 ${
+          bottomUiInset ? 'bottom-[136px] sm:bottom-[142px]' : 'bottom-5'
+        }`}
+      >
         <div className="w-10 h-10 relative flex items-center justify-center bg-[#FAF7F2]/90 backdrop-blur-xs rounded-full border border-[#D9CEBC] shadow-xs">
           <svg viewBox="0 0 40 40" className="w-7 h-7">
             <circle cx="20" cy="20" r="17" fill="none" stroke="#C5B6A0" strokeWidth="0.75" />
