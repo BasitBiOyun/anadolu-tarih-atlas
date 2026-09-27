@@ -210,8 +210,8 @@ export const Timeline: React.FC<TimelineProps> = (props) => {
         </div>
       </div>
 
-      <div className="mt-5 grid grid-cols-3 gap-2 sm:gap-3">
-        <div className="border border-[#E7DDCD] bg-[#F8F2E9] px-3 py-3 sm:px-4">
+      <div className="mt-5 grid auto-rows-fr grid-cols-3 gap-2 sm:gap-3">
+        <div className="flex min-h-[72px] flex-col justify-between border border-[#E7DDCD] bg-[#F8F2E9] px-3 py-3 sm:min-h-[78px] sm:px-4">
           <div className="font-sans text-[9px] font-semibold uppercase tracking-[0.12em] text-[#897967] sm:text-[10px]">
             {t('Başlangıç', 'Start')}
           </div>
@@ -219,7 +219,7 @@ export const Timeline: React.FC<TimelineProps> = (props) => {
             {formatYear(sYear, lang)}
           </div>
         </div>
-        <div className="border border-[#E7DDCD] bg-[#F8F2E9] px-3 py-3 text-center sm:px-4">
+        <div className="flex min-h-[72px] flex-col justify-between border border-[#E7DDCD] bg-[#F8F2E9] px-3 py-3 text-center sm:min-h-[78px] sm:px-4">
           <div className="font-sans text-[9px] font-semibold uppercase tracking-[0.12em] text-[#897967] sm:text-[10px]">
             {t('Süre', 'Duration')}
           </div>
@@ -227,7 +227,7 @@ export const Timeline: React.FC<TimelineProps> = (props) => {
             {durationLabel.replace('≈ ', '')}
           </div>
         </div>
-        <div className="border border-[#E7DDCD] bg-[#F8F2E9] px-3 py-3 text-right sm:px-4">
+        <div className="flex min-h-[72px] flex-col justify-between border border-[#E7DDCD] bg-[#F8F2E9] px-3 py-3 text-right sm:min-h-[78px] sm:px-4">
           <div className="font-sans text-[9px] font-semibold uppercase tracking-[0.12em] text-[#897967] sm:text-[10px]">
             {t('Bitiş', 'End')}
           </div>
@@ -356,11 +356,11 @@ export const Timeline: React.FC<TimelineProps> = (props) => {
           <div className="mb-2 font-sans text-[10px] font-semibold uppercase tracking-[0.14em] text-[#8A7A68] sm:text-[11px]">
             {t('Evreler', 'Phases')}
           </div>
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid auto-rows-fr grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-5">
             {periodSegments.map((segment) => (
               <div
                 key={`legend-${segment.id}-${segment.startYear}-${segment.endYear}`}
-                className="flex items-center gap-3 border border-[#E4DACB] bg-[#FAF6EF] px-3.5 py-3"
+                className="flex min-h-[76px] items-center gap-3 border border-[#E4DACB] bg-[#FAF6EF] px-3.5 py-3"
               >
                 <span
                   className="h-9 w-1.5 shrink-0"

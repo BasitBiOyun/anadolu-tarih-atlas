@@ -300,7 +300,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
       {/* Main Full-Page Editorial Reading Body */}
       <main data-monograph-scroll className="flex-1 overflow-y-auto scroll-smooth">
           {/* Premium monograph hero */}
-          <div className="mx-auto max-w-[1240px] px-4 pb-8 pt-8 sm:px-8 sm:pt-10">
+          <div className="mx-auto max-w-[1420px] px-4 pb-8 pt-8 sm:px-8 sm:pt-10">
             <div className="relative overflow-hidden border-y border-[#DCCFBC] bg-[#FCF9F3] px-5 py-7 shadow-[0_24px_60px_-48px_rgba(42,31,22,0.65)] sm:px-8 sm:py-9 lg:px-10">
               <div
                 className="absolute inset-y-0 left-0 w-1.5"
@@ -357,8 +357,8 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 border border-[#E1D6C6] bg-[#F8F2E9]">
-                  <div className="border-b border-r border-[#E1D6C6] p-4 sm:p-5">
+                <div className="grid min-h-[272px] grid-cols-2 grid-rows-2 border border-[#E1D6C6] bg-[#F8F2E9]">
+                  <div className="flex min-h-[136px] flex-col justify-between border-b border-r border-[#E1D6C6] p-4 sm:p-5">
                     <div className="font-sans text-[9px] font-semibold uppercase tracking-[0.14em] text-[#8C7A67] sm:text-[10px]">
                       {t('Tarih Aralığı', 'Date Range')}
                     </div>
@@ -366,15 +366,15 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                       {heroDateRange}
                     </div>
                   </div>
-                  <div className="border-b border-[#E1D6C6] p-4 sm:p-5">
+                  <div className="flex min-h-[136px] flex-col justify-between border-b border-[#E1D6C6] p-4 sm:p-5">
                     <div className="font-sans text-[9px] font-semibold uppercase tracking-[0.14em] text-[#8C7A67] sm:text-[10px]">
                       {t('Alan Türü', 'Site Type')}
                     </div>
-                    <div className="mt-1.5 font-serif text-base font-bold leading-snug text-[#2A211A] sm:text-lg">
+                    <div className="mt-2 font-serif text-[15px] font-bold leading-[1.2] text-[#2A211A] sm:text-base">
                       {Array.isArray(settlement.siteType) ? settlement.siteType.join(', ') : settlement.siteType}
                     </div>
                   </div>
-                  <div className="border-r border-[#E1D6C6] p-4 sm:p-5">
+                  <div className="flex min-h-[136px] flex-col justify-between border-r border-[#E1D6C6] p-4 sm:p-5">
                     <div className="font-sans text-[9px] font-semibold uppercase tracking-[0.14em] text-[#8C7A67] sm:text-[10px]">
                       {t('Dönem', 'Periods')}
                     </div>
@@ -382,7 +382,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                       {settlement.periods.length}
                     </div>
                   </div>
-                  <div className="p-4 sm:p-5">
+                  <div className="flex min-h-[136px] flex-col justify-between p-4 sm:p-5">
                     <div className="font-sans text-[9px] font-semibold uppercase tracking-[0.14em] text-[#8C7A67] sm:text-[10px]">
                       {t('Akademik Kaynak', 'Academic Sources')}
                     </div>
@@ -396,7 +396,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
           </div>
 
           {/* Monograph reading layout */}
-          <div className="mx-auto max-w-[1280px] px-4 pb-10 sm:px-8">
+          <div className="mx-auto max-w-[1420px] px-4 pb-10 sm:px-8">
             <div className="sticky top-0 z-20 -mx-4 mb-8 overflow-x-auto border-y border-[#E2D7C7] bg-[#F9F5EC]/95 px-4 py-2 backdrop-blur-md lg:hidden">
               <div className="flex min-w-max gap-1.5">
                 {sectionNav.map((item, index) => (
@@ -416,7 +416,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
               </div>
             </div>
 
-            <div className="grid gap-10 lg:grid-cols-[190px_minmax(0,1fr)] xl:gap-14">
+            <div className="grid gap-10 lg:grid-cols-[200px_minmax(0,1fr)] xl:gap-12">
               <aside className="hidden lg:block">
                 <nav className="sticky top-6 border-l border-[#D9CCBA] py-2">
                   <div className="mb-3 pl-4 font-sans text-[10px] font-bold uppercase tracking-[0.16em] text-[#9A806B]">
@@ -501,10 +501,7 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
               </h2>
 
               {/* Wide visual chronology: breaks out of the prose column without widening body text */}
-              <div
-                className="relative left-1/2 -translate-x-1/2"
-                style={{ width: 'min(1180px, calc(100vw - 2rem))' }}
-              >
+              <div className="w-full">
                 <Timeline settlement={settlement} />
               </div>
 
@@ -602,11 +599,11 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                    <div className="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2">
                       {settlement.keyFinds.map((find, idx) => (
                         <article
                           key={idx}
-                          className="group relative overflow-hidden border border-[#DDD0BE] bg-[#FCF9F3] p-5 shadow-[0_16px_34px_-30px_rgba(35,27,20,0.7)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#C8B69F] hover:shadow-[0_22px_42px_-30px_rgba(35,27,20,0.6)] sm:p-6"
+                          className="group relative h-full overflow-hidden border border-[#DDD0BE] bg-[#FCF9F3] p-5 shadow-[0_16px_34px_-30px_rgba(35,27,20,0.7)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#C8B69F] hover:shadow-[0_22px_42px_-30px_rgba(35,27,20,0.6)] sm:p-6"
                         >
                           <div
                             className="absolute left-0 top-0 h-1 w-full opacity-85"
@@ -960,9 +957,9 @@ export const SettlementFullPageView: React.FC<SettlementFullPageViewProps> = ({
                 <h2 className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#1A1510] border-b border-[#E2D8C7] pb-2">
                   {t('Yakın Kültür Noktaları & Müzeler', 'Nearby Sites & Museums')}
                 </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div className="grid auto-rows-fr grid-cols-1 gap-3.5 sm:grid-cols-2">
                   {settlement.nearbyPlaces.map((place, idx) => (
-                    <div key={idx} className="p-4 bg-[#FAF7F0] border border-[#E5DAC8] space-y-1.5 shadow-xs">
+                    <div key={idx} className="h-full p-4 bg-[#FAF7F0] border border-[#E5DAC8] space-y-1.5 shadow-xs">
                       <div className="flex items-baseline justify-between gap-2">
                         <div className="flex items-center gap-1.5 flex-wrap">
                           <span className="font-serif font-bold text-sm sm:text-base text-[#1F1914]">{place.name}</span>
