@@ -8,8 +8,7 @@ import {
   limit,
   Timestamp
 } from 'firebase/firestore';
-import { ref, getDownloadURL, getBytes, uploadString } from 'firebase/storage';
-import { db, storage, STORAGE_SITES_PATH } from '../config/firebase';
+import { db, STORAGE_SITES_PATH } from '../config/firebase';
 import { IndexSettlement, SiteDetail } from '../types/settlement';
 
 export { STORAGE_SITES_PATH };
@@ -249,51 +248,26 @@ export async function seedInitialResearchCollections(): Promise<void> {
  * Returns null if the site is not present in Firebase Storage.
  */
 export async function fetchSiteDetailFromStorage(cleanId: string): Promise<SiteDetail | null> {
-  const storageFilePath = `${STORAGE_SITES_PATH}/${cleanId}.json`;
-  const storageRef = ref(storage, storageFilePath);
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), 10000);
 
-  // 1. Attempt client Firebase Storage SDK getBytes (standard SDK client buffer retrieval)
   try {
-    const buffer = await getBytes(storageRef);
-    if (buffer && buffer.byteLength > 0) {
-      const text = new TextDecoder('utf-8').decode(buffer);
-      const data: SiteDetail = JSON.parse(text);
-      if (data && data.id) {
-        return data;
-      }
-    }
-  } catch (bytesErr) {
-    // getBytes might fail if browser cross-origin policy prevents it
-  }
+    const response = await fetch(`/api/sites/${encodeURIComponent(cleanId)}`, {
+      method: 'GET',
+      headers: { Accept: 'application/json' },
+      signal: controller.signal
+    });
 
-  // 2. Attempt client Firebase Storage SDK getDownloadURL + HTTP fetch
-  try {
-    const downloadUrl = await getDownloadURL(storageRef);
-    const response = await fetch(downloadUrl);
-    if (response.ok) {
-      const data: SiteDetail = await response.json();
-      if (data && data.id) {
-        return data;
-      }
+    if (response.status === 404) return null;
+    if (!response.ok) {
+      throw new Error(`Site detail request failed with HTTP ${response.status}`);
     }
-  } catch (urlErr) {
-    // HTTP fetch might fail if browser CORS blocks firebasestorage.googleapis.com
-  }
 
-  // 3. Fallback: Query same-origin server endpoint which streams directly from Firebase Storage bucket
-  try {
-    const res = await fetch(`/api/sites/${cleanId}`);
-    if (res.ok) {
-      const data: SiteDetail = await res.json();
-      if (data && data.id) {
-        return data;
-      }
-    }
-  } catch (serverErr) {
-    console.warn(`[Firebase Storage] Storage streaming fallback failed for ${cleanId}:`, serverErr);
+    const data: SiteDetail = await response.json();
+    return data && data.id ? data : null;
+  } finally {
+    window.clearTimeout(timeoutId);
   }
-
-  return null;
 }
 
 /**
