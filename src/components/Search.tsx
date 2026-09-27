@@ -116,12 +116,6 @@ export const Search: React.FC<SearchProps> = ({
             const primaryPeriod = getPrimaryPeriod(settlement.periods);
             const periodColor = getPeriodColor(primaryPeriod);
 
-            // Alternate language name if different from primary localized name
-            const alternateLangName =
-              lang === 'tr'
-                ? settlement.nameEN !== settlement.nameTR ? settlement.nameEN : null
-                : settlement.nameTR !== settlement.nameEN ? settlement.nameTR : null;
-
             return (
               <div
                 key={settlement.id}
@@ -143,11 +137,6 @@ export const Search: React.FC<SearchProps> = ({
                       <span className="font-serif font-bold text-sm text-[#1C1712] leading-snug break-words">
                         {settlement.name}
                       </span>
-                      {alternateLangName && (
-                        <span className="font-serif italic text-xs text-[#7A6D5E]">
-                          ({alternateLangName})
-                        </span>
-                      )}
                     </div>
 
                     {/* Row 2: Location (Province / District) underneath in smaller text */}
