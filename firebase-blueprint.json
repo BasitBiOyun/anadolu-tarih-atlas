@@ -2,93 +2,207 @@
   "entities": {
     "sites_index": {
       "title": "Sites Index",
-      "description": "Lightweight index documents for archaeological and historical sites used for fast initial map rendering and multi-criteria search",
+      "description": "Lightweight public index for map rendering, search, filters and zoom visibility.",
       "type": "object",
       "properties": {
-        "id": { "type": "string", "description": "Unique slug identifier for the archaeological site" },
-        "file": { "type": "string", "description": "Storage path to detailed site JSON in atlas/sites/" },
-        "name": {
-          "type": "object",
-          "properties": {
-            "tr": { "type": "string" },
-            "en": { "type": "string" }
-          },
-          "required": ["tr", "en"]
+        "id": {
+          "type": "string"
+        },
+        "nameTR": {
+          "type": "string"
+        },
+        "nameEN": {
+          "type": "string"
+        },
+        "alternativeNamesTR": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "alternativeNamesEN": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "province": {
-          "type": "object",
-          "properties": {
-            "tr": { "type": "string" },
-            "en": { "type": "string" }
-          }
+          "type": "string"
         },
         "district": {
-          "type": "object",
-          "properties": {
-            "tr": { "type": "string" },
-            "en": { "type": "string" }
+          "type": "string"
+        },
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        },
+        "siteType": {
+          "type": "string"
+        },
+        "periodIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
           }
         },
-        "latitude": { "type": "number" },
-        "longitude": { "type": "number" },
-        "siteType": { "type": "string" },
-        "periods": {
-          "type": "array",
-          "items": { "type": "string" }
+        "startYear": {
+          "type": [
+            "number",
+            "null"
+          ]
         },
-        "startYear": { "type": "number" },
-        "endYear": { "type": "number" },
-        "importance": { "type": "number" },
-        "minZoom": { "type": "number" },
-        "featured": { "type": "boolean" }
+        "endYear": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "importance": {
+          "type": "number"
+        },
+        "minZoom": {
+          "type": "number"
+        },
+        "featured": {
+          "type": "boolean"
+        },
+        "storagePath": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
       },
-      "required": ["id", "name", "latitude", "longitude", "periods"]
+      "required": [
+        "id",
+        "nameTR",
+        "nameEN",
+        "latitude",
+        "longitude",
+        "periodIds",
+        "storagePath"
+      ]
     },
     "research_queue": {
       "title": "Research Queue",
-      "description": "Queued archaeological sites and topics awaiting deep monograph research, source validation, and radiocarbon alignment",
+      "description": "Private queue for archaeological research and ingestion workers.",
       "type": "object",
       "properties": {
-        "siteId": { "type": "string", "description": "Identifier of the site to research" },
-        "siteName": { "type": "string", "description": "Name of the site" },
-        "priority": { "type": "string", "enum": ["low", "normal", "high", "urgent"] },
-        "status": { "type": "string", "enum": ["pending", "in_progress", "completed", "failed"] },
-        "targetTopics": {
-          "type": "array",
-          "items": { "type": "string" }
+        "id": {
+          "type": "string"
         },
-        "notes": { "type": "string" },
-        "createdAt": { "type": "string" },
-        "updatedAt": { "type": "string" }
-      },
-      "required": ["siteId", "priority", "status", "createdAt"]
+        "name": {},
+        "province": {},
+        "priority": {
+          "type": "string",
+          "enum": [
+            "low",
+            "normal",
+            "high",
+            "urgent"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "pending",
+            "processing",
+            "completed",
+            "needs_review"
+          ]
+        },
+        "assignedWorker": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "claimedAt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "completedAt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "attemptCount": {
+          "type": "number"
+        },
+        "lastError": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      }
     },
     "research_jobs": {
       "title": "Research Jobs",
-      "description": "Active and completed automated archaeological research jobs, bibliography aggregation, and synthesis tasks",
+      "description": "Private ingestion job telemetry and validation outcomes.",
       "type": "object",
       "properties": {
-        "siteId": { "type": "string" },
-        "status": { "type": "string", "enum": ["queued", "running", "completed", "failed"] },
-        "progress": { "type": "number" },
-        "step": { "type": "string" },
-        "logs": {
-          "type": "array",
-          "items": { "type": "string" }
+        "id": {
+          "type": "string"
         },
-        "resultSummary": { "type": "string" },
-        "startedAt": { "type": "string" },
-        "completedAt": { "type": "string" }
-      },
-      "required": ["siteId", "status", "startedAt"]
+        "workerId": {
+          "type": "string"
+        },
+        "siteId": {
+          "type": "string"
+        },
+        "startedAt": {
+          "type": "string"
+        },
+        "completedAt": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "completed",
+            "failed",
+            "needs_review"
+          ]
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "storageUploaded": {
+          "type": "boolean"
+        },
+        "storagePath": {
+          "type": "string"
+        },
+        "sourceCount": {
+          "type": "number"
+        },
+        "imageCount": {
+          "type": "number"
+        }
+      }
     }
   },
   "storage": {
     "buckets": [
       {
-        "name": "default",
+        "name": "hiddenfeed.firebasestorage.app",
         "paths": {
-          "atlas/sites/": "Full bilingual archaeological monograph detail JSON files lazy-loaded per site"
+          "atlas/sites/{siteId}.json": "Canonical full bilingual archaeological monograph JSON."
         }
       }
     ]
