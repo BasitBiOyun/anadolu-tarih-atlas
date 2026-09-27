@@ -7,7 +7,6 @@ import {
   CheckCircle,
   Clock,
   ArrowsClockwise,
-  PlusCircle,
   HardDrive
 } from '@phosphor-icons/react';
 import { useLanguage } from '../context/LanguageContext';
@@ -18,8 +17,6 @@ import {
   ResearchJobDoc,
   STORAGE_SITES_PATH
 } from '../data/firebaseBackend';
-import { collection, addDoc, doc, setDoc } from 'firebase/firestore';
-import { db } from '../config/firebase';
 
 interface ResearchPipelineModalProps {
   isOpen: boolean;
@@ -37,15 +34,6 @@ export const ResearchPipelineModal: React.FC<ResearchPipelineModalProps> = ({
   const [queue, setQueue] = useState<ResearchQueueDoc[]>([]);
   const [jobs, setJobs] = useState<ResearchJobDoc[]>([]);
   const [loading, setLoading] = useState(false);
-
-  // New research request form state
-  const [showAddForm, setShowAddForm] = useState(false);
-  const [newSiteName, setNewSiteName] = useState('');
-  const [newSiteId, setNewSiteId] = useState('');
-  const [newPriority, setNewPriority] = useState<'low' | 'normal' | 'high' | 'urgent'>('normal');
-  const [newTopics, setNewTopics] = useState('');
-  const [newNotes, setNewNotes] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const loadData = async () => {
     setLoading(true);
@@ -68,49 +56,6 @@ export const ResearchPipelineModal: React.FC<ResearchPipelineModalProps> = ({
       loadData();
     }
   }, [isOpen]);
-
-  const handleCreateQueueItem = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!newSiteName.trim()) return;
-
-    setIsSubmitting(true);
-    try {
-      const slug = (newSiteId.trim() || newSiteName.trim())
-        .toLowerCase()
-        .replace(/[^a-z0-9]/g, '-')
-        .replace(/-+/g, '-');
-
-      const newItem: Omit<ResearchQueueDoc, 'id'> = {
-        siteId: slug,
-        siteName: {
-          tr: newSiteName.trim(),
-          en: newSiteName.trim()
-        },
-        priority: newPriority,
-        status: 'pending',
-        targetTopics: newTopics.split(',').map(s => s.trim()).filter(Boolean),
-        notes: newNotes.trim() || undefined,
-        requestedBy: lang === 'tr' ? 'Atlas Araştırmacısı' : 'Atlas Researcher',
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString()
-      };
-
-      const docRef = doc(collection(db, 'research_queue'));
-      await setDoc(docRef, { ...newItem, id: docRef.id });
-
-      // Reset form
-      setNewSiteName('');
-      setNewSiteId('');
-      setNewTopics('');
-      setNewNotes('');
-      setShowAddForm(false);
-      await loadData();
-    } catch (err) {
-      console.error('Failed to create research queue item:', err);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   if (!isOpen) return null;
 
@@ -204,103 +149,14 @@ export const ResearchPipelineModal: React.FC<ResearchPipelineModalProps> = ({
           {/* TAB 1: RESEARCH QUEUE */}
           {activeTab === 'queue' && (
             <div className="space-y-4">
-              <div className="flex items-center justify-between">
+              <div>
                 <p className="text-[13px] text-[#4A3F33] font-serif">
                   {t(
-                    'Firestore `research_queue` koleksiyonunda bekleyen ve işlenen akademik alan araştırmaları:',
-                    'Academic field and literature research tracked in Firestore `research_queue`:'
+                    'Firestore araştırma kuyruğu salt okunur olarak görüntüleniyor. Yeni görevler yalnızca güvenli sunucu ingestion hattı üzerinden eklenir.',
+                    'The Firestore research queue is displayed read-only. New tasks are added only through the secured server ingestion pipeline.'
                   )}
                 </p>
-                <button
-                  onClick={() => setShowAddForm(!showAddForm)}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#8A4526] hover:bg-[#72371E] text-[#FAF7F2] text-xs font-serif shadow-xs transition-colors"
-                >
-                  <PlusCircle size={15} />
-                  <span>{t('Yeni Araştırma Görevi', 'New Research Task')}</span>
-                </button>
               </div>
-
-              {/* Add form */}
-              {showAddForm && (
-                <form
-                  onSubmit={handleCreateQueueItem}
-                  className="p-4 bg-[#F2EDE2] border border-[#D9CEBC] space-y-3"
-                >
-                  <div className="font-serif font-semibold text-xs text-[#8A4526]">
-                    {t('Firestore research_queue Koleksiyonuna Ekle', 'Add to Firestore research_queue')}
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div>
-                      <label className="block text-[11px] font-medium text-[#4A3F33] mb-1">
-                        {t('Site / Yerleşim Adı', 'Site / Settlement Name')} *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={newSiteName}
-                        onChange={e => setNewSiteName(e.target.value)}
-                        placeholder="Örn: Hallan Çemi"
-                        className="w-full px-2.5 py-1.5 bg-white border border-[#CFC3B0] text-xs focus:outline-none focus:border-[#8A4526]"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-[11px] font-medium text-[#4A3F33] mb-1">
-                        {t('Öncelik Seviyesi', 'Priority Level')}
-                      </label>
-                      <select
-                        value={newPriority}
-                        onChange={e => setNewPriority(e.target.value as any)}
-                        className="w-full px-2.5 py-1.5 bg-white border border-[#CFC3B0] text-xs focus:outline-none focus:border-[#8A4526]"
-                      >
-                        <option value="low">{t('Düşük (Low)', 'Low')}</option>
-                        <option value="normal">{t('Normal', 'Normal')}</option>
-                        <option value="high">{t('Yüksek (High)', 'High')}</option>
-                        <option value="urgent">{t('Acil (Urgent)', 'Urgent')}</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-[11px] font-medium text-[#4A3F33] mb-1">
-                      {t('Araştırma Konuları (Virgülle ayırınız)', 'Target Topics (Comma-separated)')}
-                    </label>
-                    <input
-                      type="text"
-                      value={newTopics}
-                      onChange={e => setNewTopics(e.target.value)}
-                      placeholder="Örn: Stratigrafi, C14 Tarihlemesi, Obsidiyen Analizi"
-                      className="w-full px-2.5 py-1.5 bg-white border border-[#CFC3B0] text-xs focus:outline-none focus:border-[#8A4526]"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-[11px] font-medium text-[#4A3F33] mb-1">
-                      {t('Araştırma Notu / Açıklama', 'Research Notes')}
-                    </label>
-                    <textarea
-                      rows={2}
-                      value={newNotes}
-                      onChange={e => setNewNotes(e.target.value)}
-                      placeholder="Kazı heyeti yayınları ve kaynak hedefleri..."
-                      className="w-full px-2.5 py-1.5 bg-white border border-[#CFC3B0] text-xs focus:outline-none focus:border-[#8A4526]"
-                    />
-                  </div>
-                  <div className="flex justify-end gap-2 pt-1">
-                    <button
-                      type="button"
-                      onClick={() => setShowAddForm(false)}
-                      className="px-3 py-1 text-xs text-[#5C4F40] hover:text-[#1A1510] border border-[#D9CEBC]"
-                    >
-                      {t('İptal', 'Cancel')}
-                    </button>
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="px-4 py-1 bg-[#8A4526] hover:bg-[#72371E] text-white text-xs font-serif"
-                    >
-                      {isSubmitting ? t('Kaydediliyor...', 'Saving...') : t('Kuyruğa Ekle', 'Add to Queue')}
-                    </button>
-                  </div>
-                </form>
-              )}
 
               {/* Queue List */}
               <div className="space-y-2">
