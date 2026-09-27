@@ -1,0 +1,406 @@
+{
+  "schemaVersion": 4,
+  "id": "hacilar-hoyuk",
+  "core": {
+    "coordinates": {
+      "latitude": 37.5843,
+      "longitude": 30.08454
+    },
+    "siteType": "mound",
+    "chronology": [
+      {
+        "periodId": "neolithic",
+        "startYear": -8000,
+        "endYear": -5700,
+        "approximate": true,
+        "note": "The aceramic and ceramic Neolithic chronology remains debated."
+      },
+      {
+        "periodId": "chalcolithic",
+        "startYear": -5700,
+        "endYear": -5000,
+        "approximate": true
+      }
+    ],
+    "dateRange": {
+      "startYear": -8000,
+      "endYear": -5000,
+      "approximate": true
+    },
+    "visibility": {
+      "importance": 1,
+      "minZoom": 1.2,
+      "featured": true
+    },
+    "images": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Female%20figurine%201%20Hac%C4%B1lar%20Neues%20Museum%2026042018.jpg?width=1600",
+        "thumbnailUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Female%20figurine%201%20Hac%C4%B1lar%20Neues%20Museum%2026042018.jpg?width=800",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Female%20figurine%201%20Hac%C4%B1lar%20Neues%20Museum%2026042018.jpg",
+        "caption": {
+          "tr": "Hacılar'dan Neolitik kadın figürini, Neues Museum Berlin.",
+          "en": "Neolithic female figurine from Hacılar, Neues Museum, Berlin."
+        },
+        "source": "Wikimedia Commons",
+        "credit": "Vassil",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "type": "artifact"
+      }
+    ],
+    "sources": [
+      {
+        "id": "hacilar_turkteki_2021",
+        "title": "Hacılar Kronoloji Sorunu ve Yeni Bir Yaklaşım Gereksinimi",
+        "type": "article",
+        "author": "Sinem Türkteki",
+        "year": 2021,
+        "url": "https://dergipark.org.tr/tr/pub/anatolia/article/957797",
+        "journal": "Anadolu / Anatolia"
+      },
+      {
+        "id": "hacilar_mellaart_book",
+        "title": "Excavations at Hacılar",
+        "type": "book",
+        "author": "James Mellaart",
+        "year": 1970,
+        "url": "https://www.jstor.org/stable/10.18866/j.ctt1pc5ggn",
+        "publisher": "British Institute at Ankara"
+      },
+      {
+        "id": "hacilar_mellaart_first",
+        "title": "Excavations at Hacilar: First Preliminary Report",
+        "type": "article",
+        "author": "James Mellaart",
+        "year": 1958,
+        "url": "https://www.cambridge.org/core/journals/anatolian-studies/article/abs/excavations-at-hacilar-first-preliminary-report/B910EE60CE3467E0B389B569373E1A26",
+        "journal": "Anatolian Studies"
+      },
+      {
+        "id": "hacilar_umurtak_2000",
+        "title": "Neolithic and Early Chalcolithic Architecture in the Lakes Region",
+        "type": "article",
+        "author": "Gülsün Umurtak",
+        "year": 2000,
+        "url": "https://belleten.gov.tr/eng/abstarct/2572/eng",
+        "journal": "Belleten"
+      },
+      {
+        "id": "hacilar_commons_fig",
+        "title": "Female figurine 1 Hacılar Neues Museum 26042018.jpg",
+        "type": "image",
+        "author": "Vassil",
+        "year": 2018,
+        "url": "https://commons.wikimedia.org/wiki/File:Female_figurine_1_Hac%C4%B1lar_Neues_Museum_26042018.jpg"
+      }
+    ]
+  },
+  "content": {
+    "tr": {
+      "name": "Hacılar Höyük",
+      "alternativeNames": [
+        "Hacılar",
+        "Hacilar"
+      ],
+      "province": "Burdur",
+      "district": "Merkez",
+      "modernPlace": "Hacılar köyü çevresi",
+      "siteTypeLabel": "Höyük / Neolitik-Kalkolitik yerleşim",
+      "occupationDisplay": "Yaklaşık MÖ 8000'lere uzanan tartışmalı akeramik evrelerden MÖ 5. binyıl başlarına kadar Neolitik ve Kalkolitik iskân.",
+      "overview": [
+        {
+          "text": "Hacılar, James Mellaart'ın 1957–1960 kazılarıyla Anadolu Neolitiği araştırmalarında kurucu bir rol oynayan Göller Bölgesi yerleşmesidir. Erken kazılar, derin bir Neolitik-Kalkolitik tabakalaşma, gelişkin kerpiç mimari, boyalı çanak çömlek ve çok sayıda figürin ortaya çıkardı.",
+          "sourceIds": [
+            "hacilar_turkteki_2021",
+            "hacilar_mellaart_book"
+          ]
+        },
+        {
+          "text": "Hacılar'ın önemi, yalnızca zengin buluntularından değil, kazıldığı tarihte Anadolu'nun yerleşik Neolitik topluluklarının kronolojisini şekillendiren başlıca referans olması ve sonraki araştırmaların bu kronolojiyi sürekli yeniden değerlendirmesinden kaynaklanır.",
+          "sourceIds": [
+            "hacilar_turkteki_2021"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "text": "Mellaart'ın tabakalaşması akeramik ve seramikli Neolitik ile Kalkolitik evreleri birbirinden ayırdı. Ancak özellikle en erken, 'akeramik' olarak tanımlanan tabakaların mutlak tarihlenmesi ve stratigrafik yorumu yeni çalışmalarla yeniden tartışılmıştır.",
+          "sourceIds": [
+            "hacilar_turkteki_2021",
+            "hacilar_mellaart_book"
+          ]
+        },
+        {
+          "text": "Yeni değerlendirmeler Göller Bölgesi'nde yerleşik yaşamın başlangıcını yaklaşık MÖ 8000'lere kadar geri götürme olasılığını korurken, Hacılar'ın ilk kazı kronolojisinin doğrudan değişmez bir zaman çizelgesi olarak kullanılmaması gerektiğini vurgular.",
+          "sourceIds": [
+            "hacilar_turkteki_2021"
+          ]
+        }
+      ],
+      "importance": [
+        {
+          "text": "Hacılar, Batı ve Güneybatı Anadolu'da Neolitik köy yaşamı, mimari ve seramik geleneklerini tanımlayan en erken geniş ölçekli kazılardan biridir.",
+          "sourceIds": [
+            "hacilar_mellaart_first",
+            "hacilar_mellaart_book"
+          ]
+        },
+        {
+          "text": "Özellikle Hacılar VI ve ilişkili evreler, taş temelli kerpiç evlerin, ocak-fırın düzenlerinin ve ev içi üretimin Göller Bölgesi'ndeki gelişimini karşılaştırmak için temel oluşturur.",
+          "sourceIds": [
+            "hacilar_umurtak_2000"
+          ]
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "Kırmızı boya bezemeli seramikler ve stilize/figüratif repertuvar, Hacılar'ın en tanınan buluntuları arasındadır.",
+          "sourceIds": [
+            "hacilar_mellaart_book"
+          ]
+        },
+        {
+          "text": "Kadın figürinleri, yerleşmenin toplumsal ve sembolik yaşamını yorumlamada sık kullanılan ancak anlamları konusunda dikkatli olunması gereken bir buluntu grubudur.",
+          "sourceIds": [
+            "hacilar_mellaart_book",
+            "hacilar_commons_fig"
+          ]
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "James Mellaart yönetimindeki kazılar 1957–1960 arasında yürütüldü ve Anadolu Neolitiğinin uluslararası literatürde görünür hale gelmesinde büyük rol oynadı. Daha sonraki bölgesel araştırmalar ve Hacılar çevresindeki çalışmalar, ilk stratigrafinin ve özellikle erken tarihlemenin yeniden değerlendirilmesine yol açtı.",
+          "sourceIds": [
+            "hacilar_turkteki_2021",
+            "hacilar_mellaart_book"
+          ]
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "Hacılar bugün esas olarak yayımlanmış kazı arşivi ve müze koleksiyonları üzerinden araştırılan tarihî bir kazı alanıdır. Modern çalışmalar, Mellaart'ın verilerini Göller Bölgesi'ndeki yeni radyokarbon ve stratigrafik dizilerle karşılaştırmaktadır.",
+          "sourceIds": [
+            "hacilar_turkteki_2021"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Boyalı seramikler",
+          "description": "Kırmızı tonlu bezemeleriyle Hacılar seramiği, Güneybatı Anadolu Neolitik-Kalkolitik kronolojisinin ayırt edici repertuvarlarından biridir.",
+          "period": "Neolitik / Kalkolitik",
+          "sourceIds": [
+            "hacilar_mellaart_book"
+          ]
+        },
+        {
+          "name": "Kadın figürinleri",
+          "description": "Kil ve taş figürinler Hacılar'ın en bilinen buluntu gruplarındandır; işlevleri ve anlamları tek bir 'ana tanrıça' açıklamasına indirgenemez.",
+          "period": "Neolitik",
+          "sourceIds": [
+            "hacilar_mellaart_book",
+            "hacilar_commons_fig"
+          ]
+        },
+        {
+          "name": "Hacılar VI mimarisi",
+          "description": "Taş temel, kerpiç duvar ve ev içi fırın/ocak düzenleri bölgesel mimari karşılaştırmalar için önemlidir.",
+          "period": "Neolitik",
+          "sourceIds": [
+            "hacilar_umurtak_2000"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "title": "Akeramik Hacılar gerçekten ne kadar erken?",
+          "text": "En erken tabakaların yaklaşık MÖ 8000'lere uzanabileceği önerilse de, Mellaart'ın akeramik stratigrafisinin tarihlenmesi ve yorumlanması uzun süredir tartışmalıdır. Yeni bölgesel veriler kronolojinin yeniden kurulmasını gerektirmektedir.",
+          "sourceIds": [
+            "hacilar_turkteki_2021"
+          ]
+        },
+        {
+          "title": "Figürinlerin anlamı",
+          "text": "Hacılar figürinleri geçmişte çoğu kez doğurganlık veya 'ana tanrıça' ile doğrudan ilişkilendirilmiştir. Güncel yaklaşım, kullanım bağlamları ve çeşitliliği nedeniyle tek anlamlı açıklamalardan kaçınmayı gerektirir.",
+          "sourceIds": [
+            "hacilar_mellaart_book"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "Hacılar, Burdur çevresindeki Göller Bölgesi'nin tarıma elverişli ova ve göl havzalarıyla bağlantılı tarihöncesi yerleşim ağının parçasıdır.",
+        "landscape": "Göller Bölgesi'nin kapalı havzaları ile dağlık eşikler arasında tarım, hayvancılık ve hammadde erişimine uygun çevre.",
+        "sourceIds": [
+          "hacilar_turkteki_2021"
+        ]
+      },
+      "visit": {
+        "statusLabel": "Tarihî kazı alanı",
+        "visitorNote": "Düzenli bir ören yeri ziyareti varsayılmamalıdır; güncel erişim yerel/kurumsal kaynaklardan doğrulanmalıdır.",
+        "sourceIds": [
+          "hacilar_turkteki_2021"
+        ]
+      },
+      "nearbyPlaces": [
+        {
+          "name": "Burdur Arkeoloji Müzesi",
+          "type": "museum",
+          "note": "Göller Bölgesi'nin Neolitik ve Kalkolitik arkeolojisini anlamak için başlıca müze koleksiyonlarından biridir."
+        }
+      ]
+    },
+    "en": {
+      "name": "Hacılar Höyük",
+      "alternativeNames": [
+        "Hacılar",
+        "Hacilar"
+      ],
+      "province": "Burdur",
+      "district": "Merkez",
+      "modernPlace": "vicinity of Hacılar village",
+      "siteTypeLabel": "Tell / Neolithic-Chalcolithic settlement",
+      "occupationDisplay": "Neolithic and Chalcolithic occupation from debated aceramic phases possibly reaching c. 8000 BCE into the early 5th millennium BCE.",
+      "overview": [
+        {
+          "text": "Hacılar is a Lakes Region settlement whose excavation by James Mellaart in 1957–1960 played a foundational role in Anatolian Neolithic research. The work exposed a deep Neolithic-Chalcolithic sequence, mudbrick architecture, painted pottery and numerous figurines.",
+          "sourceIds": [
+            "hacilar_turkteki_2021",
+            "hacilar_mellaart_book"
+          ]
+        },
+        {
+          "text": "Its importance lies not only in its finds but also in the way its early chronology became a major reference point and has subsequently been reassessed as new regional evidence accumulated.",
+          "sourceIds": [
+            "hacilar_turkteki_2021"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "text": "Mellaart separated aceramic and ceramic Neolithic from Chalcolithic phases. The absolute dating and stratigraphic interpretation of the earliest 'aceramic' levels have, however, been repeatedly reconsidered.",
+          "sourceIds": [
+            "hacilar_turkteki_2021",
+            "hacilar_mellaart_book"
+          ]
+        },
+        {
+          "text": "Recent assessments retain the possibility that settled life in the region reaches back toward 8000 BCE while emphasizing that the original chronology should not be treated as an immutable timeline.",
+          "sourceIds": [
+            "hacilar_turkteki_2021"
+          ]
+        }
+      ],
+      "importance": [
+        {
+          "text": "Hacılar was among the first large excavations to define Neolithic village life, architecture and pottery traditions in western and southwestern Anatolia.",
+          "sourceIds": [
+            "hacilar_mellaart_first",
+            "hacilar_mellaart_book"
+          ]
+        },
+        {
+          "text": "Hacılar VI and related phases provide key comparisons for stone-founded mudbrick houses, ovens and domestic production in the Lakes Region.",
+          "sourceIds": [
+            "hacilar_umurtak_2000"
+          ]
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "Red-painted pottery with geometric and figurative decoration is among Hacılar's most recognizable material traditions.",
+          "sourceIds": [
+            "hacilar_mellaart_book"
+          ]
+        },
+        {
+          "text": "Female figurines are a famous find group, important for symbolic interpretation but requiring caution against single-purpose readings.",
+          "sourceIds": [
+            "hacilar_mellaart_book",
+            "hacilar_commons_fig"
+          ]
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "James Mellaart directed excavations from 1957 to 1960. Later research in the Lakes Region and renewed work around Hacılar prompted reassessment of the original stratigraphy and especially its earliest dates.",
+          "sourceIds": [
+            "hacilar_turkteki_2021",
+            "hacilar_mellaart_book"
+          ]
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "Hacılar is now studied primarily through its published excavation record and museum collections. Modern research compares Mellaart's sequence with newer radiocarbon and stratigraphic datasets from the region.",
+          "sourceIds": [
+            "hacilar_turkteki_2021"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Painted pottery",
+          "description": "Red-painted ceramics are a diagnostic repertoire for Neolithic-Chalcolithic chronology in southwestern Anatolia.",
+          "period": "Neolithic / Chalcolithic",
+          "sourceIds": [
+            "hacilar_mellaart_book"
+          ]
+        },
+        {
+          "name": "Female figurines",
+          "description": "Clay and stone figurines are among the best-known finds; their meaning cannot safely be reduced to a single 'mother goddess' interpretation.",
+          "period": "Neolithic",
+          "sourceIds": [
+            "hacilar_mellaart_book",
+            "hacilar_commons_fig"
+          ]
+        },
+        {
+          "name": "Hacılar VI architecture",
+          "description": "Stone foundations, mudbrick walls and domestic oven/hearth arrangements are central to regional architectural comparisons.",
+          "period": "Neolithic",
+          "sourceIds": [
+            "hacilar_umurtak_2000"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "title": "How early is aceramic Hacılar?",
+          "text": "The earliest levels may reach toward 8000 BCE, but the dating and interpretation of Mellaart's aceramic sequence remain disputed and require reconstruction against newer regional evidence.",
+          "sourceIds": [
+            "hacilar_turkteki_2021"
+          ]
+        },
+        {
+          "title": "Meaning of the figurines",
+          "text": "Hacılar figurines were often linked directly to fertility or a 'mother goddess'. Their diverse contexts argue for caution with any single explanation.",
+          "sourceIds": [
+            "hacilar_mellaart_book"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "Hacılar belongs to the prehistoric settlement network of the Lakes Region around Burdur, a landscape of basins, plains and mountain thresholds.",
+        "landscape": "A basin-and-upland environment offering agricultural land, grazing and access to regional resources.",
+        "sourceIds": [
+          "hacilar_turkteki_2021"
+        ]
+      },
+      "visit": {
+        "statusLabel": "Historic excavation site",
+        "visitorNote": "Regular public access should not be assumed; current conditions should be checked locally or institutionally.",
+        "sourceIds": [
+          "hacilar_turkteki_2021"
+        ]
+      },
+      "nearbyPlaces": [
+        {
+          "name": "Burdur Archaeology Museum",
+          "type": "museum",
+          "note": "A major collection for understanding Neolithic and Chalcolithic archaeology of the Lakes Region."
+        }
+      ]
+    }
+  }
+}

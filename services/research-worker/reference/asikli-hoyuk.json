@@ -1,0 +1,1064 @@
+{
+  "schemaVersion": 4,
+  "id": "asikli-hoyuk",
+  "core": {
+    "coordinates": {
+      "latitude": 38.3509,
+      "longitude": 34.2294
+    },
+    "siteType": "mound",
+    "chronology": [
+      {
+        "periodId": "epipalaeolithic",
+        "startYear": -9000,
+        "endYear": -8400,
+        "approximate": true
+      },
+      {
+        "periodId": "neolithic",
+        "startYear": -8350,
+        "endYear": -7350,
+        "approximate": true
+      }
+    ],
+    "dateRange": {
+      "startYear": -9000,
+      "endYear": -7350,
+      "approximate": true
+    },
+    "visibility": {
+      "importance": 1,
+      "minZoom": 1.5,
+      "featured": true
+    },
+    "visit": {
+      "status": "open",
+      "hours": null,
+      "closedDays": [],
+      "museumPass": null,
+      "phone": "",
+      "officialUrl": "https://muze.gov.tr/muze-detay?DistId=MRK&SectionId=AHK01"
+    },
+    "images": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/AshikliHoyuk.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:AshikliHoyuk.jpg",
+        "caption": {
+          "tr": "Aşıklı Höyük ve çevresindeki Melendiz Vadisi.",
+          "en": "Aşıklı Höyük and the surrounding Melendiz valley."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ashikli_Hoyuk.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Ashikli_Hoyuk.jpg",
+        "caption": {
+          "tr": "Aşıklı Höyük kazı alanından görünüm.",
+          "en": "View of the Aşıklı Höyük excavation area."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Asikli_Hoyuk_panorama.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Asikli_Hoyuk_panorama.jpg",
+        "caption": {
+          "tr": "Aşıklı Höyük'ün panoramik görünümü.",
+          "en": "Panoramic view of Aşıklı Höyük."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Original_Structures_Asikli_Hoyuk.JPG",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Original_Structures_Asikli_Hoyuk.JPG",
+        "caption": {
+          "tr": "Aşıklı Höyük'te korunmuş özgün Neolitik yapı kalıntıları.",
+          "en": "Original Neolithic architectural remains preserved at Aşıklı Höyük."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Reconstructed_Structures_Asikli_Hoyuk.JPG",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Reconstructed_Structures_Asikli_Hoyuk.JPG",
+        "caption": {
+          "tr": "Deneysel ve rekonstrüktif koruma kapsamında yeniden yapılan Neolitik yapı örnekleri.",
+          "en": "Reconstructed Neolithic buildings created as part of experimental and reconstructive preservation."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      }
+    ],
+    "sources": [
+      {
+        "id": "asikli-project",
+        "citationNumber": 1,
+        "type": "research_project",
+        "authors": [
+          "Aşıklı Höyük Research Project"
+        ],
+        "title": "Aşıklı Höyük",
+        "year": null,
+        "journalOrPublisher": "Aşıklı Höyük Research Project",
+        "url": "https://www.asiklihoyuk.org/",
+        "doi": ""
+      },
+      {
+        "id": "asikli-intro",
+        "citationNumber": 2,
+        "type": "research_project",
+        "authors": [
+          "Aşıklı Höyük Research Project"
+        ],
+        "title": "Introduction",
+        "year": null,
+        "journalOrPublisher": "Aşıklı Höyük Research Project",
+        "url": "https://www.asiklihoyuk.org/introduction-board-1-5/",
+        "doi": ""
+      },
+      {
+        "id": "asikli-ozbasaran2022",
+        "citationNumber": 3,
+        "type": "article",
+        "authors": [
+          "Mihriban Özbaşaran",
+          "Güneş Duru",
+          "Nurcan Kayacan"
+        ],
+        "title": "Orta Anadolu Yerleşme Modeli ve Aşıklı Höyük",
+        "year": 2022,
+        "journalOrPublisher": "Höyük 10",
+        "url": "https://hoyuk.gov.tr/tam-metin/69/tur",
+        "doi": "10.37879/hoyuk.2022.2.001"
+      },
+      {
+        "id": "asikli-duru2021",
+        "citationNumber": 4,
+        "type": "article",
+        "authors": [
+          "Güneş Duru",
+          "et al."
+        ],
+        "title": "Space making and home making in the world's first villages: Reconsidering the circular to rectangular architectural transition at Aşıklı Höyük, Central Anatolia",
+        "year": 2021,
+        "journalOrPublisher": "Journal of Anthropological Archaeology 64, 101357",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0278416521000908",
+        "doi": "10.1016/j.jaa.2021.101357"
+      },
+      {
+        "id": "asikli-stiner2022jar",
+        "citationNumber": 5,
+        "type": "article",
+        "authors": [
+          "Mary C. Stiner",
+          "Mihriban Özbaşaran",
+          "Güneş Duru"
+        ],
+        "title": "Aşıklı Höyük: The Generative Evolution of a Central Anatolian PPN Settlement in Regional Context",
+        "year": 2022,
+        "journalOrPublisher": "Journal of Archaeological Research 30, 497-543",
+        "url": "https://experts.arizona.edu/en/publications/a%C5%9F%C4%B1kl%C4%B1-h%C3%B6y%C3%BCk-the-generative-evolution-of-a-central-anatolian-ppn-/",
+        "doi": "10.1007/s10814-021-09167-z"
+      },
+      {
+        "id": "asikli-stiner2022pnas",
+        "citationNumber": 6,
+        "type": "article",
+        "authors": [
+          "Mary C. Stiner",
+          "Mihriban Özbaşaran",
+          "Benjamin S. Arbuckle",
+          "et al."
+        ],
+        "title": "An endemic pathway to sheep and goat domestication at Aşıklı Höyük (Central Anatolia, Turkey)",
+        "year": 2022,
+        "journalOrPublisher": "Proceedings of the National Academy of Sciences 119(4)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8795544/",
+        "doi": "10.1073/pnas.2110930119"
+      },
+      {
+        "id": "asikli-abell2019",
+        "citationNumber": 7,
+        "type": "article",
+        "authors": [
+          "Jordan T. Abell",
+          "et al."
+        ],
+        "title": "Urine salts elucidate Early Neolithic animal management at Aşıklı Höyük, Turkey",
+        "year": 2019,
+        "journalOrPublisher": "Science Advances 5(4), eaaw0038",
+        "url": "https://www.science.org/doi/10.1126/sciadv.aaw0038",
+        "doi": "10.1126/sciadv.aaw0038"
+      },
+      {
+        "id": "asikli-yildirim2011",
+        "citationNumber": 8,
+        "type": "article",
+        "authors": [
+          "Semra Yıldırım-Balcı"
+        ],
+        "title": "Aşıklı Höyük Obsidiyen Teknolojisi",
+        "year": 2011,
+        "journalOrPublisher": "TÜBA-AR 14, 19-39",
+        "url": "https://dergipark.org.tr/tr/pub/tubaar/issue/61824/924892",
+        "doi": "10.22520/tubaar.2011.0004"
+      },
+      {
+        "id": "asikli-tugcu2010",
+        "citationNumber": 9,
+        "type": "article",
+        "authors": [
+          "Bekir Tuğcu"
+        ],
+        "title": "Anadolu'da, Canlıda Yapılan İlk Trepanasyon Örneği: Aşıklı Höyük İnsanı",
+        "year": 2010,
+        "journalOrPublisher": "Türk Nöroşirürji Dergisi 20(2), 70-75",
+        "url": "https://norosirurji.dergisi.org/Articles/Details/666",
+        "doi": ""
+      },
+      {
+        "id": "asikli-ventilation2021",
+        "citationNumber": 10,
+        "type": "article",
+        "authors": [
+          "Güneş Duru",
+          "Gizem Güral",
+          "Mihriban Özbaşaran"
+        ],
+        "title": "Early Neolithic Innovation: Ventilation Systems and the Built Environment",
+        "year": 2021,
+        "journalOrPublisher": "Journal of Field Archaeology 46(8), 534-550",
+        "url": "https://www.tandfonline.com/doi/full/10.1080/00934690.2021.1981048",
+        "doi": "10.1080/00934690.2021.1981048"
+      },
+      {
+        "id": "asikli-children2024",
+        "citationNumber": 11,
+        "type": "article",
+        "authors": [
+          "Mihriban Özbaşaran",
+          "Sercan Yelözer",
+          "Nurcan Kayacan",
+          "Güneş Duru"
+        ],
+        "title": "Aşıklı Höyük'ün Çocukları",
+        "year": 2024,
+        "journalOrPublisher": "Höyük 13, 1-18",
+        "url": "https://dergipark.org.tr/tr/pub/hoyuk/article/1544627",
+        "doi": "10.37879/hoyuk.2024.1.001"
+      },
+      {
+        "id": "asikli-reconstruction",
+        "citationNumber": 12,
+        "type": "research_project",
+        "authors": [
+          "Aşıklı Höyük Research Project"
+        ],
+        "title": "Reconstructive Preservation",
+        "year": null,
+        "journalOrPublisher": "Aşıklı Höyük Research Project",
+        "url": "https://www.asiklihoyuk.org/reconstructive-preservation-board-16-17/",
+        "doi": ""
+      },
+      {
+        "id": "asikli-museum",
+        "citationNumber": 13,
+        "type": "institutional",
+        "authors": [
+          "T.C. Kültür ve Turizm Bakanlığı"
+        ],
+        "title": "Aşıklı Höyük",
+        "year": null,
+        "journalOrPublisher": "Türkiye Müzeleri",
+        "url": "https://muze.gov.tr/muze-detay?DistId=MRK&SectionId=AHK01",
+        "doi": ""
+      },
+      {
+        "id": "asikli-pubs",
+        "citationNumber": 14,
+        "type": "bibliography",
+        "authors": [
+          "Aşıklı Höyük Research Project"
+        ],
+        "title": "Yayın Arşivi",
+        "year": null,
+        "journalOrPublisher": "Aşıklı Höyük Research Project",
+        "url": "https://www.asiklihoyuk.org/yayin-arsivi/",
+        "doi": ""
+      }
+    ]
+  },
+  "content": {
+    "tr": {
+      "name": "Aşıklı Höyük",
+      "alternativeNames": [
+        "Aşıklı"
+      ],
+      "province": "Aksaray",
+      "district": "Güzelyurt",
+      "modernPlace": "Kızılkaya / Melendiz Vadisi",
+      "siteTypeLabel": "Akeramik Neolitik Köy ve Erken Yerleşik Yaşam Merkezi",
+      "occupationDisplay": "Yaklaşık MÖ 8350-7350 arasında bin yıla yakın kesintisiz köy yaşamı, öncesinde daha kısa süreli kullanım izleri",
+      "occupationNote": {
+        "text": "Aşıklı Höyük, Kapadokya'nın bilinen en erken kalıcı köy yerleşimlerinden biridir. Araştırmalar yerleşik yaşamın yaklaşık MÖ 8350 dolayında başladığını ve yaklaşık bin yıl sürdüğünü gösterir. Bundan önce bölgede daha kısa süreli ziyaretler ve geçici kamp faaliyetleri vardır. Bu uzun dizi, avcı-toplayıcı hareketliliğinden kalıcı köy yaşamına, bitki yetiştiriciliğine ve koyun-keçi yönetimine geçişin tek bir 'devrim' yerine nesiller boyunca gelişen aşamalı bir süreç olduğunu ayrıntılı biçimde izlemeyi mümkün kılar.",
+        "sourceIds": [
+          "asikli-intro",
+          "asikli-ozbasaran2022",
+          "asikli-duru2021",
+          "asikli-stiner2022jar"
+        ]
+      },
+      "overview": [
+        {
+          "text": "Aşıklı Höyük, Orta Anadolu'da Melendiz Nehri'nin kıyısında, volkanik Kapadokya peyzajının içinde yer alır. Obsidiyen kaynaklarına yakınlığı, suya ve tarıma elverişli mikro çevrelere erişimi, erken yerleşik toplulukların burada uzun süre kalıcı bir köy kurabilmesinde önemli rol oynamıştır.",
+          "sourceIds": [
+            "asikli-project",
+            "asikli-intro",
+            "asikli-yildirim2011"
+          ]
+        },
+        {
+          "text": "Yerleşimin ilk evrelerinde insanlar yarı gömülü, yuvarlak veya oval barınaklarda yaşamıştır. Zamanla bu mimari terk edilmiş, yer üstünde kerpiçten yapılmış dikdörtgen yapılar ve birbirine yakın ev kümeleri gelişmiştir. Yaklaşık bin yıllık yerleşim boyunca mimarinin değişmesi, topluluğun sosyal örgütlenmesinin, ev kavramının ve ortak alan kullanımının da değiştiğini gösterir.",
+          "sourceIds": [
+            "asikli-ozbasaran2022",
+            "asikli-duru2021"
+          ]
+        },
+        {
+          "text": "Aşıklı'nın en önemli yönlerinden biri koyun ve keçi yönetiminin çok erken ve ayrıntılı biçimde izlenebilmesidir. Hayvan kemikleri, yaş-cinsiyet profilleri, gübre ve idrar tuzları, topluluğun önce yabani yavruları yakalayıp büyüttüğünü, sonra küçük ölçekli kontrollü üretime geçtiğini ve zamanla üreyebilen sürüler oluşturduğunu göstermektedir.",
+          "sourceIds": [
+            "asikli-stiner2022pnas",
+            "asikli-abell2019"
+          ]
+        },
+        {
+          "text": "Bitki kullanımı da giderek daha sistemli hâle gelmiştir. Tahıllar, baklagiller ve yabani bitkiler topluluğun beslenmesinde önemliydi. Bu veriler Aşıklı'yı tarım ve hayvancılığın bir anda ortaya çıktığı bir yer olarak değil, farklı geçim stratejilerinin yan yana denenip değiştirildiği uzun süreli bir deney alanı olarak görmemizi sağlar.",
+          "sourceIds": [
+            "asikli-intro",
+            "asikli-stiner2022jar"
+          ]
+        },
+        {
+          "text": "Aşıklı aynı zamanda obsidiyen teknolojisi, gömü gelenekleri, insan sağlığı, ev içi faaliyetler ve çocukluk araştırmaları için büyük bir veri seti sunar. Ev tabanları altına yapılan gömüler, kafatasında trepanasyon izi taşıyan birey ve ayrıntılı biyolojik antropoloji çalışmaları, köy yaşamının yalnız ekonomi değil beden, bakım ve toplumsal kimlik boyutlarını da ortaya koyar.",
+          "sourceIds": [
+            "asikli-yildirim2011",
+            "asikli-tugcu2010",
+            "asikli-children2024"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "text": "Melendiz Vadisi'nde kalıcı köyün kurulmasından önce avcı-toplayıcı grupların kısa süreli kullanımları ve kamp faaliyetleri vardır. Bu erken izler, Aşıklı'daki yerleşikliğin boş bir peyzajda aniden başlamadığını, bölgenin daha önce de bilinen ve kullanılan bir alan olduğunu gösterir.",
+          "sourceIds": [
+            "asikli-ozbasaran2022",
+            "asikli-intro"
+          ],
+          "title": "Yerleşim öncesi kullanım"
+        },
+        {
+          "text": "Yaklaşık MÖ 8350'den itibaren ilk kalıcı köy evresi başlar. Erken yapılar çoğunlukla toprağa kısmen gömülü, yuvarlak veya oval planlı barınaklardır. Yerleşim dokusu henüz daha sonraki evrelerde görülen sıkışık dikdörtgen mahalle sistemine dönüşmemiştir.",
+          "sourceIds": [
+            "asikli-duru2021",
+            "asikli-ozbasaran2022"
+          ],
+          "title": "İlk köy ve yarı gömülü yapılar"
+        },
+        {
+          "text": "MÖ 8. binyılın başlarında mimaride önemli bir dönüşüm gerçekleşir. Yuvarlak ve yarı gömülü yapılardan yer üstünde, dikdörtgen, kerpiç yapılara geçilir. Yapılar genellikle bir veya iki odalıdır ve bitişik fakat çoğunlukla bağımsız duvarlarla birbirine yaklaşan kümeler oluşturur.",
+          "sourceIds": [
+            "asikli-duru2021",
+            "asikli-reconstruction"
+          ],
+          "title": "Dikdörtgen kerpiç evlere geçiş"
+        },
+        {
+          "text": "Yerleşimin ilerleyen evrelerinde mahalle benzeri yapı kümeleri, dar geçişler, daha geniş ortak alanlar, çöplükler ve özel amaçlı yapılar belirginleşir. Aynı evlerin tekrar tekrar yenilenmesi ve gömülerin ev tabanları altında yapılması mekânla toplumsal hafıza arasında güçlü bağlar olduğunu düşündürür.",
+          "sourceIds": [
+            "asikli-reconstruction",
+            "asikli-stiner2022jar"
+          ],
+          "title": "Mahalleler ve uzun süreli ev kullanımı"
+        },
+        {
+          "text": "Yaklaşık MÖ 8350-7350 arasındaki bin yıllık dizi boyunca koyun-keçi yönetimi giderek yoğunlaşır. İlk evrelerde yabani yavruların yakalanıp köyde tutulması öne çıkarken, daha sonraki yüzyıllarda kontrollü üreme ve kalıcı sürü yönetiminin işaretleri artar.",
+          "sourceIds": [
+            "asikli-stiner2022pnas",
+            "asikli-abell2019"
+          ],
+          "title": "Hayvan yönetiminin gelişimi"
+        },
+        {
+          "text": "Yaklaşık MÖ 7350 dolayında Aşıklı Höyük'teki uzun süreli yerleşim sona erer. Bu son, bölgedeki insan yaşamının bitmesi anlamına gelmez. Orta Anadolu Neolitiği sonraki yüzyıllarda farklı yerleşim biçimleri ve ekonomik sistemlerle devam eder.",
+          "sourceIds": [
+            "asikli-duru2021",
+            "asikli-stiner2022jar"
+          ],
+          "title": "Yerleşimin sonu"
+        }
+      ],
+      "importance": [
+        {
+          "text": "Aşıklı, avcı-toplayıcı hareketliliğinden yerleşik köy yaşamına geçişi yaklaşık bin yıllık kesintisiz bir dizi içinde gösterdiği için Neolitik araştırmalarında temel bir merkezdir. Değişim tek bir anda gerçekleşmez. Mimari, beslenme, hayvan yönetimi ve toplumsal mekân farklı hızlarda dönüşür.",
+          "sourceIds": [
+            "asikli-stiner2022jar",
+            "asikli-duru2021"
+          ],
+          "title": "Yerleşik yaşamın uzun dönüşümü"
+        },
+        {
+          "text": "Koyun ve keçinin yönetimi Aşıklı'da özellikle ayrıntılıdır. Hayvan demografisi ve jeokimyasal kanıtlar, yabani hayvanların köye getirilmesinden üreyebilen sürülerin oluşmasına kadar uzun süreli yerel bir süreci destekler. Bu kayıt, hayvan evcilleştirmenin yalnız başka bölgelerden hazır bir paket olarak gelmediğini göstermektedir.",
+          "sourceIds": [
+            "asikli-stiner2022pnas",
+            "asikli-abell2019"
+          ],
+          "title": "Koyun-keçi evcilleştirme süreci"
+        },
+        {
+          "text": "Yuvarlak yarı gömülü barınaklardan dikdörtgen kerpiç evlere geçiş, Neolitik mimarinin yalnız teknik bir değişim olmadığını gösterir. Evlerin yeniden yapılması, mahallelerin oluşması ve ortak alanların düzenlenmesi, topluluğun sosyal ilişkilerinin mimariyle birlikte üretildiğini düşündürür.",
+          "sourceIds": [
+            "asikli-duru2021",
+            "asikli-ozbasaran2022"
+          ],
+          "title": "Mimari ve toplumsal örgütlenme"
+        },
+        {
+          "text": "Yakındaki Kapadokya obsidiyen kaynakları Aşıklı topluluğunun taş alet üretiminde uzmanlaşmasına imkân verdi. Teknolojik analizler hammadde seçimi, çekirdek hazırlama ve alet üretiminin zaman içinde değiştiğini ve yerleşimin daha geniş Orta Anadolu ağlarıyla bağlantılı olduğunu gösterir.",
+          "sourceIds": [
+            "asikli-yildirim2011"
+          ],
+          "title": "Obsidiyen teknolojisi"
+        },
+        {
+          "text": "İnsan iskeletleri, gömüler ve sağlık verileri Aşıklı'yı biyolojik antropoloji açısından da önemli kılar. Trepanasyon örneği, çocuk gömüleri ve ev altı mezarlar hastalık, bakım, ölüm ve toplumsal aidiyet konularında doğrudan veri sunar.",
+          "sourceIds": [
+            "asikli-tugcu2010",
+            "asikli-children2024"
+          ],
+          "title": "Beden, sağlık ve ölüm"
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "Yerleşimin erken evrelerindeki yuvarlak veya oval yarı gömülü yapılar, Aşıklı'daki ilk kalıcı yaşam biçiminin mimari temelini oluşturur. Bu yapılar daha sonraki dikdörtgen kerpiç evlerden hem inşa tekniği hem mekânsal örgütlenme bakımından ayrılır.",
+          "sourceIds": [
+            "asikli-duru2021",
+            "asikli-reconstruction"
+          ],
+          "title": "Yarı gömülü erken yapılar"
+        },
+        {
+          "text": "Daha geç evrelerde ortaya çıkan dikdörtgen kerpiç evler bitişik kümeler ve mahalleler oluşturur. Evlerin çoğu küçük, bir veya iki odalıdır. Aynı parsellerde tekrar tekrar yenilenmeleri yer ve hane hafızasının önemini gösterir.",
+          "sourceIds": [
+            "asikli-reconstruction",
+            "asikli-ozbasaran2022"
+          ],
+          "title": "Dikdörtgen kerpiç evler"
+        },
+        {
+          "text": "Bazı yapıların tabanları altında insan gömüleri bulunmuştur. Ev ile mezar arasındaki bu yakın ilişki, yaşayanlar ile ölüler arasında mekânsal ve toplumsal süreklilik bulunduğunu düşündürür.",
+          "sourceIds": [
+            "asikli-stiner2022jar",
+            "asikli-children2024"
+          ],
+          "title": "Ev altı gömüleri"
+        },
+        {
+          "text": "Bir kadın kafatasında açılmış delik ve çevresindeki kemik iyileşmesi, bireyin işlemden sonra bir süre yaşadığını gösterir. Bu buluntu Anadolu'da yaşayan bir birey üzerinde gerçekleştirildiği gösterilebilen en erken trepanasyon örneklerinden biri olarak değerlendirilir. Operasyonun nedeni bilinmemektedir.",
+          "sourceIds": [
+            "asikli-tugcu2010"
+          ],
+          "title": "Trepanasyonlu kafatası"
+        },
+        {
+          "text": "Koyun ve keçi kalıntılarının yaş dağılımları, topluluğun zaman içinde hayvanları daha sistemli biçimde yönettiğini gösterir. Yavruların köye getirilmesi, cinsiyet ve kesim örüntülerinin değişmesi evcilleştirme sürecinin aşamalarını izlemeyi mümkün kılar.",
+          "sourceIds": [
+            "asikli-stiner2022pnas"
+          ],
+          "title": "Koyun-keçi yönetimi"
+        },
+        {
+          "text": "Yerleşim topraklarındaki idrar tuzları ve diğer kimyasal birikimler, çok sayıda hayvanın köy içinde veya yakınında tutulduğunu gösteren bağımsız bir kanıt sağlamıştır. Bu yöntem hayvan yönetiminin yoğunluğunu yalnız kemiklerden değil yerleşim kimyasından da izlemeyi mümkün kılmıştır.",
+          "sourceIds": [
+            "asikli-abell2019"
+          ],
+          "title": "İdrar tuzları ve hayvan barındırma"
+        },
+        {
+          "text": "Obsidiyen yongalama ürünleri, çekirdekler ve aletler Aşıklı'nın Kapadokya obsidiyen teknolojisi için temel referans koleksiyonlarından biridir. Üretim zincirindeki değişiklikler uzmanlık ve hammadde kullanım stratejilerini gösterir.",
+          "sourceIds": [
+            "asikli-yildirim2011"
+          ],
+          "title": "Obsidiyen endüstrisi"
+        },
+        {
+          "text": "Bazı yapılarda duvar veya çatı içindeki kontrollü hava dolaşımını sağlayan düzenlemeler, Neolitik mimaride ısı, duman ve iç ortam koşullarına yönelik teknik çözümlerin düşünüldüğünü göstermektedir.",
+          "sourceIds": [
+            "asikli-ventilation2021"
+          ],
+          "title": "Havalandırma sistemleri"
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "Aşıklı Höyük'ün sistematik kazıları 1989'da İstanbul Üniversitesi'nden Ufuk Esin başkanlığında başladı. Çalışmalar yalnız mimariyi açığa çıkarmayı değil yerleşikliğin başlangıcını, geçim ekonomisini ve çevre ilişkilerini çok disiplinli biçimde araştırmayı hedefledi.",
+          "sourceIds": [
+            "asikli-intro",
+            "asikli-project"
+          ]
+        },
+        {
+          "text": "İlk dönem kazıları kalın Neolitik tabakalanmayı, kerpiç mimariyi, ev altı gömülerini ve yoğun obsidiyen üretimini ortaya koydu. Bu veriler Aşıklı'yı Orta Anadolu'nun erken Neolitik kronolojisinin temel referanslarından biri hâline getirdi.",
+          "sourceIds": [
+            "asikli-intro",
+            "asikli-yildirim2011"
+          ]
+        },
+        {
+          "text": "2000'lerin sonundan itibaren yeni araştırma programı Mihriban Özbaşaran, Güneş Duru ve Nurcan Kayacan'ın da yer aldığı ekiplerle genişledi. Amaç yalnız daha fazla alan açmak değil, önceki kazı sonuçlarını yeni sorularla yeniden değerlendirmek ve erken yerleşim evrelerine ulaşmaktı.",
+          "sourceIds": [
+            "asikli-project",
+            "asikli-intro"
+          ]
+        },
+        {
+          "text": "Güncel araştırma arkeozooloji, botanik, jeoarkeoloji, mikromorfoloji, insan iskeleti analizi, obsidiyen teknolojisi, mimarlık ve deneysel arkeolojiyi birlikte kullanmaktadır. Bu yöntemler hayvan yönetimi ve köy içi faaliyetleri çok daha yüksek çözünürlükte izlemeyi sağlamıştır.",
+          "sourceIds": [
+            "asikli-stiner2022pnas",
+            "asikli-abell2019",
+            "asikli-duru2021"
+          ]
+        },
+        {
+          "text": "Koruma stratejisinin dikkat çekici yönlerinden biri rekonstrüktif ve deneysel yaklaşımdır. Neolitik yapılara benzer kerpiç evler ve tarım alanları, hem ziyaretçi eğitimi hem de yapı malzemelerinin davranışını anlamak için yeniden oluşturulmuştur.",
+          "sourceIds": [
+            "asikli-reconstruction",
+            "asikli-museum"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "text": "Aşıklı'daki koyun-keçi yönetimi uzun süre Yakındoğu'nun daha güneyindeki merkezlerden evcil hayvanların hazır biçimde getirildiği modeller içinde değerlendirilebilirdi. Yüksek çözünürlüklü arkeozoolojik ve jeokimyasal çalışmalar ise yaklaşık MÖ 8400'den itibaren yerel yabani popülasyonların yakalanması, büyütülmesi ve zamanla kontrollü üremeye geçilmesiyle daha yerel ve aşamalı bir yol önermektedir. Bu, bütün evcilleştirme süreçlerinin tek bir merkezden yayıldığı anlamına gelmeyen çok merkezli modelleri güçlendirir.",
+          "sourceIds": [
+            "asikli-stiner2022pnas",
+            "asikli-abell2019"
+          ],
+          "title": "Hayvan evcilleştirme yerel mi gelişti?"
+        },
+        {
+          "text": "Yuvarlak yapılardan dikdörtgen evlere geçiş eski modellerde bazen doğrudan aile yapısının veya sosyal karmaşıklığın değişimine eşitlenmiştir. Aşıklı verileri daha ihtiyatlı bir tablo sunar. Mimari biçim, faaliyet alanları, ortak çöplükler ve mahalle örgütlenmesi birlikte değerlendirilmelidir. Dikdörtgen plan tek başına belirli bir aile modelinin kanıtı değildir.",
+          "sourceIds": [
+            "asikli-duru2021",
+            "asikli-ozbasaran2022"
+          ],
+          "title": "Mimari biçim sosyal yapıyı doğrudan gösterir mi?"
+        },
+        {
+          "text": "Aşıklı için 'tarımın başladığı yer' veya 'hayvancılığın icat edildiği yer' gibi ifadeler bilimsel olarak aşırı basitleştiricidir. Bitki yetiştiriciliği, toplama, avcılık ve hayvan yönetimi uzun süre birlikte sürmüştür. Yerleşimin önemi tek bir icat iddiasından çok bu davranışların bin yıl boyunca nasıl değiştiğini göstermesidir.",
+          "sourceIds": [
+            "asikli-stiner2022jar",
+            "asikli-stiner2022pnas"
+          ],
+          "title": "Neolitik 'devrim' mi, kademeli dönüşüm mü?"
+        },
+        {
+          "text": "Trepanasyonlu kafatasındaki iyileşme, bireyin işlem sırasında veya hemen sonrasında ölmediğini gösterir. Buna rağmen operasyonun tıbbi tedavi, travma müdahalesi, ritüel uygulama veya başka bir amaç taşıdığını belirleyen doğrudan kanıt yoktur. Bu nedenle buluntu gelişmiş cerrahi pratiğin kesin nedeni gibi yorumlanmamalıdır.",
+          "sourceIds": [
+            "asikli-tugcu2010"
+          ],
+          "title": "Trepanasyon neden yapıldı?"
+        },
+        {
+          "text": "Yerleşimde evlerin tekrar tekrar aynı yerde yenilenmesi ve bazı yapılara daha fazla yatırım yapılması, toplumsal farklılaşma tartışmalarına katkı sağlar. Ancak bu farklılıkları doğrudan kalıcı sınıflar veya kurumsal hiyerarşi olarak tanımlamak için kanıt sınırlıdır. Aşıklı daha çok eşitsizliğin ve toplumsal rollerin nasıl yavaşça çeşitlenebileceğini araştırmaya uygundur.",
+          "sourceIds": [
+            "asikli-stiner2022jar",
+            "asikli-ozbasaran2022"
+          ],
+          "title": "Toplumsal eşitsizlik var mıydı?"
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "Aşıklı Höyük aktif bir araştırma, koruma ve eğitim alanıdır. Ziyaretçiler özgün kazı alanlarının yanında rekonstrüksiyonlarla erken ve geç Neolitik yapı tiplerini karşılaştırabilir. Deneysel alanlar kerpiç mimari ve erken tarım uygulamalarını anlatmak için kullanılmaktadır.",
+          "sourceIds": [
+            "asikli-museum",
+            "asikli-reconstruction"
+          ]
+        },
+        {
+          "text": "Proje uzun süreli yayın programını sürdürmektedir. Kazı arşivi ve yayın listesi, yerleşim mimarisinden hayvan evcilleştirmeye, çocukluk araştırmalarından taş alet teknolojisine kadar çok farklı uzmanlık alanlarını kapsar.",
+          "sourceIds": [
+            "asikli-project",
+            "asikli-pubs"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Yarı gömülü erken yapılar",
+          "description": "Yerleşimin ilk yüzyıllarında kullanılan yuvarlak veya oval planlı barınaklar.",
+          "period": "Erken Neolitik",
+          "sourceIds": [
+            "asikli-duru2021",
+            "asikli-reconstruction"
+          ]
+        },
+        {
+          "name": "Dikdörtgen kerpiç mahalleler",
+          "description": "Daha geç evrelerde ortaya çıkan ve tekrar tekrar aynı parsellerde yenilenen bitişik ev kümeleri.",
+          "period": "Neolitik",
+          "sourceIds": [
+            "asikli-ozbasaran2022",
+            "asikli-reconstruction"
+          ]
+        },
+        {
+          "name": "Trepanasyonlu insan kafatası",
+          "description": "Kemik iyileşmesi işlemin ardından yaşamın sürdüğünü gösteren erken kafatası müdahalesi.",
+          "period": "Neolitik",
+          "sourceIds": [
+            "asikli-tugcu2010"
+          ]
+        },
+        {
+          "name": "Koyun-keçi yönetim dizisi",
+          "description": "Yabani yavruların yakalanmasından üreyebilen yönetilen sürülere uzanan uzun evcilleştirme sürecini belgeleyen hayvan kalıntıları.",
+          "period": "Neolitik",
+          "sourceIds": [
+            "asikli-stiner2022pnas",
+            "asikli-abell2019"
+          ]
+        },
+        {
+          "name": "Obsidiyen üretimi",
+          "description": "Kapadokya kaynaklarına dayanan yoğun taş alet üretimi ve değişen yongalama teknolojileri.",
+          "period": "Neolitik",
+          "sourceIds": [
+            "asikli-yildirim2011"
+          ]
+        },
+        {
+          "name": "Ev altı gömüleri",
+          "description": "Ölülerin yaşanan yapıların tabanları altına yerleştirilmesiyle ev, hafıza ve toplumsal aidiyeti ilişkilendiren gömü uygulaması.",
+          "period": "Neolitik",
+          "sourceIds": [
+            "asikli-stiner2022jar",
+            "asikli-children2024"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "Aşıklı Höyük, Aksaray'ın Güzelyurt ilçesi sınırlarında, Kızılkaya yakınındaki Melendiz Vadisi'nde ve Melendiz Nehri kıyısında yer alır.",
+        "distanceFromNearestCenter": "Aksaray kent merkezinin yaklaşık 25 km güneydoğusu.",
+        "landscape": "Volkanik Kapadokya peyzajı içinde nehir, verimli küçük düzlükler ve zengin obsidiyen kaynaklarına erişim bir aradadır. Bu çevresel çeşitlilik yerleşik yaşam, avcılık, bitki kullanımı ve taş alet üretimini desteklemiştir.",
+        "gettingThere": "Aksaray'dan Güzelyurt ve Kızılkaya yönüne karayoluyla ulaşılır.",
+        "sourceIds": [
+          "asikli-project",
+          "asikli-intro",
+          "asikli-yildirim2011"
+        ]
+      },
+      "visit": {
+        "statusLabel": "Ziyarete açık arkeolojik araştırma ve eğitim alanı",
+        "address": "Kızılkaya, Güzelyurt, Aksaray",
+        "visitorNote": "Özgün kazı alanları ile deneysel rekonstrüksiyonlar birlikte görülebilir. Güncel ziyaret saatleri için resmi Türkiye Müzeleri sayfası kontrol edilmelidir.",
+        "sourceIds": [
+          "asikli-museum",
+          "asikli-reconstruction"
+        ]
+      },
+      "nearbyPlaces": [],
+      "participation": []
+    },
+    "en": {
+      "name": "Aşıklı Höyük",
+      "alternativeNames": [
+        "Aşıklı"
+      ],
+      "province": "Aksaray",
+      "district": "Güzelyurt",
+      "modernPlace": "Kızılkaya / Melendiz Valley",
+      "siteTypeLabel": "Aceramic Neolithic Village and Early Sedentary Settlement",
+      "occupationDisplay": "nearly a millennium of permanent village life around 8350-7350 BCE, preceded by shorter-term activity",
+      "occupationNote": {
+        "text": "Aşıklı Höyük is among the earliest known permanent village settlements of Cappadocia. Research places the beginning of sustained occupation around 8350 BCE and indicates roughly a millennium of village life. Shorter visits and temporary occupation preceded the permanent settlement. This long sequence makes it possible to follow the transition from mobile hunting and gathering to village life, plant cultivation and caprine management as a generational process rather than a single 'revolution'.",
+        "sourceIds": [
+          "asikli-intro",
+          "asikli-ozbasaran2022",
+          "asikli-duru2021",
+          "asikli-stiner2022jar"
+        ]
+      },
+      "overview": [
+        {
+          "text": "Aşıklı Höyük stands beside the Melendiz River within the volcanic landscape of Cappadocia in central Anatolia. Access to water, productive microenvironments and nearby obsidian sources helped sustain a community that remained in the same place for many centuries.",
+          "sourceIds": [
+            "asikli-project",
+            "asikli-intro",
+            "asikli-yildirim2011"
+          ]
+        },
+        {
+          "text": "The earliest permanent phases were characterised by partly subterranean round or oval shelters. Over time these were replaced by above-ground rectangular mudbrick buildings and tightly grouped houses. Architectural change across almost a thousand years reflects changing ideas of home, neighbourhood and shared space as much as changing construction techniques.",
+          "sourceIds": [
+            "asikli-ozbasaran2022",
+            "asikli-duru2021"
+          ]
+        },
+        {
+          "text": "One of the strongest research contributions of Aşıklı concerns early sheep and goat management. Animal bones, demographic profiles, dung and urine salts indicate a long process that began with capturing and raising wild young, moved through low-level controlled breeding and eventually produced reproductively viable managed herds.",
+          "sourceIds": [
+            "asikli-stiner2022pnas",
+            "asikli-abell2019"
+          ]
+        },
+        {
+          "text": "Plant use also became increasingly systematic. Cereals, pulses and gathered wild plants contributed to subsistence. The evidence makes Aşıklı important not as the place where farming suddenly appeared but as a long-term setting in which different subsistence strategies were tested and transformed together.",
+          "sourceIds": [
+            "asikli-intro",
+            "asikli-stiner2022jar"
+          ]
+        },
+        {
+          "text": "The site also provides rich evidence for obsidian technology, burial customs, health, household practice and childhood. Burials under house floors, a skull with evidence of trepanation and detailed biological anthropology expand the picture of village life beyond economy into care, the body, death and social identity.",
+          "sourceIds": [
+            "asikli-yildirim2011",
+            "asikli-tugcu2010",
+            "asikli-children2024"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "text": "Before the permanent village was founded, hunter-gatherer groups used the Melendiz Valley for shorter visits and temporary camps. These traces show that sedentary life emerged in a landscape that had already been known and used for generations.",
+          "sourceIds": [
+            "asikli-ozbasaran2022",
+            "asikli-intro"
+          ],
+          "title": "Before permanent settlement"
+        },
+        {
+          "text": "Permanent village occupation began around 8350 BCE. Early buildings were mostly partly subterranean and round or oval. The settlement had not yet developed the dense rectangular neighbourhood pattern characteristic of later phases.",
+          "sourceIds": [
+            "asikli-duru2021",
+            "asikli-ozbasaran2022"
+          ],
+          "title": "First village and semi-subterranean buildings"
+        },
+        {
+          "text": "Around the beginning of the 8th millennium BCE architecture changed substantially. Round semi-subterranean shelters gave way to above-ground rectangular mudbrick buildings. Most houses contained one or two rooms and formed tight clusters with adjacent but generally independent walls.",
+          "sourceIds": [
+            "asikli-duru2021",
+            "asikli-reconstruction"
+          ],
+          "title": "Transition to rectangular mudbrick houses"
+        },
+        {
+          "text": "Later settlement phases developed neighbourhood-like building groups, narrow passages, larger communal spaces, middens and special-purpose structures. Repeated rebuilding in the same places and burials under house floors suggest strong relationships between place, household continuity and social memory.",
+          "sourceIds": [
+            "asikli-reconstruction",
+            "asikli-stiner2022jar"
+          ],
+          "title": "Neighbourhoods and long-lived houses"
+        },
+        {
+          "text": "Across the sequence from about 8350 to 7350 BCE, management of sheep and goats intensified. Early inhabitants often captured wild young and kept them near the village. Later centuries show increasing evidence for controlled breeding and sustainable captive herds.",
+          "sourceIds": [
+            "asikli-stiner2022pnas",
+            "asikli-abell2019"
+          ],
+          "title": "Development of animal management"
+        },
+        {
+          "text": "The long occupation at Aşıklı ended around 7350 BCE. This did not mark the end of settlement in central Anatolia. Neolithic communities continued elsewhere with changing settlement forms and economic strategies.",
+          "sourceIds": [
+            "asikli-duru2021",
+            "asikli-stiner2022jar"
+          ],
+          "title": "End of occupation"
+        }
+      ],
+      "importance": [
+        {
+          "text": "Aşıklı is fundamental to Neolithic research because it preserves nearly a millennium of change from mobile lifeways to permanent village residence. Architecture, food production, animal management and social space changed at different rates, revealing a long transformation rather than one sudden event.",
+          "sourceIds": [
+            "asikli-stiner2022jar",
+            "asikli-duru2021"
+          ],
+          "title": "The long transition to village life"
+        },
+        {
+          "text": "Sheep and goat management is especially well documented. Zooarchaeological and geochemical evidence supports a local process beginning with the capture of wild animals and developing over centuries toward breeding populations. This challenges models in which fully domesticated herds simply arrived as a ready-made package from elsewhere.",
+          "sourceIds": [
+            "asikli-stiner2022pnas",
+            "asikli-abell2019"
+          ],
+          "title": "Pathway to caprine domestication"
+        },
+        {
+          "text": "The transition from round semi-subterranean shelters to rectangular mudbrick houses demonstrates that Neolithic architecture was also social practice. Rebuilding, neighbourhood formation and communal spaces show how communities actively created new forms of domestic and collective life.",
+          "sourceIds": [
+            "asikli-duru2021",
+            "asikli-ozbasaran2022"
+          ],
+          "title": "Architecture and social organisation"
+        },
+        {
+          "text": "Nearby Cappadocian obsidian sources supported intensive stone-tool production. Technological analysis documents changing choices in raw materials, core preparation and tool production and connects Aşıklı with wider central Anatolian interaction networks.",
+          "sourceIds": [
+            "asikli-yildirim2011"
+          ],
+          "title": "Obsidian technology"
+        },
+        {
+          "text": "Human remains, burials and evidence for health make Aşıklı equally important for biological anthropology. Trepanation, child burials and under-floor interments provide direct evidence for care, death and belonging within the village.",
+          "sourceIds": [
+            "asikli-tugcu2010",
+            "asikli-children2024"
+          ],
+          "title": "Body, health and death"
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "Round or oval semi-subterranean shelters formed the architectural basis of the earliest permanent settlement. They differ from later rectangular mudbrick houses in both construction and spatial organisation.",
+          "sourceIds": [
+            "asikli-duru2021",
+            "asikli-reconstruction"
+          ],
+          "title": "Early semi-subterranean buildings"
+        },
+        {
+          "text": "Later rectangular mudbrick houses formed tightly packed neighbourhoods. Many were small one- or two-room units repeatedly rebuilt in the same locations, showing the importance of persistent household places.",
+          "sourceIds": [
+            "asikli-reconstruction",
+            "asikli-ozbasaran2022"
+          ],
+          "title": "Rectangular mudbrick neighbourhoods"
+        },
+        {
+          "text": "Human burials were placed beneath the floors of some occupied buildings. This close relationship between house and grave suggests spatial continuity between living communities, ancestors and household memory.",
+          "sourceIds": [
+            "asikli-stiner2022jar",
+            "asikli-children2024"
+          ],
+          "title": "Under-floor burials"
+        },
+        {
+          "text": "A perforation in the skull of an adult woman shows bone healing around the opening, demonstrating survival after the procedure. It is regarded as one of the earliest examples in Anatolia where trepanation can be shown to have been performed on a living person. The reason for the operation remains unknown.",
+          "sourceIds": [
+            "asikli-tugcu2010"
+          ],
+          "title": "Trepanated skull"
+        },
+        {
+          "text": "Age profiles of sheep and goat remains change through time and document increasingly systematic management. Capture of young animals, changing culling patterns and later breeding populations allow stages of domestication to be reconstructed.",
+          "sourceIds": [
+            "asikli-stiner2022pnas"
+          ],
+          "title": "Sheep and goat management"
+        },
+        {
+          "text": "Urine salts and other chemical deposits in settlement sediments provide independent evidence that large numbers of animals were kept within or very near the village. This approach tracks management intensity through settlement chemistry as well as bones.",
+          "sourceIds": [
+            "asikli-abell2019"
+          ],
+          "title": "Urine salts and animal penning"
+        },
+        {
+          "text": "Obsidian flakes, cores and tools form one of the reference assemblages for Cappadocian Neolithic stone technology. Changing reduction strategies reveal variation in skill, production organisation and raw-material use.",
+          "sourceIds": [
+            "asikli-yildirim2011"
+          ],
+          "title": "Obsidian industry"
+        },
+        {
+          "text": "Architectural features interpreted as ventilation arrangements suggest deliberate technical solutions for air movement, smoke and indoor environmental conditions within some Neolithic buildings.",
+          "sourceIds": [
+            "asikli-ventilation2021"
+          ],
+          "title": "Ventilation systems"
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "Systematic excavation began in 1989 under Ufuk Esin of Istanbul University. From the beginning, the project aimed not only to expose architecture but also to investigate the emergence of sedentary life, subsistence and environmental relationships through interdisciplinary research.",
+          "sourceIds": [
+            "asikli-intro",
+            "asikli-project"
+          ]
+        },
+        {
+          "text": "Early campaigns established the deep Neolithic sequence, mudbrick architecture, under-floor burials and intensive obsidian production that made Aşıklı a key reference point for the chronology of early central Anatolian villages.",
+          "sourceIds": [
+            "asikli-intro",
+            "asikli-yildirim2011"
+          ]
+        },
+        {
+          "text": "A renewed research programme from the late 2000s expanded under a team including Mihriban Özbaşaran, Güneş Duru and Nurcan Kayacan. Rather than simply opening larger areas, the project returned to earlier questions with new methods and targeted the earliest phases of occupation.",
+          "sourceIds": [
+            "asikli-project",
+            "asikli-intro"
+          ]
+        },
+        {
+          "text": "Current research integrates zooarchaeology, archaeobotany, geoarchaeology, micromorphology, human osteology, obsidian technology, architecture and experimental archaeology. These approaches have produced high-resolution reconstructions of animal management and activities within the village.",
+          "sourceIds": [
+            "asikli-stiner2022pnas",
+            "asikli-abell2019",
+            "asikli-duru2021"
+          ]
+        },
+        {
+          "text": "An important part of preservation is reconstructive and experimental work. Mudbrick buildings and cultivation plots modelled on Neolithic evidence are used both to communicate the site to visitors and to test how materials and structures behave over time.",
+          "sourceIds": [
+            "asikli-reconstruction",
+            "asikli-museum"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "text": "Caprine management at Aşıklı was once easier to fit into models in which domesticated animals arrived from centres farther south. High-resolution zooarchaeological and geochemical evidence instead supports a more local sequence beginning around 8400 BCE with the capture of wild young and developing gradually toward controlled reproduction. This contributes to broader multi-centred models of domestication.",
+          "sourceIds": [
+            "asikli-stiner2022pnas",
+            "asikli-abell2019"
+          ],
+          "title": "Did animal domestication develop locally?"
+        },
+        {
+          "text": "Older models sometimes treated the shift from round to rectangular architecture as a direct proxy for changes in family structure or social complexity. Aşıklı suggests a more cautious approach. Building form must be studied together with activity areas, neighbourhood organisation and communal spaces. A rectangular plan by itself does not identify a particular family system.",
+          "sourceIds": [
+            "asikli-duru2021",
+            "asikli-ozbasaran2022"
+          ],
+          "title": "Does house shape directly reveal social structure?"
+        },
+        {
+          "text": "Statements that Aşıklı was simply the 'birthplace of agriculture' or the place where animal husbandry was 'invented' are too simple. Cultivation, gathering, hunting and animal management coexisted for centuries. The strength of the site lies in documenting how these practices changed through a millennium of experimentation.",
+          "sourceIds": [
+            "asikli-stiner2022jar",
+            "asikli-stiner2022pnas"
+          ],
+          "title": "Neolithic revolution or gradual transformation?"
+        },
+        {
+          "text": "Healing around the trepanation opening shows that the individual survived the procedure for some time. There is no direct evidence, however, that identifies its purpose as medical treatment, response to trauma, ritual action or another practice. The operation should not be given a specific motive without evidence.",
+          "sourceIds": [
+            "asikli-tugcu2010"
+          ],
+          "title": "Why was trepanation performed?"
+        },
+        {
+          "text": "Repeated rebuilding of houses and different levels of investment in particular structures contribute to debates over emerging social differentiation. The evidence does not require formal classes or institutional hierarchy. Aşıklı is better suited to studying how differences in social roles and household histories could slowly become more visible.",
+          "sourceIds": [
+            "asikli-stiner2022jar",
+            "asikli-ozbasaran2022"
+          ],
+          "title": "Was there social inequality?"
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "Aşıklı Höyük is an active research, conservation and education site. Visitors can compare original excavation areas with reconstructed examples of early and later Neolithic buildings. Experimental areas are used to communicate mudbrick architecture and early cultivation practices.",
+          "sourceIds": [
+            "asikli-museum",
+            "asikli-reconstruction"
+          ]
+        },
+        {
+          "text": "The project maintains a substantial publication programme covering architecture, animal domestication, childhood, human remains, obsidian technology and many other specialist subjects.",
+          "sourceIds": [
+            "asikli-project",
+            "asikli-pubs"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Early semi-subterranean buildings",
+          "description": "Round or oval shelters used during the first centuries of permanent occupation.",
+          "period": "Early Neolithic",
+          "sourceIds": [
+            "asikli-duru2021",
+            "asikli-reconstruction"
+          ]
+        },
+        {
+          "name": "Rectangular mudbrick neighbourhoods",
+          "description": "Later clusters of houses repeatedly rebuilt in the same plots and organised into dense neighbourhoods.",
+          "period": "Neolithic",
+          "sourceIds": [
+            "asikli-ozbasaran2022",
+            "asikli-reconstruction"
+          ]
+        },
+        {
+          "name": "Trepanated human skull",
+          "description": "An early cranial intervention with bone healing demonstrating survival after the procedure.",
+          "period": "Neolithic",
+          "sourceIds": [
+            "asikli-tugcu2010"
+          ]
+        },
+        {
+          "name": "Sheep and goat management sequence",
+          "description": "Animal remains documenting the long pathway from captured wild young to managed breeding herds.",
+          "period": "Neolithic",
+          "sourceIds": [
+            "asikli-stiner2022pnas",
+            "asikli-abell2019"
+          ]
+        },
+        {
+          "name": "Obsidian production",
+          "description": "Intensive lithic production based on Cappadocian obsidian and changing reduction technologies.",
+          "period": "Neolithic",
+          "sourceIds": [
+            "asikli-yildirim2011"
+          ]
+        },
+        {
+          "name": "Under-floor burials",
+          "description": "Burials beneath occupied houses linking domestic space, memory and social belonging.",
+          "period": "Neolithic",
+          "sourceIds": [
+            "asikli-stiner2022jar",
+            "asikli-children2024"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "Aşıklı Höyük lies in the Melendiz Valley near Kızılkaya within Güzelyurt district of Aksaray, beside the Melendiz River.",
+        "distanceFromNearestCenter": "Approximately 25 km southeast of central Aksaray.",
+        "landscape": "The volcanic Cappadocian landscape combines river water, productive small plains and access to rich obsidian sources. This environmental diversity supported sedentary residence, hunting, plant use and lithic production.",
+        "gettingThere": "The site is reached by road from Aksaray toward Güzelyurt and Kızılkaya.",
+        "sourceIds": [
+          "asikli-project",
+          "asikli-intro",
+          "asikli-yildirim2011"
+        ]
+      },
+      "visit": {
+        "statusLabel": "Archaeological research and education site open to visitors",
+        "address": "Kızılkaya, Güzelyurt, Aksaray",
+        "visitorNote": "Original excavation areas can be viewed together with experimental reconstructions. Current opening arrangements should be checked through the official Turkish Museums page.",
+        "sourceIds": [
+          "asikli-museum",
+          "asikli-reconstruction"
+        ]
+      },
+      "nearbyPlaces": [],
+      "participation": []
+    }
+  }
+}

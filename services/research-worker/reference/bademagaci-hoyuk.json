@@ -1,0 +1,392 @@
+{
+  "schemaVersion": 4,
+  "id": "bademagaci-hoyuk",
+  "core": {
+    "coordinates": {
+      "latitude": 37.223056,
+      "longitude": 30.498056
+    },
+    "siteType": "mound",
+    "chronology": [
+      {
+        "periodId": "neolithic",
+        "startYear": -6500,
+        "endYear": -6160,
+        "approximate": true,
+        "note": "Early Neolithic I/II framework; exact absolute limits remain subject to revision."
+      },
+      {
+        "periodId": "chalcolithic",
+        "startYear": -6160,
+        "endYear": -5900,
+        "approximate": true,
+        "note": "Late Neolithic/Early Chalcolithic transition represented in the sequence."
+      },
+      {
+        "periodId": "early_bronze_age",
+        "approximate": true
+      },
+      {
+        "periodId": "byzantine",
+        "approximate": true
+      }
+    ],
+    "dateRange": {
+      "startYear": -6500,
+      "endYear": -5900,
+      "approximate": true
+    },
+    "visibility": {
+      "importance": 2,
+      "minZoom": 1.8,
+      "featured": false
+    },
+    "images": [],
+    "sources": [
+      {
+        "id": "bademagaci_duru_1993",
+        "title": "Bademağacı Höyüğü (Kızılkaya) Kazıları 1993 Yılı Çalışma Raporu",
+        "type": "article",
+        "author": "Refik Duru",
+        "year": 1996,
+        "url": "https://belleten.gov.tr/eng/full-text/2402/tur",
+        "journal": "Belleten"
+      },
+      {
+        "id": "bademagaci_duru_1994",
+        "title": "Bademağacı Kazıları 1994 Yılı Çalışma Raporu",
+        "type": "article",
+        "author": "Refik Duru",
+        "year": 1997,
+        "url": "https://belleten.gov.tr/eng/full-text/2418/tur",
+        "journal": "Belleten"
+      },
+      {
+        "id": "bademagaci_duru_9798",
+        "title": "Interim Report (1997 and 1998) on the Excavation at Bademağacı",
+        "type": "article",
+        "author": "Refik Duru",
+        "year": 2000,
+        "url": "https://belleten.gov.tr/ozet/2544/eng",
+        "journal": "Belleten"
+      },
+      {
+        "id": "bademagaci_duru_umurtak_2008",
+        "title": "Bademağacı Report for the Campaigns of 2004, 2005 and 2006",
+        "type": "article",
+        "author": "Refik Duru; Gülsün Umurtak",
+        "year": 2008,
+        "url": "https://belleten.gov.tr/eng/abstarct/50/eng",
+        "doi": "10.37879/belleten.2008.193",
+        "journal": "Belleten"
+      },
+      {
+        "id": "bademagaci_coords",
+        "title": "Bademağacı – A Database of Archaeological Sites",
+        "type": "database",
+        "author": "ADEMNES",
+        "url": "https://www.ademnes.de/db/site.php?s=991"
+      }
+    ]
+  },
+  "content": {
+    "tr": {
+      "name": "Bademağacı Höyük",
+      "alternativeNames": [
+        "Bademağacı",
+        "Kızılkaya Höyüğü"
+      ],
+      "province": "Antalya",
+      "district": "Döşemealtı",
+      "modernPlace": "Bademağacı çevresi",
+      "siteTypeLabel": "Höyük / Neolitik-İlk Tunç Çağı yerleşimi",
+      "occupationDisplay": "Erken Neolitik, Geç Neolitik/Erken Kalkolitik ve İlk Tunç Çağı başta olmak üzere çok dönemli yerleşim.",
+      "overview": [
+        {
+          "text": "Bademağacı Höyük, Burdur Göller Bölgesi ile Antalya ovası arasındaki tarihöncesi kültürel bağlantıları araştırmak amacıyla 1993'te kazılmaya başlayan, derin Neolitik tabakalaşması ve İlk Tunç Çağı yerleşimleriyle önemli bir höyüktür.",
+          "sourceIds": [
+            "bademagaci_duru_1993",
+            "bademagaci_duru_umurtak_2008"
+          ]
+        },
+        {
+          "text": "Derin sondajlarda ana toprağa yaklaşık 9 m derinlikte ulaşılması ve Erken Neolitik I'in çok sayıda alt evreyle temsil edilmesi, yerleşmenin uzun süreli stratigrafik gelişimini ayrıntılı incelemeye olanak sağlamıştır.",
+          "sourceIds": [
+            "bademagaci_duru_umurtak_2008"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "text": "Erken kazı yıllarında Geç Neolitik/Erken Kalkolitik ve Erken Neolitik tabakalar ayırt edildi; sonraki kampanyalar derin Neolitik diziyi çok sayıda yapı evresine ayırdı. Erken Neolitik'in ilk tabakaları hakkındaki bilgi, küçük alanlarda açığa çıkarıldıkları için diğer evrelere göre daha sınırlıdır.",
+          "sourceIds": [
+            "bademagaci_duru_1994",
+            "bademagaci_duru_umurtak_2008"
+          ]
+        },
+        {
+          "text": "1997–1998 çalışmalarında Erken Neolitik tabaka 5 ve 6, MÖ 7. binyılın ortalarına tarihlenen yerleşmeler olarak raporlandı; daha geç dönemlerde İlk Tunç Çağı iskânları da geniş alanlarda araştırıldı.",
+          "sourceIds": [
+            "bademagaci_duru_9798"
+          ]
+        }
+      ],
+      "importance": [
+        {
+          "text": "Bademağacı, Göller Bölgesi Neolitiğinin güney uzantısını Antalya havzasına bağlayan konumu ve uzun tabakalaşması nedeniyle bölgesel kronoloji ile kültürel farklılaşmayı anlamada temel bir karşılaştırma noktasıdır.",
+          "sourceIds": [
+            "bademagaci_duru_1993"
+          ]
+        },
+        {
+          "text": "Çok katlı Neolitik mimari, yerleşme planı ve İlk Tunç Çağı mimarisinin aynı höyükte izlenebilmesi, uzun dönemli yerleşim tarihi için önemli bir veri seti yaratır.",
+          "sourceIds": [
+            "bademagaci_duru_umurtak_2008",
+            "bademagaci_duru_9798"
+          ]
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "Derin sondajlar Erken Neolitik I'in birden fazla yapı evresini ve ana toprağa kadar uzanan kalın kültür dolgusunu ortaya koymuştur.",
+          "sourceIds": [
+            "bademagaci_duru_umurtak_2008"
+          ]
+        },
+        {
+          "text": "İlk Tunç Çağı yerleşimlerinin höyük yamaçlarına yayılan mimari evreleri, yerleşmenin Neolitik sonrası tarihinin de güçlü olduğunu göstermektedir.",
+          "sourceIds": [
+            "bademagaci_duru_1994",
+            "bademagaci_duru_9798"
+          ]
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "Refik Duru'nun Burdur ve çevresinde Kuruçay ile Höyücek'te yürüttüğü uzun araştırma programının ardından, çalışmalar daha güneye kaydırılarak Bademağacı 1993'te yeni kazı alanı olarak seçildi. Sonraki yıllarda geniş açmalar ve derin sondajlarla kuzey yarının stratigrafisi ayrıntılandırıldı.",
+          "sourceIds": [
+            "bademagaci_duru_1993",
+            "bademagaci_duru_umurtak_2008"
+          ]
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "Bademağacı'nın kazı yayınları, Neolitik ve İlk Tunç Çağı tabakalaşmasının büyük bölümünü ayrıntılı biçimde belgelemektedir. Alanın yorumunda ilk kampanyalardaki geçici tabaka numaraları yerine sonraki stratigrafik revizyonların dikkate alınması önemlidir.",
+          "sourceIds": [
+            "bademagaci_duru_1994",
+            "bademagaci_duru_umurtak_2008"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Derin Erken Neolitik dizi",
+          "description": "Yaklaşık 9 m'ye ulaşan derin sondajlar, çok sayıda Erken Neolitik I yapı evresi belgeledi.",
+          "period": "Erken Neolitik",
+          "sourceIds": [
+            "bademagaci_duru_umurtak_2008"
+          ]
+        },
+        {
+          "name": "Erken Neolitik 5–6 tabakaları",
+          "description": "MÖ 7. binyıl ortalarına tarihlenen yerleşmeler, erken mimari ve seramik gelişimi için önemli veri sağlar.",
+          "period": "Erken Neolitik",
+          "sourceIds": [
+            "bademagaci_duru_9798"
+          ]
+        },
+        {
+          "name": "İlk Tunç Çağı yerleşimleri",
+          "description": "Höyük yamaçlarında genişleyen çok evreli İlk Tunç Çağı mimarisi, uzun iskân tarihinin ikinci ana bölümünü oluşturur.",
+          "period": "İlk Tunç Çağı",
+          "sourceIds": [
+            "bademagaci_duru_1994",
+            "bademagaci_duru_9798"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "title": "En erken tabakaların mutlak kronolojisi",
+          "text": "Bademağacı'nın en derin Erken Neolitik tabakaları küçük alanlarda açığa çıkarıldığı ve erken yayınlarda mutlak tarihleme sınırlı olduğu için alt evrelerin kesin tarih sınırları ihtiyatla kullanılmalıdır.",
+          "sourceIds": [
+            "bademagaci_duru_1993",
+            "bademagaci_duru_umurtak_2008"
+          ]
+        },
+        {
+          "title": "Bölgesel kültürel ayrışma",
+          "text": "Kazı projesinin temel sorularından biri, Burdur/Göller Bölgesi Neolitiği ile Antalya'nın kuzey eşiğindeki toplulukların benzerlik ve farklılıklarının nasıl açıklanacağıdır. Bademağacı bu geçiş zonunda anahtar konumdadır.",
+          "sourceIds": [
+            "bademagaci_duru_1993"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "Bademağacı, Antalya'nın kuzeyinde, Burdur Göller Bölgesi ile Antalya ovası arasındaki doğal geçiş güzergâhına yakın bir höyüktür.",
+        "landscape": "Dağlık eşikler ile ova sistemleri arasında, farklı ekolojik ve kültürel bölgeleri bağlayan geçiş alanı.",
+        "sourceIds": [
+          "bademagaci_duru_1993",
+          "bademagaci_coords"
+        ]
+      },
+      "visit": {
+        "statusLabel": "Arkeolojik alan",
+        "visitorNote": "Güncel ziyaret ve erişim koşulları yerel/kurumsal kaynaklardan doğrulanmalıdır.",
+        "sourceIds": [
+          "bademagaci_duru_umurtak_2008"
+        ]
+      }
+    },
+    "en": {
+      "name": "Bademağacı Höyük",
+      "alternativeNames": [
+        "Bademağacı",
+        "Kızılkaya Höyük"
+      ],
+      "province": "Antalya",
+      "district": "Döşemealtı",
+      "modernPlace": "vicinity of Bademağacı",
+      "siteTypeLabel": "Tell / Neolithic-Early Bronze Age settlement",
+      "occupationDisplay": "Multi-period settlement dominated by Early Neolithic, Late Neolithic/Early Chalcolithic and Early Bronze Age occupation.",
+      "overview": [
+        {
+          "text": "Bademağacı Höyük began to be excavated in 1993 as part of a research program examining prehistoric links between the Burdur Lakes Region and the Antalya plain. Its deep Neolithic stratigraphy and Early Bronze Age settlements make it a major regional sequence.",
+          "sourceIds": [
+            "bademagaci_duru_1993",
+            "bademagaci_duru_umurtak_2008"
+          ]
+        },
+        {
+          "text": "Deep soundings reached virgin soil at roughly 9 m and revealed numerous Early Neolithic I subphases, enabling long-term study of the mound's stratigraphic development.",
+          "sourceIds": [
+            "bademagaci_duru_umurtak_2008"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "text": "Early campaigns distinguished Late Neolithic/Early Chalcolithic and Early Neolithic deposits; later work subdivided the deep Neolithic sequence into many building phases. The earliest EN I levels remain less extensively exposed than later phases.",
+          "sourceIds": [
+            "bademagaci_duru_1994",
+            "bademagaci_duru_umurtak_2008"
+          ]
+        },
+        {
+          "text": "The 1997–1998 campaigns reported Early Neolithic Levels 5 and 6 in the mid-seventh millennium BCE, while later work also investigated extensive Early Bronze Age occupation.",
+          "sourceIds": [
+            "bademagaci_duru_9798"
+          ]
+        }
+      ],
+      "importance": [
+        {
+          "text": "Its location and long sequence make Bademağacı a key comparative point for regional chronology and cultural differentiation between the Lakes Region and the Antalya basin.",
+          "sourceIds": [
+            "bademagaci_duru_1993"
+          ]
+        },
+        {
+          "text": "The combination of multi-phase Neolithic architecture and extensive Early Bronze Age settlement provides a long-term settlement history within one mound.",
+          "sourceIds": [
+            "bademagaci_duru_umurtak_2008",
+            "bademagaci_duru_9798"
+          ]
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "Deep soundings exposed a thick cultural sequence and multiple Early Neolithic I building phases down to virgin soil.",
+          "sourceIds": [
+            "bademagaci_duru_umurtak_2008"
+          ]
+        },
+        {
+          "text": "Multi-phase Early Bronze Age architecture extending down the mound slopes demonstrates the strength of post-Neolithic occupation.",
+          "sourceIds": [
+            "bademagaci_duru_1994",
+            "bademagaci_duru_9798"
+          ]
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "After Refik Duru's long program at Kuruçay and Höyücek, research shifted farther south and Bademağacı was selected for excavation in 1993. Subsequent large trenches and deep soundings refined the stratigraphy of the northern half of the mound.",
+          "sourceIds": [
+            "bademagaci_duru_1993",
+            "bademagaci_duru_umurtak_2008"
+          ]
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "Published excavation reports document much of the Neolithic and Early Bronze Age sequence in detail. Later stratigraphic revisions should be preferred to provisional phase labels used during the earliest campaigns.",
+          "sourceIds": [
+            "bademagaci_duru_1994",
+            "bademagaci_duru_umurtak_2008"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Deep Early Neolithic sequence",
+          "description": "Soundings reaching roughly 9 m documented numerous Early Neolithic I building phases.",
+          "period": "Early Neolithic",
+          "sourceIds": [
+            "bademagaci_duru_umurtak_2008"
+          ]
+        },
+        {
+          "name": "Early Neolithic Levels 5–6",
+          "description": "Mid-seventh-millennium BCE settlements provide important evidence for early architecture and pottery development.",
+          "period": "Early Neolithic",
+          "sourceIds": [
+            "bademagaci_duru_9798"
+          ]
+        },
+        {
+          "name": "Early Bronze Age settlements",
+          "description": "Multi-phase architecture spreading along the mound slopes forms the second major component of the occupation history.",
+          "period": "Early Bronze Age",
+          "sourceIds": [
+            "bademagaci_duru_1994",
+            "bademagaci_duru_9798"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "title": "Absolute chronology of the earliest levels",
+          "text": "The deepest Early Neolithic levels were exposed in limited areas and early reports had restricted absolute dating, so precise boundaries for the lowest phases should be treated cautiously.",
+          "sourceIds": [
+            "bademagaci_duru_1993",
+            "bademagaci_duru_umurtak_2008"
+          ]
+        },
+        {
+          "title": "Regional cultural differentiation",
+          "text": "A central research question is how Neolithic communities of the Lakes Region related to those on the northern threshold of Antalya. Bademağacı occupies a strategic position in this transition zone.",
+          "sourceIds": [
+            "bademagaci_duru_1993"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "Bademağacı lies north of Antalya near a natural corridor between the Burdur Lakes Region and the Antalya plain.",
+        "landscape": "A threshold zone connecting upland and lowland ecological and cultural regions.",
+        "sourceIds": [
+          "bademagaci_duru_1993",
+          "bademagaci_coords"
+        ]
+      },
+      "visit": {
+        "statusLabel": "Archaeological site",
+        "visitorNote": "Current public access should be verified through local or institutional sources.",
+        "sourceIds": [
+          "bademagaci_duru_umurtak_2008"
+        ]
+      }
+    }
+  }
+}

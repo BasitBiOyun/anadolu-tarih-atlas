@@ -1,0 +1,940 @@
+{
+  "schemaVersion": 4,
+  "id": "alacahoyuk",
+  "core": {
+    "coordinates": {
+      "latitude": 40.233894,
+      "longitude": 34.695575
+    },
+    "siteType": "mound",
+    "chronology": [
+      {
+        "periodId": "chalcolithic",
+        "startYear": -4000,
+        "endYear": -3000,
+        "approximate": true
+      },
+      {
+        "periodId": "early_bronze_age",
+        "startYear": -3000,
+        "endYear": -2000,
+        "approximate": true
+      },
+      {
+        "periodId": "middle_bronze_age",
+        "startYear": -2000,
+        "endYear": -1650,
+        "approximate": true
+      },
+      {
+        "periodId": "late_bronze_age",
+        "startYear": -1650,
+        "endYear": -1200,
+        "approximate": true
+      },
+      {
+        "periodId": "iron_age",
+        "startYear": -750,
+        "endYear": -500,
+        "approximate": true
+      }
+    ],
+    "dateRange": {
+      "startYear": -4000,
+      "endYear": -500,
+      "approximate": true
+    },
+    "visibility": {
+      "importance": 1,
+      "minZoom": 1.3,
+      "featured": true
+    },
+    "visit": {
+      "status": "open",
+      "hours": null,
+      "closedDays": [],
+      "museumPass": true,
+      "phone": "0364 422 70 11",
+      "officialUrl": "https://muze.gov.tr/muze-detay?DistId=MRK&SectionId=ALC01"
+    },
+    "images": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Alaca_H%C3%B6y%C3%BCk_01.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Alaca_H%C3%B6y%C3%BCk_01.jpg",
+        "caption": {
+          "tr": "Alacahöyük kazı alanı ve anıtsal kalıntılar.",
+          "en": "The excavation area and monumental remains at Alacahöyük."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Alacah%C3%B6y%C3%BCk_Early_Bronze_Age_graves_3367.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Alacah%C3%B6y%C3%BCk_Early_Bronze_Age_graves_3367.jpg",
+        "caption": {
+          "tr": "Erken Tunç Çağı seçkin mezarlarının bulunduğu alan.",
+          "en": "The area of the elite Early Bronze Age tombs."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Alacah%C3%B6y%C3%BCk_General_picture_3348.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Alacah%C3%B6y%C3%BCk_General_picture_3348.jpg",
+        "caption": {
+          "tr": "Alacahöyük'ün genel görünümü.",
+          "en": "General view of Alacahöyük."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sundisk_Alacahoyuk.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Sundisk_Alacahoyuk.jpg",
+        "caption": {
+          "tr": "Alacahöyük mezar geleneğiyle özdeşleşen güneş kurslarından bir örnek.",
+          "en": "An example of the sun disks associated with the Alacahöyük tomb assemblages."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      }
+    ],
+    "sources": [
+      {
+        "id": "alaca-muze",
+        "citationNumber": 1,
+        "type": "institutional",
+        "authors": [
+          "T.C. Kültür ve Turizm Bakanlığı"
+        ],
+        "title": "Alacahöyük Müzesi ve Örenyeri",
+        "year": null,
+        "journalOrPublisher": "Türkiye Müzeleri",
+        "url": "https://muze.gov.tr/muze-detay?DistId=MRK&SectionId=ALC01",
+        "doi": ""
+      },
+      {
+        "id": "alaca-ktb",
+        "citationNumber": 2,
+        "type": "institutional",
+        "authors": [
+          "T.C. Kültür ve Turizm Bakanlığı"
+        ],
+        "title": "Alacahöyük",
+        "year": null,
+        "journalOrPublisher": "Kültür ve Turizm Bakanlığı",
+        "url": "https://www.ktb.gov.tr/EN-114132/alacahoyuk.html",
+        "doi": ""
+      },
+      {
+        "id": "alaca-arik1937",
+        "citationNumber": 3,
+        "type": "excavation_report",
+        "authors": [
+          "Remzi Oğuz Arık"
+        ],
+        "title": "Türk Tarih Kurumu tarafından yapılan Alacahöyük hafriyatı: 1935'teki çalışmalara ve keşiflere ait ilk rapor",
+        "year": 1937,
+        "journalOrPublisher": "Türk Tarih Kurumu",
+        "url": "https://kutuphane.ttk.gov.tr/details?id=464824&materialType=KT",
+        "doi": ""
+      },
+      {
+        "id": "alaca-ozyar1999",
+        "citationNumber": 4,
+        "type": "article",
+        "authors": [
+          "Aslı Özyar"
+        ],
+        "title": "Reconsidering the \"Royal\" Tombs of Alacahöyük: Problems of Stratigraphy According to the Topographical Location of the Tombs",
+        "year": 1999,
+        "journalOrPublisher": "TÜBA-AR Türkiye Bilimler Akademisi Arkeoloji Dergisi 2, 79-85",
+        "url": "https://dergipark.org.tr/en/pub/tubaar/article/1697453",
+        "doi": ""
+      },
+      {
+        "id": "alaca-tin2020",
+        "citationNumber": 5,
+        "type": "article",
+        "authors": [
+          "Ünsal Yalçın",
+          "H. Gönül Yalçın"
+        ],
+        "title": "An Ingot Fragment of Tin from EBA Royal Tombs at Alacahöyük, Anatolia",
+        "year": 2020,
+        "journalOrPublisher": "Süleyman Demirel Üniversitesi Fen-Edebiyat Fakültesi Sosyal Bilimler Dergisi 50, 233-239",
+        "url": "https://dergipark.org.tr/tr/pub/sufesosbil/article/711568",
+        "doi": ""
+      },
+      {
+        "id": "alaca-chron2022",
+        "citationNumber": 6,
+        "type": "book_chapter",
+        "authors": [
+          "Ünsal Yalçın",
+          "H. Gönül Yalçın"
+        ],
+        "title": "Radyokarbon Analizleri Işığında Alacahöyük Kral Mezarları Kronolojisi",
+        "year": 2022,
+        "journalOrPublisher": "Asırlık Çınar Anadolu Medeniyetleri Müzesi 100 Yaşında, 291-300",
+        "url": "https://avesis.sdu.edu.tr/yayin/5487df67-c9f0-477c-8b26-08116b82ea73/radyokarbon-analizleri-isiginda-alacahoyuk-kral-mezarlari-kronolojisi",
+        "doi": ""
+      },
+      {
+        "id": "alaca-taracha2012",
+        "citationNumber": 7,
+        "type": "article",
+        "authors": [
+          "Piotr Taracha"
+        ],
+        "title": "The Sculptures of Alacahöyük: A Key to Religious Symbolism in Hittite Representational Art",
+        "year": 2012,
+        "journalOrPublisher": "Near Eastern Archaeology 75(2)",
+        "url": "https://www.journals.uchicago.edu/doi/10.5615/neareastarch.75.2.0108",
+        "doi": "10.5615/neareastarch.75.2.0108"
+      },
+      {
+        "id": "alaca-figurines2013",
+        "citationNumber": 8,
+        "type": "article",
+        "authors": [
+          "Ünsal Yalçın",
+          "H. Gönül Yalçın"
+        ],
+        "title": "Reassessing Anthropomorphic Metal Figurines of Alacahöyük, Anatolia",
+        "year": 2013,
+        "journalOrPublisher": "Near Eastern Archaeology 76(1), 38-49",
+        "url": "https://www.journals.uchicago.edu/doi/abs/10.5615/neareastarch.76.1.0038",
+        "doi": "10.5615/neareastarch.76.1.0038"
+      },
+      {
+        "id": "alaca-sacrifice2023",
+        "citationNumber": 9,
+        "type": "article",
+        "authors": [
+          "Fatma Sevinç Erbaşı"
+        ],
+        "title": "Erken Tunç Çağı'nda Alaca Höyük Kralî Mezarlarında Kurban Uygulamalarına Dair Bazı Gözlemler",
+        "year": 2023,
+        "journalOrPublisher": "OANNES - International Journal of Ancient History 5(1)",
+        "url": "https://dergipark.org.tr/en/pub/oannes/article/1235520",
+        "doi": ""
+      },
+      {
+        "id": "alaca-water2015",
+        "citationNumber": 10,
+        "type": "article",
+        "authors": [
+          "M. Ü. Öziş",
+          "et al."
+        ],
+        "title": "Water Works Through Four Millenia in Turkey",
+        "year": 2015,
+        "journalOrPublisher": "Environmental Processes",
+        "url": "https://doi.org/10.1007/s40710-015-0085-3",
+        "doi": "10.1007/s40710-015-0085-3"
+      },
+      {
+        "id": "alaca-alexander1989",
+        "citationNumber": 11,
+        "type": "article",
+        "authors": [
+          "Robert L. Alexander"
+        ],
+        "title": "A Great Queen on the Sphinx Piers at Alaca Hüyük",
+        "year": 1989,
+        "journalOrPublisher": "Anatolian Studies 39, 151-158",
+        "url": "https://www.cambridge.org/core/journals/anatolian-studies/article/abs/great-queen-on-the-sphinx-piers-at-alaca-huyuk/0C838211B301DAFF47C01C4D3300DA94",
+        "doi": "10.2307/3642819"
+      }
+    ]
+  },
+  "content": {
+    "tr": {
+      "name": "Alacahöyük",
+      "alternativeNames": [
+        "Alaca Höyük"
+      ],
+      "province": "Çorum",
+      "district": "Alaca",
+      "modernPlace": "Alacahöyük beldesi",
+      "siteTypeLabel": "Çok Dönemli Höyük, Seçkin Mezarlık ve Hitit Tören Merkezi",
+      "occupationDisplay": "Kalkolitik Çağ'dan Demir Çağı'na uzanan çok katmanlı yerleşim",
+      "occupationNote": {
+        "text": "Alacahöyük'te kazıcıların klasik sınıflandırmasına göre Kalkolitik, Erken Tunç, Hitit ve Frig dönemlerini kapsayan uzun bir yerleşim dizisi vardır. Alanın iki evresi özellikle öne çıkar. MÖ 3. binyıldaki zengin seçkin mezarları Orta Anadolu'da toplumsal hiyerarşi ve metal üretimi tartışmalarının merkezindedir. MÖ 2. binyıldaki Sfenksli Kapı ve kabartmalar ise Hitit İmparatorluk dönemi din, temsil ve tören kültürünün başlıca anıtları arasındadır.",
+        "sourceIds": [
+          "alaca-muze",
+          "alaca-ktb",
+          "alaca-ozyar1999",
+          "alaca-taracha2012"
+        ]
+      },
+      "overview": [
+        {
+          "text": "Alacahöyük, Çorum'un Alaca ilçesinde, Hattuşa'nın yaklaşık 25 kilometre kuzeyindeki verimli bir vadi sisteminde yer alan önemli bir höyüktür. Uzun süreli yerleşim, Orta Anadolu'nun tarihöncesinden Hitit dünyasına ve Demir Çağı'na geçişini aynı alanda izleme imkânı verir. Kültür Bakanlığı'nın geleneksel tabakalanma şemasında höyükte dört ana kültür evresi ve bunların içinde çok sayıda mimari kat tanımlanır.",
+          "sourceIds": [
+            "alaca-ktb",
+            "alaca-muze"
+          ]
+        },
+        {
+          "text": "Alanın dünya arkeolojisindeki en dikkat çekici buluntu gruplarından biri, 1930'lu yıllarda ortaya çıkarılan Erken Tunç Çağı seçkin mezarlarıdır. Geleneksel olarak 'kral mezarları' diye anılan bu gömülerde yetişkin kadın ve erkeklere ait iskeletlerin yanında altın, gümüş, bakır ve tunç eserler, hayvan biçimli standartlar, güneş kursları, silahlar, süs eşyaları ve çeşitli araçlar bulunmuştur. Mezarların zenginliği, MÖ 3. binyıl Orta Anadolu'sunda güçlü bir seçkin tabakanın varlığını tartışmak için temel veri oluşturur.",
+          "sourceIds": [
+            "alaca-muze",
+            "alaca-ozyar1999",
+            "alaca-figurines2013",
+            "alaca-sacrifice2023"
+          ]
+        },
+        {
+          "text": "Hitit döneminde Alacahöyük bambaşka bir anıtsal kimlik kazanmıştır. Yaklaşık 10 metre genişliğindeki Sfenksli Kapı, kapıyı çevreleyen kabartmalı ortostatlar ve bunların tören, av ve tanrısal figürleri, buranın yalnızca savunmalı bir yerleşim değil aynı zamanda önemli bir kült ve temsil merkezi olduğunu gösterir. Kabartmaların ikonografisi Hitit devlet panteonu, kraliyet ritüeli ve yerel festival uygulamalarıyla ilişkilendirilmiştir.",
+          "sourceIds": [
+            "alaca-muze",
+            "alaca-taracha2012",
+            "alaca-alexander1989"
+          ]
+        },
+        {
+          "text": "Alacahöyük aynı zamanda Türkiye arkeoloji tarihi için özel bir yere sahiptir. 1935'te Türk Tarih Kurumu adına başlatılan kazı, Cumhuriyet döneminin ilk büyük Türk arkeolojik kazılarından biridir. Bu nedenle alan, yalnızca eski toplumların tarihi için değil Türkiye'de bilimsel arkeolojinin kurumsallaşma süreci için de birincil önemdedir.",
+          "sourceIds": [
+            "alaca-arik1937",
+            "alaca-ktb"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "text": "Kazıların geleneksel tabakalanmasında en eski ana evre Kalkolitik döneme verilir. Taş temelli kerpiç mimari, basit konut düzenleri ve yerel üretim bu evrenin genel karakteridir. Tarihlemeler eski kazı terminolojisine dayandığı için modern mutlak kronolojiyle bire bir eşleştirilirken dikkatli olunmalıdır.",
+          "sourceIds": [
+            "alaca-ktb"
+          ],
+          "title": "Kalkolitik yerleşim"
+        },
+        {
+          "text": "Erken Tunç Çağı Alacahöyük'ün toplumsal ve ekonomik açıdan en tartışmalı evrelerinden biridir. Zengin mezarlar geleneksel olarak MÖ 3. binyılın ikinci yarısına yerleştirilmiştir. Yeni radyokarbon değerlendirmeleri ise bazı mezarların daha erken, MÖ 3. binyılın ikinci çeyreğinde başlamış olabileceğini düşündürür. Bu nedenle mezarların kesin kronolojik dizisi hâlâ araştırma konusudur.",
+          "sourceIds": [
+            "alaca-ozyar1999",
+            "alaca-chron2022"
+          ],
+          "title": "Erken Tunç Çağı ve seçkin mezarlar"
+        },
+        {
+          "text": "MÖ 2. binyılda yerleşim Hitit kültür dünyasının önemli merkezlerinden biri hâline gelir. Sfenksli Kapı, anıtsal sur sistemi, büyük yapı kalıntıları ve taş kabartmalar bu dönemin en görünür unsurlarıdır. Kapı kabartmalarının büyük bölümü Hitit İmparatorluk dönemine ve özellikle MÖ 13. yüzyıla tarihlenir.",
+          "sourceIds": [
+            "alaca-ktb",
+            "alaca-taracha2012"
+          ],
+          "title": "Hitit dönemi"
+        },
+        {
+          "text": "Hitit siyasi sisteminin sona ermesinden sonra alanın kullanımı tamamen bitmemiştir. Üst seviyelerde Demir Çağı ve geleneksel olarak Frig dönemiyle ilişkilendirilen buluntular vardır. Ancak alanın bilimsel öneminin ağırlık merkezi Erken Tunç Çağı seçkin mezarları ile Hitit anıtsal evreleridir.",
+          "sourceIds": [
+            "alaca-muze",
+            "alaca-ktb"
+          ],
+          "title": "Demir Çağı"
+        },
+        {
+          "text": "Alacahöyük çevresindeki Gölpınar su yapısı, Hitit döneminin su yönetimi açısından ayrıca önemlidir. Araştırmalar bu baraj sistemini MÖ 2. binyılın son yüzyıllarındaki daha geniş Hitit su yönetimi geleneği içinde değerlendirir.",
+          "sourceIds": [
+            "alaca-water2015"
+          ],
+          "title": "Hitit su yönetimi"
+        }
+      ],
+      "importance": [
+        {
+          "text": "Alacahöyük mezarları, Orta Anadolu'da Erken Tunç Çağı toplumsal hiyerarşisini anlamak için en zengin arkeolojik veri kümelerinden biridir. Mezar mimarisi, farklı bireylerin gömülme biçimleri ve sıra dışı metal armağanlar güçlü bir seçkin kimliğinin oluştuğunu gösterir. Bunun nasıl bir siyasal yapıya karşılık geldiği ise tartışmalıdır.",
+          "sourceIds": [
+            "alaca-ozyar1999",
+            "alaca-figurines2013"
+          ],
+          "title": "Toplumsal hiyerarşi"
+        },
+        {
+          "text": "Mezarlardan gelen metal eserler erken metalurji ve uzun mesafeli hammadde dolaşımı açısından olağanüstü önemlidir. A Mezarı'ndan yeniden incelenen kumaşa sarılı metal parçasının kalay külçesi olarak tanımlanması, Eski Dünya'da korunmuş en erken kalay külçelerinden biri olarak yorumlanmasına yol açmıştır.",
+          "sourceIds": [
+            "alaca-tin2020"
+          ],
+          "title": "Erken metalurji"
+        },
+        {
+          "text": "Sfenksli Kapı kabartmaları Hitit görsel kültürünün en önemli anıtsal programlarından biridir. Tören, av ve tanrısal ikonografi Hitit devlet panteonunun ve kraliyet ritüelinin nasıl görselleştirildiğini tartışmak için kullanılır.",
+          "sourceIds": [
+            "alaca-taracha2012",
+            "alaca-alexander1989"
+          ],
+          "title": "Hitit dini ve görsel kültürü"
+        },
+        {
+          "text": "1935 kazılarının Türk Tarih Kurumu tarafından başlatılması, Alacahöyük'ü Türkiye'de ulusal arkeoloji kurumlarının oluşumu ve Cumhuriyet dönemi bilim politikaları açısından da tarihsel bir belge hâline getirir.",
+          "sourceIds": [
+            "alaca-arik1937"
+          ],
+          "title": "Türkiye arkeoloji tarihi"
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "Erken Tunç Çağı'na ait seçkin mezar grubu, zengin metal armağanları ve sıra dışı gömü uygulamalarıyla alanın en ünlü buluntusudur. Müze sunumunda 13 mezar öne çıkarılır, bilimsel yayınlarda mezar sayısı ve gruplama biçimi farklılaşabilir.",
+          "sourceIds": [
+            "alaca-muze",
+            "alaca-figurines2013"
+          ],
+          "title": "Seçkin mezarlar"
+        },
+        {
+          "text": "Güneş kursları ve hayvan biçimli metal standartlar, Alacahöyük'ün en tanınmış eserleridir. Bunların kesin işlevi konusunda tek bir görüş yoktur. Törensel, sembolik veya taşıyıcı düzeneklerle ilişkili yorumlar yapılmıştır.",
+          "sourceIds": [
+            "alaca-figurines2013",
+            "alaca-ozyar1999"
+          ],
+          "title": "Güneş kursları ve metal standartlar"
+        },
+        {
+          "text": "Altın, gümüş, bakır ve tunçtan yapılmış silahlar, takılar, kaplar ve figürinler Erken Tunç Çağı metal işçiliğinin teknik çeşitliliğini gösterir.",
+          "sourceIds": [
+            "alaca-figurines2013",
+            "alaca-tin2020"
+          ],
+          "title": "Metal eserler"
+        },
+        {
+          "text": "A Mezarı'nda bulunan küçük metal parçasının yeni analizlerle kalay külçesi olarak tanımlanması, kalayın dolaşımı ve tunç üretiminin hammaddeleri üzerine araştırmalara yeni bir boyut kazandırmıştır.",
+          "sourceIds": [
+            "alaca-tin2020"
+          ],
+          "title": "Kalay külçesi"
+        },
+        {
+          "text": "Mezarların üzerini kapatan düzenekler, hayvan kalıntıları ve mezar çevresindeki uygulamalar, gömü sırasında kurban ve şölen benzeri ritüellerin gerçekleşmiş olabileceği yönünde yorumlanmıştır.",
+          "sourceIds": [
+            "alaca-sacrifice2023"
+          ],
+          "title": "Gömü ritüelleri"
+        },
+        {
+          "text": "Sfenksli Kapı, sfenks protomları, çift başlı kartal motifi ve kabartmalı ortostatlarıyla Hitit İmparatorluk dönemi taş işçiliğinin başlıca örneklerinden biridir.",
+          "sourceIds": [
+            "alaca-muze",
+            "alaca-taracha2012",
+            "alaca-alexander1989"
+          ],
+          "title": "Sfenksli Kapı"
+        },
+        {
+          "text": "Kapı çevresindeki kabartmalarda kraliyet çifti, ibadet, kurban, müzik ve av sahneleri birlikte görülür. Programın tam anlamı konusunda farklı yorumlar bulunmakla birlikte tören ve tanrısal koruma temaları belirgindir.",
+          "sourceIds": [
+            "alaca-taracha2012",
+            "alaca-alexander1989"
+          ],
+          "title": "Kabartmalı ortostatlar"
+        },
+        {
+          "text": "Alacahöyük yakınındaki Gölpınar barajı, Hitit mühendisliği ve su yönetiminin bölgesel ölçekte değerlendirilmesini sağlayan önemli bir peyzaj unsurudur.",
+          "sourceIds": [
+            "alaca-water2015"
+          ],
+          "title": "Gölpınar su yapısı"
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "Alacahöyük 19. yüzyılda Batılı gezgin ve araştırmacıların dikkatini çekti. W. G. Hamilton 1835'te alanı tanıttı. 19. yüzyılın ikinci yarısı ve 20. yüzyıl başında çeşitli araştırmacılar özellikle Sfenksli Kapı'yı belgeledi. Theodor Makridi'nin 1907'de yaptığı kısa çalışma yeni ortostatları açığa çıkardı.",
+          "sourceIds": [
+            "alaca-ktb"
+          ]
+        },
+        {
+          "text": "Sistematik kazılar 1935'te Türk Tarih Kurumu adına Hamit Zübeyr Koşay ve Remzi Oğuz Arık'ın yer aldığı ekip tarafından başlatıldı. İlk rapor kısa sürede yayımlandı ve kazılar Cumhuriyet döneminin bilimsel arkeoloji programında simgesel bir konum kazandı.",
+          "sourceIds": [
+            "alaca-arik1937",
+            "alaca-ktb"
+          ]
+        },
+        {
+          "text": "Türk Tarih Kurumu kazıları farklı dönemlerde Hamit Zübeyr Koşay, Mahmut Akok ve diğer araştırmacılarla sürdü. Çalışmalar 1980'lerde kesintiye uğradı, 1997'de yeni bir kazı evresi başladı. Uzun araştırma tarihi bugün eski kazıların belgelerini ve buluntularını yeniden değerlendirmeyi de gerekli kılmaktadır.",
+          "sourceIds": [
+            "alaca-ktb"
+          ]
+        },
+        {
+          "text": "Son dönem araştırmalarının önemli yönlerinden biri, 1930'larda bulunan mezar malzemesinin modern arkeometri, radyokarbon ve metal analizi yöntemleriyle yeniden incelenmesidir. Bu çalışmalar eski kronolojik kabullerin ve bazı buluntu tanımlarının yeniden tartışılmasına yol açmıştır.",
+          "sourceIds": [
+            "alaca-chron2022",
+            "alaca-tin2020",
+            "alaca-figurines2013"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "text": "Alacahöyük mezarlarının geleneksel olarak 'kral mezarları' diye adlandırılması, mezarlardaki olağanüstü zenginlik ve toplumsal ayrıcalığa dayanır. Ancak gömülü kişilerin gerçek siyasi unvanlarını doğrudan gösteren yazılı belge yoktur. Bu nedenle 'kraliyet' ifadesi arkeolojik seçkinliği tanımlayan geleneksel bir terim olarak kullanılmalıdır.",
+          "sourceIds": [
+            "alaca-ozyar1999",
+            "alaca-figurines2013"
+          ],
+          "title": "Gerçekten kral mezarları mı?"
+        },
+        {
+          "text": "Mezarların tarihlendirilmesi uzun süredir tartışmalıdır. Eski kazılarda mezarların höyükteki farklı derinlikleri kronolojik bir sıra gibi yorumlanmıştır. Özyar, mezarların eğimli topografya üzerindeki konumlarının bu yaklaşımı sorunlu hâle getirdiğini göstermiştir. Yeni radyokarbon sonuçları da bazı geleneksel tarihlemelerin yeniden değerlendirilmesini gerektirir.",
+          "sourceIds": [
+            "alaca-ozyar1999",
+            "alaca-chron2022"
+          ],
+          "title": "Mezarların kronolojisi"
+        },
+        {
+          "text": "Güneş kursları ve hayvan biçimli standartlar modern popüler kültürde çoğu zaman kesin bir dinsel anlamla sunulur. Oysa bu nesnelerin kullanım biçimi ve sembolik işlevi kesin olarak bilinmemektedir. Mezar bağlamı ritüel önemlerini gösterir, ancak belirli bir tanrı, tören veya astronomik işleve doğrudan bağlamak temkin gerektirir.",
+          "sourceIds": [
+            "alaca-figurines2013",
+            "alaca-ozyar1999"
+          ],
+          "title": "Güneş kurslarının işlevi"
+        },
+        {
+          "text": "Sfenksli Kapı kabartmalarının tarihi ve programı üzerine farklı görüşler üretilmiştir. Taracha ikonografik ve tarihsel gerekçelerle özellikle MÖ 13. yüzyılın ikinci yarısını savunur ve sahneleri Hitit devlet panteonunun ana tanrılarıyla ilişkilendirir. Kabartmaların yerel festival mi yoksa daha genel bir devlet töreni mi gösterdiği tartışılmaya devam eder.",
+          "sourceIds": [
+            "alaca-taracha2012",
+            "alaca-alexander1989"
+          ],
+          "title": "Sfenksli Kapı programının yorumu"
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "Alacahöyük bugün müze ve ören yeri olarak ziyarete açıktır. Müze koleksiyonu Kalkolitik, Erken Tunç, Hitit ve Frig dönemlerine ait eserleri bir arada sunar. Erken Tunç Çağı mezar buluntuları serginin en önemli gruplarındandır.",
+          "sourceIds": [
+            "alaca-muze"
+          ]
+        },
+        {
+          "text": "Alan uzun kazı geçmişi nedeniyle hem açıkta korunmuş mimariyi hem de eski kazılardan gelen büyük bir müze koleksiyonunu içerir. Sfenksli Kapı ve çevresi ziyaret rotasının merkezindedir.",
+          "sourceIds": [
+            "alaca-muze",
+            "alaca-ktb"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Erken Tunç Çağı seçkin mezarları",
+          "description": "Zengin metal armağanları ve karmaşık gömü ritüelleriyle Orta Anadolu'da erken toplumsal hiyerarşinin en önemli kanıt gruplarından biri.",
+          "period": "Erken Tunç Çağı",
+          "sourceIds": [
+            "alaca-ozyar1999",
+            "alaca-chron2022"
+          ]
+        },
+        {
+          "name": "Güneş kursları",
+          "description": "Mezar bağlamlarından gelen ve Alacahöyük'le özdeşleşen metal sembolik nesneler. Kesin işlevleri tartışmalıdır.",
+          "period": "Erken Tunç Çağı",
+          "sourceIds": [
+            "alaca-figurines2013"
+          ]
+        },
+        {
+          "name": "Kalay külçesi parçası",
+          "description": "A Mezarı'ndan gelen ve yeniden analiz sonucunda kalay olarak tanımlanan erken hammadde buluntusu.",
+          "period": "Erken Tunç Çağı",
+          "sourceIds": [
+            "alaca-tin2020"
+          ]
+        },
+        {
+          "name": "Sfenksli Kapı",
+          "description": "Sfenks protomları ve kabartmalı ortostatlarıyla Hitit İmparatorluk dönemi anıtsal giriş kompleksi.",
+          "period": "Geç Tunç Çağı",
+          "sourceIds": [
+            "alaca-muze",
+            "alaca-taracha2012"
+          ]
+        },
+        {
+          "name": "Kabartmalı ortostatlar",
+          "description": "Kraliyet, ibadet, kurban ve av sahneleri içeren Hitit taş kabartma programı.",
+          "period": "Geç Tunç Çağı",
+          "sourceIds": [
+            "alaca-taracha2012",
+            "alaca-alexander1989"
+          ]
+        },
+        {
+          "name": "Gölpınar barajı",
+          "description": "Alacahöyük çevresinde Hitit dönemi su yönetiminin önemli örneklerinden biri.",
+          "period": "Geç Tunç Çağı",
+          "sourceIds": [
+            "alaca-water2015"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "Alacahöyük, Çorum'un Alaca ilçesine bağlı Alacahöyük beldesinde, Hattuşa'nın yaklaşık 25 km kuzeyinde ve Çorum kent merkezinin yaklaşık 50 km güneybatısında yer alır.",
+        "distanceFromNearestCenter": "Çorum kent merkezine yaklaşık 50 km.",
+        "landscape": "Höyük, tarıma elverişli dalgalı plato ve vadi peyzajı içinde yer alır. Yakındaki su kaynakları ve Gölpınar su yapısı, alanın çevresel tarihinin anlaşılmasında önemlidir.",
+        "gettingThere": "Alaca üzerinden Alacahöyük beldesine karayoluyla ulaşılır.",
+        "sourceIds": [
+          "alaca-muze",
+          "alaca-ktb",
+          "alaca-water2015"
+        ]
+      },
+      "visit": {
+        "statusLabel": "Müze ve ören yeri ziyarete açık",
+        "address": "Alacahöyük Beldesi, Alaca, Çorum",
+        "visitorNote": "Ziyaretçi alanında müze, Erken Tunç Çağı mezar bölgesi, Sfenksli Kapı ve Hitit dönemine ait mimari kalıntılar görülebilir. Güncel saatler için resmi Türkiye Müzeleri sayfası kontrol edilmelidir.",
+        "sourceIds": [
+          "alaca-muze"
+        ]
+      },
+      "nearbyPlaces": [],
+      "participation": []
+    },
+    "en": {
+      "name": "Alacahöyük",
+      "alternativeNames": [
+        "Alaca Höyük"
+      ],
+      "province": "Çorum",
+      "district": "Alaca",
+      "modernPlace": "Alacahöyük",
+      "siteTypeLabel": "Multi-Period Mound, Elite Cemetery and Hittite Ceremonial Centre",
+      "occupationDisplay": "a multi-layered sequence from the Chalcolithic through the Iron Age",
+      "occupationNote": {
+        "text": "Alacahöyük preserves a long sequence traditionally divided into Chalcolithic, Early Bronze Age, Hittite and Phrygian phases. Two horizons are especially important. The rich 3rd-millennium BCE elite tombs are central to debates about hierarchy and metallurgy in central Anatolia, while the Sphinx Gate and sculptured orthostats are major monuments of Hittite imperial religion and representation.",
+        "sourceIds": [
+          "alaca-muze",
+          "alaca-ktb",
+          "alaca-ozyar1999",
+          "alaca-taracha2012"
+        ]
+      },
+      "overview": [
+        {
+          "text": "Alacahöyük lies in the Alaca district of Çorum, roughly 25 km north of Hattusa, within a fertile valley landscape. Its long occupation allows major transformations in central Anatolia to be followed from prehistory into the Hittite world and the Iron Age. Traditional excavation schemes distinguish four main cultural phases with numerous architectural levels.",
+          "sourceIds": [
+            "alaca-ktb",
+            "alaca-muze"
+          ]
+        },
+        {
+          "text": "One of the most remarkable assemblages is the group of elite Early Bronze Age tombs excavated in the 1930s. Traditionally called 'royal tombs', they contained adult men and women accompanied by gold, silver, copper and bronze objects, animal standards, sun disks, weapons, jewellery and tools. Their extraordinary wealth is key evidence for social differentiation in 3rd-millennium central Anatolia.",
+          "sourceIds": [
+            "alaca-muze",
+            "alaca-ozyar1999",
+            "alaca-figurines2013",
+            "alaca-sacrifice2023"
+          ]
+        },
+        {
+          "text": "In the Hittite period Alacahöyük acquired a different monumental identity. The Sphinx Gate, sculptured orthostats and scenes of ritual, hunting and divine imagery show that the site was more than a defended settlement. The relief programme has been interpreted in relation to the Hittite state pantheon, royal ritual and local festivals.",
+          "sourceIds": [
+            "alaca-muze",
+            "alaca-taracha2012",
+            "alaca-alexander1989"
+          ]
+        },
+        {
+          "text": "Alacahöyük also holds a special place in the history of archaeology in Türkiye. Excavation begun in 1935 on behalf of the Turkish Historical Society became one of the first major Turkish archaeological projects of the Republican era.",
+          "sourceIds": [
+            "alaca-arik1937",
+            "alaca-ktb"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "text": "The earliest main phase in the traditional excavation scheme is Chalcolithic. Mudbrick buildings on stone foundations and local domestic occupation characterise this horizon. The old excavation terminology should not be equated mechanically with modern absolute chronologies.",
+          "sourceIds": [
+            "alaca-ktb"
+          ],
+          "title": "Chalcolithic occupation"
+        },
+        {
+          "text": "The elite tombs belong to the Early Bronze Age. They were long placed mainly in the later 3rd millennium BCE, but radiocarbon re-evaluation suggests that at least part of the cemetery may begin earlier, in the second quarter of the millennium. Their exact internal chronology remains debated.",
+          "sourceIds": [
+            "alaca-ozyar1999",
+            "alaca-chron2022"
+          ],
+          "title": "Early Bronze Age elite cemetery"
+        },
+        {
+          "text": "During the 2nd millennium BCE the settlement became an important centre within the Hittite cultural sphere. The Sphinx Gate, fortifications, monumental buildings and stone reliefs belong to this broad phase. Much of the sculptural programme is commonly placed in the Hittite Empire period and especially the 13th century BCE.",
+          "sourceIds": [
+            "alaca-ktb",
+            "alaca-taracha2012"
+          ],
+          "title": "Hittite period"
+        },
+        {
+          "text": "Use of the mound continued after the collapse of the Hittite political system. Upper levels contain Iron Age material traditionally associated with Phrygian occupation, though the archaeological fame of the site remains centred on the Early Bronze Age and Hittite phases.",
+          "sourceIds": [
+            "alaca-muze",
+            "alaca-ktb"
+          ],
+          "title": "Iron Age"
+        },
+        {
+          "text": "The nearby Gölpınar hydraulic installation adds another dimension to the Hittite landscape. Research places it within the broader tradition of late 2nd-millennium BCE Hittite water management.",
+          "sourceIds": [
+            "alaca-water2015"
+          ],
+          "title": "Hittite water management"
+        }
+      ],
+      "importance": [
+        {
+          "text": "The elite cemetery is one of the richest bodies of evidence for Early Bronze Age hierarchy in central Anatolia. Tomb construction, treatment of the dead and exceptional metal grave goods point to a highly privileged social group, although the exact political form represented by that elite is debated.",
+          "sourceIds": [
+            "alaca-ozyar1999",
+            "alaca-figurines2013"
+          ],
+          "title": "Social hierarchy"
+        },
+        {
+          "text": "Metal objects from the tombs are crucial for the study of early metallurgy and long-distance raw-material circulation. Reanalysis of a cloth-wrapped metal fragment from Tomb A identified it as tin, leading to its interpretation as one of the earliest preserved tin ingots known from the Old World.",
+          "sourceIds": [
+            "alaca-tin2020"
+          ],
+          "title": "Early metallurgy"
+        },
+        {
+          "text": "The Sphinx Gate reliefs are among the major monumental programmes of Hittite visual culture and provide evidence for the representation of royal ceremony, hunting and divine order.",
+          "sourceIds": [
+            "alaca-taracha2012",
+            "alaca-alexander1989"
+          ],
+          "title": "Hittite religion and representation"
+        },
+        {
+          "text": "The 1935 excavation makes the site a primary document for the institutional history of archaeology in Republican Türkiye as well as for ancient Anatolia.",
+          "sourceIds": [
+            "alaca-arik1937"
+          ],
+          "title": "History of archaeology"
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "The elite Early Bronze Age tomb group is the most famous archaeological discovery at the site. Official museum presentation emphasises thirteen tombs, while scholarly publications sometimes differ in counting and grouping individual burials.",
+          "sourceIds": [
+            "alaca-muze",
+            "alaca-figurines2013"
+          ],
+          "title": "Elite tombs"
+        },
+        {
+          "text": "Sun disks and animal-shaped metal standards are iconic finds from Alacahöyük. Their ritual importance is clear from context, but their precise function is not securely known.",
+          "sourceIds": [
+            "alaca-figurines2013",
+            "alaca-ozyar1999"
+          ],
+          "title": "Sun disks and standards"
+        },
+        {
+          "text": "Gold, silver, copper and bronze weapons, ornaments, vessels and figurines show a sophisticated and varied metallurgical tradition.",
+          "sourceIds": [
+            "alaca-figurines2013",
+            "alaca-tin2020"
+          ],
+          "title": "Metal assemblages"
+        },
+        {
+          "text": "The tin fragment from Tomb A has become important to wider debates over the movement of tin and the raw materials of bronze production.",
+          "sourceIds": [
+            "alaca-tin2020"
+          ],
+          "title": "Tin ingot fragment"
+        },
+        {
+          "text": "Animal remains and the arrangement of the tombs have been used to explore the possibility of sacrifice and feasting during funerary ceremonies.",
+          "sourceIds": [
+            "alaca-sacrifice2023"
+          ],
+          "title": "Funerary ritual"
+        },
+        {
+          "text": "The Sphinx Gate, its sphinx protomes, double-headed eagle motif and carved orthostats form one of the major surviving Hittite monumental entrances.",
+          "sourceIds": [
+            "alaca-muze",
+            "alaca-taracha2012",
+            "alaca-alexander1989"
+          ],
+          "title": "Sphinx Gate"
+        },
+        {
+          "text": "The reliefs combine royal, ritual, sacrificial, musical and hunting imagery. Their exact narrative remains debated, but ceremony and divine protection are central themes.",
+          "sourceIds": [
+            "alaca-taracha2012",
+            "alaca-alexander1989"
+          ],
+          "title": "Sculptured orthostats"
+        },
+        {
+          "text": "The Gölpınar dam near the mound provides important evidence for Hittite hydraulic engineering and landscape management.",
+          "sourceIds": [
+            "alaca-water2015"
+          ],
+          "title": "Gölpınar hydraulic works"
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "The site attracted European travellers and scholars during the 19th century. W. G. Hamilton publicised it in 1835, and later researchers documented the Sphinx Gate. Theodor Makridi carried out a short excavation in 1907 and uncovered additional orthostats.",
+          "sourceIds": [
+            "alaca-ktb"
+          ]
+        },
+        {
+          "text": "Systematic excavation began in 1935 on behalf of the Turkish Historical Society with a team including Hamit Zübeyr Koşay and Remzi Oğuz Arık. The first major report appeared soon afterwards, establishing the project as a landmark in Republican-era archaeology.",
+          "sourceIds": [
+            "alaca-arik1937",
+            "alaca-ktb"
+          ]
+        },
+        {
+          "text": "Research continued under several Turkish archaeologists through much of the 20th century. Work was interrupted in the 1980s and a new phase began in 1997. The very long history of excavation makes re-evaluation of old records and stored finds an important part of modern research.",
+          "sourceIds": [
+            "alaca-ktb"
+          ]
+        },
+        {
+          "text": "Recent studies have applied radiocarbon dating, archaeometry and new metallurgical analyses to material excavated many decades ago. These approaches have reopened questions about chronology and the identification of particular objects.",
+          "sourceIds": [
+            "alaca-chron2022",
+            "alaca-tin2020",
+            "alaca-figurines2013"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "text": "The conventional label 'royal tombs' reflects the extraordinary wealth and social privilege visible in the burials. No written document identifies the buried individuals as kings or queens, however. The term is best understood as a traditional archaeological shorthand for an elite cemetery.",
+          "sourceIds": [
+            "alaca-ozyar1999",
+            "alaca-figurines2013"
+          ],
+          "title": "Were these really royal tombs?"
+        },
+        {
+          "text": "Dating of the cemetery remains controversial. Earlier interpretations sometimes treated differences in tomb depth as chronological evidence. Özyar demonstrated that the sloping topography complicates such reasoning. New radiocarbon results further suggest that older chronological assumptions require revision.",
+          "sourceIds": [
+            "alaca-ozyar1999",
+            "alaca-chron2022"
+          ],
+          "title": "Chronology of the tombs"
+        },
+        {
+          "text": "Sun disks and animal standards are often given precise religious or astronomical meanings in popular presentations. Archaeologically, their funerary contexts show symbolic importance, but a single specific function cannot yet be demonstrated.",
+          "sourceIds": [
+            "alaca-figurines2013",
+            "alaca-ozyar1999"
+          ],
+          "title": "Function of the sun disks"
+        },
+        {
+          "text": "The date and meaning of the Sphinx Gate programme have also been debated. Taracha argues for the second half of the 13th century BCE and connects the reliefs to the principal gods of the Hittite state pantheon. Whether the scenes represent a specific local festival or a broader royal ritual programme remains open to interpretation.",
+          "sourceIds": [
+            "alaca-taracha2012",
+            "alaca-alexander1989"
+          ],
+          "title": "Interpretation of the Sphinx Gate"
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "Alacahöyük is open as a museum and archaeological site. The museum displays material from the Chalcolithic, Early Bronze Age, Hittite and Phrygian phases, with the elite tomb assemblages forming a major part of the collection.",
+          "sourceIds": [
+            "alaca-muze"
+          ]
+        },
+        {
+          "text": "The visitor route combines exposed architecture with the museum collection. The Sphinx Gate and adjacent Hittite remains are the visual centre of the archaeological site.",
+          "sourceIds": [
+            "alaca-muze",
+            "alaca-ktb"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Elite Early Bronze Age tombs",
+          "description": "An exceptionally rich cemetery central to the study of early social hierarchy in central Anatolia.",
+          "period": "Early Bronze Age",
+          "sourceIds": [
+            "alaca-ozyar1999",
+            "alaca-chron2022"
+          ]
+        },
+        {
+          "name": "Sun disks",
+          "description": "Iconic metal objects from the burial assemblages whose precise function remains debated.",
+          "period": "Early Bronze Age",
+          "sourceIds": [
+            "alaca-figurines2013"
+          ]
+        },
+        {
+          "name": "Tin ingot fragment",
+          "description": "A small object from Tomb A identified through reanalysis as an early fragment of tin raw material.",
+          "period": "Early Bronze Age",
+          "sourceIds": [
+            "alaca-tin2020"
+          ]
+        },
+        {
+          "name": "Sphinx Gate",
+          "description": "A monumental Hittite entrance with sphinx protomes and sculptured orthostats.",
+          "period": "Late Bronze Age",
+          "sourceIds": [
+            "alaca-muze",
+            "alaca-taracha2012"
+          ]
+        },
+        {
+          "name": "Sculptured orthostats",
+          "description": "A Hittite relief programme depicting royal, ritual and hunting imagery.",
+          "period": "Late Bronze Age",
+          "sourceIds": [
+            "alaca-taracha2012",
+            "alaca-alexander1989"
+          ]
+        },
+        {
+          "name": "Gölpınar dam",
+          "description": "An important component of the Hittite hydraulic landscape around Alacahöyük.",
+          "period": "Late Bronze Age",
+          "sourceIds": [
+            "alaca-water2015"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "Alacahöyük is located in the Alaca district of Çorum, around 25 km north of Hattusa and roughly 50 km southwest of the city of Çorum.",
+        "distanceFromNearestCenter": "Approximately 50 km from central Çorum.",
+        "landscape": "The mound lies in a rolling agricultural plateau and valley landscape. Nearby springs and the Gölpınar hydraulic installation form part of the wider archaeological environment.",
+        "gettingThere": "The site is reached by road via Alaca and the modern settlement of Alacahöyük.",
+        "sourceIds": [
+          "alaca-muze",
+          "alaca-ktb",
+          "alaca-water2015"
+        ]
+      },
+      "visit": {
+        "statusLabel": "Museum and archaeological site open to visitors",
+        "address": "Alacahöyük, Alaca, Çorum",
+        "visitorNote": "The visitor area includes the museum, the Early Bronze Age cemetery area, the Sphinx Gate and Hittite architectural remains. Current opening hours should be checked on the official Turkish Museums page.",
+        "sourceIds": [
+          "alaca-muze"
+        ]
+      },
+      "nearbyPlaces": [],
+      "participation": []
+    }
+  }
+}

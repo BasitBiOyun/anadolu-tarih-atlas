@@ -1,0 +1,32 @@
+{
+  "name": "atlas-research-worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "tsx --test test/*.test.ts",
+    "check": "tsc --noEmit",
+    "start": "tsx src/main.ts",
+    "audit": "tsx src/cli.ts audit",
+    "seed": "tsx src/cli.ts seed"
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "^7.11.0",
+    "@google-cloud/storage": "^7.16.0",
+    "@google/genai": "^1.30.0",
+    "cheerio": "^1.1.2",
+    "google-auth-library": "^10.5.0",
+    "ipaddr.js": "^2.2.0",
+    "pdf-parse": "^2.4.5",
+    "tsx": "^4.20.6",
+    "undici": "^7.16.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "firebase-tools": "^15.31.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22.14"
+  }
+}

@@ -1,0 +1,475 @@
+{
+  "schemaVersion": 4,
+  "id": "nevali-cori",
+  "core": {
+    "coordinates": {
+      "latitude": 37.51833,
+      "longitude": 38.60556
+    },
+    "siteType": "mound",
+    "chronology": [
+      {
+        "periodId": "neolithic",
+        "startYear": -8700,
+        "endYear": -7500,
+        "approximate": true,
+        "note": "PPNB phases I–V; recent radiocarbon work refines the early/middle/late subphases."
+      },
+      {
+        "periodId": "chalcolithic",
+        "startYear": -5500,
+        "endYear": -5000,
+        "approximate": true,
+        "note": "Later Halaf-period reoccupation."
+      },
+      {
+        "periodId": "early_bronze_age",
+        "startYear": -2900,
+        "endYear": -2800,
+        "approximate": true
+      },
+      {
+        "periodId": "iron_age",
+        "startYear": -1200,
+        "endYear": -30,
+        "approximate": true
+      },
+      {
+        "periodId": "roman",
+        "startYear": 1,
+        "endYear": 300,
+        "approximate": true
+      }
+    ],
+    "dateRange": {
+      "startYear": -8700,
+      "endYear": 300,
+      "approximate": true
+    },
+    "visibility": {
+      "importance": 1,
+      "minZoom": 1.0,
+      "featured": true
+    },
+    "images": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Nevali%20%C3%87ori%20terazzo%20taban.jpg?width=1600",
+        "thumbnailUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Nevali%20%C3%87ori%20terazzo%20taban.jpg?width=800",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Nevali%20%C3%87ori%20terazzo%20taban.jpg",
+        "caption": {
+          "tr": "Nevalı Çori'ye ait terrazzo taban rekonstrüksiyonu / müze sergisi.",
+          "en": "Terrazzo floor associated with Nevalı Çori, displayed/reconstructed in a museum setting."
+        },
+        "source": "Wikimedia Commons",
+        "credit": "Cobija",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "type": "reconstruction"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/UrfaMuseumNevaliCori.jpg?width=1600",
+        "thumbnailUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/UrfaMuseumNevaliCori.jpg?width=800",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:UrfaMuseumNevaliCori.jpg",
+        "caption": {
+          "tr": "Şanlıurfa Arkeoloji Müzesi'nde Nevalı Çori'den Neolitik sanat parçası.",
+          "en": "Fragment of Neolithic art from Nevalı Çori in the Şanlıurfa Archaeological Museum."
+        },
+        "source": "Wikimedia Commons",
+        "credit": "Klaus-Peter Simon",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "type": "artifact"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Urfa%20museum%20Neval%C4%B1%20%C3%87ori%20Temple%20-%20Neolithic%20age%204848.jpg?width=1600",
+        "thumbnailUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Urfa%20museum%20Neval%C4%B1%20%C3%87ori%20Temple%20-%20Neolithic%20age%204848.jpg?width=800",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Urfa%20museum%20Neval%C4%B1%20%C3%87ori%20Temple%20-%20Neolithic%20age%204848.jpg",
+        "caption": {
+          "tr": "Şanlıurfa Arkeoloji Müzesi'nde Nevalı Çori özel yapısının rekonstrüksiyonu.",
+          "en": "Reconstruction of the Nevalı Çori special building in the Şanlıurfa Archaeological Museum."
+        },
+        "source": "Wikimedia Commons",
+        "credit": "Dosseman",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "type": "reconstruction"
+      }
+    ],
+    "sources": [
+      {
+        "id": "nev_pnas_2023",
+        "title": "Isotopic and DNA analyses reveal multiscale PPNB mobility and migration across Southeastern Anatolia and the Southern Levant",
+        "type": "article",
+        "author": "Ayça Omrak et al.",
+        "year": 2023,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9942848/",
+        "doi": "10.1073/pnas.2210611120",
+        "journal": "PNAS"
+      },
+      {
+        "id": "nev_hauptmann_2025",
+        "title": "Nevalı Çori excavation plan and architectural discussion in Zur Geschichte der Kleidung in der Steinzeit",
+        "type": "book_chapter",
+        "author": "H. Hauptmann et al. (cited and synthesized in volume)",
+        "year": 2025,
+        "url": "https://books.ub.uni-heidelberg.de/propylaeum/catalog/view/1678/3092/132560",
+        "publisher": "Propylaeum"
+      },
+      {
+        "id": "nev_commons_category",
+        "title": "Nevalı Çori – Wikimedia Commons category",
+        "type": "database",
+        "author": "Wikimedia Commons",
+        "url": "https://commons.wikimedia.org/wiki/Category:Neval%C4%B1_%C3%87ori"
+      },
+      {
+        "id": "nev_commons_art",
+        "title": "UrfaMuseumNevaliCori.jpg",
+        "type": "image",
+        "author": "Klaus-Peter Simon",
+        "year": 2012,
+        "url": "https://commons.wikimedia.org/wiki/File:UrfaMuseumNevaliCori.jpg"
+      },
+      {
+        "id": "nev_commons_floor",
+        "title": "Nevali Çori terazzo taban.jpg",
+        "type": "image",
+        "author": "Cobija",
+        "year": 2016,
+        "url": "https://commons.wikimedia.org/wiki/File:Nevali_%C3%87ori_terazzo_taban.jpg"
+      },
+      {
+        "id": "nev_commons_temple",
+        "title": "Urfa museum Nevalı Çori Temple - Neolithic age 4848.jpg",
+        "type": "image",
+        "author": "Dosseman",
+        "year": 2019,
+        "url": "https://commons.wikimedia.org/wiki/File:Urfa_museum_Neval%C4%B1_%C3%87ori_Temple_-_Neolithic_age_4848.jpg"
+      }
+    ]
+  },
+  "content": {
+    "tr": {
+      "name": "Nevalı Çori",
+      "alternativeNames": [
+        "Nevali Çori",
+        "Nevalı Çori Höyüğü"
+      ],
+      "province": "Şanlıurfa",
+      "district": "Hilvan",
+      "modernPlace": "Atatürk Barajı göl alanı",
+      "siteTypeLabel": "Höyük / PPNB yerleşimi",
+      "occupationDisplay": "Ana PPNB iskânı yaklaşık MÖ 8700–7500; Halaf, İlk Tunç, Demir Çağı ve Roma dönemlerinde yeniden kullanım.",
+      "overview": [
+        {
+          "text": "Nevalı Çori, Fırat havzasında Çanak Çömleksiz Neolitik B (PPNB) topluluklarının ev mimarisi, özel/ritüel yapıları, heykel sanatı ve geçim ekonomisini birlikte incelemeye imkân veren anahtar yerleşmelerden biridir.",
+          "sourceIds": [
+            "nev_pnas_2023",
+            "nev_hauptmann_2025"
+          ]
+        },
+        {
+          "text": "Yerleşmenin beş PPNB tabakası, kanal-planlı evleri ve anıtsal nitelikteki özel yapısı; Göbekli Tepe ve daha geniş Yukarı Mezopotamya ağıyla karşılaştırmaların temelini oluşturur.",
+          "sourceIds": [
+            "nev_pnas_2023",
+            "nev_hauptmann_2025"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "text": "Yeni radyokarbon verileri erken PPNB I'i yaklaşık MÖ 8700–8300, PPNB II'yi yaklaşık MÖ 8300–7900 ve PPNB III'ü yaklaşık MÖ 7900–7500 aralığına yerleştirir. Yerleşmede daha genç PPNB evreleri de tanımlanmıştır.",
+          "sourceIds": [
+            "nev_pnas_2023"
+          ]
+        },
+        {
+          "text": "PPNB sonrasında alan Halaf, İlk Tunç, Demir Çağı ve Roma dönemlerinde yeniden kullanılmıştır; bu nedenle höyük tek dönemli bir Neolitik alan değildir.",
+          "sourceIds": [
+            "nev_pnas_2023"
+          ]
+        }
+      ],
+      "importance": [
+        {
+          "text": "Nevalı Çori'nin T-biçimli dikilitaşlar, büyük kireçtaşı heykeller ve terrazzo tabanlı özel yapı içeren mimarisi, erken Neolitik sembolizm ve ortak ritüel pratikleri üzerine tartışmalarda merkezi önemdedir.",
+          "sourceIds": [
+            "nev_hauptmann_2025"
+          ]
+        },
+        {
+          "text": "İzotop ve antik DNA analizleri, erken PPNB'de yüksek hareketlilikten MÖ yaklaşık 8300 sonrasında daha yerel ve tarımsal bir yaşam düzenine doğru değişim olduğunu göstermektedir.",
+          "sourceIds": [
+            "nev_pnas_2023"
+          ]
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "Kanal-planlı evler, altında hava dolaşımı/depolama işlevi görebilen kanallar bulunan yerleşim mimarisinin karakteristik örnekleridir.",
+          "sourceIds": [
+            "nev_hauptmann_2025"
+          ]
+        },
+        {
+          "text": "Özel yapıdaki taş heykeller ve dikilitaşlar ile evsel alanlardaki yüzlerce küçük kil figürin, farklı üretim ve kullanım bağlamlarını karşılaştırmaya imkân verir.",
+          "sourceIds": [
+            "nev_hauptmann_2025"
+          ]
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "Harald Hauptmann yönetimindeki kurtarma kazıları 1983–1991 arasında, Atatürk Barajı'nın yapımı öncesinde gerçekleştirildi. Kazılar hem PPNB mimarisini hem de daha geç dönem tabakalarını belgeledi.",
+          "sourceIds": [
+            "nev_hauptmann_2025",
+            "nev_pnas_2023"
+          ]
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "Yerleşmenin özgün konumu Atatürk Barajı rezervuarı altında kalmıştır. Kazıdan çıkarılan önemli mimari parçalar ve eserler Şanlıurfa Arkeoloji Müzesi'nde sergilenmektedir.",
+          "sourceIds": [
+            "nev_commons_category",
+            "nev_commons_temple"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Özel yapı ve T-biçimli dikilitaşlar",
+          "description": "Terrazzo tabanlı, taş heykeller ve dikilitaşlarla donatılmış yapı erken Neolitik topluluk mimarisinin en önemli örneklerindendir.",
+          "period": "PPNB",
+          "sourceIds": [
+            "nev_hauptmann_2025"
+          ]
+        },
+        {
+          "name": "Kanal-planlı evler",
+          "description": "Yaşam alanı ile alt kanallı depolama/zemin düzenini birleştiren ev tipi yerleşmenin karakteristik mimarisidir.",
+          "period": "PPNB",
+          "sourceIds": [
+            "nev_hauptmann_2025"
+          ]
+        },
+        {
+          "name": "İnsan ve hayvan heykelleri",
+          "description": "Büyük taş heykeller ile evsel alanlardaki çok sayıdaki küçük kil figürin, sembolik üretimin farklı mekânsal bağlamlarını gösterir.",
+          "period": "PPNB",
+          "sourceIds": [
+            "nev_hauptmann_2025"
+          ]
+        },
+        {
+          "name": "İzotop ve aDNA dizisi",
+          "description": "İnsan ve hayvan kalıntıları hareketlilik, akrabalık ve geçim ekonomisindeki değişimi doğrudan incelemeye olanak verir.",
+          "period": "PPNB",
+          "sourceIds": [
+            "nev_pnas_2023"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "title": "Ritüel merkez mi, gündelik yerleşim mi?",
+          "text": "Özel yapının belirginliği, Nevalı Çori'nin ritüel boyutunu vurgular; ancak yerleşme aynı zamanda geniş bir evsel mimari, üretim ve geçim ekonomisi dizisine sahiptir. Dolayısıyla ritüel ve gündelik yaşamı birbirinden tamamen ayıran modeller yetersiz kalabilir.",
+          "sourceIds": [
+            "nev_hauptmann_2025"
+          ]
+        },
+        {
+          "title": "Hareketlilikten yerleşikliğe geçiş",
+          "text": "İzotop verileri erken PPNB'de daha fazla 'yerel olmayan' birey, sonraki evrelerde ise daha düşük hareketlilik gösterir. Bu değişimin tarım/hayvancılık, sosyal ağlar ve ritüel sistemdeki dönüşümlerle nasıl ilişkili olduğu aktif bir araştırma konusudur.",
+          "sourceIds": [
+            "nev_pnas_2023"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "Yerleşme, Fırat'ın bir kolu olan Katara çevresinde, Toros eteklerinde bulunuyordu; bugün özgün konumu Atatürk Barajı gölü altında kalmıştır.",
+        "landscape": "Fırat havzası ile Toros etekleri arasında geçiş kuşağı.",
+        "sourceIds": [
+          "nev_hauptmann_2025",
+          "nev_commons_category"
+        ]
+      },
+      "visit": {
+        "statusLabel": "Özgün alan su altında",
+        "visitorNote": "Yerleşme yerinde ziyaret edilemez. Nevalı Çori'ye ait önemli eserler ve mimari rekonstrüksiyonlar Şanlıurfa Arkeoloji Müzesi'nde görülebilir.",
+        "sourceIds": [
+          "nev_commons_category",
+          "nev_commons_temple"
+        ]
+      },
+      "nearbyPlaces": [
+        {
+          "name": "Şanlıurfa Arkeoloji Müzesi",
+          "type": "museum",
+          "note": "Nevalı Çori eserlerinin ve özel yapı rekonstrüksiyonunun başlıca sergi yeridir."
+        }
+      ]
+    },
+    "en": {
+      "name": "Nevalı Çori",
+      "alternativeNames": [
+        "Nevali Çori",
+        "Nevalı Çori Höyük"
+      ],
+      "province": "Şanlıurfa",
+      "district": "Hilvan",
+      "modernPlace": "Atatürk Reservoir area",
+      "siteTypeLabel": "Tell / PPNB settlement",
+      "occupationDisplay": "Main PPNB occupation approximately 8700–7500 BCE; later Halaf, Early Bronze Age, Iron Age and Roman reuse.",
+      "overview": [
+        {
+          "text": "Nevalı Çori is a key Euphrates-basin settlement for studying Pre-Pottery Neolithic B domestic architecture, special or ritual buildings, sculpture and subsistence within one stratified site.",
+          "sourceIds": [
+            "nev_pnas_2023",
+            "nev_hauptmann_2025"
+          ]
+        },
+        {
+          "text": "Its five PPNB layers, channel-plan houses and monumental special building form a major basis for comparison with Göbekli Tepe and the broader Upper Mesopotamian Neolithic network.",
+          "sourceIds": [
+            "nev_pnas_2023",
+            "nev_hauptmann_2025"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "text": "New radiocarbon work places PPNB I roughly at 8700–8300 BCE, PPNB II at 8300–7900 BCE and PPNB III at 7900–7500 BCE; additional younger PPNB phases are also documented.",
+          "sourceIds": [
+            "nev_pnas_2023"
+          ]
+        },
+        {
+          "text": "The site was reoccupied in the Halaf, Early Bronze Age, Iron Age and Roman periods and is therefore not a single-period Neolithic settlement.",
+          "sourceIds": [
+            "nev_pnas_2023"
+          ]
+        }
+      ],
+      "importance": [
+        {
+          "text": "T-shaped pillars, large limestone sculpture and a terrazzo-floored special building make Nevalı Çori central to debates on symbolism and communal practice in the early Neolithic.",
+          "sourceIds": [
+            "nev_hauptmann_2025"
+          ]
+        },
+        {
+          "text": "Isotope and ancient-DNA analyses indicate a transition from high mobility in early PPNB toward more local, domesticate-reliant lifeways after about 8300 BCE.",
+          "sourceIds": [
+            "nev_pnas_2023"
+          ]
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "Channel-plan houses are a characteristic architectural form, combining dwelling space with underfloor channels associated with dry/cool storage or floor management.",
+          "sourceIds": [
+            "nev_hauptmann_2025"
+          ]
+        },
+        {
+          "text": "Large stone sculptures in the special building and hundreds of small clay figurines in domestic contexts permit comparison of symbolic production across different spaces.",
+          "sourceIds": [
+            "nev_hauptmann_2025"
+          ]
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "Rescue excavations directed by Harald Hauptmann took place from 1983 to 1991 ahead of construction of the Atatürk Dam, documenting both PPNB architecture and later occupations.",
+          "sourceIds": [
+            "nev_hauptmann_2025",
+            "nev_pnas_2023"
+          ]
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "The original site is now submerged beneath the Atatürk Reservoir. Important architectural elements and finds are displayed in the Şanlıurfa Archaeological Museum.",
+          "sourceIds": [
+            "nev_commons_category",
+            "nev_commons_temple"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Special building and T-shaped pillars",
+          "description": "A terrazzo-floored structure with stone sculpture and pillars is one of the key examples of early Neolithic communal architecture.",
+          "period": "PPNB",
+          "sourceIds": [
+            "nev_hauptmann_2025"
+          ]
+        },
+        {
+          "name": "Channel-plan houses",
+          "description": "A characteristic house form combining living areas with underfloor channels.",
+          "period": "PPNB",
+          "sourceIds": [
+            "nev_hauptmann_2025"
+          ]
+        },
+        {
+          "name": "Human and animal sculpture",
+          "description": "Large stone sculptures and numerous small clay figurines reveal contrasting contexts of symbolic production.",
+          "period": "PPNB",
+          "sourceIds": [
+            "nev_hauptmann_2025"
+          ]
+        },
+        {
+          "name": "Isotope and aDNA sequence",
+          "description": "Human and animal remains provide direct evidence for changing mobility, relatedness and subsistence.",
+          "period": "PPNB",
+          "sourceIds": [
+            "nev_pnas_2023"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "title": "Ritual centre or everyday settlement?",
+          "text": "The special building highlights ritual practice, but the site also has extensive domestic architecture and economic evidence; models that fully separate ritual from daily life may therefore be too rigid.",
+          "sourceIds": [
+            "nev_hauptmann_2025"
+          ]
+        },
+        {
+          "title": "From mobility to sedentism",
+          "text": "Isotope data show more non-local individuals in the earliest PPNB and reduced mobility later. How this change relates to farming, social networks and ritual systems remains an active research question.",
+          "sourceIds": [
+            "nev_pnas_2023"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "The settlement lay on both banks of the Katara, a tributary of the Euphrates, near the Taurus foothills; its original location is now below the Atatürk Reservoir.",
+        "landscape": "Transition zone between the Euphrates basin and Taurus foothills.",
+        "sourceIds": [
+          "nev_hauptmann_2025",
+          "nev_commons_category"
+        ]
+      },
+      "visit": {
+        "statusLabel": "Original site submerged",
+        "visitorNote": "The site cannot be visited in situ. Major finds and a reconstruction of the special building can be seen in the Şanlıurfa Archaeological Museum.",
+        "sourceIds": [
+          "nev_commons_category",
+          "nev_commons_temple"
+        ]
+      },
+      "nearbyPlaces": [
+        {
+          "name": "Şanlıurfa Archaeological Museum",
+          "type": "museum",
+          "note": "Principal display location for Nevalı Çori finds and the reconstructed special building."
+        }
+      ]
+    }
+  }
+}

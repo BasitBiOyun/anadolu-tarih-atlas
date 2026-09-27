@@ -1,0 +1,375 @@
+{
+  "schemaVersion": 4,
+  "id": "ulucak-hoyuk",
+  "core": {
+    "coordinates": {
+      "latitude": 38.46668,
+      "longitude": 27.35242
+    },
+    "siteType": "mound",
+    "chronology": [
+      {
+        "periodId": "neolithic",
+        "startYear": -6850,
+        "endYear": -5700,
+        "approximate": false
+      },
+      {
+        "periodId": "chalcolithic",
+        "startYear": -5600,
+        "endYear": -5460,
+        "approximate": true
+      }
+    ],
+    "dateRange": {
+      "startYear": -6850,
+      "endYear": -5460,
+      "approximate": true
+    },
+    "visibility": {
+      "importance": 1,
+      "minZoom": 1.2,
+      "featured": true
+    },
+    "images": [],
+    "sources": [
+      {
+        "id": "ulucak_cevik_erdogu_2020",
+        "title": "Absolute Chronology of Cultural Continuity, Change and Break in Western Anatolia between 6850–5460 cal. BC: The Ulucak Höyük Case",
+        "type": "article",
+        "author": "Özlem Çevik; Burçin Erdoğu",
+        "year": 2020,
+        "url": "https://www.maajournal.com/index.php/maa/article/view/153",
+        "doi": "10.5281/zenodo.3605670",
+        "journal": "Mediterranean Archaeology and Archaeometry"
+      },
+      {
+        "id": "ulucak_pottery_2016",
+        "title": "Neolithic pottery production workshop at Ulucak Höyük, western Turkey: evidence for a full production sequence",
+        "type": "article",
+        "author": "Özlem Çevik",
+        "year": 2016,
+        "url": "https://www.cambridge.org/core/journals/antiquity-project-gallery/article/neolithic-pottery-production-workshop-at-ulucak-hoyuk-western-turkey-evidence-for-a-full-production-sequence/542226FCCC1B3BFAAA0F2B7482FF621C",
+        "journal": "Antiquity Project Gallery"
+      },
+      {
+        "id": "ulucak_ktb",
+        "title": "Kemalpaşa Ulucak Höyük",
+        "type": "official",
+        "author": "T.C. Kültür ve Turizm Bakanlığı Kültür Portalı",
+        "url": "https://www.kulturportali.gov.tr/turkiye/izmir/gezilecekyer/kemalpasa-ulucak-hoyuk"
+      },
+      {
+        "id": "ulucak_eba",
+        "title": "Ulucak Höyük",
+        "type": "official",
+        "author": "EBA / Okul Dışı Öğrenme Ortamları",
+        "url": "https://okuldisiogrenme.eba.gov.tr/mekan-detay/ulucak-hoyuk-2888"
+      }
+    ]
+  },
+  "content": {
+    "tr": {
+      "name": "Ulucak Höyük",
+      "alternativeNames": [
+        "Ulucak",
+        "Ulucak Höyüğü"
+      ],
+      "province": "İzmir",
+      "district": "Kemalpaşa",
+      "modernPlace": "Ulucak çevresi",
+      "siteTypeLabel": "Höyük / Neolitik-Kalkolitik yerleşim",
+      "occupationDisplay": "Radyokarbon dizisi yaklaşık MÖ 6850–5460; ana yerleşim Neolitik ve Erken Kalkolitik.",
+      "overview": [
+        {
+          "text": "Ulucak Höyük, İzmir'in yaklaşık 25 km doğusunda, Ege'nin en erken tarımcı topluluklarından birini ve bin yılı aşan Neolitik yerleşim sürekliliğini belgeleyen anahtar bir Batı Anadolu alanıdır.",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020",
+            "ulucak_pottery_2016"
+          ]
+        },
+        {
+          "text": "65 radyokarbon tarihi, VI–III tabakaları arasında yaklaşık MÖ 6850–5460 aralığında ayrıntılı bir mutlak kronoloji kurulmasını sağlamıştır. Bu veri seti yerleşiklik, kültürel süreklilik, kademeli dönüşüm ve ani kırılmaları aynı sahada izlemeye imkân verir.",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "text": "VI ve V tabakaları arasında radyokarbon verileri belirgin bir kesinti göstermemektedir. Vb'den itibaren kademeli dönüşüm gözlenir; Geç Neolitik ile Erken Kalkolitik arasında kısa bir kesinti ve yaklaşık MÖ 5600 civarında maddi kültürde daha belirgin bir değişim görülür.",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020"
+          ]
+        },
+        {
+          "text": "Neolitik IV–VI tabakaları genel olarak yaklaşık MÖ 6800–5700 arasına yerleştirilir; IVc'deki uzmanlaşmış çanak çömlek üretim alanı yaklaşık MÖ 6005–5840'e tarihlenmektedir.",
+          "sourceIds": [
+            "ulucak_pottery_2016"
+          ]
+        }
+      ],
+      "importance": [
+        {
+          "text": "Ulucak, Ege dünyasında tarım ve hayvancılığın en erken açık kanıtlarından birini verdiği için Batı Anadolu'da neolitik yaşamın kökenlerini tartışmada kritik önemdedir.",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020"
+          ]
+        },
+        {
+          "text": "Uzun ve iyi tarihlenmiş tabakalaşması, Doğu ve Orta Anadolu ile Ege/Balkan dünyaları arasındaki kültürel aktarım ve yerel dönüşüm modellerini test etmek için güçlü bir kronolojik çıpa sağlar.",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020"
+          ]
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "IVc tabakasındaki çanak çömlek atölyesi, hammadde hazırlama, biçimlendirme ve pişirme aşamalarını bir arada izlemeye imkân veren tam bir üretim dizisi sunar ve erken uzmanlaşmış seramik üretimi için istisnai bir örnektir.",
+          "sourceIds": [
+            "ulucak_pottery_2016"
+          ]
+        },
+        {
+          "text": "İlk Neolitik VI tabakası, Batı Anadolu'da yerleşik tarım ve hayvancılığın çok erken evrelerine ilişkin doğrudan veri sağlar.",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020"
+          ]
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "Höyük 1960'larda David French'in araştırmalarıyla bilimsel literatüre girdi. Sistematik kazılar 1995'te Altan Çilingiroğlu başkanlığında başladı; 2009'dan itibaren çalışmalar Özlem Çevik yönetiminde sürdürülmüştür.",
+          "sourceIds": [
+            "ulucak_ktb",
+            "ulucak_eba"
+          ]
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "Ulucak uzun süreli bilimsel kazılar ve yayınlarla Batı Anadolu Neolitiğinin en ayrıntılı araştırılmış yerleşmelerinden biri haline gelmiştir.",
+          "sourceIds": [
+            "ulucak_eba",
+            "ulucak_cevik_erdogu_2020"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "İlk Neolitik VI tabakası",
+          "description": "Yaklaşık MÖ 6850'den başlayan erken yerleşim, Ege'de çiftçilik ve hayvancılığın erken tarihini belgelemektedir.",
+          "period": "Neolitik",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020"
+          ]
+        },
+        {
+          "name": "IVc çanak çömlek atölyesi",
+          "description": "Yaklaşık MÖ 6005–5840'e tarihlenen üretim alanı, Neolitik seramik üretiminin aşamalarını aynı bağlamda göstermektedir.",
+          "period": "Neolitik",
+          "sourceIds": [
+            "ulucak_pottery_2016"
+          ]
+        },
+        {
+          "name": "65 radyokarbonluk seri",
+          "description": "VI–III tabakalarının kronolojisini yüksek çözünürlükle kuran geniş radyokarbon veri seti.",
+          "period": "Neolitik / Kalkolitik",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "title": "8.2 ka iklim olayı ve toplumsal dönüşüm",
+          "text": "Vb'den başlayan kademeli dönüşüm 8.2 ka iklim olayıyla zamansal olarak örtüşür; ancak eşzamanlılık doğrudan nedensellik anlamına gelmez. Ulucak bu çevresel ve toplumsal süreçlerin birlikte nasıl değerlendirileceğine dair önemli bir vaka sunar.",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020"
+          ]
+        },
+        {
+          "title": "Süreklilik ve kırılma",
+          "text": "VI–V arasında süreklilik güçlü görünürken Geç Neolitik/Erken Kalkolitik geçişinde kısa kesinti ve yaklaşık MÖ 5600'de daha ani maddi kültür değişimi görülür. Bunun göç, ağ değişimi veya yerel yeniden örgütlenme ile ilişkisi karşılaştırmalı olarak tartışılmaktadır.",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "Ulucak, İzmir'in yaklaşık 25 km doğusunda, Kemalpaşa Ovası'nın Ege kıyıları ile İç Batı Anadolu arasındaki geçiş güzergâhında bulunur.",
+        "landscape": "Verimli ova tabanı ve çevre yükseltiler, tarım-hayvancılık ile bölgesel dolaşıma uygun bir çevre oluşturur.",
+        "sourceIds": [
+          "ulucak_pottery_2016",
+          "ulucak_ktb"
+        ]
+      },
+      "visit": {
+        "statusLabel": "Arkeolojik kazı alanı",
+        "visitorNote": "Ziyaret koşulları güncel resmî kaynaklardan kontrol edilmelidir.",
+        "sourceIds": [
+          "ulucak_ktb"
+        ]
+      },
+      "nearbyPlaces": [
+        {
+          "name": "İzmir Arkeoloji Müzesi",
+          "type": "museum",
+          "note": "İzmir ve çevresinin tarihöncesi ve antik dönem koleksiyonlarını barındırır."
+        }
+      ]
+    },
+    "en": {
+      "name": "Ulucak Höyük",
+      "alternativeNames": [
+        "Ulucak",
+        "Ulucak Höyük"
+      ],
+      "province": "İzmir",
+      "district": "Kemalpaşa",
+      "modernPlace": "vicinity of Ulucak",
+      "siteTypeLabel": "Tell / Neolithic-Chalcolithic settlement",
+      "occupationDisplay": "Radiocarbon sequence approximately 6850–5460 BCE; main occupation Neolithic and Early Chalcolithic.",
+      "overview": [
+        {
+          "text": "Ulucak Höyük, about 25 km east of İzmir, documents one of the earliest farming communities in the Aegean and more than a millennium of Neolithic settlement history in western Anatolia.",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020",
+            "ulucak_pottery_2016"
+          ]
+        },
+        {
+          "text": "A series of 65 radiocarbon dates from Levels VI–III establishes a detailed absolute chronology of c. 6850–5460 BCE, allowing continuity, gradual transformation and abrupt change to be examined at the same site.",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "text": "Radiocarbon evidence suggests no major gap between Levels VI and V. Gradual transformation begins in Vb, followed by a short hiatus between the Late Neolithic and Early Chalcolithic and more abrupt material change around 5600 BCE.",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020"
+          ]
+        },
+        {
+          "text": "Neolithic Levels VI–IV broadly span c. 6800–5700 BCE; the specialized pottery workshop in IVc dates approximately 6005–5840 BCE.",
+          "sourceIds": [
+            "ulucak_pottery_2016"
+          ]
+        }
+      ],
+      "importance": [
+        {
+          "text": "Ulucak provides some of the earliest evidence for farming and animal husbandry in the Aegean, making it critical to discussions of the beginnings of Neolithic lifeways in western Anatolia.",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020"
+          ]
+        },
+        {
+          "text": "Its long, well-dated sequence supplies a chronological anchor for testing models of interaction and local transformation between Anatolia and the Aegean/Balkan worlds.",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020"
+          ]
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "The IVc pottery workshop preserves a full production sequence, from preparation to manufacture and firing, and is an exceptional case of specialized Neolithic ceramic production.",
+          "sourceIds": [
+            "ulucak_pottery_2016"
+          ]
+        },
+        {
+          "text": "Initial Neolithic Level VI provides direct evidence for very early sedentary farming and herding in western Anatolia.",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020"
+          ]
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "The mound entered archaeological literature through David French's surveys in the 1960s. Systematic excavation began in 1995 under Altan Çilingiroğlu and has been directed by Özlem Çevik since 2009.",
+          "sourceIds": [
+            "ulucak_ktb",
+            "ulucak_eba"
+          ]
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "Long-term excavation and publication have made Ulucak one of the most extensively studied Neolithic settlements in western Anatolia.",
+          "sourceIds": [
+            "ulucak_eba",
+            "ulucak_cevik_erdogu_2020"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Initial Neolithic Level VI",
+          "description": "Occupation beginning around 6850 BCE documents an early farming and herding community in the Aegean zone.",
+          "period": "Neolithic",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020"
+          ]
+        },
+        {
+          "name": "IVc pottery workshop",
+          "description": "A production area dated around 6005–5840 BCE preserves multiple stages of pottery manufacture.",
+          "period": "Neolithic",
+          "sourceIds": [
+            "ulucak_pottery_2016"
+          ]
+        },
+        {
+          "name": "65-date radiocarbon series",
+          "description": "A high-resolution chronology for Levels VI–III.",
+          "period": "Neolithic / Chalcolithic",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "title": "The 8.2 ka event and social change",
+          "text": "Gradual change from Level Vb overlaps chronologically with the 8.2 ka climate event, but correlation does not demonstrate direct causation. Ulucak is an important case for assessing environmental and social explanations together.",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020"
+          ]
+        },
+        {
+          "title": "Continuity versus rupture",
+          "text": "Strong continuity between VI and V contrasts with a short Late Neolithic/Early Chalcolithic hiatus and more abrupt change around 5600 BCE. Whether this reflects migration, shifting networks or local reorganization remains a comparative question.",
+          "sourceIds": [
+            "ulucak_cevik_erdogu_2020"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "Ulucak lies roughly 25 km east of İzmir on the Kemalpaşa plain, along a corridor linking the Aegean coast with inland western Anatolia.",
+        "landscape": "A fertile plain and surrounding uplands suitable for mixed farming, herding and regional movement.",
+        "sourceIds": [
+          "ulucak_pottery_2016",
+          "ulucak_ktb"
+        ]
+      },
+      "visit": {
+        "statusLabel": "Archaeological excavation area",
+        "visitorNote": "Current access conditions should be checked through official sources.",
+        "sourceIds": [
+          "ulucak_ktb"
+        ]
+      },
+      "nearbyPlaces": [
+        {
+          "name": "İzmir Archaeology Museum",
+          "type": "museum",
+          "note": "Holds archaeological collections from İzmir and its wider region."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,5 @@
+[
+  {"id":"dursunlu","name":"Dursunlu Fosil ve Paleolitik Buluntu Alanı","province":"Konya","earliestPeriod":"early_pleistocene","importance":1,"aliases":["Dursunlu","Dursunlu locality"],"sourceHints":[]},
+  {"id":"kaletepe-deresi-3","name":"Kaletepe Deresi 3","province":"Niğde","earliestPeriod":"lower_palaeolithic","importance":1,"aliases":["Kaletepe Deresi III"],"sourceHints":[]},
+  {"id":"yarimburgaz-magarasi","name":"Yarımburgaz Mağarası","province":"İstanbul","earliestPeriod":"lower_palaeolithic","importance":1,"aliases":["Yarımburgaz","Yarimburgaz Cave"],"sourceHints":[]}
+]

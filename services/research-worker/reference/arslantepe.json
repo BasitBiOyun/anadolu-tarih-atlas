@@ -1,0 +1,1079 @@
+{
+  "schemaVersion": 4,
+  "id": "arslantepe",
+  "core": {
+    "coordinates": {
+      "latitude": 38.381667,
+      "longitude": 38.361111
+    },
+    "siteType": "mound",
+    "chronology": [
+      {
+        "periodId": "neolithic",
+        "startYear": -6000,
+        "endYear": -5000,
+        "approximate": true
+      },
+      {
+        "periodId": "chalcolithic",
+        "startYear": -5000,
+        "endYear": -3100,
+        "approximate": true
+      },
+      {
+        "periodId": "early_bronze_age",
+        "startYear": -3100,
+        "endYear": -2000,
+        "approximate": true
+      },
+      {
+        "periodId": "middle_bronze_age",
+        "startYear": -2000,
+        "endYear": -1650,
+        "approximate": true
+      },
+      {
+        "periodId": "late_bronze_age",
+        "startYear": -1650,
+        "endYear": -1200,
+        "approximate": true
+      },
+      {
+        "periodId": "iron_age",
+        "startYear": -1200,
+        "endYear": -712,
+        "approximate": true
+      },
+      {
+        "periodId": "roman",
+        "startYear": 200,
+        "endYear": 400,
+        "approximate": true
+      },
+      {
+        "periodId": "byzantine",
+        "startYear": 400,
+        "endYear": 1100,
+        "approximate": true
+      }
+    ],
+    "dateRange": {
+      "startYear": -6000,
+      "endYear": 1100,
+      "approximate": true
+    },
+    "visibility": {
+      "importance": 1,
+      "minZoom": 1.0,
+      "featured": true
+    },
+    "visit": {
+      "status": "open",
+      "hours": null,
+      "closedDays": [],
+      "museumPass": null,
+      "phone": "",
+      "officialUrl": "https://whc.unesco.org/en/list/1622"
+    },
+    "images": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Arslantepe_Ruins,_Malatya_01.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Arslantepe_Ruins,_Malatya_01.jpg",
+        "caption": {
+          "tr": "Arslantepe Höyüğü'ndeki mimari kalıntılar.",
+          "en": "Architectural remains at Arslantepe Mound."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Arslantepe_Ruins,_Malatya_04.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Arslantepe_Ruins,_Malatya_04.jpg",
+        "caption": {
+          "tr": "Arslantepe'nin açıkta korunmuş kerpiç mimarisinden görünüm.",
+          "en": "View of the preserved mudbrick architecture at Arslantepe."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Arslantepe5.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Arslantepe5.jpg",
+        "caption": {
+          "tr": "Arslantepe kazı alanından genel görünüm.",
+          "en": "General view of the Arslantepe excavation area."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Et%C3%A0_del_rame,_spade_in_bronzo_e_argento,_da_arslantepe_(museo_di_malatya)_01.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Et%C3%A0_del_rame,_spade_in_bronzo_e_argento,_da_arslantepe_(museo_di_malatya)_01.jpg",
+        "caption": {
+          "tr": "Arslantepe'den erken metal silahlar.",
+          "en": "Early metal weapons from Arslantepe."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Arslantepe_Palastplan_01.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Arslantepe_Palastplan_01.jpg",
+        "caption": {
+          "tr": "Arslantepe Geç Kalkolitik saray kompleksinin planı.",
+          "en": "Plan of the Late Chalcolithic palace complex at Arslantepe."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      }
+    ],
+    "sources": [
+      {
+        "id": "ars-unesco",
+        "citationNumber": 1,
+        "type": "institutional",
+        "authors": [
+          "UNESCO World Heritage Centre"
+        ],
+        "title": "Arslantepe Mound",
+        "year": 2021,
+        "journalOrPublisher": "UNESCO World Heritage Centre",
+        "url": "https://whc.unesco.org/en/list/1622",
+        "doi": ""
+      },
+      {
+        "id": "ars-nomination",
+        "citationNumber": 2,
+        "type": "institutional",
+        "authors": [
+          "Republic of Türkiye"
+        ],
+        "title": "Arslantepe Mound: Nomination Text",
+        "year": 2019,
+        "journalOrPublisher": "UNESCO World Heritage Centre",
+        "url": "https://whc.unesco.org/document/172312",
+        "doi": ""
+      },
+      {
+        "id": "ars-sapienza",
+        "citationNumber": 3,
+        "type": "research_project",
+        "authors": [
+          "Sapienza University of Rome"
+        ],
+        "title": "Arslantepe: Italian Archaeological Mission in Eastern Anatolia",
+        "year": null,
+        "journalOrPublisher": "Sapienza University of Rome",
+        "url": "https://dipantichita.web.uniroma1.it/index.php/en/arslantepe-italian-archaeological-mission-eastern-anatolia-maiao",
+        "doi": ""
+      },
+      {
+        "id": "ars-frangipane2021",
+        "citationNumber": 4,
+        "type": "article",
+        "authors": [
+          "Marcella Frangipane",
+          "Francesca Balossi Restelli",
+          "Gian Maria Di Nocera"
+        ],
+        "title": "Arslantepe. The Sapienza University archaeological project in Eastern Anatolia 60 years on",
+        "year": 2021,
+        "journalOrPublisher": "Asia Minor 1, 15-36",
+        "url": "https://iris.uniroma1.it/handle/11573/1595716",
+        "doi": "10.19272/202115201002"
+      },
+      {
+        "id": "ars-frangipane1997",
+        "citationNumber": 5,
+        "type": "article",
+        "authors": [
+          "Marcella Frangipane"
+        ],
+        "title": "A 4th-millennium temple/palace complex at Arslantepe-Malatya. North-south relations and the formation of early state societies in the northern regions of Greater Mesopotamia",
+        "year": 1997,
+        "journalOrPublisher": "Paléorient 23(1), 45-73",
+        "url": "https://www.persee.fr/doc/paleo_0153-9345_1997_num_23_1_4644",
+        "doi": "10.3406/paleo.1997.4644"
+      },
+      {
+        "id": "ars-cretulae2007",
+        "citationNumber": 6,
+        "type": "book",
+        "authors": [
+          "Marcella Frangipane",
+          "et al."
+        ],
+        "title": "Arslantepe Cretulae: An Early Centralised Administrative System Before Writing",
+        "year": 2007,
+        "journalOrPublisher": "Università di Roma La Sapienza",
+        "url": "https://iris.uniroma1.it/handle/11573/181704",
+        "doi": ""
+      },
+      {
+        "id": "ars-tomb2001",
+        "citationNumber": 7,
+        "type": "article",
+        "authors": [
+          "Marcella Frangipane",
+          "Gian Maria Di Nocera",
+          "Alessandro Hauptmann",
+          "Paolo Morbidelli",
+          "Antonio Palmieri",
+          "Lucia Sadori",
+          "Matilde Schultz",
+          "Thomas Schmidt-Schultz"
+        ],
+        "title": "New Symbols of a New Power in a \"Royal\" Tomb from 3000 BC Arslantepe, Malatya (Turkey)",
+        "year": 2001,
+        "journalOrPublisher": "Paléorient 27(2), 105-139",
+        "url": "https://www.persee.fr/doc/paleo_0153-9345_2001_num_27_2_4733",
+        "doi": "10.3406/paleo.2001.4733"
+      },
+      {
+        "id": "ars-neohittite2020",
+        "citationNumber": 8,
+        "type": "article",
+        "authors": [
+          "Marcella Frangipane",
+          "Francesca Balossi Restelli",
+          "Daniela Di Filippo",
+          "Federico Manuelli",
+          "Lucia Mori"
+        ],
+        "title": "Arslantepe: New Data on the Formation of the Neo-Hittite Kingdom of Melid",
+        "year": 2020,
+        "journalOrPublisher": "News from the Lands of the Hittites 3-4",
+        "url": "https://iris.cnr.it/handle/20.500.14243/401824",
+        "doi": ""
+      },
+      {
+        "id": "ars-puglisi1961",
+        "citationNumber": 9,
+        "type": "field_report",
+        "authors": [
+          "Salvatore M. Puglisi"
+        ],
+        "title": "Malatya-Arslantepe Kazıları 1961",
+        "year": 1961,
+        "journalOrPublisher": "Türk Arkeoloji Dergisi 17, 53-55",
+        "url": "https://dergipark.org.tr/tr/pub/turkarkeolojidergisi/issue/67100/1048011",
+        "doi": ""
+      },
+      {
+        "id": "ars-blades2024",
+        "citationNumber": 10,
+        "type": "article",
+        "authors": [
+          "Giulia Moscone",
+          "et al."
+        ],
+        "title": "Large blades and specialised production at Arslantepe: New evidence for lithic procurement and exchange",
+        "year": 2024,
+        "journalOrPublisher": "Journal of Archaeological Science: Reports 56, 104544",
+        "url": "https://www.sciencedirect.com/science/article/pii/S2352409X2400172X",
+        "doi": "10.1016/j.jasrep.2024.104544"
+      },
+      {
+        "id": "ars-sword2011",
+        "citationNumber": 11,
+        "type": "article",
+        "authors": [
+          "Thomas Zimmermann",
+          "et al."
+        ],
+        "title": "A new Sword of the Type \"Arslantepe\" from Sivas, Turkey",
+        "year": 2011,
+        "journalOrPublisher": "Praehistorische Zeitschrift 86(1), 1-7",
+        "url": "https://www.degruyter.com/document/doi/10.1515/pz.2011.001/html",
+        "doi": "10.1515/PZ.2011.001"
+      },
+      {
+        "id": "ars-frangipane2018",
+        "citationNumber": 12,
+        "type": "article",
+        "authors": [
+          "Marcella Frangipane"
+        ],
+        "title": "Different types of multiethnic societies and different patterns of development and change in the prehistoric Near East",
+        "year": 2018,
+        "journalOrPublisher": "Proceedings of the National Academy of Sciences 115(39), E9112-E9119",
+        "url": "https://www.pnas.org/doi/10.1073/pnas.1804840115",
+        "doi": "10.1073/pnas.1804840115"
+      },
+      {
+        "id": "ars-museum",
+        "citationNumber": 13,
+        "type": "institutional",
+        "authors": [
+          "T.C. Kültür ve Turizm Bakanlığı"
+        ],
+        "title": "Arslantepe Höyüğü",
+        "year": null,
+        "journalOrPublisher": "Malatya İl Kültür ve Turizm Müdürlüğü",
+        "url": "https://malatya.ktb.gov.tr/TR-58275/arslantepe-hoyugu.html",
+        "doi": ""
+      }
+    ]
+  },
+  "content": {
+    "tr": {
+      "name": "Arslantepe Höyüğü",
+      "alternativeNames": [
+        "Arslantepe",
+        "Melid",
+        "Malitiya"
+      ],
+      "province": "Malatya",
+      "district": "Battalgazi",
+      "modernPlace": "Orduzu",
+      "siteTypeLabel": "Höyük, Erken Devlet Merkezi ve Tarihî Melid Kenti",
+      "occupationDisplay": "MÖ 6. binyıldan Orta Çağ'a uzanan çok katmanlı yerleşim, en ayrıntılı diziler MÖ 5.-1. binyıllar",
+      "occupationNote": {
+        "text": "Arslantepe'de MÖ 6. binyıla işaret eden erken malzeme vardır, ancak en iyi belgelenmiş kesintisiz arkeolojik dizi MÖ 5. binyılın sonlarından başlayarak Kalkolitik, Erken Tunç, Hitit ve Demir Çağı evrelerinde izlenir. Höyük özellikle MÖ 4. binyılın sonundaki anıtsal yönetim kompleksi, erken bürokratik uygulamalar, MÖ 3000 dolayındaki seçkin mezarı ve daha sonraki Melid krallığı ile olağanüstü önem taşır. Geç Roma ve Orta Çağ'da alan daha sınırlı biçimde yeniden kullanılmıştır.",
+        "sourceIds": [
+          "ars-unesco",
+          "ars-nomination",
+          "ars-sapienza",
+          "ars-frangipane2021"
+        ]
+      },
+      "overview": [
+        {
+          "text": "Arslantepe, Malatya Ovası'nın kuzeydoğu kenarında, Fırat havzasını Orta Anadolu, Kafkasya ve Kuzey Mezopotamya'ya bağlayan doğal geçişlerin yakınında yer alan yaklaşık 30 metre yüksekliğinde ve 4,5 hektarlık bir höyüktür. Bu konum yerleşimin binlerce yıl boyunca farklı ekonomik ve siyasi ağlara katılmasını sağlamıştır.",
+          "sourceIds": [
+            "ars-unesco",
+            "ars-sapienza"
+          ]
+        },
+        {
+          "text": "Alanın dünya arkeolojisindeki en önemli evresi MÖ 4. binyılın sonudur. Yaklaşık MÖ 3400-3100 arasına tarihlenen büyük kerpiç kompleks, tapınaklar, avlular, depolar, tören alanları ve idari odaları tek bir mimari sistem içinde birleştirir. Kazıcılar bu yapıyı çoğu kez 'saray' olarak adlandırır. Kompleksin ölçeği ve işlevsel bütünlüğü, merkezî karar alma ve kaynak yönetiminin erken örneklerinden biri olarak yorumlanır.",
+          "sourceIds": [
+            "ars-unesco",
+            "ars-frangipane1997"
+          ]
+        },
+        {
+          "text": "Bu yapının odalarında ve depolarında bulunan binlerce kil mühürleme parçası, malların hareketini, kapların ve depoların kontrolünü ve farklı görev sahiplerinin idari sisteme katılımını belgelemektedir. Arslantepe'deki sistem yazının kullanılmadığı bir ortamda karmaşık muhasebe ve kontrol mekanizmalarının nasıl işlediğini gösterdiği için erken bürokrasinin araştırılmasında temel öneme sahiptir.",
+          "sourceIds": [
+            "ars-cretulae2007",
+            "ars-unesco"
+          ]
+        },
+        {
+          "text": "MÖ 3100 dolaylarında saray kompleksi büyük bir yangınla sona ermiş, hemen sonraki dönemde yerleşimin mimarisi ve toplumsal örgütlenmesi önemli ölçüde değişmiştir. MÖ 3000 dolayındaki seçkin mezar, metal silahlar ve Transkafkasya gelenekleriyle bağlantılı unsurlar, bu dönüşüm sürecinde yeni güç biçimlerinin ve hareketli grupların rolünü tartışmak için benzersiz bir bağlam sağlar.",
+          "sourceIds": [
+            "ars-tomb2001",
+            "ars-frangipane2018"
+          ]
+        },
+        {
+          "text": "Arslantepe'nin önemi tarihöncesiyle sınırlı değildir. Tunç Çağı'nın ilerleyen evrelerinde ve Demir Çağı'nda yerleşim Malitiya, Melid veya Meliddu adıyla anılan önemli bir siyasi merkez hâline geldi. Geç Hitit dünyasının Melid krallığı burada gelişti ve kent MÖ 712'de Asur Kralı II. Sargon'un seferleriyle büyük bir kırılma yaşadı.",
+          "sourceIds": [
+            "ars-sapienza",
+            "ars-neohittite2020"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "text": "Höyükte MÖ 6. binyıla ait Halaf ve Ubeyd bağlantılı seramik parçaları bulunmuştur. Ancak bunların bir bölümü ikincil bağlamdadır. UNESCO adaylık dosyası en erken güçlü biçimde belgelenmiş yerleşim evrelerini MÖ 5. binyılın sonlarında başlayan tabakalarla ilişkilendirir.",
+          "sourceIds": [
+            "ars-nomination"
+          ],
+          "title": "En erken kullanım"
+        },
+        {
+          "text": "Yaklaşık MÖ 4300-3900 arasındaki Kalkolitik evrelerde Arslantepe büyük köy ölçeğinden daha karmaşık ekonomik ve törensel örgütlenmeye doğru ilerleyen bir yerleşim görünümü verir. Ortak depolama, üretim ve ritüel mekânlar sonraki merkezî sistemin toplumsal zeminini anlamak açısından önemlidir.",
+          "sourceIds": [
+            "ars-nomination",
+            "ars-frangipane2021"
+          ],
+          "title": "MÖ 5. binyıl sonu"
+        },
+        {
+          "text": "MÖ 4. binyılın ikinci yarısında kamusal ve törensel yapılar büyüdü. Yaklaşık MÖ 3400-3100 arasındaki VI A evresinde geniş tapınak-saray kompleksi, duvar resimleri, depolar ve mühürleme sistemiyle yüksek derecede merkezî bir yönetim ortaya çıktı.",
+          "sourceIds": [
+            "ars-frangipane1997",
+            "ars-cretulae2007",
+            "ars-unesco"
+          ],
+          "title": "Geç Kalkolitik saray sistemi"
+        },
+        {
+          "text": "MÖ 3100 dolayındaki büyük yangından sonra anıtsal kompleks artık aynı biçimde kullanılmadı. MÖ 3000 dolayındaki seçkin mezar ve yeni mimari düzen, Transkafkasya gelenekleri ve yerel unsurların birlikte görüldüğü farklı bir siyasi-toplumsal ortamı gösterir.",
+          "sourceIds": [
+            "ars-tomb2001",
+            "ars-frangipane2018"
+          ],
+          "title": "Erken Tunç Çağı dönüşümü"
+        },
+        {
+          "text": "MÖ 3. ve 2. binyıllarda Arslantepe'nin bölgesel merkez niteliği farklı biçimlerde sürdü. Orta ve Geç Tunç Çağı boyunca yerleşim Hitit ve Kuzey Suriye-Anadolu siyasi ağlarının içinde yer aldı. Geç Tunç Çağı'ndan Demir Çağı'na geçişte süreklilik ve dönüşüm birlikte izlenebilir.",
+          "sourceIds": [
+            "ars-neohittite2020",
+            "ars-sapienza"
+          ],
+          "title": "Tunç Çağı krallık merkezi"
+        },
+        {
+          "text": "Demir Çağı'nda Melid, Geç Hitit siyasi dünyasının önde gelen krallıklarından biri hâline geldi. Anıtsal kapılar, taş kabartmalar ve saray alanları bu evrenin görünür kalıntılarıdır. Asur kaynakları ve arkeolojik dizi, II. Sargon'un MÖ 712 seferlerinin kent tarihinde belirleyici bir kırılma yarattığını gösterir.",
+          "sourceIds": [
+            "ars-sapienza",
+            "ars-neohittite2020"
+          ],
+          "title": "Melid ve Demir Çağı"
+        },
+        {
+          "text": "Asur döneminden sonra höyük büyük siyasi merkez olma niteliğini kaybetti. Geç Roma döneminde kırsal nitelikli daha küçük bir yerleşim ve Orta Çağ'da mezarlık kullanımı belgelenmiştir.",
+          "sourceIds": [
+            "ars-sapienza",
+            "ars-unesco"
+          ],
+          "title": "Geç dönem kullanımları"
+        }
+      ],
+      "importance": [
+        {
+          "text": "Arslantepe'nin Geç Kalkolitik kompleksi, yazıdan önce merkezî kaynak yönetimi, iş bölümü ve bürokrasinin nasıl gelişebildiğini gösteren en önemli arkeolojik örneklerden biridir. Kil mühürlemeler, mal akışını kontrol eden karmaşık fakat yazısız bir idari sistemin maddi kayıtlarıdır.",
+          "sourceIds": [
+            "ars-cretulae2007",
+            "ars-frangipane1997"
+          ],
+          "title": "Yazıdan önce bürokrasi"
+        },
+        {
+          "text": "Kazı ekibi Arslantepe'yi Mezopotamya'nın büyük kent modellerinin doğrudan kopyası olmayan, yerel koşullarda gelişmiş erken bir devletleşme süreci olarak yorumlar. Bu, erken siyasal merkezileşmenin Yakındoğu'da tek bir merkezden yayılan tek çizgili bir süreç olmadığını göstermesi bakımından önemlidir.",
+          "sourceIds": [
+            "ars-frangipane1997",
+            "ars-frangipane2021",
+            "ars-frangipane2018"
+          ],
+          "title": "Erken devletleşme"
+        },
+        {
+          "text": "MÖ 3000 dolayındaki mezar, metal silahlar ve Transkafkasya bağlantılı buluntular, hareketli pastoral gruplarla yerleşik toplumlar arasındaki ilişkilerin yeni güç biçimleri yaratmış olabileceğini tartışmaya açar.",
+          "sourceIds": [
+            "ars-tomb2001",
+            "ars-frangipane2018"
+          ],
+          "title": "Toplumsal dönüşüm ve hareketlilik"
+        },
+        {
+          "text": "Arslantepe'den gelen metal silahlar, özellikle tam kabzalı kılıçlar, metalurji ve savaş teknolojisinin gelişimi açısından uluslararası önemdedir. Güvenli bağlamdan gelen bu örnekler bilinen en erken kılıç grupları arasında değerlendirilir.",
+          "sourceIds": [
+            "ars-sword2011",
+            "ars-tomb2001"
+          ],
+          "title": "Erken kılıçlar ve metalurji"
+        },
+        {
+          "text": "Geç Hitit Melid dizisi, Hitit İmparatorluğu'nun sona ermesinden sonra Doğu Anadolu'da siyasi geleneklerin nasıl yeniden örgütlendiğini gösterir. Arslantepe, Geç Tunç Çağı ile Demir Çağı arasında yalnız kopuş değil kurumsal ve kültürel sürekliliklerin de incelenebildiği merkezlerden biridir.",
+          "sourceIds": [
+            "ars-neohittite2020"
+          ],
+          "title": "Geç Hitit siyasi sürekliliği"
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "MÖ 3400-3100 arasındaki anıtsal kompleks yaklaşık binlerce metrekareye yayılan tapınak, avlu, depo ve idari odaları içerir. Duvar resimleri ve standartlaşmış dolaşım güzergâhları, mekânların törensel ve yönetimsel işlevlerinin birlikte örgütlendiğini gösterir.",
+          "sourceIds": [
+            "ars-frangipane1997",
+            "ars-unesco"
+          ],
+          "title": "Geç Kalkolitik saray kompleksi"
+        },
+        {
+          "text": "İdari odalar ve depolardan ele geçen çok sayıdaki kil mühürleme, kapların, torbaların, kapıların ve depoların kontrol edildiğini gösterir. Yayınlanmış kapsamlı korpus iki binden fazla mühürlemeyi ayrıntılı biçimde belgelemektedir.",
+          "sourceIds": [
+            "ars-cretulae2007"
+          ],
+          "title": "Kretulalar ve mühürleme sistemi"
+        },
+        {
+          "text": "Sarayın duvar resimleri, kırmızı ve siyah pigmentlerle yapılmış insan ve geometrik betimler içerir. Bunlar kamu mimarisindeki görsel iletişimin ve törensel temsilin erken örnekleridir.",
+          "sourceIds": [
+            "ars-frangipane1997",
+            "ars-unesco"
+          ],
+          "title": "Duvar resimleri"
+        },
+        {
+          "text": "MÖ 3000 dolayındaki seçkin mezar, taş sanduka benzeri ana gömü alanı, zengin metal armağanlar ve çevresindeki insan gömüleriyle son derece sıra dışı bir komplekstir. Kazıcılar mezarı yeni siyasi gücün sembolik ifadesi olarak yorumlamıştır.",
+          "sourceIds": [
+            "ars-tomb2001"
+          ],
+          "title": "Seçkin mezar"
+        },
+        {
+          "text": "Arslantepe'nin metal silah repertuarı içinde tam kabzalı kılıçlar, hançerler ve mızrak uçları yer alır. Bazı örneklerde gümüş bezeme vardır. Bunlar MÖ 4. binyıl sonu ve 3. binyıl başındaki metal işçiliğinin ileri düzeyini gösterir.",
+          "sourceIds": [
+            "ars-sword2011",
+            "ars-tomb2001"
+          ],
+          "title": "Erken metal silahlar"
+        },
+        {
+          "text": "Çakmaktaşı büyük dilgiler üzerine yapılan yeni analizler, bazı üretim aşamalarının höyük dışında gerçekleştiğini ve hammaddenin uzmanlaşmış tedarik ağları üzerinden yerleşime getirildiğini düşündürmektedir.",
+          "sourceIds": [
+            "ars-blades2024"
+          ],
+          "title": "Uzmanlaşmış taş alet üretimi"
+        },
+        {
+          "text": "Demir Çağı Melid evresindeki Aslanlı Kapı ve taş kabartmalar, höyüğün modern adının kaynağını oluşturur. Bu anıtlar Geç Hitit krallık ideolojisi, saray mimarisi ve taş sanatının başlıca belgeleridir.",
+          "sourceIds": [
+            "ars-sapienza",
+            "ars-neohittite2020"
+          ],
+          "title": "Aslanlı Kapı ve Geç Hitit kabartmaları"
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "Arslantepe'deki ilk büyük arkeolojik çalışmalar 1930'larda Fransız arkeolog Louis Delaporte tarafından yürütüldü. Bu kazılar özellikle Demir Çağı sarayı, Aslanlı Kapı ve kabartmaları görünür hâle getirdi. İkinci Dünya Savaşı sonrasında Claude Schaeffer kısa süreli çalışmalar yaptı.",
+          "sourceIds": [
+            "ars-sapienza"
+          ]
+        },
+        {
+          "text": "İtalyan arkeolojik misyonu 1961'de başladı. İlk yıllarda Piero Meriggi ve Salvatore M. Puglisi'nin yer aldığı çalışmalar yalnız tarihî dönem yapılarına değil höyüğün derin tarihöncesi tabakalarına da yöneldi. 1961 sezonuna ilişkin erken rapor Türk Arkeoloji Dergisi'nde yayımlandı.",
+          "sourceIds": [
+            "ars-puglisi1961",
+            "ars-sapienza"
+          ]
+        },
+        {
+          "text": "1960'lardan sonraki uzun soluklu Sapienza Üniversitesi programı, Arslantepe'de MÖ 5. binyıldan 1. binyıla uzanan geniş stratigrafiyi sistematik biçimde açığa çıkardı. Marcella Frangipane döneminde Geç Kalkolitik saray sistemi ve erken devletleşme araştırmanın uluslararası ölçekte en etkili sonuçlarından biri hâline geldi.",
+          "sourceIds": [
+            "ars-frangipane2021",
+            "ars-frangipane1997"
+          ]
+        },
+        {
+          "text": "Araştırma bugün kazı, malzeme analizi, çevre arkeolojisi, arkeometri, konservasyon ve kerpiç mimarinin korunmasını birlikte yürüten çok disiplinli bir programa dönüşmüştür. UNESCO statüsü, açıkta bırakılan kerpiç yapıların uzun vadeli korunmasını araştırmanın merkezine yerleştirmiştir.",
+          "sourceIds": [
+            "ars-unesco",
+            "ars-frangipane2021"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "text": "Arslantepe sık sık 'dünyanın ilk devleti' gibi popüler ifadelerle tanıtılır. Akademik literatürde daha temkinli bir dil kullanılır. Kazı ekibi burada Mezopotamya dışındaki birincil veya erken devletleşme biçiminin geliştiğini savunur, ancak 'devlet' kavramının hangi kurumsal eşiğe uygulanacağı kuramsal bir tartışmadır. Arslantepe'nin önemi tek bir sıralama iddiasından çok merkezî idare, eşitsizlik ve kamu mimarisinin birlikte belgelenmesindedir.",
+          "sourceIds": [
+            "ars-frangipane1997",
+            "ars-frangipane2021",
+            "ars-frangipane2018"
+          ],
+          "title": "Arslantepe gerçekten 'ilk devlet' mi?"
+        },
+        {
+          "text": "MÖ 3400-3100 kompleksine 'saray' denmesi yaygındır, ancak yapı yalnız hükümdar konutu değildir. Tapınak, depo, avlu, idari oda ve tören mekânlarını bir araya getirir. Bu nedenle 'tapınak-saray kompleksi' veya 'kamusal-idari kompleks' terimleri işlevsel çeşitliliği daha iyi yansıtabilir.",
+          "sourceIds": [
+            "ars-frangipane1997",
+            "ars-unesco"
+          ],
+          "title": "'Saray' teriminin anlamı"
+        },
+        {
+          "text": "Kompleksin büyük yangınla sona erdiği açıktır, ancak yangının savaş, iç çatışma veya başka bir olaydan kaynaklandığını kesin biçimde göstermek zordur. UNESCO metni ani ve muhtemelen şiddetli bir son olasılığını vurgular. Nedeni kanıtlanmadığı için atlas yangını kesin bir istila öyküsüne bağlamamalıdır.",
+          "sourceIds": [
+            "ars-unesco",
+            "ars-frangipane1997"
+          ],
+          "title": "Saray neden yandı?"
+        },
+        {
+          "text": "Arslantepe kılıçları bazen doğrudan 'dünyanın ilk kılıçları' olarak adlandırılır. Güvenli arkeolojik bağlamları onları bilinen en erken kılıç gruplarından biri yapar, ancak erken uzun bıçakların nasıl sınıflandırılacağı ve işlevlerinin gerçek savaş silahı mı yoksa statü göstergesi mi olduğu ayrıca tartışılmalıdır.",
+          "sourceIds": [
+            "ars-sword2011",
+            "ars-tomb2001"
+          ],
+          "title": "En eski kılıçlar ve işlevleri"
+        },
+        {
+          "text": "MÖ 3000 dolayındaki seçkin mezarda Transkafkasya ile ilişkili öğeler bulunması, yeni gelen gruplar, pastoral hareketlilik ve yerel elitlerin dönüşümü üzerine farklı modeller üretmiştir. Arkeolojik karışım doğrudan tek bir etnik grubun göçü olarak okunmamalıdır. Kazı ekibi çok etnikli etkileşim ve değişen toplumsal ilişkiler üzerinde durur.",
+          "sourceIds": [
+            "ars-tomb2001",
+            "ars-frangipane2018"
+          ],
+          "title": "Transkafkasya bağlantıları nasıl yorumlanmalı?"
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "Arslantepe 2021'den beri UNESCO Dünya Mirası Listesi'ndedir. Ziyaretçi rotası özellikle Geç Kalkolitik kerpiç mimariyi ve daha sonraki dönem kalıntılarını yerinde görmeye imkân verir. Kerpiç yapıların korunması için çatı, drenaj ve yüzey konservasyonu gibi özel yöntemler kullanılmaktadır.",
+          "sourceIds": [
+            "ars-unesco",
+            "ars-museum"
+          ]
+        },
+        {
+          "text": "Kazı ve araştırmalar Sapienza Üniversitesi'nin uzun soluklu projesi kapsamında devam etmektedir. Alanın bilimsel değeri yalnız açığa çıkarılan yapılar değil, henüz kazılmamış tabakaların korunması ve uzun stratigrafik dizinin bütünlüğüdür.",
+          "sourceIds": [
+            "ars-sapienza",
+            "ars-frangipane2021"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Geç Kalkolitik saray kompleksi",
+          "description": "Tapınaklar, depolar, avlular ve idari mekânları birleştiren MÖ 4. binyıl sonu anıtsal kamusal kompleks.",
+          "period": "Geç Kalkolitik",
+          "sourceIds": [
+            "ars-frangipane1997",
+            "ars-unesco"
+          ]
+        },
+        {
+          "name": "Kil mühürlemeler",
+          "description": "Yazı kullanılmadan önce malların, kapların ve depoların kontrolünü belgeleyen kapsamlı idari kayıt sistemi.",
+          "period": "Geç Kalkolitik",
+          "sourceIds": [
+            "ars-cretulae2007"
+          ]
+        },
+        {
+          "name": "Seçkin mezar",
+          "description": "MÖ 3000 dolayında metal silahlar ve farklı kültürel gelenekleri bir araya getiren sıra dışı gömü kompleksi.",
+          "period": "Erken Tunç Çağı",
+          "sourceIds": [
+            "ars-tomb2001"
+          ]
+        },
+        {
+          "name": "Erken kılıçlar",
+          "description": "Tam kabzalı metal örnekleriyle bilinen en erken güvenli kılıç gruplarından biri.",
+          "period": "Geç Kalkolitik / Erken Tunç Çağı",
+          "sourceIds": [
+            "ars-sword2011",
+            "ars-tomb2001"
+          ]
+        },
+        {
+          "name": "Aslanlı Kapı",
+          "description": "Melid krallığının Geç Hitit saray ve temsil geleneğinin başlıca anıtlarından biri.",
+          "period": "Demir Çağı",
+          "sourceIds": [
+            "ars-sapienza",
+            "ars-neohittite2020"
+          ]
+        },
+        {
+          "name": "Duvar resimleri",
+          "description": "Anıtsal kamusal mimaride insan ve geometrik betimleri kullanan erken resim programı.",
+          "period": "Geç Kalkolitik",
+          "sourceIds": [
+            "ars-frangipane1997",
+            "ars-unesco"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "Arslantepe, Malatya Ovası'nın kuzeydoğusunda, günümüzde Battalgazi ilçesine bağlı Orduzu çevresinde yer alır.",
+        "distanceFromNearestCenter": "Malatya kent merkezine yaklaşık 7 km.",
+        "landscape": "Yaklaşık 30 metre yüksekliğinde ve 4,5 hektarlık höyük, Fırat havzasını Toros geçitleri, Orta Anadolu ve Kafkasya yönlerine bağlayan doğal yolların yakınındadır. Verimli ova tarımı ve dağlık kaynak bölgelerine erişim uzun yerleşim tarihinde belirleyici olmuştur.",
+        "gettingThere": "Malatya merkezden Orduzu ve Arslantepe yönüne karayoluyla ulaşılır.",
+        "sourceIds": [
+          "ars-unesco",
+          "ars-sapienza"
+        ]
+      },
+      "visit": {
+        "statusLabel": "Ziyarete açık UNESCO Dünya Mirası alanı",
+        "address": "Orduzu, Battalgazi, Malatya",
+        "visitorNote": "Açıkta korunan kerpiç mimari hassastır ve ziyaret güzergâhı koruma çalışmalarına göre değişebilir. Güncel saat ve erişim bilgileri resmi kültür ve müze kaynaklarından kontrol edilmelidir.",
+        "sourceIds": [
+          "ars-unesco",
+          "ars-museum"
+        ]
+      },
+      "nearbyPlaces": [],
+      "participation": []
+    },
+    "en": {
+      "name": "Arslantepe Mound",
+      "alternativeNames": [
+        "Arslantepe",
+        "Melid",
+        "Malitiya"
+      ],
+      "province": "Malatya",
+      "district": "Battalgazi",
+      "modernPlace": "Orduzu",
+      "siteTypeLabel": "Mound, Early Political Centre and Historic City of Melid",
+      "occupationDisplay": "a multi-layered settlement from the 6th millennium BCE into the medieval period, with the strongest sequence from the 5th to 1st millennia BCE",
+      "occupationNote": {
+        "text": "Material at Arslantepe points to activity in the 6th millennium BCE, although the best-documented continuous archaeological sequence begins in the later 5th millennium and runs through Chalcolithic, Early Bronze Age, Hittite and Iron Age phases. The site is especially important for its late 4th-millennium administrative complex, early bureaucratic practices, the elite tomb around 3000 BCE and the later kingdom of Melid. More limited reuse occurred in the Late Roman and medieval periods.",
+        "sourceIds": [
+          "ars-unesco",
+          "ars-nomination",
+          "ars-sapienza",
+          "ars-frangipane2021"
+        ]
+      },
+      "overview": [
+        {
+          "text": "Arslantepe is a mound about 30 metres high and 4.5 hectares in area on the northeastern edge of the Malatya Plain, close to natural routes linking the Euphrates basin with central Anatolia, the Caucasus and northern Mesopotamia. This position allowed the settlement to participate in changing economic and political networks for millennia.",
+          "sourceIds": [
+            "ars-unesco",
+            "ars-sapienza"
+          ]
+        },
+        {
+          "text": "Its most internationally significant phase belongs to the late 4th millennium BCE. A large mudbrick complex dating roughly to 3400-3100 BCE combined temples, courtyards, storage rooms, ceremonial spaces and administrative rooms within one architectural system. Excavators commonly call it a palace. Its scale and functional integration have made it a major case for early centralised decision-making and resource management.",
+          "sourceIds": [
+            "ars-unesco",
+            "ars-frangipane1997"
+          ]
+        },
+        {
+          "text": "Thousands of fragments of clay sealings from rooms and stores record the control of containers, doors and stored goods and the participation of multiple officials in administration. Because this complex operated without writing, Arslantepe is fundamental to research on how sophisticated accounting and control could function before written bureaucracies.",
+          "sourceIds": [
+            "ars-cretulae2007",
+            "ars-unesco"
+          ]
+        },
+        {
+          "text": "A major fire ended the palace complex around 3100 BCE, after which architecture and social organisation changed sharply. An elite tomb around 3000 BCE, metal weapons and elements connected with Transcaucasian traditions provide a unique context for debating new forms of power and the role of mobile groups in this transformation.",
+          "sourceIds": [
+            "ars-tomb2001",
+            "ars-frangipane2018"
+          ]
+        },
+        {
+          "text": "The importance of Arslantepe extends far beyond prehistory. In later Bronze and Iron Age phases the settlement became the political centre known as Malitiya, Melid or Meliddu. The Neo-Hittite kingdom of Melid developed here, and the campaign of Sargon II of Assyria in 712 BCE marked a major break in the history of the city.",
+          "sourceIds": [
+            "ars-sapienza",
+            "ars-neohittite2020"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "text": "Sherds connected with Halaf and Ubaid traditions indicate 6th-millennium BCE activity, although some are not from secure primary contexts. The UNESCO nomination dossier treats the later 5th millennium as the beginning of the most securely documented settlement sequence.",
+          "sourceIds": [
+            "ars-nomination"
+          ],
+          "title": "Earliest activity"
+        },
+        {
+          "text": "During phases around 4300-3900 BCE, Arslantepe shows movement from a large village toward more complex economic and ceremonial organisation. Shared storage, production and ritual spaces provide important background for the later centralised system.",
+          "sourceIds": [
+            "ars-nomination",
+            "ars-frangipane2021"
+          ],
+          "title": "Late 5th millennium BCE"
+        },
+        {
+          "text": "Public and ceremonial architecture expanded in the second half of the 4th millennium. In the VI A phase, roughly 3400-3100 BCE, the great temple-palace complex combined wall paintings, stores and a sealing system within a highly centralised form of administration.",
+          "sourceIds": [
+            "ars-frangipane1997",
+            "ars-cretulae2007",
+            "ars-unesco"
+          ],
+          "title": "Late Chalcolithic palace system"
+        },
+        {
+          "text": "After the destructive fire around 3100 BCE the monumental complex was no longer used in the same way. The elite tomb around 3000 BCE and new architectural arrangements combine local elements with Transcaucasian traditions and signal a different political and social environment.",
+          "sourceIds": [
+            "ars-tomb2001",
+            "ars-frangipane2018"
+          ],
+          "title": "Early Bronze Age transformation"
+        },
+        {
+          "text": "During the 3rd and 2nd millennia BCE Arslantepe continued as a regional centre in changing forms. Through the Middle and Late Bronze Ages it participated in Hittite and northern Syrian-Anatolian political networks. Both continuity and transformation can be traced across the Late Bronze to Iron Age transition.",
+          "sourceIds": [
+            "ars-neohittite2020",
+            "ars-sapienza"
+          ],
+          "title": "Bronze Age political centre"
+        },
+        {
+          "text": "In the Iron Age Melid became one of the major kingdoms of the Neo-Hittite world. Monumental gates, relief sculpture and palatial areas belong to this phase. Archaeology and Assyrian records indicate that the campaigns of Sargon II in 712 BCE created a decisive break.",
+          "sourceIds": [
+            "ars-sapienza",
+            "ars-neohittite2020"
+          ],
+          "title": "Melid and the Iron Age"
+        },
+        {
+          "text": "After Assyrian domination the mound lost its role as a major political capital. More limited rural occupation is documented in the Late Roman period, followed by medieval cemetery use.",
+          "sourceIds": [
+            "ars-sapienza",
+            "ars-unesco"
+          ],
+          "title": "Later reuse"
+        }
+      ],
+      "importance": [
+        {
+          "text": "The Late Chalcolithic complex is one of the most important archaeological examples for studying central resource management, division of labour and bureaucracy before writing. Clay sealings are the material record of a sophisticated system for controlling goods and access.",
+          "sourceIds": [
+            "ars-cretulae2007",
+            "ars-frangipane1997"
+          ],
+          "title": "Bureaucracy before writing"
+        },
+        {
+          "text": "The excavation team interprets Arslantepe as evidence for a locally generated process of early state formation rather than a simple copy of southern Mesopotamian urban models. Its wider significance lies in showing that political centralisation in the Near East did not follow a single linear route.",
+          "sourceIds": [
+            "ars-frangipane1997",
+            "ars-frangipane2021",
+            "ars-frangipane2018"
+          ],
+          "title": "Early state formation"
+        },
+        {
+          "text": "The elite tomb, metal weapons and Transcaucasian-related material around 3000 BCE open a rare window onto relations between mobile pastoral groups and settled communities during a period of major political change.",
+          "sourceIds": [
+            "ars-tomb2001",
+            "ars-frangipane2018"
+          ],
+          "title": "Mobility and social transformation"
+        },
+        {
+          "text": "Metal weapons from Arslantepe, particularly full-hilted swords, are internationally important for the history of metallurgy and warfare. Securely dated examples belong among the earliest known groups of swords.",
+          "sourceIds": [
+            "ars-sword2011",
+            "ars-tomb2001"
+          ],
+          "title": "Early swords and metallurgy"
+        },
+        {
+          "text": "The Neo-Hittite sequence at Melid documents how political traditions were reorganised in eastern Anatolia after the end of the Hittite Empire. Arslantepe preserves evidence for continuity as well as rupture across the Late Bronze to Iron Age transition.",
+          "sourceIds": [
+            "ars-neohittite2020"
+          ],
+          "title": "Neo-Hittite political continuity"
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "The monumental complex of about 3400-3100 BCE combined temples, courtyards, storage spaces and administrative rooms across a large area. Wall paintings and controlled circulation routes show the close integration of ceremonial and administrative functions.",
+          "sourceIds": [
+            "ars-frangipane1997",
+            "ars-unesco"
+          ],
+          "title": "Late Chalcolithic palace complex"
+        },
+        {
+          "text": "Large numbers of clay sealings from administrative rooms and stores document control over containers, bags, doors and storage. The published corpus records more than two thousand sealings in detail.",
+          "sourceIds": [
+            "ars-cretulae2007"
+          ],
+          "title": "Cretulae and sealing system"
+        },
+        {
+          "text": "Wall paintings within the palace used red, black and other pigments for human and geometric imagery. They are early examples of visual communication and representation within monumental public architecture.",
+          "sourceIds": [
+            "ars-frangipane1997",
+            "ars-unesco"
+          ],
+          "title": "Wall paintings"
+        },
+        {
+          "text": "The elite tomb around 3000 BCE is an unusual complex with a principal burial, rich metal equipment and additional human burials. Excavators have interpreted it as a powerful symbolic expression of a new political order.",
+          "sourceIds": [
+            "ars-tomb2001"
+          ],
+          "title": "Elite tomb"
+        },
+        {
+          "text": "The metal weapon assemblage includes full-hilted swords, daggers and spearheads, some with silver decoration. These objects demonstrate sophisticated metallurgy around the end of the 4th and beginning of the 3rd millennium BCE.",
+          "sourceIds": [
+            "ars-sword2011",
+            "ars-tomb2001"
+          ],
+          "title": "Early metal weapons"
+        },
+        {
+          "text": "Recent analysis of large chert blades indicates that parts of the production sequence took place away from the mound and that finished or semi-finished products moved through specialised procurement networks.",
+          "sourceIds": [
+            "ars-blades2024"
+          ],
+          "title": "Specialised lithic production"
+        },
+        {
+          "text": "The Lions' Gate and relief sculpture of Iron Age Melid gave the mound its modern name. These monuments are major documents for Neo-Hittite royal ideology, palatial architecture and stone carving.",
+          "sourceIds": [
+            "ars-sapienza",
+            "ars-neohittite2020"
+          ],
+          "title": "Lions' Gate and Neo-Hittite reliefs"
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "The first major archaeological excavation at Arslantepe was carried out in the 1930s by the French archaeologist Louis Delaporte. This work made the Iron Age palace, Lions' Gate and relief sculpture widely known. Claude Schaeffer conducted brief work after the Second World War.",
+          "sourceIds": [
+            "ars-sapienza"
+          ]
+        },
+        {
+          "text": "The Italian archaeological mission began in 1961. Early work involving Piero Meriggi and Salvatore M. Puglisi soon expanded from historical monuments into the deep prehistoric sequence of the mound. A report on the 1961 season was published in Türk Arkeoloji Dergisi.",
+          "sourceIds": [
+            "ars-puglisi1961",
+            "ars-sapienza"
+          ]
+        },
+        {
+          "text": "The long-running Sapienza University project subsequently exposed a broad sequence from the 5th to the 1st millennium BCE. Under Marcella Frangipane, the Late Chalcolithic palace system and the problem of early state formation became among the project's most influential international contributions.",
+          "sourceIds": [
+            "ars-frangipane2021",
+            "ars-frangipane1997"
+          ]
+        },
+        {
+          "text": "Research today combines excavation, material studies, environmental archaeology, archaeometry and conservation. Since the most important architecture is mudbrick, long-term preservation of exposed buildings is itself a central component of the scientific programme.",
+          "sourceIds": [
+            "ars-unesco",
+            "ars-frangipane2021"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "text": "Arslantepe is sometimes popularised as the site of the 'world's first state'. Scholarly language is more cautious. The excavation team argues for an early or primary process of state formation outside the classic southern Mesopotamian city model, but the institutional threshold at which the word 'state' should be used remains theoretical and debated. The secure archaeological point is the combination of centralised administration, inequality and monumental public architecture.",
+          "sourceIds": [
+            "ars-frangipane1997",
+            "ars-frangipane2021",
+            "ars-frangipane2018"
+          ],
+          "title": "Was Arslantepe the 'first state'?"
+        },
+        {
+          "text": "The complex of 3400-3100 BCE is commonly called a palace, but it was not simply a royal residence. Temples, storage, courtyards, administrative rooms and ceremonial spaces were integrated into one system. Terms such as temple-palace or public-administrative complex may better capture its functional diversity.",
+          "sourceIds": [
+            "ars-frangipane1997",
+            "ars-unesco"
+          ],
+          "title": "What does 'palace' mean here?"
+        },
+        {
+          "text": "The destruction of the complex by a major fire is clear, but the cause is not. UNESCO discusses a sudden and possibly violent end, yet archaeology cannot securely identify war, internal conflict or another specific event. The atlas should therefore avoid converting the fire into an unsupported invasion narrative.",
+          "sourceIds": [
+            "ars-unesco",
+            "ars-frangipane1997"
+          ],
+          "title": "Why did the palace burn?"
+        },
+        {
+          "text": "The Arslantepe swords are often described as the world's first swords. Their secure contexts make them part of one of the earliest known sword groups, but classification of early long blades and the balance between practical weapon and prestige symbol remain open questions.",
+          "sourceIds": [
+            "ars-sword2011",
+            "ars-tomb2001"
+          ],
+          "title": "The earliest swords and their function"
+        },
+        {
+          "text": "Transcaucasian elements in the elite tomb and early 3rd-millennium material have generated models involving migration, pastoral mobility and transformation of local elites. The mixed archaeological assemblage should not be translated automatically into one ethnic migration. The excavation team instead stresses multiethnic interaction and changing social relationships.",
+          "sourceIds": [
+            "ars-tomb2001",
+            "ars-frangipane2018"
+          ],
+          "title": "How should Transcaucasian connections be interpreted?"
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "Arslantepe has been on the UNESCO World Heritage List since 2021. The visitor route makes it possible to see preserved Late Chalcolithic mudbrick architecture and later remains in situ. Roofing, drainage and surface conservation are essential because exposed mudbrick is exceptionally vulnerable.",
+          "sourceIds": [
+            "ars-unesco",
+            "ars-museum"
+          ]
+        },
+        {
+          "text": "Excavation and research continue through the long-term Sapienza University mission. The value of the site lies not only in excavated monuments but also in preserving the unexcavated sequence and its stratigraphic integrity for future research.",
+          "sourceIds": [
+            "ars-sapienza",
+            "ars-frangipane2021"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Late Chalcolithic palace complex",
+          "description": "A monumental late 4th-millennium public complex integrating temples, storage, courtyards and administrative rooms.",
+          "period": "Late Chalcolithic",
+          "sourceIds": [
+            "ars-frangipane1997",
+            "ars-unesco"
+          ]
+        },
+        {
+          "name": "Clay sealings",
+          "description": "A large administrative record of the control of goods and storage before the adoption of writing.",
+          "period": "Late Chalcolithic",
+          "sourceIds": [
+            "ars-cretulae2007"
+          ]
+        },
+        {
+          "name": "Elite tomb",
+          "description": "An exceptional burial around 3000 BCE combining rich metal equipment with multiple cultural traditions.",
+          "period": "Early Bronze Age",
+          "sourceIds": [
+            "ars-tomb2001"
+          ]
+        },
+        {
+          "name": "Early swords",
+          "description": "A securely dated group of full-hilted metal weapons belonging among the earliest known swords.",
+          "period": "Late Chalcolithic / Early Bronze Age",
+          "sourceIds": [
+            "ars-sword2011",
+            "ars-tomb2001"
+          ]
+        },
+        {
+          "name": "Lions' Gate",
+          "description": "A major monument of the Neo-Hittite kingdom of Melid and the source of the modern name Arslantepe.",
+          "period": "Iron Age",
+          "sourceIds": [
+            "ars-sapienza",
+            "ars-neohittite2020"
+          ]
+        },
+        {
+          "name": "Wall paintings",
+          "description": "An early programme of human and geometric imagery in monumental public architecture.",
+          "period": "Late Chalcolithic",
+          "sourceIds": [
+            "ars-frangipane1997",
+            "ars-unesco"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "Arslantepe lies on the northeastern side of the Malatya Plain near modern Orduzu in Battalgazi district.",
+        "distanceFromNearestCenter": "Approximately 7 km from central Malatya.",
+        "landscape": "The mound rises about 30 metres above the plain and covers roughly 4.5 hectares. It stands near natural corridors connecting the Euphrates basin with the Taurus passes, central Anatolia and the Caucasus. Fertile agriculture and access to upland resources helped sustain its long occupation.",
+        "gettingThere": "The site is reached by road from central Malatya toward Orduzu and Arslantepe.",
+        "sourceIds": [
+          "ars-unesco",
+          "ars-sapienza"
+        ]
+      },
+      "visit": {
+        "statusLabel": "UNESCO World Heritage Site open to visitors",
+        "address": "Orduzu, Battalgazi, Malatya",
+        "visitorNote": "The exposed mudbrick architecture is fragile and visitor routes may change according to conservation work. Current opening and access information should be checked through official museum and cultural sources.",
+        "sourceIds": [
+          "ars-unesco",
+          "ars-museum"
+        ]
+      },
+      "nearbyPlaces": [],
+      "participation": []
+    }
+  }
+}

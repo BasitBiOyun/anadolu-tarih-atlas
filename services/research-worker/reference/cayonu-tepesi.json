@@ -1,0 +1,414 @@
+{
+  "schemaVersion": 4,
+  "id": "cayonu-tepesi",
+  "core": {
+    "coordinates": {
+      "latitude": 38.216329,
+      "longitude": 39.726509
+    },
+    "siteType": "mound",
+    "chronology": [
+      {
+        "periodId": "neolithic",
+        "startYear": -9300,
+        "endYear": -6300,
+        "approximate": true,
+        "note": "Main Neolithic sequence; absolute dates vary by phase and publication."
+      },
+      {
+        "periodId": "early_bronze_age",
+        "approximate": true,
+        "note": "Later occupation is also documented and has been investigated in renewed excavations."
+      }
+    ],
+    "dateRange": {
+      "startYear": -9300,
+      "endYear": -6300,
+      "approximate": true
+    },
+    "visibility": {
+      "importance": 1,
+      "minZoom": 1.0,
+      "featured": true
+    },
+    "images": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Standing%20Stones%2C%207500%20BC%2C%20Diyarbak%C4%B1r%20Archaeology%20Museum.jpg?width=1600",
+        "thumbnailUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Standing%20Stones%2C%207500%20BC%2C%20Diyarbak%C4%B1r%20Archaeology%20Museum.jpg?width=800",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Standing%20Stones%2C%207500%20BC%2C%20Diyarbak%C4%B1r%20Archaeology%20Museum.jpg",
+        "caption": {
+          "tr": "Diyarbakır Arkeoloji Müzesi'nde Çayönü Tepesi'nden dikili taşlar, yaklaşık MÖ 7500.",
+          "en": "Standing stones from Çayönü Tepesi in the Diyarbakır Archaeology Museum, c. 7500 BCE."
+        },
+        "source": "Wikimedia Commons",
+        "credit": "- Ozymandias -",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "type": "artifact"
+      }
+    ],
+    "sources": [
+      {
+        "id": "cayonu_official_history",
+        "title": "Çayönü Tepesi – Tarihçe / History",
+        "type": "official",
+        "author": "Çayönü Tepesi Kazı ve Araştırma Projesi",
+        "year": 2026,
+        "url": "https://cayonutepesi.org.tr/tr/cayonu/tarihce"
+      },
+      {
+        "id": "cayonu_official_home",
+        "title": "Çayönü Tepesi Kazı ve Araştırma Projesi",
+        "type": "official",
+        "author": "Çayönü Tepesi Kazı ve Araştırma Projesi",
+        "year": 2026,
+        "url": "https://cayonutepesi.org.tr/tr"
+      },
+      {
+        "id": "ozdogan_1989",
+        "title": "Çayönü. A Conspectus of Recent Work",
+        "type": "article",
+        "author": "Mehmet Özdoğan; Aslı Özdoğan",
+        "year": 1989,
+        "url": "https://www.persee.fr/doc/paleo_0153-9345_1989_num_15_1_4485",
+        "journal": "Paléorient"
+      },
+      {
+        "id": "pearson_2013",
+        "title": "Food and social complexity at Çayönü Tepesi, southeastern Anatolia: stable isotope evidence of differentiation in diet according to burial practice and sex in the early Neolithic",
+        "type": "article",
+        "author": "Jessica Pearson et al.",
+        "year": 2013,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4066944/",
+        "journal": "Journal of Anthropological Archaeology"
+      },
+      {
+        "id": "archatlas_cayonu",
+        "title": "Çayönü: Site from Satellites",
+        "type": "database",
+        "author": "ArchAtlas",
+        "url": "https://www.archatlas.org/atlas/visualisations/sitesfromsatellites/cayonu/"
+      },
+      {
+        "id": "commons_cayonu_stones",
+        "title": "Standing Stones, 7500 BC, Diyarbakır Archaeology Museum",
+        "type": "image",
+        "author": "Wikimedia Commons / - Ozymandias -",
+        "year": 2022,
+        "url": "https://commons.wikimedia.org/wiki/File:Standing_Stones,_7500_BC,_Diyarbak%C4%B1r_Archaeology_Museum.jpg"
+      }
+    ]
+  },
+  "content": {
+    "tr": {
+      "name": "Çayönü Tepesi",
+      "alternativeNames": [
+        "Çayönü",
+        "Çayönü Höyüğü"
+      ],
+      "province": "Diyarbakır",
+      "district": "Ergani",
+      "modernPlace": "Hilar (Sesverenpınar) çevresi",
+      "siteTypeLabel": "Höyük / Neolitik yerleşim",
+      "occupationDisplay": "Yaklaşık MÖ 9300–6300 ana Neolitik dizisi; daha geç dönem iskânları da belgelenmiştir.",
+      "overview": [
+        {
+          "text": "Çayönü Tepesi, Ergani Ovası'nın Toros eteklerine açıldığı kesimde, Dicle havzasının erken yerleşik topluluklarını anlamak için temel referans alanlarından biridir. Yerleşme; avcı-toplayıcı yaşamdan daha yerleşik, üretici ekonomilere geçişin tek bir anda değil, mimari, beslenme, toplumsal örgütlenme ve teknoloji boyunca uzun bir süreçte gerçekleştiğini gösterir.",
+          "sourceIds": [
+            "cayonu_official_history",
+            "ozdogan_1989"
+          ]
+        },
+        {
+          "text": "Alan özellikle mimari planların zaman içindeki değişimi, bitki ve hayvan kullanımındaki dönüşüm, doğal bakırın işlenmesi ve insan gömme pratikleri bakımından önemlidir. Bu nedenle Çayönü yalnızca Güneydoğu Anadolu Neolitiği için değil, Güneybatı Asya'da neolitikleşme tartışmalarının bütünü için merkezî bir veri seti sunar.",
+          "sourceIds": [
+            "cayonu_official_history",
+            "pearson_2013"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "title": "Uzun Neolitik dizi",
+          "text": "Çayönü'nün Neolitik dolguları farklı mimari evrelerle izlenir. Yayınlarda bu evreler yuvarlak/ızgara-planlı yapılardan hücre-planlı ve daha gelişkin yapılara doğru değişen bir mimari seriyle ilişkilendirilir; mutlak tarihler ve alt evrelerin sınırları yayına göre farklılaşabilir.",
+          "sourceIds": [
+            "ozdogan_1989"
+          ]
+        },
+        {
+          "title": "Neolitik sonrası kullanım",
+          "text": "2015 sonrası araştırmalarda yerleşmenin yalnızca Neolitik tabakaları değil, daha geç iskânları ve özellikle İlk Tunç Çağı dolguları da yeniden araştırılmıştır.",
+          "sourceIds": [
+            "cayonu_official_history"
+          ]
+        }
+      ],
+      "importance": [
+        {
+          "text": "Çayönü, tarım ve hayvancılığın gelişimi, kalıcı mimari, toplumsal farklılaşma ve teknolojik yenilikleri aynı stratigrafik bağlamda uzun süre izlemeye imkân verdiği için dünya Neolitik arkeolojisinin başlıca karşılaştırma merkezlerindendir.",
+          "sourceIds": [
+            "cayonu_official_history",
+            "ozdogan_1989"
+          ]
+        },
+        {
+          "text": "Doğal bakırın kullanımına ilişkin bulgular, metalin eritilmesinden önceki dönemde taş ve kemik işleme gelenekleriyle birlikte gelişen erken metal işçiliğini incelemek açısından özellikle değerlidir.",
+          "sourceIds": [
+            "cayonu_official_history"
+          ]
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "Mimari dizinin farklı aşamaları, yerleşim mekânlarının işlev ve örgütlenmesindeki değişimleri ayrıntılı biçimde göstermektedir.",
+          "sourceIds": [
+            "ozdogan_1989"
+          ]
+        },
+        {
+          "text": "İnsan kalıntıları ve özellikle özel gömme bağlamları, beslenme ve toplumsal örgütlenmenin izotop analizleriyle birlikte değerlendirilmesine olanak vermiştir.",
+          "sourceIds": [
+            "pearson_2013"
+          ]
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "Çayönü 1963'te Halet Çambel ve Robert J. Braidwood yönetimindeki yüzey araştırmalarında saptandı; sistematik kazılar 1964'te başladı. 1964–1985 dönemini Çambel ve Braidwood, 1985–1992 dönemini Mehmet Özdoğan yürüttü. Güvenlik koşulları nedeniyle verilen uzun aradan sonra çalışmalar 2015'te Aslı Erim-Özdoğan başkanlığında yeniden başladı; 2024'ten itibaren proje Savaş Sarıaltun tarafından yürütülmektedir.",
+          "sourceIds": [
+            "cayonu_official_history"
+          ]
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "Kazı ve araştırma projesi 2024'ten beri sürmektedir. Güncel program, kazının yanında dijital belgeleme, koruma, disiplinlerarası analiz ve kültürel miras yönetimini birlikte ele almaktadır.",
+          "sourceIds": [
+            "cayonu_official_history",
+            "cayonu_official_home"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Mimari evreler",
+          "description": "Neolitik boyunca değişen yapı planları, topluluğun mekân kullanımı ve ekonomik örgütlenmesindeki dönüşümü izlemeye imkân verir.",
+          "period": "Neolitik",
+          "sourceIds": [
+            "ozdogan_1989"
+          ]
+        },
+        {
+          "name": "Doğal bakır işçiliği",
+          "description": "Çayönü, doğal bakırın erken kullanım ve şekillendirilme örnekleriyle metal teknolojisinin kökenleri bakımından önemlidir.",
+          "period": "Neolitik",
+          "sourceIds": [
+            "cayonu_official_history"
+          ]
+        },
+        {
+          "name": "Gömü ve insan kalıntıları",
+          "description": "Özel gömme bağlamları ve insan kalıntıları, sosyal farklılaşma ve beslenme araştırmalarına kapsamlı veri sağlamıştır.",
+          "period": "Neolitik",
+          "sourceIds": [
+            "pearson_2013"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "title": "Neolitikleşme tek bir 'devrim' miydi?",
+          "text": "Çayönü verileri, yerleşiklik, tarım-hayvancılık, mimari ve toplumsal düzenin aynı anda ortaya çıkmadığını; farklı hızlarda dönüşen uzun bir süreç olduğunu göstermesi nedeniyle 'Neolitik Devrim' kavramının daha kademeli modellerle tartışılmasına katkı verir.",
+          "sourceIds": [
+            "cayonu_official_history",
+            "ozdogan_1989"
+          ]
+        },
+        {
+          "title": "Toplumsal farklılaşmanın derecesi",
+          "text": "Gömü bağlamları ile izotopik beslenme verileri arasında görülen farklılıkların erken toplumsal hiyerarşi, kimlik veya ritüel seçilimle nasıl ilişkilendirileceği tartışmalıdır; veri basit bir sınıf sistemi varsayımını tek başına doğrulamaz.",
+          "sourceIds": [
+            "pearson_2013"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "Yerleşme Diyarbakır ili Ergani ilçesinin yaklaşık 7 km güneybatısında, Hilar köyü kuzeyinde ve Toros eteklerine açılan bir eşik ovasında bulunur.",
+        "landscape": "Dicle havzası ile dağlık kuşak arasında, farklı ekolojik zonlara erişim sağlayan geçiş alanı.",
+        "sourceIds": [
+          "cayonu_official_home",
+          "archatlas_cayonu"
+        ]
+      },
+      "visit": {
+        "statusLabel": "Aktif kazı ve araştırma alanı",
+        "visitorNote": "Alan için güncel erişim koşulları kazı projesinin resmî kanallarından kontrol edilmelidir.",
+        "sourceIds": [
+          "cayonu_official_home"
+        ]
+      },
+      "nearbyPlaces": [
+        {
+          "name": "Diyarbakır Arkeoloji Müzesi",
+          "type": "museum",
+          "note": "Çayönü buluntularının önemli bir bölümü müze koleksiyonları ve sergileri üzerinden görülebilir."
+        }
+      ]
+    },
+    "en": {
+      "name": "Çayönü Tepesi",
+      "alternativeNames": [
+        "Çayönü",
+        "Çayönü Höyük"
+      ],
+      "province": "Diyarbakır",
+      "district": "Ergani",
+      "modernPlace": "vicinity of Hilar (Sesverenpınar)",
+      "siteTypeLabel": "Tell / Neolithic settlement",
+      "occupationDisplay": "Main Neolithic sequence approximately 9300–6300 BCE; later occupations are also documented.",
+      "overview": [
+        {
+          "text": "Çayönü Tepesi lies near the Taurus foothills on the Ergani plain and is a key reference site for understanding the first sedentary communities of the Tigris basin. Its sequence shows that the shift from hunting and gathering toward more sedentary food-producing lifeways was a long process expressed through architecture, subsistence, social organization and technology rather than a single event.",
+          "sourceIds": [
+            "cayonu_official_history",
+            "ozdogan_1989"
+          ]
+        },
+        {
+          "text": "The site is especially important for changing architectural plans, plant and animal use, native-copper working and mortuary practices. For this reason Çayönü is central not only to the Neolithic of southeastern Anatolia but also to wider debates on Neolithization in Southwest Asia.",
+          "sourceIds": [
+            "cayonu_official_history",
+            "pearson_2013"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "title": "Long Neolithic sequence",
+          "text": "The Neolithic deposits are divided into architectural phases that track substantial changes in building form and settlement organization. Absolute dates and the boundaries of individual subphases vary among publications.",
+          "sourceIds": [
+            "ozdogan_1989"
+          ]
+        },
+        {
+          "title": "Post-Neolithic use",
+          "text": "Renewed excavations since 2015 have also investigated later occupation, including Early Bronze Age deposits, broadening the site's history beyond its famous Neolithic sequence.",
+          "sourceIds": [
+            "cayonu_official_history"
+          ]
+        }
+      ],
+      "importance": [
+        {
+          "text": "Çayönü provides a rare long sequence in which farming and herding, permanent architecture, social differentiation and technological innovations can be studied within a single stratigraphic framework.",
+          "sourceIds": [
+            "cayonu_official_history",
+            "ozdogan_1989"
+          ]
+        },
+        {
+          "text": "Evidence for native-copper working is particularly significant for studying metal technology before extractive metallurgy, when copper was treated alongside established stone and bone technologies.",
+          "sourceIds": [
+            "cayonu_official_history"
+          ]
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "Successive architectural phases document changing uses and organization of built space through the Neolithic.",
+          "sourceIds": [
+            "ozdogan_1989"
+          ]
+        },
+        {
+          "text": "Human remains and special mortuary contexts have enabled isotope-based studies of diet and social differentiation.",
+          "sourceIds": [
+            "pearson_2013"
+          ]
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "Çayönü was identified in 1963 during surveys led by Halet Çambel and Robert J. Braidwood, and systematic excavation began in 1964. Work was directed by Çambel and Braidwood in 1964–1985, Mehmet Özdoğan in 1985–1992, and Aslı Erim-Özdoğan after excavations resumed in 2015. Savaş Sarıaltun took over the project in 2024.",
+          "sourceIds": [
+            "cayonu_official_history"
+          ]
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "The excavation and research project continues under Savaş Sarıaltun. Current work integrates excavation with digital documentation, conservation, interdisciplinary analysis and heritage management.",
+          "sourceIds": [
+            "cayonu_official_history",
+            "cayonu_official_home"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Architectural sequence",
+          "description": "Changing building plans allow long-term study of spatial, social and economic reorganization.",
+          "period": "Neolithic",
+          "sourceIds": [
+            "ozdogan_1989"
+          ]
+        },
+        {
+          "name": "Native copper working",
+          "description": "Early use and shaping of native copper makes Çayönü important for the origins of metal technology.",
+          "period": "Neolithic",
+          "sourceIds": [
+            "cayonu_official_history"
+          ]
+        },
+        {
+          "name": "Mortuary record",
+          "description": "Special burial contexts and human remains provide evidence for diet and social organization.",
+          "period": "Neolithic",
+          "sourceIds": [
+            "pearson_2013"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "title": "Was Neolithization a single 'revolution'?",
+          "text": "Çayönü supports models in which sedentism, farming, architecture and social organization changed at different rates over a long period rather than appearing simultaneously.",
+          "sourceIds": [
+            "cayonu_official_history",
+            "ozdogan_1989"
+          ]
+        },
+        {
+          "title": "Degree of social differentiation",
+          "text": "Differences in mortuary contexts and isotope data can be read in several ways; they do not by themselves demonstrate a simple class hierarchy.",
+          "sourceIds": [
+            "pearson_2013"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "The settlement lies about 7 km southwest of Ergani in Diyarbakır province, north of Hilar village, on a threshold plain at the Taurus foothills.",
+        "landscape": "A transition zone between the Tigris basin and the uplands, with access to contrasting ecological settings.",
+        "sourceIds": [
+          "cayonu_official_home",
+          "archatlas_cayonu"
+        ]
+      },
+      "visit": {
+        "statusLabel": "Active excavation and research area",
+        "visitorNote": "Current access conditions should be checked through the excavation project's official channels.",
+        "sourceIds": [
+          "cayonu_official_home"
+        ]
+      },
+      "nearbyPlaces": [
+        {
+          "name": "Diyarbakır Archaeology Museum",
+          "type": "museum",
+          "note": "Important Çayönü finds are held and displayed in museum collections."
+        }
+      ]
+    }
+  }
+}

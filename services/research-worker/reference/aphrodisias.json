@@ -1,0 +1,1108 @@
+{
+  "schemaVersion": 4,
+  "id": "aphrodisias",
+  "core": {
+    "coordinates": {
+      "latitude": 37.708333,
+      "longitude": 28.723611
+    },
+    "siteType": "ancient_city",
+    "chronology": [
+      {
+        "periodId": "chalcolithic",
+        "startYear": -4500,
+        "endYear": -3000,
+        "approximate": true
+      },
+      {
+        "periodId": "early_bronze_age",
+        "startYear": -3000,
+        "endYear": -2000,
+        "approximate": true
+      },
+      {
+        "periodId": "archaic",
+        "startYear": -600,
+        "endYear": -480,
+        "approximate": true
+      },
+      {
+        "periodId": "classical",
+        "startYear": -480,
+        "endYear": -323,
+        "approximate": true
+      },
+      {
+        "periodId": "hellenistic",
+        "startYear": -323,
+        "endYear": -30,
+        "approximate": true
+      },
+      {
+        "periodId": "roman",
+        "startYear": -30,
+        "endYear": 395,
+        "approximate": true
+      },
+      {
+        "periodId": "late_antiquity",
+        "startYear": 395,
+        "endYear": 700,
+        "approximate": true
+      },
+      {
+        "periodId": "byzantine",
+        "startYear": 700,
+        "endYear": 1250,
+        "approximate": true
+      }
+    ],
+    "dateRange": {
+      "startYear": -4500,
+      "endYear": 1250,
+      "approximate": true
+    },
+    "visibility": {
+      "importance": 1,
+      "minZoom": 1.2,
+      "featured": true
+    },
+    "visit": {
+      "status": "open",
+      "hours": null,
+      "closedDays": [],
+      "museumPass": true,
+      "phone": "",
+      "officialUrl": "https://whc.unesco.org/en/list/1519"
+    },
+    "images": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/09385_Geyre-Karacasu-Ayd%C4%B1n,_Turkey_-_panoramio_(3).jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:09385_Geyre-Karacasu-Ayd%C4%B1n,_Turkey_-_panoramio_(3).jpg",
+        "caption": {
+          "tr": "Aphrodisias antik kentinden genel görünüm.",
+          "en": "General view of the ancient city of Aphrodisias."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/09385_Geyre-Karacasu-Ayd%C4%B1n,_Turkey_-_panoramio_(6).jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:09385_Geyre-Karacasu-Ayd%C4%B1n,_Turkey_-_panoramio_(6).jpg",
+        "caption": {
+          "tr": "Aphrodisias arkeolojik alanı ve mermer mimari kalıntılar.",
+          "en": "The archaeological site and marble architecture of Aphrodisias."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Aphrodisias_-_Sebasteion.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Aphrodisias_-_Sebasteion.jpg",
+        "caption": {
+          "tr": "Sebasteion kompleksinin yeniden ayağa kaldırılmış bölümü.",
+          "en": "A reconstructed section of the Sebasteion complex."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Aphrodisias_2013-03-27zb.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Aphrodisias_2013-03-27zb.jpg",
+        "caption": {
+          "tr": "Aphrodisias'ın anıtsal kent dokusundan bir görünüm.",
+          "en": "View of the monumental urban fabric at Aphrodisias."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      }
+    ],
+    "sources": [
+      {
+        "id": "aph-unesco",
+        "citationNumber": 1,
+        "type": "institutional",
+        "authors": [
+          "UNESCO World Heritage Centre"
+        ],
+        "title": "Aphrodisias",
+        "year": 2017,
+        "journalOrPublisher": "UNESCO World Heritage Centre",
+        "url": "https://whc.unesco.org/en/list/1519",
+        "doi": ""
+      },
+      {
+        "id": "aph-history",
+        "citationNumber": 2,
+        "type": "research_project",
+        "authors": [
+          "Aphrodisias Excavations"
+        ],
+        "title": "History",
+        "year": null,
+        "journalOrPublisher": "Aphrodisias Excavations, New York University",
+        "url": "https://aphrodisias-excavations.com/history/",
+        "doi": ""
+      },
+      {
+        "id": "aph-prehistory",
+        "citationNumber": 3,
+        "type": "research_project",
+        "authors": [
+          "Aphrodisias Excavations"
+        ],
+        "title": "Pre-History",
+        "year": null,
+        "journalOrPublisher": "Aphrodisias Excavations, New York University",
+        "url": "https://aphrodisias-excavations.com/pre-history/",
+        "doi": ""
+      },
+      {
+        "id": "aph-about",
+        "citationNumber": 4,
+        "type": "research_project",
+        "authors": [
+          "Aphrodisias Excavations"
+        ],
+        "title": "About the Project",
+        "year": null,
+        "journalOrPublisher": "Aphrodisias Excavations, New York University",
+        "url": "https://aphrodisias-excavations.com/about-project/",
+        "doi": ""
+      },
+      {
+        "id": "aph-exploration",
+        "citationNumber": 5,
+        "type": "research_project",
+        "authors": [
+          "Aphrodisias Excavations"
+        ],
+        "title": "Early Exploration",
+        "year": null,
+        "journalOrPublisher": "Aphrodisias Excavations, New York University",
+        "url": "https://aphrodisias-excavations.com/early-exploration/",
+        "doi": ""
+      },
+      {
+        "id": "aph-workshop",
+        "citationNumber": 6,
+        "type": "research_project",
+        "authors": [
+          "Aphrodisias Excavations"
+        ],
+        "title": "Sculptor's Workshop",
+        "year": null,
+        "journalOrPublisher": "Aphrodisias Excavations, New York University",
+        "url": "https://aphrodisias-excavations.com/sculptorsworkshop/",
+        "doi": ""
+      },
+      {
+        "id": "aph-temple",
+        "citationNumber": 7,
+        "type": "research_project",
+        "authors": [
+          "Aphrodisias Excavations"
+        ],
+        "title": "Temple of Aphrodite",
+        "year": null,
+        "journalOrPublisher": "Aphrodisias Excavations, New York University",
+        "url": "https://aphrodisias-excavations.com/tr/aphrodite-tapinagi/",
+        "doi": ""
+      },
+      {
+        "id": "aph-sebasteion",
+        "citationNumber": 8,
+        "type": "research_project",
+        "authors": [
+          "Aphrodisias Excavations"
+        ],
+        "title": "Sebasteion",
+        "year": null,
+        "journalOrPublisher": "Aphrodisias Excavations, New York University",
+        "url": "https://aphrodisias-excavations.com/sebasteion/",
+        "doi": ""
+      },
+      {
+        "id": "aph-smith1987",
+        "citationNumber": 9,
+        "type": "article",
+        "authors": [
+          "R. R. R. Smith"
+        ],
+        "title": "The Imperial Reliefs from the Sebasteion at Aphrodisias",
+        "year": 1987,
+        "journalOrPublisher": "Journal of Roman Studies 77, 88-138",
+        "url": "https://www.jstor.org/stable/300576",
+        "doi": "10.2307/300576"
+      },
+      {
+        "id": "aph-smith2013",
+        "citationNumber": 10,
+        "type": "book",
+        "authors": [
+          "R. R. R. Smith"
+        ],
+        "title": "The Marble Reliefs from the Julio-Claudian Sebasteion",
+        "year": 2013,
+        "journalOrPublisher": "Aphrodisias VI, Philipp von Zabern",
+        "url": "https://aphrodisias-excavations.com/monographs/",
+        "doi": ""
+      },
+      {
+        "id": "aph-voorhis2018",
+        "citationNumber": 11,
+        "type": "book",
+        "authors": [
+          "Julie Van Voorhis"
+        ],
+        "title": "The Sculptor's Workshop",
+        "year": 2018,
+        "journalOrPublisher": "Aphrodisias X, Reichert Verlag",
+        "url": "https://aphrodisias-excavations.com/monographs/",
+        "doi": ""
+      },
+      {
+        "id": "aph-brody2007",
+        "citationNumber": 12,
+        "type": "book",
+        "authors": [
+          "Lisa R. Brody"
+        ],
+        "title": "The Cult of Aphrodite",
+        "year": 2007,
+        "journalOrPublisher": "Aphrodisias III, Philipp von Zabern",
+        "url": "https://aphrodisias-excavations.com/monographs/",
+        "doi": ""
+      },
+      {
+        "id": "aph-stinson2016",
+        "citationNumber": 13,
+        "type": "book",
+        "authors": [
+          "Philip Stinson"
+        ],
+        "title": "The Civil Basilica",
+        "year": 2016,
+        "journalOrPublisher": "Aphrodisias VII, Reichert Verlag",
+        "url": "https://aphrodisias-excavations.com/monographs/",
+        "doi": ""
+      },
+      {
+        "id": "aph-jeffery2019",
+        "citationNumber": 14,
+        "type": "book",
+        "authors": [
+          "Jonathan Jeffery"
+        ],
+        "title": "The Middle Byzantine Aphrodisias, AD 700-1250",
+        "year": 2019,
+        "journalOrPublisher": "Aphrodisias XII, Reichert Verlag",
+        "url": "https://aphrodisias-excavations.com/monographs/",
+        "doi": ""
+      },
+      {
+        "id": "aph-crawford2023",
+        "citationNumber": 15,
+        "type": "book",
+        "authors": [
+          "Michael Crawford",
+          "Philip Stinson"
+        ],
+        "title": "The Diocletianic Price Edict at Aphrodisias",
+        "year": 2023,
+        "journalOrPublisher": "Aphrodisias XIII, Reichert Verlag",
+        "url": "https://aphrodisias-excavations.com/monographs/",
+        "doi": ""
+      },
+      {
+        "id": "aph-conservation",
+        "citationNumber": 16,
+        "type": "research_project",
+        "authors": [
+          "Aphrodisias Excavations"
+        ],
+        "title": "Conservation",
+        "year": null,
+        "journalOrPublisher": "Aphrodisias Excavations, New York University",
+        "url": "https://aphrodisias-excavations.com/conservation/",
+        "doi": ""
+      },
+      {
+        "id": "aph-2023report",
+        "citationNumber": 17,
+        "type": "field_report",
+        "authors": [
+          "Aphrodisias Excavations"
+        ],
+        "title": "2023 Season Report",
+        "year": 2023,
+        "journalOrPublisher": "Aphrodisias Excavations, New York University",
+        "url": "https://aphrodisias-excavations.com/wp-content/uploads/2024/01/4-2023-season-report-ENG-15.11.2023.pdf",
+        "doi": ""
+      }
+    ]
+  },
+  "content": {
+    "tr": {
+      "name": "Aphrodisias",
+      "alternativeNames": [
+        "Afrodisias",
+        "Aphrodisias Antik Kenti"
+      ],
+      "province": "Aydın",
+      "district": "Karacasu",
+      "modernPlace": "Geyre",
+      "siteTypeLabel": "Antik Kent, Kutsal Merkez ve Heykeltıraşlık Merkezi",
+      "occupationDisplay": "MÖ 5. binyıldaki tarihöncesi yerleşimlerden Orta Bizans dönemine kadar uzun süreli kullanım",
+      "occupationNote": {
+        "text": "Aphrodisias'ın bulunduğu alan antik kentin kuruluşundan binlerce yıl önce yerleşime açıktı. Pekmez Tepe ve Tiyatro Tepesi çevresindeki buluntular MÖ 5. binyıl ortalarından MÖ 3. binyıla uzanan yoğun tarihöncesi yerleşimleri gösterir. Kent devletinin kurumsal biçimi ise özellikle MÖ 2. yüzyılda belirginleşmiş, Roma döneminde Aphrodite kültü, imparatorlukla kurulan ayrıcalıklı ilişkiler, mermer ocakları ve heykeltıraşlık üretimi sayesinde büyük bir bölgesel merkez hâline gelmiştir.",
+        "sourceIds": [
+          "aph-prehistory",
+          "aph-unesco",
+          "aph-history"
+        ]
+      },
+      "overview": [
+        {
+          "text": "Aphrodisias, Aydın'ın Karacasu ilçesine bağlı Geyre yakınındaki yüksek ve verimli bir havzada yer alır. UNESCO Dünya Mirası alanı yalnız sur içindeki antik kenti değil, kentin yaklaşık birkaç kilometre kuzeydoğusundaki mermer ocaklarını da kapsar. Bu birliktelik önemlidir çünkü Aphrodisias'ın mimarisi ve heykeltıraşlığı, yakın çevreden çıkarılan yüksek kaliteli beyaz ve mavi-gri mermerle doğrudan bağlantılıdır.",
+          "sourceIds": [
+            "aph-unesco"
+          ]
+        },
+        {
+          "text": "Antik kentin düzenli kentsel biçimi büyük ölçüde Helenistik dönemde şekillendi. Izgara planlı caddeler, Aphrodite Tapınağı çevresindeki kutsal merkez ve kamu yapıları sonraki Roma kenti için altyapı oluşturdu. Kent Roma Cumhuriyeti'nin son yüzyılında Sulla, Caesar ve Augustus çevresiyle özel siyasi ilişkiler geliştirdi. Roma yönetimi altında vergi ayrıcalıkları ve yerel özerklik Aphrodisias'ın seçkin kimliğinin önemli parçaları hâline geldi.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-history"
+          ]
+        },
+        {
+          "text": "Roma İmparatorluk döneminde kent tiyatro, bouleuterion, agora, Sebasteion, Hadrianus Hamamları, stadyum, bazilika ve büyük kentsel meydanlarla anıtsal bir görünüm kazandı. Yazıtların olağanüstü bolluğu kentteki siyasi kurumları, seçkin aileleri, imparatorlukla ilişkileri, festival yaşamını ve kamusal onurlandırma kültürünü ayrıntılı biçimde izlemeyi mümkün kılar.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-history"
+          ]
+        },
+        {
+          "text": "Aphrodisias'ın en ayırt edici özelliklerinden biri heykeltıraşlık üretimidir. Yerel mermer yatakları, kentte yetişmiş ustalar ve geniş sipariş ağı sayesinde Aphrodisias heykeltıraşları Roma dünyasında tanınan bir üretim geleneği geliştirdi. Kazılmış heykeltıraş atölyesi, yarım kalmış heykeller, çalışma parçaları ve aletler sayesinde Roma heykel üretiminin süreçlerini olağanüstü ayrıntıyla incelemek mümkündür.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-workshop",
+            "aph-voorhis2018"
+          ]
+        },
+        {
+          "text": "Geç Antik Çağ'da kent ortadan kalkmadı. Aphrodite Tapınağı yaklaşık MS 500 dolaylarında büyük bir kiliseye dönüştürüldü, kamu yapıları yeni işlevler kazandı ve kent Geç Roma eyalet sistemi içinde Karia'nın başkenti olarak yaşamaya devam etti. 7. yüzyıldan sonra kentsel ölçek küçülse de Orta Bizans dönemine kadar yerleşim sürdü.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-temple",
+            "aph-jeffery2019"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "text": "Pekmez Tepe ve Tiyatro Tepesi çevresindeki kazılar, MÖ 5. binyıl ortalarından itibaren çanak çömlek kullanan toplulukların bölgede yaşadığını gösterir. Kerpiç evler, pithos gömüler ve MÖ 4.-3. binyıllara ait seramik dizileri, Aphrodisias'ın tarihöncesi geçmişini Batı ve Güneybatı Anadolu kronolojisi için önemli hâle getirir.",
+          "sourceIds": [
+            "aph-prehistory"
+          ],
+          "title": "Tarihöncesi yerleşimler"
+        },
+        {
+          "text": "Arkaik ve Klasik dönemlerde bölgede kutsal alan ve yerleşim faaliyetleri vardır, ancak büyük kent dokusu henüz Roma dönemindeki ölçeğe ulaşmamıştır. Aphrodite kültünün erken kökleri bu yerel kutsal geleneğin üzerine gelişmiştir.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-brody2007"
+          ],
+          "title": "Arkaik ve Klasik dönem"
+        },
+        {
+          "text": "MÖ 2. yüzyılda Aphrodisias kent devleti belirgin biçimde örgütlenmiş, ortogonal kent planı ve kamu yapıları gelişmiştir. Helenistik dönemin sonlarında Roma'nın önde gelen siyasi aktörleriyle kurulan ilişkiler sonraki ayrıcalıklı statünün temelini oluşturmuştur.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-history"
+          ],
+          "title": "Helenistik kentleşme"
+        },
+        {
+          "text": "MÖ 1. yüzyıl sonundan MS 3. yüzyıla kadar Aphrodisias en parlak dönemini yaşadı. Sebasteion, forumlar, hamamlar, stadyum ve çok sayıda heykel bu dönemin ürünüdür. Kentin yaklaşık 2.000'e ulaşan yazıtı, Roma İmparatorluk dönemindeki kamusal hayatı alışılmadık ayrıntıda belgelemektedir.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-history",
+            "aph-smith1987"
+          ],
+          "title": "Roma İmparatorluk dönemi"
+        },
+        {
+          "text": "MS 3. yüzyıl sonlarında Aphrodisias yeni kurulan Karia eyaletinin başkenti oldu. Geç Antik Çağ'da kent Hristiyanlaştı, ancak klasik kent dokusunun önemli bölümü kullanılmaya devam etti. Aphrodite Tapınağı'nın yaklaşık MS 500 dolaylarında katedrale dönüştürülmesi bu dönüşümün en görünür örneğidir.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-temple"
+          ],
+          "title": "Geç Antik Çağ"
+        },
+        {
+          "text": "7. yüzyılda savaş, deprem, ekonomik daralma ve idari değişimlerle kentsel yaşam önemli ölçüde küçüldü. Buna rağmen araştırmalar Aphrodisias'ın Orta Bizans döneminde tamamen terk edilmediğini, daha sınırlı bir yerleşim olarak MS 700-1250 arasında yaşamayı sürdürdüğünü göstermektedir.",
+          "sourceIds": [
+            "aph-history",
+            "aph-jeffery2019"
+          ],
+          "title": "Orta Bizans dönemi"
+        }
+      ],
+      "importance": [
+        {
+          "text": "Aphrodisias, mermer ocağı, heykeltıraş atölyesi, yarım kalmış eserler, tamamlanmış heykeller ve yazılı sanatçı imzalarının aynı arkeolojik çevrede incelenebildiği ender merkezlerden biridir. Bu bütünlük Roma heykel üretiminin ekonomik ve teknik örgütlenmesini araştırmak için olağanüstü bir laboratuvar yaratır.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-workshop",
+            "aph-voorhis2018"
+          ],
+          "title": "Roma heykeltıraşlığı"
+        },
+        {
+          "text": "Sebasteion'un kabartma programı, Julio-Claudian imparatorluk ideolojisini imparatorlar, tanrılar, kahramanlar ve fethedilmiş halkların kişileştirmeleri üzerinden görselleştirir. Kompleks, yerel seçkinlerin Roma imparatorluk düzenini kendi kentlerinin kamusal alanında nasıl yeniden yorumladığını gösterir.",
+          "sourceIds": [
+            "aph-sebasteion",
+            "aph-smith1987",
+            "aph-smith2013"
+          ],
+          "title": "İmparatorluk ideolojisi"
+        },
+        {
+          "text": "Yaklaşık iki bin yazıt, Aphrodisias'ı Roma dünyasının en zengin epigrafik kentlerinden biri hâline getirir. Yazıtlar yerel yönetim, imparatorluk ayrıcalıkları, yurttaşlık, meslekler, festivaller, onurlandırmalar ve ekonomik hayat hakkında doğrudan kanıt sağlar.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-history"
+          ],
+          "title": "Yazılı kent tarihi"
+        },
+        {
+          "text": "Aphrodite Tapınağı'nın katedrale dönüştürülmesi, Geç Antik Çağ'da pagan kutsal alanlarının nasıl yeniden kullanıldığını anlamak için temel bir örnektir. Buradaki dönüşüm basit bir 'yıkım ve yerine kilise yapımı' modeli yerine büyük bir mimari yeniden düzenleme sürecini gösterir.",
+          "sourceIds": [
+            "aph-temple",
+            "aph-brody2007"
+          ],
+          "title": "Dinî dönüşüm"
+        },
+        {
+          "text": "Tarihöncesi tepeciklerden Helenistik kent planına, Roma eyalet başkentinden Orta Bizans yerleşimine uzanan uzun dizi, aynı coğrafyada kentsel biçimin, kimliğin ve ekonomi modellerinin nasıl değiştiğini inceleme imkânı verir.",
+          "sourceIds": [
+            "aph-prehistory",
+            "aph-history",
+            "aph-jeffery2019"
+          ],
+          "title": "Uzun dönemli yerleşim tarihi"
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "Aphrodite Tapınağı kentin kutsal kimliğinin merkezindeydi. İyon düzenindeki tapınak Roma döneminde büyük bir kutsal alanın parçasıydı. Yaklaşık MS 500'de sütunların ve yapı elemanlarının kapsamlı biçimde yeniden kullanılmasıyla büyük bir kiliseye dönüştürüldü.",
+          "sourceIds": [
+            "aph-temple",
+            "aph-brody2007"
+          ],
+          "title": "Aphrodite Tapınağı ve tapınak-kilise"
+        },
+        {
+          "text": "Sebasteion, Aphrodite ile Julio-Claudian hanedanına adanmış üç katlı portikolar ve tapınaktan oluşan anıtsal bir komplekstir. Üst katlarda imparatorlar, mitolojik figürler ve imparatorluğun halklarını betimleyen geniş bir mermer kabartma dizisi bulunmuştur.",
+          "sourceIds": [
+            "aph-sebasteion",
+            "aph-smith1987",
+            "aph-smith2013"
+          ],
+          "title": "Sebasteion kabartmaları"
+        },
+        {
+          "text": "Heykeltıraş atölyesi, bouleuterionun kuzeyinde iki kapalı oda ve açık çalışma alanından oluşur. Geç 4. veya erken 5. yüzyıldaki terk evresi sırasında içeride yaklaşık 25 iyi korunmuş heykel, 300'den fazla parça, çalışma örnekleri ve aletler kalmıştır.",
+          "sourceIds": [
+            "aph-workshop",
+            "aph-voorhis2018"
+          ],
+          "title": "Heykeltıraş atölyesi"
+        },
+        {
+          "text": "Aphrodisias Stadyumu yaklaşık 30 bin kişilik kapasitesiyle antik dünyanın en iyi korunmuş stadyumlarından biridir. Atletik yarışlar, festivaller ve daha sonraki dönemde farklı seyir etkinlikleri kentin kamusal eğlence yaşamının ölçeğini gösterir.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-history"
+          ],
+          "title": "Stadyum"
+        },
+        {
+          "text": "Tiyatro Tepesi'ndeki tiyatro ve çevresindeki mimari, Helenistik çekirdeğin Roma dönemindeki dönüşümünü gösterir. Sahne binası, oturma düzeni ve bitişik kamu yapıları kentin gösteri kültürünü belgelemektedir.",
+          "sourceIds": [
+            "aph-history"
+          ],
+          "title": "Tiyatro"
+        },
+        {
+          "text": "Sivil Bazilika, Roma kentinin ana kamusal eksenlerinden birinde yer alan büyük bir idari ve hukuki yapıdır. Yapıda Diocletianus'un MS 301 tarihli Tavan Fiyatlar Fermanı'nın geniş bölümleri yazıt hâlinde korunmuştur.",
+          "sourceIds": [
+            "aph-stinson2016",
+            "aph-crawford2023",
+            "aph-2023report"
+          ],
+          "title": "Sivil Bazilika ve Tavan Fiyatlar Fermanı"
+        },
+        {
+          "text": "Hadrianus Hamamları, büyük ölçekli tonozlu mekânları, havuzları ve mermer kaplamalarıyla Roma döneminin sosyal ve teknik altyapısını gösterir. Son yıllardaki koruma çalışmaları yapının uzun kullanım ve onarım tarihini de ortaya koymaktadır.",
+          "sourceIds": [
+            "aph-conservation"
+          ],
+          "title": "Hadrianus Hamamları"
+        },
+        {
+          "text": "Kent çevresindeki mermer ocakları, Aphrodisias'ın heykel ve mimari üretim sisteminin hammadde aşamasını doğrudan belgeleyen Dünya Mirası bileşenidir.",
+          "sourceIds": [
+            "aph-unesco"
+          ],
+          "title": "Mermer ocakları"
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "Aphrodisias 19. yüzyıl gezginlerinin ilgisini çekmiş olsa da ilk arkeolojik girişimler 20. yüzyıl başında yoğunlaştı. Paul Gaudin ve Gustave Mendel'in 1905 araştırmaları önemli heykellerin İstanbul Arkeoloji Müzeleri'ne taşınmasına yol açtı. 1913'te Fransız ekiplerin çalışması Birinci Dünya Savaşı nedeniyle kısa sürdü, 1937'de Giulio Jacopi bir sezonluk İtalyan kazısı yürüttü.",
+          "sourceIds": [
+            "aph-exploration"
+          ]
+        },
+        {
+          "text": "Kesintisiz modern kazı programı 1961'de Kenan Erim başkanlığında New York University desteğiyle başladı. Erim dönemi Aphrodite Tapınağı, tiyatro, bouleuterion, Sebasteion, stadyum ve büyük kamu yapılarının açığa çıkarılmasıyla kentin bugün bilinen arkeolojik görünümünü büyük ölçüde oluşturdu.",
+          "sourceIds": [
+            "aph-about",
+            "aph-exploration"
+          ]
+        },
+        {
+          "text": "Kenan Erim'in 1990'daki ölümünden sonra proje New York University Institute of Fine Arts bünyesinde devam etti. Yeni dönem yalnız büyük kazılara değil kent planı, seramik, yazıt, heykel, mimari belgeleme ve uzun vadeli korumaya odaklandı. Oxford Üniversitesi ile yakın akademik işbirliği de programın önemli parçalarından biri hâline geldi.",
+          "sourceIds": [
+            "aph-about"
+          ]
+        },
+        {
+          "text": "Son yıllarda araştırma ile koruma birlikte yürütülmektedir. Tetrapylon Caddesi, Hadrianus Hamamları, tapınak-kilise, stadyum, kentsel park ve diğer yapılardaki çalışmalar, ziyaretçi sunumundan önce özgün malzemenin belgelenmesi ve sağlamlaştırılmasını hedefler.",
+          "sourceIds": [
+            "aph-conservation"
+          ]
+        },
+        {
+          "text": "2023 sezonunda Sivil Bazilika projesinin önemli bir aşaması tamamlandı ve Diocletianus'un Tavan Fiyatlar Fermanı'nın korunmuş blokları yeni sergileme ve koruma düzeni içinde ele alındı.",
+          "sourceIds": [
+            "aph-2023report",
+            "aph-crawford2023"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "text": "Aphrodisias için sık kullanılan 'heykeltıraşlık okulu' ifadesi, yerel üslup özellikleri ve çok sayıda imzalı eser nedeniyle güçlü bir açıklayıcı değere sahiptir. Bununla birlikte modern araştırma, bu kavramı tek tip ve kapalı bir sanat okulu gibi kullanmak yerine mermer ocakları, atölyeler, usta-çırak ilişkileri, hareketli heykeltıraşlar ve dış siparişlerden oluşan esnek bir üretim ağı olarak değerlendirmeye yönelmiştir.",
+          "sourceIds": [
+            "aph-workshop",
+            "aph-voorhis2018"
+          ],
+          "title": "Bir 'Aphrodisias heykeltıraşlık okulu' var mıydı?"
+        },
+        {
+          "text": "Roma kentinin MÖ 2. yüzyılda kuruluşu önemlidir, ancak bu tarih bölgedeki insan faaliyetinin başlangıcı değildir. Pekmez ve Tiyatro tepelerindeki tarihöncesi diziler, daha sonraki kent devletinden binlerce yıl önce yerel toplulukların aynı peyzajı kullandığını gösterir. Bu nedenle 'Aphrodisias'ın kuruluşu' ifadesi kent devletinin kuruluşu ile yerleşim tarihinin başlangıcını birbirinden ayırmalıdır.",
+          "sourceIds": [
+            "aph-prehistory",
+            "aph-unesco"
+          ],
+          "title": "Kent ne zaman kuruldu?"
+        },
+        {
+          "text": "Aphrodite Tapınağı'nın kiliseye çevrilmesi bazen paganizmin ani sona erişinin simgesi gibi anlatılır. Arkeolojik kanıt ise Geç Antik Çağ'da yapıların uzun süreli yeniden kullanımını ve klasik kent dokusunun yeni Hristiyan kurumlarıyla birlikte dönüştüğünü gösterir. Dinsel değişim kentsel hayatın aynı anda tamamen sona ermesi anlamına gelmez.",
+          "sourceIds": [
+            "aph-temple",
+            "aph-history"
+          ],
+          "title": "Pagan kentten Hristiyan kente geçiş"
+        },
+        {
+          "text": "7. yüzyıl sonrasındaki küçülme uzun süre basit bir 'çöküş' modeliyle açıklanmıştır. Orta Bizans araştırmaları ise daha küçük ölçekli fakat devam eden yerleşim, üretim ve yeniden kullanım pratiklerini ortaya koyar. Bu nedenle geç dönem Aphrodisias'ı terk edilmiş bir harabeden çok değişen ölçek ve işlevlere sahip bir yerleşim olarak ele almak daha isabetlidir.",
+          "sourceIds": [
+            "aph-jeffery2019"
+          ],
+          "title": "Çöküş mü, dönüşüm mü?"
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "Aphrodisias 2017'den beri UNESCO Dünya Mirası Listesi'ndedir. Dünya Mirası alanı antik kent ile kuzeydoğudaki mermer ocaklarını birlikte kapsar. Kazı, yayın, mimari koruma ve ziyaretçi düzenlemeleri uzun vadeli uluslararası proje kapsamında sürdürülmektedir.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-about",
+            "aph-conservation"
+          ]
+        },
+        {
+          "text": "Aphrodisias Müzesi, kazılarda bulunan özgün heykellerin önemli bölümünü korur. Sebasteion kabartmaları için oluşturulan müze bölümü, anıtsal programı hava koşullarından koruyarak bütünlüklü biçimde görme imkânı verir.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-smith2013"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Sebasteion kabartmaları",
+          "description": "Julio-Claudian hanedanı, tanrılar, kahramanlar ve imparatorluğun halklarını bir araya getiren geniş mermer kabartma programı.",
+          "period": "Roma Dönemi",
+          "sourceIds": [
+            "aph-sebasteion",
+            "aph-smith1987",
+            "aph-smith2013"
+          ]
+        },
+        {
+          "name": "Heykeltıraş atölyesi",
+          "description": "Yarım kalmış heykeller, çalışma parçaları ve aletleriyle Roma heykel üretiminin süreçlerini doğrudan belgeleyen atölye kompleksi.",
+          "period": "Roma / Geç Antik Çağ",
+          "sourceIds": [
+            "aph-workshop",
+            "aph-voorhis2018"
+          ]
+        },
+        {
+          "name": "Aphrodite Tapınağı",
+          "description": "Kentin ana kutsal yapısı. Yaklaşık MS 500'de büyük bir Hristiyan bazilikasına dönüştürüldü.",
+          "period": "Helenistik / Roma / Geç Antik Çağ",
+          "sourceIds": [
+            "aph-temple",
+            "aph-brody2007"
+          ]
+        },
+        {
+          "name": "Diocletianus Tavan Fiyatlar Fermanı",
+          "description": "MS 301 tarihli imparatorluk fiyat düzenlemesinin Sivil Bazilika cephesinde korunan geniş yazıt bölümleri.",
+          "period": "Geç Roma",
+          "sourceIds": [
+            "aph-crawford2023",
+            "aph-2023report"
+          ]
+        },
+        {
+          "name": "Stadyum",
+          "description": "Büyük kapasitesi ve iyi korunmuş planıyla Roma dünyasının en etkileyici atletik gösteri yapılarından biri.",
+          "period": "Roma Dönemi",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-history"
+          ]
+        },
+        {
+          "name": "Mermer ocakları",
+          "description": "Kentin mimarisi ve heykel üretimini besleyen yerel mermer kaynağı ve UNESCO seri alanının ikinci ana bileşeni.",
+          "period": "Antik Çağ",
+          "sourceIds": [
+            "aph-unesco"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "Aphrodisias, Aydın'ın Karacasu ilçesine bağlı Geyre yakınında, Morsynus/Dandalaz vadisinin yüksek ve verimli iç kesiminde yer alır.",
+        "distanceFromNearestCenter": "Karacasu'nun yaklaşık 12 km güneydoğusu.",
+        "landscape": "Kent, tarımsal bir vadi ile kuzeydoğudaki mermer yataklarının kesiştiği peyzajda kurulmuştur. Mermer ocakları antik kent ekonomisinin ve sanat üretiminin ayrılmaz parçasıdır.",
+        "gettingThere": "Karacasu ve Geyre üzerinden karayoluyla ulaşılır.",
+        "sourceIds": [
+          "aph-unesco",
+          "aph-history"
+        ]
+      },
+      "visit": {
+        "statusLabel": "Ziyarete açık UNESCO Dünya Mirası alanı",
+        "address": "Geyre, Karacasu, Aydın",
+        "visitorNote": "Arkeolojik alan ve Aphrodisias Müzesi birlikte ziyaret edilebilir. Açılış saatleri ve geçici koruma alanları için resmi müze ve kazı projesi bilgileri kontrol edilmelidir.",
+        "sourceIds": [
+          "aph-unesco",
+          "aph-about"
+        ]
+      },
+      "nearbyPlaces": [],
+      "participation": []
+    },
+    "en": {
+      "name": "Aphrodisias",
+      "alternativeNames": [
+        "Aphrodisias Archaeological Site"
+      ],
+      "province": "Aydın",
+      "district": "Karacasu",
+      "modernPlace": "Geyre",
+      "siteTypeLabel": "Ancient City, Sanctuary and Sculpture Centre",
+      "occupationDisplay": "from prehistoric communities of the 5th millennium BCE to the Middle Byzantine period",
+      "occupationNote": {
+        "text": "The landscape of Aphrodisias was inhabited thousands of years before the ancient city took shape. Excavation on Pekmez Hill and Theatre Hill documents intensive occupation from the middle 5th through the 3rd millennium BCE. The organised city-state became clearly visible especially in the 2nd century BCE, then developed into a major Roman centre through the cult of Aphrodite, privileged relations with Rome, nearby marble quarries and a celebrated tradition of sculpture.",
+        "sourceIds": [
+          "aph-prehistory",
+          "aph-unesco",
+          "aph-history"
+        ]
+      },
+      "overview": [
+        {
+          "text": "Aphrodisias lies in a fertile high valley near modern Geyre in the Karacasu district of Aydın. The UNESCO property includes both the ancient city and the marble quarries a few kilometres to the northeast. This relationship is fundamental because the architecture and sculpture of Aphrodisias depended on locally available high-quality white and blue-grey marble.",
+          "sourceIds": [
+            "aph-unesco"
+          ]
+        },
+        {
+          "text": "The organised urban form of the ancient city developed substantially in the Hellenistic period. An orthogonal street grid, the sanctuary of Aphrodite and new public institutions laid the groundwork for the later Roman city. In the late Republic, Aphrodisias cultivated special political connections with figures around Sulla, Caesar and Augustus. Under Roman rule, tax privileges and local autonomy became central to its civic identity.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-history"
+          ]
+        },
+        {
+          "text": "During the Roman imperial period the city acquired a monumental landscape of theatre, council house, agoras, Sebasteion, Hadrianic Baths, stadium, basilica and large public squares. Roughly two thousand inscriptions make it possible to reconstruct political institutions, elite families, relations with emperors, festivals and civic honours in exceptional detail.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-history"
+          ]
+        },
+        {
+          "text": "Sculptural production is one of the city's most distinctive features. Local marble, trained craftsmen and a wide network of commissions allowed Aphrodisian sculptors to develop a major production tradition. The excavated sculptor's workshop, unfinished statues, practice pieces and tools provide unusually direct evidence for the actual processes of Roman marble carving.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-workshop",
+            "aph-voorhis2018"
+          ]
+        },
+        {
+          "text": "The city did not disappear in Late Antiquity. The Temple of Aphrodite was converted into a large church around AD 500, public buildings acquired new functions and Aphrodisias continued as the capital of the late Roman province of Caria. The urban scale contracted after the 7th century, but settlement continued into the Middle Byzantine period.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-temple",
+            "aph-jeffery2019"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "text": "Excavation on Pekmez Hill and Theatre Hill documents pottery-using communities from the middle 5th millennium BCE onward. Mudbrick houses, pithos burials and ceramic sequences of the 4th and 3rd millennia make the prehistoric occupation important for the chronology of southwestern Anatolia and its links with the Aegean.",
+          "sourceIds": [
+            "aph-prehistory"
+          ],
+          "title": "Prehistoric occupation"
+        },
+        {
+          "text": "Archaic and Classical activity is visible in the settlement and sanctuary, although the city had not yet reached its later scale. The cult of Aphrodite developed from this earlier local sacred landscape.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-brody2007"
+          ],
+          "title": "Archaic and Classical periods"
+        },
+        {
+          "text": "In the 2nd century BCE Aphrodisias emerged more clearly as an organised city-state with an orthogonal plan and developed public architecture. Political connections with Roman leaders during the late Hellenistic period helped shape its later privileged status.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-history"
+          ],
+          "title": "Hellenistic urbanisation"
+        },
+        {
+          "text": "From the late 1st century BCE through the 3rd century CE the city experienced its greatest monumental expansion. The Sebasteion, baths, stadium, civic buildings and large sculptural programmes belong to this long Roman phase. Thousands of inscriptions provide unusually rich evidence for public life.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-history",
+            "aph-smith1987"
+          ],
+          "title": "Roman imperial period"
+        },
+        {
+          "text": "In the later 3rd century Aphrodisias became capital of the new province of Caria. Christianity transformed the city in Late Antiquity, while much of the classical urban fabric remained in use. Conversion of the Temple of Aphrodite into a cathedral around AD 500 is the most visible example.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-temple"
+          ],
+          "title": "Late Antiquity"
+        },
+        {
+          "text": "War, earthquakes, economic contraction and administrative change reduced the scale of urban life after the 7th century. Research nevertheless shows continued settlement and adaptation between about AD 700 and 1250 rather than complete abandonment.",
+          "sourceIds": [
+            "aph-history",
+            "aph-jeffery2019"
+          ],
+          "title": "Middle Byzantine period"
+        }
+      ],
+      "importance": [
+        {
+          "text": "Aphrodisias is one of the rare places where marble quarrying, workshop practice, unfinished pieces, finished statues and signed artists can be studied within the same archaeological landscape. This creates an exceptional laboratory for the technical and economic organisation of Roman sculpture.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-workshop",
+            "aph-voorhis2018"
+          ],
+          "title": "Roman sculpture"
+        },
+        {
+          "text": "The relief programme of the Sebasteion visualised Julio-Claudian imperial ideology through emperors, gods, heroes and personifications of conquered peoples. It shows how a local elite translated Roman imperial power into its own civic public space.",
+          "sourceIds": [
+            "aph-sebasteion",
+            "aph-smith1987",
+            "aph-smith2013"
+          ],
+          "title": "Imperial ideology"
+        },
+        {
+          "text": "With around two thousand inscriptions, Aphrodisias is one of the richest epigraphic cities of the Roman world. The texts illuminate government, privileges, citizenship, professions, festivals, honours and economic life.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-history"
+          ],
+          "title": "A written urban history"
+        },
+        {
+          "text": "The conversion of the Temple of Aphrodite into a cathedral is a major case for studying how pagan sanctuaries were transformed in Late Antiquity. The evidence points to large-scale architectural adaptation rather than a simple narrative of destruction and replacement.",
+          "sourceIds": [
+            "aph-temple",
+            "aph-brody2007"
+          ],
+          "title": "Religious transformation"
+        },
+        {
+          "text": "From prehistoric mounds through a Hellenistic grid, Roman provincial capital and Middle Byzantine settlement, Aphrodisias offers a long sequence for studying changing urban form, identity and economy in one landscape.",
+          "sourceIds": [
+            "aph-prehistory",
+            "aph-history",
+            "aph-jeffery2019"
+          ],
+          "title": "Long-term settlement history"
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "The Temple of Aphrodite was the centre of the city's sacred identity. The Ionic temple formed part of a major Roman sanctuary and was extensively transformed into a Christian cathedral around AD 500 through the reuse and repositioning of architectural elements.",
+          "sourceIds": [
+            "aph-temple",
+            "aph-brody2007"
+          ],
+          "title": "Temple of Aphrodite and temple-church"
+        },
+        {
+          "text": "The Sebasteion was a monumental complex dedicated to Aphrodite and the Julio-Claudian emperors. Its upper-storey reliefs represented emperors, mythological figures and personified peoples of the empire.",
+          "sourceIds": [
+            "aph-sebasteion",
+            "aph-smith1987",
+            "aph-smith2013"
+          ],
+          "title": "Sebasteion reliefs"
+        },
+        {
+          "text": "The sculptor's workshop north of the council house contained two rooms and an open working area. When it was abandoned in the late 4th or early 5th century, about 25 substantial statues, hundreds of fragments, practice pieces and tools remained inside.",
+          "sourceIds": [
+            "aph-workshop",
+            "aph-voorhis2018"
+          ],
+          "title": "Sculptor's workshop"
+        },
+        {
+          "text": "The stadium, with a capacity often estimated in the tens of thousands, is among the best-preserved ancient stadiums. It reflects the scale of athletic festivals and public entertainment in the Roman city.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-history"
+          ],
+          "title": "Stadium"
+        },
+        {
+          "text": "The theatre and adjacent monuments preserve the transformation of a Hellenistic urban core into the Roman city. Stage architecture and seating document the long history of performance and civic assembly.",
+          "sourceIds": [
+            "aph-history"
+          ],
+          "title": "Theatre"
+        },
+        {
+          "text": "The Civil Basilica stood on a principal civic axis. Large sections of Diocletian's Edict on Maximum Prices of AD 301 were inscribed on its façade and have become one of the site's most important epigraphic monuments.",
+          "sourceIds": [
+            "aph-stinson2016",
+            "aph-crawford2023",
+            "aph-2023report"
+          ],
+          "title": "Civil Basilica and Price Edict"
+        },
+        {
+          "text": "The Hadrianic Baths preserve monumental vaulted rooms, pools and marble fittings that illuminate Roman social infrastructure and engineering. Recent conservation also documents the building's long history of repair and reuse.",
+          "sourceIds": [
+            "aph-conservation"
+          ],
+          "title": "Hadrianic Baths"
+        },
+        {
+          "text": "The marble quarries northeast of the city are a separate component of the World Heritage property and provide direct evidence for the raw material base of Aphrodisian architecture and sculpture.",
+          "sourceIds": [
+            "aph-unesco"
+          ],
+          "title": "Marble quarries"
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "Although the site attracted 19th-century travellers, archaeological investigation intensified in the early 20th century. Work by Paul Gaudin and Gustave Mendel in 1905 brought major sculptures to the Istanbul Archaeological Museums. A French campaign in 1913 was interrupted by the First World War, and Giulio Jacopi led a single Italian season in 1937.",
+          "sourceIds": [
+            "aph-exploration"
+          ]
+        },
+        {
+          "text": "Continuous modern excavation began in 1961 under Kenan Erim with support from New York University. Work on the Temple of Aphrodite, theatre, council house, Sebasteion, stadium and other major monuments created much of the archaeological landscape visible today.",
+          "sourceIds": [
+            "aph-about",
+            "aph-exploration"
+          ]
+        },
+        {
+          "text": "After Erim's death in 1990, the project continued through the Institute of Fine Arts at New York University. The programme broadened from large-scale excavation to urban survey, ceramics, epigraphy, sculpture, architectural documentation and long-term conservation, with close collaboration involving Oxford scholars.",
+          "sourceIds": [
+            "aph-about"
+          ]
+        },
+        {
+          "text": "Recent work integrates research and conservation. Projects at the Tetrapylon Street, Hadrianic Baths, temple-church, stadium, urban park and other monuments aim to document and stabilise original material before public presentation.",
+          "sourceIds": [
+            "aph-conservation"
+          ]
+        },
+        {
+          "text": "In 2023 a major phase of work at the Civil Basilica was completed, including conservation and presentation of blocks carrying Diocletian's Edict on Maximum Prices.",
+          "sourceIds": [
+            "aph-2023report",
+            "aph-crawford2023"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "text": "The phrase 'Aphrodisias school of sculpture' remains useful because of identifiable local traditions and numerous sculptors associated with the city. Modern research, however, tends to avoid imagining a closed institution with a single fixed style. Quarrying, workshops, apprenticeships, travelling craftsmen and external commissions formed a more flexible production network.",
+          "sourceIds": [
+            "aph-workshop",
+            "aph-voorhis2018"
+          ],
+          "title": "Was there an Aphrodisias 'school' of sculpture?"
+        },
+        {
+          "text": "The 2nd century BCE is important for the formation of the organised city-state, but it is not the beginning of human occupation. Prehistoric sequences on Pekmez Hill and Theatre Hill show that communities had used the same landscape for thousands of years. The 'foundation of Aphrodisias' must therefore distinguish urban foundation from settlement history.",
+          "sourceIds": [
+            "aph-prehistory",
+            "aph-unesco"
+          ],
+          "title": "When was the city founded?"
+        },
+        {
+          "text": "Conversion of the Temple of Aphrodite is sometimes presented as a simple symbol of paganism abruptly replaced by Christianity. Archaeology instead shows extensive architectural adaptation and the continued use of classical urban spaces alongside new Christian institutions.",
+          "sourceIds": [
+            "aph-temple",
+            "aph-history"
+          ],
+          "title": "From pagan to Christian city"
+        },
+        {
+          "text": "The reduced scale of the city after the 7th century was long described simply as decline. Study of Middle Byzantine Aphrodisias reveals continued settlement, reuse and production. The later site is better understood as a transformed settlement rather than an abandoned ruin.",
+          "sourceIds": [
+            "aph-jeffery2019"
+          ],
+          "title": "Decline or transformation?"
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "Aphrodisias has been on the UNESCO World Heritage List since 2017. The property includes both the ancient city and the marble quarries to the northeast. Excavation, publication, architectural conservation and visitor presentation continue through a long-term international research programme.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-about",
+            "aph-conservation"
+          ]
+        },
+        {
+          "text": "The Aphrodisias Museum preserves a major part of the original sculpture from the excavations. A dedicated Sebasteion hall allows much of the relief programme to be viewed together under protected conditions.",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-smith2013"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Sebasteion reliefs",
+          "description": "A large marble relief programme combining Julio-Claudian emperors, gods, heroes and personified peoples of the empire.",
+          "period": "Roman Period",
+          "sourceIds": [
+            "aph-sebasteion",
+            "aph-smith1987",
+            "aph-smith2013"
+          ]
+        },
+        {
+          "name": "Sculptor's workshop",
+          "description": "An excavated workshop with unfinished statues, practice pieces and tools that directly documents Roman sculptural production.",
+          "period": "Roman / Late Antique",
+          "sourceIds": [
+            "aph-workshop",
+            "aph-voorhis2018"
+          ]
+        },
+        {
+          "name": "Temple of Aphrodite",
+          "description": "The principal sanctuary of the city, transformed into a large Christian basilica around AD 500.",
+          "period": "Hellenistic / Roman / Late Antique",
+          "sourceIds": [
+            "aph-temple",
+            "aph-brody2007"
+          ]
+        },
+        {
+          "name": "Diocletian's Edict on Maximum Prices",
+          "description": "Large surviving sections of the AD 301 imperial price regulation inscribed on the Civil Basilica.",
+          "period": "Late Roman",
+          "sourceIds": [
+            "aph-crawford2023",
+            "aph-2023report"
+          ]
+        },
+        {
+          "name": "Stadium",
+          "description": "One of the most impressive and best-preserved athletic buildings of the Roman world.",
+          "period": "Roman Period",
+          "sourceIds": [
+            "aph-unesco",
+            "aph-history"
+          ]
+        },
+        {
+          "name": "Marble quarries",
+          "description": "The local raw-material source that sustained the architecture and sculpture industry of Aphrodisias.",
+          "period": "Antiquity",
+          "sourceIds": [
+            "aph-unesco"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "Aphrodisias lies near Geyre in the Karacasu district of Aydın, in the fertile upland Morsynus or Dandalaz valley.",
+        "distanceFromNearestCenter": "Approximately 12 km southeast of Karacasu.",
+        "landscape": "The city occupies an agricultural valley closely connected with marble deposits to the northeast. The quarries are an integral part of the archaeological and economic landscape.",
+        "gettingThere": "The site is reached by road via Karacasu and Geyre.",
+        "sourceIds": [
+          "aph-unesco",
+          "aph-history"
+        ]
+      },
+      "visit": {
+        "statusLabel": "UNESCO World Heritage Site open to visitors",
+        "address": "Geyre, Karacasu, Aydın",
+        "visitorNote": "The archaeological site and Aphrodisias Museum can be visited together. Official museum and excavation-project information should be checked for current opening arrangements and temporary conservation zones.",
+        "sourceIds": [
+          "aph-unesco",
+          "aph-about"
+        ]
+      },
+      "nearbyPlaces": [],
+      "participation": []
+    }
+  }
+}

@@ -1,0 +1,1037 @@
+{
+  "schemaVersion": 4,
+  "id": "ani",
+  "core": {
+    "coordinates": {
+      "latitude": 40.5075,
+      "longitude": 43.57278
+    },
+    "siteType": "ancient_city",
+    "chronology": [
+      {
+        "periodId": "early_bronze_age",
+        "startYear": -3000,
+        "endYear": -2000,
+        "approximate": true
+      },
+      {
+        "periodId": "iron_age",
+        "startYear": -800,
+        "endYear": -500,
+        "approximate": true
+      },
+      {
+        "periodId": "late_antiquity",
+        "startYear": 300,
+        "endYear": 700,
+        "approximate": true
+      },
+      {
+        "periodId": "byzantine",
+        "startYear": 700,
+        "endYear": 1064,
+        "approximate": true
+      },
+      {
+        "periodId": "seljuk",
+        "startYear": 1064,
+        "endYear": 1200,
+        "approximate": true
+      },
+      {
+        "periodId": "beyliks",
+        "startYear": 1200,
+        "endYear": 1400,
+        "approximate": true
+      }
+    ],
+    "dateRange": {
+      "startYear": -3000,
+      "endYear": 1500,
+      "approximate": true
+    },
+    "visibility": {
+      "importance": 1,
+      "minZoom": 1.2,
+      "featured": true
+    },
+    "visit": {
+      "status": "open",
+      "hours": null,
+      "closedDays": [],
+      "museumPass": true,
+      "phone": "0474 212 14 30",
+      "officialUrl": "https://muze.gov.tr/muze-detay?DistId=MRK&SectionId=ANI01"
+    },
+    "images": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ani_harabeleri_2023.jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Ani_harabeleri_2023.jpg",
+        "caption": {
+          "tr": "Ani arkeolojik alanının genel görünümü.",
+          "en": "General view of the archaeological site of Ani."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ani_xarabal%C4%B1qlar%C4%B1_2022_(10).jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Ani_xarabal%C4%B1qlar%C4%B1_2022_(10).jpg",
+        "caption": {
+          "tr": "Ani'nin sur içi kalıntıları ve açık kent peyzajı.",
+          "en": "Ruins and open urban landscape within the walls of Ani."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ani_xarabal%C4%B1qlar%C4%B1_2022_(11).jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Ani_xarabal%C4%B1qlar%C4%B1_2022_(11).jpg",
+        "caption": {
+          "tr": "Ani'nin tarihî kent peyzajı.",
+          "en": "The historic urban landscape of Ani."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ani_xarabal%C4%B1qlar%C4%B1_2022_(12).jpg",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Ani_xarabal%C4%B1qlar%C4%B1_2022_(12).jpg",
+        "caption": {
+          "tr": "Ani'deki ortaçağ mimari kalıntıları.",
+          "en": "Medieval architectural remains at Ani."
+        },
+        "credit": "Wikimedia Commons contributor",
+        "license": "See source page",
+        "type": "site-photo"
+      }
+    ],
+    "sources": [
+      {
+        "id": "ani-unesco",
+        "citationNumber": 1,
+        "type": "institutional",
+        "authors": [
+          "UNESCO World Heritage Centre"
+        ],
+        "title": "Archaeological Site of Ani",
+        "year": 2016,
+        "journalOrPublisher": "UNESCO World Heritage Centre",
+        "url": "https://whc.unesco.org/en/list/1518",
+        "doi": ""
+      },
+      {
+        "id": "ani-kultur",
+        "citationNumber": 2,
+        "type": "institutional",
+        "authors": [
+          "T.C. Kültür ve Turizm Bakanlığı"
+        ],
+        "title": "Ani Arkeolojik Alanı",
+        "year": null,
+        "journalOrPublisher": "Kültür Portalı",
+        "url": "https://www.kulturportali.gov.tr/portal/aniarkeolojikalani",
+        "doi": ""
+      },
+      {
+        "id": "ani-unesco-book2019",
+        "citationNumber": 3,
+        "type": "book_chapter",
+        "authors": [
+          "Fahriye Bayram",
+          "N. Alp",
+          "Z. Aktüre"
+        ],
+        "title": "Archaeological Site of Ani",
+        "year": 2019,
+        "journalOrPublisher": "UNESCO World Heritage in Turkey 2019, Turkish National Commission for UNESCO, pp. 446-483",
+        "url": "https://www.unesco.org.tr/Content_Files/Content/Yayinlar/wht_19.pdf",
+        "doi": ""
+      },
+      {
+        "id": "ani-watenpaugh2014",
+        "citationNumber": 4,
+        "type": "article",
+        "authors": [
+          "Heghnar Zeitlian Watenpaugh"
+        ],
+        "title": "Preserving the Medieval City of Ani: Cultural Heritage between Contest and Reconciliation",
+        "year": 2014,
+        "journalOrPublisher": "Journal of the Society of Architectural Historians 73(4), 528-555",
+        "url": "https://online.ucpress.edu/jsah/article-abstract/73/4/528/58659/",
+        "doi": "10.1525/jsah.2014.73.4.528"
+      },
+      {
+        "id": "ani-kazaryan2022",
+        "citationNumber": 5,
+        "type": "article",
+        "authors": [
+          "Armen Yu. Kazaryan"
+        ],
+        "title": "The Study of the Architectural Heritage of Ani: Current Issues and Recent Publications",
+        "year": 2022,
+        "journalOrPublisher": "Actual Problems of Theory and History of Art",
+        "url": "https://publ.actual-art.org/aptha/en/article/view/10927",
+        "doi": "10.18688/aa2212-01-06"
+      },
+      {
+        "id": "ani-medvedeva2023",
+        "citationNumber": 6,
+        "type": "article",
+        "authors": [
+          "Maria V. Medvedeva"
+        ],
+        "title": "Sixteen Ani Campaigns by Nikolai Marr: The Representativeness of Photographic Documents in the Archival Collection of IHMC RAS",
+        "year": 2023,
+        "journalOrPublisher": "Actual Problems of Theory and History of Art",
+        "url": "https://publ.actual-art.org/aptha/en/article/view/11008",
+        "doi": "10.18688/aa2313-2-17"
+      },
+      {
+        "id": "ani-pravilova2016",
+        "citationNumber": 7,
+        "type": "article",
+        "authors": [
+          "Ekaterina Pravilova"
+        ],
+        "title": "Contested Ruins: Nationalism, Emotions, and Archaeology at Armenian Ani, 1892-1918",
+        "year": 2016,
+        "journalOrPublisher": "Ab Imperio 2016(1), 69-101",
+        "url": "https://collaborate.princeton.edu/en/publications/contested-ruins-nationalism-emotions-and-archaeology-at-armenian-/",
+        "doi": ""
+      },
+      {
+        "id": "ani-arslan2022",
+        "citationNumber": 8,
+        "type": "book",
+        "authors": [
+          "Muhammet Arslan"
+        ],
+        "title": "Ani Örenyeri Kazısı 2019-2021 Yılı Çalışmaları",
+        "year": 2022,
+        "journalOrPublisher": "Kars, ISBN 978-625-8414-07-3",
+        "url": "https://unis.kafkas.edu.tr/yayin-detay/2_CJOmDpS_92/ani-orenyeri-kazisi-2019-2021-yili-calismalari",
+        "doi": ""
+      },
+      {
+        "id": "ani-current-project",
+        "citationNumber": 9,
+        "type": "research_project",
+        "authors": [
+          "Muhammet Arslan"
+        ],
+        "title": "Ani Örenyeri Selçuklu Çarşısı ve Selçuklu Konutları Konservasyonu ve Genel Arkeolojik Kazı Çalışması",
+        "year": 2021,
+        "journalOrPublisher": "Kafkas Üniversitesi",
+        "url": "https://unis.kafkas.edu.tr/proje-detay/2_CJKoCG_65/ani-orenyeri-selcuklu-carsisi-ve-selcuklu-konutlari-konservasyonu-ve-genel-arkeolojik-kazi-calismasi",
+        "doi": ""
+      },
+      {
+        "id": "ani-muze",
+        "citationNumber": 10,
+        "type": "institutional",
+        "authors": [
+          "T.C. Kültür ve Turizm Bakanlığı"
+        ],
+        "title": "Ani Örenyeri",
+        "year": null,
+        "journalOrPublisher": "Türkiye Müzeleri",
+        "url": "https://muze.gov.tr/muze-detay?DistId=MRK&SectionId=ANI01",
+        "doi": ""
+      },
+      {
+        "id": "ani-2024",
+        "citationNumber": 11,
+        "type": "conference_paper",
+        "authors": [
+          "Muhammet Arslan",
+          "Gül Geyik",
+          "Ahmet Şen",
+          "Mustafa Koçak",
+          "Gonca Papuccu",
+          "Bekir Karacabey",
+          "Ayşe Duran"
+        ],
+        "title": "Studies for the Year 2024 of Ani Ruins Excavations",
+        "year": 2025,
+        "journalOrPublisher": "Kazı ve Araştırmalar Sempozyumu Bildiri Özetleri",
+        "url": "https://akmb.gov.tr/wp-content/uploads/2025/04/2025.04.07-Ozet-Bildiri-Kitabi.pdf",
+        "doi": ""
+      },
+      {
+        "id": "ani-walls1999",
+        "citationNumber": 12,
+        "type": "article",
+        "authors": [
+          "Jean-Pierre Mahé",
+          "et al."
+        ],
+        "title": "L'enceinte urbaine d'Ani (Turquie orientale): problèmes chronologiques",
+        "year": 1999,
+        "journalOrPublisher": "Comptes rendus des séances de l'Académie des Inscriptions et Belles-Lettres 143(2)",
+        "url": "https://www.persee.fr/doc/crai_0065-0536_1999_num_143_2_16036",
+        "doi": ""
+      }
+    ]
+  },
+  "content": {
+    "tr": {
+      "name": "Ani",
+      "alternativeNames": [
+        "Ani Tarihi Kenti",
+        "Ani Örenyeri"
+      ],
+      "province": "Kars",
+      "district": "Merkez",
+      "modernPlace": "Ocaklı köyü / Türkiye-Ermenistan sınırı",
+      "siteTypeLabel": "Çok Katmanlı Orta Çağ Kenti ve Arkeolojik Peyzaj",
+      "occupationDisplay": "Tarihöncesi kullanım izlerinden Orta Çağ sonlarına kadar, en güçlü kentsel evre 10.-13. yüzyıllar",
+      "occupationNote": {
+        "text": "Ani çevresindeki yerleşim tarihi ortaçağ kentinden çok daha eskidir. UNESCO alan tanımı yaklaşık 2500 yıllık yerleşim sürekliliğine dikkat çeker ve Tunç Çağı'ndan itibaren kullanım olduğunu belirtir. Bugün görülen sur içi büyük kentin temel biçimi ise Geç Antik ve erken Orta Çağ'da gelişmiş, 10. ve 11. yüzyıllarda Bagratuni Ermeni Krallığı'nın başkenti olduğu dönemde olağanüstü büyümüştür. Bizans, Selçuklu, Şeddadi ve Gürcü egemenlikleri altında kent önemini sürdürmüş, 13. yüzyıl istilaları, 1319 depremi ve ticaret yollarındaki değişim uzun süreli gerilemeyi hızlandırmıştır.",
+        "sourceIds": [
+          "ani-unesco",
+          "ani-kultur",
+          "ani-unesco-book2019"
+        ]
+      },
+      "overview": [
+        {
+          "text": "Ani, Kars'ın doğusunda, Arpaçay vadisinin batı kenarında üçgen biçimli ve doğal olarak savunmalı bir plato üzerinde kuruludur. Derin vadiler kentin doğu ve batı kenarlarını korurken kuzeyde anıtsal sur sistemleri savunmayı tamamlar. Bu coğrafi konum Kafkasya'dan Anadolu'ya, İran ve Suriye yönlerine giden güzergâhların kesişiminde önemli bir geçiş noktası yaratmıştır.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-walls1999"
+          ]
+        },
+        {
+          "text": "Kent 10. yüzyılda Bagratuni hanedanı döneminde başkent olduğunda siyasi, ekonomik ve mimari açıdan en parlak evrelerinden birini yaşadı. Katedral, kiliseler, saraylar, surlar ve kentsel altyapı bu büyümeyi yansıtır. Ani'nin mimari dili Ermeni yapı geleneğini, Kafkasya'nın diğer geleneklerini ve daha sonraki İslam mimarisini aynı kentsel peyzajda yan yana gösterir.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kultur",
+            "ani-kazaryan2022"
+          ]
+        },
+        {
+          "text": "11. yüzyıldan itibaren kent Bizans ve Selçuklu siyasi dünyasının doğrudan parçası hâline geldi. 1064'te Selçuklu Sultanı Alp Arslan'ın fethinden sonra Şeddadiler döneminde cami, saray ve ticari yapılarla İslamî kent kültürü de görünür hâle geldi. UNESCO'nun değerlendirmesinde Ani'nin temel değeri, ardışık Hristiyan ve Müslüman hanedanların aynı kentte oluşturduğu konut, din, savunma ve kamu mimarisinin bütünlüğüdür.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kultur"
+          ]
+        },
+        {
+          "text": "Ani yalnızca anıtsal yapılarıyla değil, pazarlar, konutlar, hamamlar, su sistemleri, değirmenler, kaya oyma mekânlar, köprüler ve mezarlıklarla tam bir ortaçağ kenti olarak önem taşır. Bu geniş malzeme kültürü, kentin yalnız bir 'kiliseler şehri' veya askeri kale olarak değerlendirilmesini yetersiz kılar.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-unesco-book2019",
+            "ani-arslan2022"
+          ]
+        },
+        {
+          "text": "Modern araştırma tarihi de Ani'nin yorumunu şekillendirmiştir. Nikolai Marr'ın 1892-1917 arasındaki uzun soluklu kazıları, erken fotoğraf ve çizim arşivleri, Cumhuriyet dönemi Türk kazıları ve son yıllardaki koruma programları sayesinde kent aynı zamanda arkeoloji, mimarlık tarihi ve kültürel miras siyaseti çalışmalarının başlıca örneklerinden biri olmuştur.",
+          "sourceIds": [
+            "ani-unesco-book2019",
+            "ani-medvedeva2023",
+            "ani-pravilova2016",
+            "ani-watenpaugh2014"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "text": "Ani platosu ve çevresinde Tunç Çağı ve Demir Çağı kullanımına ilişkin bulgular vardır. Tarihöncesi ve erken tarihî yerleşimler daha çok Bostanlar Deresi ve çevresindeki kaya oyma alanlar ile İç Kale'nin erken kullanım evreleri üzerinden izlenir. Büyük sur içi ortaçağ kentinin doğrudan bu erken yerleşimlerin biçimini koruduğu düşünülmemelidir.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kultur"
+          ],
+          "title": "Tarihöncesi ve erken kullanım"
+        },
+        {
+          "text": "Sur içindeki yerleşimin İç Kale çevresinde Geç Antik Çağ'da belirginleştiği kabul edilir. Kamsarakan soylu ailesiyle ilişkilendirilen erken ortaçağ yapıları daha sonraki büyük kentsel büyümenin temelini oluşturmuştur.",
+          "sourceIds": [
+            "ani-kultur",
+            "ani-unesco-book2019"
+          ],
+          "title": "Geç Antik ve erken Orta Çağ"
+        },
+        {
+          "text": "961'de Bagratuni Kralı III. Aşot'un başkenti Ani'ye taşıması kentin tarihinde dönüm noktasıdır. 10. ve 11. yüzyıllarda surlar genişletildi, anıtsal kiliseler ve kamu yapıları inşa edildi ve Ani İpek Yolu ağlarının önemli ticaret merkezlerinden biri hâline geldi.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-unesco-book2019"
+          ],
+          "title": "Bagratuni başkenti"
+        },
+        {
+          "text": "1045'te Bizans'ın kontrolüne geçen kent 1064'te Selçuklu Sultanı Alp Arslan tarafından fethedildi. Ardından Şeddadi yönetimi altında İslamî mimari, yeni ticari yapılar ve farklı cemaatlerin birlikte var olduğu çok katmanlı kent dokusu gelişti.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kultur"
+          ],
+          "title": "Bizans ve Selçuklu dönemi"
+        },
+        {
+          "text": "12. ve 13. yüzyıllarda Gürcü ve Zakaryan yönetimleri sırasında Ani yeniden önemli bir bölgesel merkez oldu. Tigran Honents Kilisesi gibi yapılar ve zengin duvar resimleri bu dönemin ekonomik ve kültürel canlılığını gösterir.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kazaryan2022"
+          ],
+          "title": "12.-13. yüzyıllar"
+        },
+        {
+          "text": "Moğol istilaları, siyasi parçalanma, ticaret ağlarının yön değiştirmesi ve 1319'daki büyük deprem Ani'nin gerilemesini hızlandırdı. Yerleşim tamamen bir anda terk edilmedi, ancak geç ortaçağ ve erken yeniçağ boyunca nüfus ve kentsel işlevler giderek küçüldü.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-unesco-book2019"
+          ],
+          "title": "Gerileme ve terk süreci"
+        }
+      ],
+      "importance": [
+        {
+          "text": "Ani, Ermeni ortaçağ mimarisinin gelişimini tek bir kent içinde geniş bir zaman aralığında izlemek için olağanüstü bir arşivdir. UNESCO özellikle 7.-13. yüzyıllar arasındaki bölgesel mimari yeniliklerin neredeyse tüm ana tiplerinin burada temsil edildiğini vurgular.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kazaryan2022"
+          ],
+          "title": "Ortaçağ mimarlık tarihi"
+        },
+        {
+          "text": "Kent Ermeni, Bizans, Gürcü ve İslam mimari geleneklerinin birbirini etkilediği bir sınır ve ticaret merkezidir. Bu etkileşim yalnız biçimsel özelliklerde değil yapı teknikleri, taş işçiliği, bezeme ve kentsel örgütlenmede de görülür.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kultur"
+          ],
+          "title": "Kültürel etkileşim"
+        },
+        {
+          "text": "Ani'nin coğrafi konumu, İpek Yolu'nun Kafkasya ile Anadolu arasındaki kollarından birini denetlemesine imkân verdi. Bu nedenle kent tarihi yalnız hanedan değişimleriyle değil ticaret, zanaat ve kervan dolaşımıyla birlikte okunmalıdır.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-unesco-book2019"
+          ],
+          "title": "Ticaret ve İpek Yolu"
+        },
+        {
+          "text": "Marr kazılarından günümüz koruma projelerine uzanan 130 yılı aşkın araştırma tarihi, Ani'yi arkeolojik mirasın nasıl üretildiği, yorumlandığı ve ulusal kimlik tartışmalarına nasıl dahil edildiği konusunda da önemli bir örnek hâline getirir.",
+          "sourceIds": [
+            "ani-pravilova2016",
+            "ani-watenpaugh2014",
+            "ani-medvedeva2023"
+          ],
+          "title": "Arkeoloji ve miras siyaseti"
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "Ani Katedrali, Bagratuni başkentinin anıtsal kilise mimarisinin en önemli örneklerindendir. Daha sonraki dönemlerde farklı işlevler kazanmış olması, kentin siyasi dönüşümlerini tek yapı üzerinde izlemeyi mümkün kılar.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kazaryan2022"
+          ],
+          "title": "Ani Katedrali"
+        },
+        {
+          "text": "Smbat II döneminde genişletilen surlar, kuleler ve kapılar kentin kuzeydeki en zayıf topografik kesimini koruyan karmaşık bir savunma sistemi oluşturur. Sur kronolojisi ve eklemeleri uzun süredir araştırma konusudur.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-walls1999"
+          ],
+          "title": "Kent surları"
+        },
+        {
+          "text": "Tigran Honents Kilisesi, 13. yüzyıl başındaki ekonomik canlılığı ve Ermeni-Gürcü sanat çevreleri arasındaki ilişkileri yansıtan zengin duvar resimleriyle öne çıkar.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kazaryan2022"
+          ],
+          "title": "Tigran Honents Kilisesi"
+        },
+        {
+          "text": "Menüçehr Camii, Ani'nin İslamî dönem mimarisinin en önemli anıtlarındandır. Yapının tarih ve işlev evreleri üzerine farklı görüşler vardır, ancak Selçuklu ve Şeddadi dönemlerinin kent peyzajındaki görünürlüğü açısından temel bir kaynaktır.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-unesco-book2019"
+          ],
+          "title": "Menüçehr Camii"
+        },
+        {
+          "text": "İç Kale, saray yapıları ve erken kiliseler Ani'nin surlu başkentten önceki ve sonraki yönetim merkezini anlamak için temel bir bölgedir.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-unesco-book2019"
+          ],
+          "title": "İç Kale"
+        },
+        {
+          "text": "Bostanlar Deresi yamaçlarındaki kaya oyma mekânlar, konut, şapel, depo ve diğer işlevleriyle kentin taş mimarisinin ötesindeki gündelik yaşam dünyasını gösterir.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kultur"
+          ],
+          "title": "Kaya oyma yerleşim"
+        },
+        {
+          "text": "Pazar, dükkân, konut ve Selçuklu çarşısı alanları, son dönem kazılarında kentin ekonomik yaşamı ve mahalle düzenini anlamak için öncelikli araştırma alanlarıdır.",
+          "sourceIds": [
+            "ani-arslan2022",
+            "ani-current-project",
+            "ani-2024"
+          ],
+          "title": "Çarşı ve konut alanları"
+        },
+        {
+          "text": "Sikke, seramik, cam ve metal buluntular, farklı siyasi dönemler arasında gündelik tüketim, ticaret ve zanaatın sürekliliğini ayrıntılandırır.",
+          "sourceIds": [
+            "ani-arslan2022",
+            "ani-2024"
+          ],
+          "title": "Taşınabilir buluntular"
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "Ani'deki ilk sistematik arkeolojik araştırmalar Rus İmparatorluğu döneminde Nikolai Marr yönetiminde 1892-1893 ve 1904-1917 arasında gerçekleştirildi. Marr'ın ekipleri dini anıtların yanı sıra surları, sarayları, sivil mimariyi, su sistemlerini ve farklı dönemlere ait yapıları kazdı ve belgeledi.",
+          "sourceIds": [
+            "ani-unesco-book2019",
+            "ani-medvedeva2023"
+          ]
+        },
+        {
+          "text": "Marr döneminin arşivleri, fotoğrafları ve yayınları Ani'nin bugün kaybolmuş veya daha fazla bozulmuş bazı unsurları için eşsiz belge niteliğindedir. Aynı zamanda bu araştırmaların imparatorluk, milliyetçilik ve kimlik siyasetiyle ilişkisi modern tarih yazımında ayrıca incelenmektedir.",
+          "sourceIds": [
+            "ani-medvedeva2023",
+            "ani-pravilova2016"
+          ]
+        },
+        {
+          "text": "Türkiye döneminde Kılıç Kökten, Kemal Balkan ve daha sonra Beyhan Karamağaralı başkanlığındaki ekipler farklı alanlarda kazı ve belgeleme çalışmaları yürüttü. 1989-2005 arasındaki uzun dönem özellikle Menüçehr Camii, Selçuklu Sarayı, konutlar ve ana cadde çevresindeki dükkânlara odaklandı.",
+          "sourceIds": [
+            "ani-unesco-book2019",
+            "ani-arslan2022"
+          ]
+        },
+        {
+          "text": "2019'dan itibaren Kars Müzesi ve Kafkas Üniversitesi işbirliğiyle yeni kazı ve koruma programı başladı. 2021'den itibaren Muhammet Arslan başkanlığında Cumhurbaşkanlığı kararlı kazı statüsünde yürütülen çalışmalar Selçuklu çarşısı, konutlar, mezarlıklar ve kentin farklı bölgelerinde araştırmayı sürdürmektedir.",
+          "sourceIds": [
+            "ani-current-project",
+            "ani-arslan2022",
+            "ani-2024"
+          ]
+        },
+        {
+          "text": "Ani'de arkeolojik kazı ile mimari koruma birbirinden ayrı düşünülemez. Kırılgan tüf taşları, deprem etkileri, iklim ve uzun süreli bakımsızlık, her araştırma sezonunu aynı zamanda bir konservasyon programına dönüştürmektedir.",
+          "sourceIds": [
+            "ani-watenpaugh2014",
+            "ani-unesco"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "text": "Ani'nin mirası farklı modern ulusal anlatılar için güçlü sembolik anlamlar taşır. Akademik yaklaşım kenti tek bir ulusun veya tek bir dinin eseri olarak indirgemek yerine Ermeni Bagratuni çekirdeğini, Bizans, Gürcü, Selçuklu ve Şeddadi katmanlarını ve daha geniş Kafkasya-Anadolu etkileşimini birlikte değerlendirmelidir.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-pravilova2016",
+            "ani-watenpaugh2014"
+          ],
+          "title": "Çok kültürlü miras nasıl anlatılmalı?"
+        },
+        {
+          "text": "Ani'nin nüfusu için popüler yayınlarda çok yüksek rakamlar tekrarlanır. UNESCO'nun evrensel değer tanımı kentin büyük bir kültür ve ticaret merkezi olduğunu açıkça ortaya koysa da ortaçağ nüfusuna ilişkin kesin sayılar arkeolojik olarak güvenli değildir. Bu nedenle atlas sabit bir nüfus rakamını kesin gerçek gibi sunmamalıdır.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-unesco-book2019"
+          ],
+          "title": "Ani gerçekten 100 bin nüfuslu muydu?"
+        },
+        {
+          "text": "1319 depremi Ani'nin gerilemesinde önemli bir olaydır, ancak kentin tek bir felaketle aniden terk edildiği anlatısı fazla basittir. Moğol istilaları, ticaret güzergâhlarının değişmesi, bölgesel siyasal dönüşümler ve ekonomik küçülme birlikte değerlendirilmelidir.",
+          "sourceIds": [
+            "ani-unesco"
+          ],
+          "title": "Kentin gerilemesinin nedeni"
+        },
+        {
+          "text": "Ani'deki koruma müdahaleleri, özgün taş malzemenin kırılganlığı ve farklı dönem restorasyonlarının mirası nedeniyle bilimsel tartışma konusudur. Modern koruma yaklaşımı yalnız anıtların görünüşünü değil özgün malzeme, belgelenebilirlik ve çok katmanlı tarihi korumayı hedefler.",
+          "sourceIds": [
+            "ani-watenpaugh2014",
+            "ani-unesco"
+          ],
+          "title": "Koruma ve restorasyon"
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "Ani 2016'dan beri UNESCO Dünya Mirası Listesi'ndedir. Alan Türkiye-Ermenistan sınırında, geniş bir açık arkeolojik peyzaj olarak ziyarete açıktır. UNESCO koruma çerçevesi kentin surlarını, iç kaleyi, sur içi anıtları ve vadi yamaçlarındaki kaya oyma yapıları birlikte ele alır.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-muze"
+          ]
+        },
+        {
+          "text": "Arkeolojik kazı, konservasyon ve çevre düzenleme çalışmaları halen devam etmektedir. Son dönem programları özellikle Selçuklu çarşısı ve konut alanları gibi sivil ve ekonomik yaşamı görünür kılan bölgelere önem vermektedir.",
+          "sourceIds": [
+            "ani-current-project",
+            "ani-2024"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Ani Katedrali",
+          "description": "Bagratuni başkentinin en büyük anıtsal kiliselerinden biri ve kentin sonraki siyasi dönüşümlerinin de tanığı.",
+          "period": "Bizans / Bagratuni dönemi",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kazaryan2022"
+          ]
+        },
+        {
+          "name": "Smbat II surları",
+          "description": "Kentin kuzey savunmasını oluşturan kuleli ve kapılı anıtsal sur sistemi.",
+          "period": "10. yüzyıl",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-walls1999"
+          ]
+        },
+        {
+          "name": "Tigran Honents Kilisesi",
+          "description": "Zengin duvar resimleri ve 13. yüzyıl mimarisiyle Ani'nin geç parlak dönemini temsil eden yapı.",
+          "period": "13. yüzyıl",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kazaryan2022"
+          ]
+        },
+        {
+          "name": "Menüçehr Camii",
+          "description": "Ani'nin İslamî dönem kentsel peyzajının başlıca anıtlarından biri.",
+          "period": "11.-12. yüzyıllar",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-unesco-book2019"
+          ]
+        },
+        {
+          "name": "Selçuklu çarşısı ve konutları",
+          "description": "Güncel kazıların ticaret, depolama ve gündelik yaşamı araştırdığı sivil kent alanları.",
+          "period": "Orta Çağ",
+          "sourceIds": [
+            "ani-current-project",
+            "ani-2024"
+          ]
+        },
+        {
+          "name": "Kaya oyma yapılar",
+          "description": "Bostanlar Deresi ve çevresinde konut, dini kullanım ve depolama gibi farklı işlevlere sahip geniş kaya oyma kompleks.",
+          "period": "Orta Çağ",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kultur"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "Ani, Kars kent merkezinin yaklaşık 42-45 km doğusunda, Arpaçay'ın batısındaki üçgen plato üzerinde ve Türkiye-Ermenistan sınırında yer alır.",
+        "distanceFromNearestCenter": "Kars kent merkezine yaklaşık 42-45 km.",
+        "landscape": "Yaklaşık 1500 metre rakımdaki volkanik plato, doğu ve batıda derin nehir vadileriyle çevrilidir. Bu doğal savunma, kuzeydeki yapay surlarla tamamlanmıştır.",
+        "gettingThere": "Kars'tan Ocaklı köyü ve Ani Örenyeri yönüne karayoluyla ulaşılır.",
+        "sourceIds": [
+          "ani-unesco",
+          "ani-walls1999",
+          "ani-muze"
+        ]
+      },
+      "visit": {
+        "statusLabel": "Ziyarete açık UNESCO Dünya Mirası alanı",
+        "address": "Ani Köyü / Ocaklı, Merkez, Kars",
+        "visitorNote": "Alan çok geniştir ve yapıların önemli bölümü açık arazidedir. Mevsimsel hava koşulları, sınır bölgesi kuralları ve güncel açılış saatleri için resmi Türkiye Müzeleri bilgisi kontrol edilmelidir.",
+        "sourceIds": [
+          "ani-muze"
+        ]
+      },
+      "nearbyPlaces": [],
+      "participation": []
+    },
+    "en": {
+      "name": "Ani",
+      "alternativeNames": [
+        "Archaeological Site of Ani"
+      ],
+      "province": "Kars",
+      "district": "Central District",
+      "modernPlace": "Ocaklı / Türkiye-Armenia border",
+      "siteTypeLabel": "Multi-Layered Medieval City and Archaeological Landscape",
+      "occupationDisplay": "from prehistoric traces to the late medieval period, with its strongest urban phase between the 10th and 13th centuries",
+      "occupationNote": {
+        "text": "The history of occupation around Ani extends far beyond the medieval city. UNESCO notes a settlement history of roughly 2,500 years and evidence reaching back to the Bronze Age. The large walled city visible today developed in Late Antiquity and the early medieval period, then expanded dramatically in the 10th and 11th centuries as a capital of the Armenian Bagratid kingdom. Ani remained important under Byzantine, Seljuk, Shaddadid and Georgian rule. Invasion, the earthquake of 1319 and changing trade routes contributed to a long process of decline rather than a single moment of abandonment.",
+        "sourceIds": [
+          "ani-unesco",
+          "ani-kultur",
+          "ani-unesco-book2019"
+        ]
+      },
+      "overview": [
+        {
+          "text": "Ani stands east of Kars on a naturally defensible triangular plateau above the Akhurian River gorge. Deep valleys protect the eastern and western sides, while monumental walls close the more accessible northern approach. This geography placed the city at an important crossing between the Caucasus, Anatolia, Iran and routes leading toward Syria.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-walls1999"
+          ]
+        },
+        {
+          "text": "The city entered one of its most prosperous phases in the 10th century when it became the capital of the Bagratid Armenian kingdom. The cathedral, churches, palaces, walls and urban infrastructure reflect this expansion. Ani's architecture preserves Armenian traditions together with connections across the Caucasus and later Islamic building traditions.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kultur",
+            "ani-kazaryan2022"
+          ]
+        },
+        {
+          "text": "From the 11th century onward Ani became directly entangled in Byzantine and Seljuk political history. After the Seljuk conquest of 1064, Shaddadid rule added mosques, palatial buildings and new commercial architecture to a city in which different religious communities and architectural traditions coexisted.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kultur"
+          ]
+        },
+        {
+          "text": "Ani matters not only for monumental churches and fortifications but also for markets, houses, baths, water systems, mills, rock-cut spaces, bridges and cemeteries. These remains allow the site to be studied as a complete medieval city rather than simply as a collection of spectacular monuments.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-unesco-book2019",
+            "ani-arslan2022"
+          ]
+        },
+        {
+          "text": "Its modern research history is equally important. The long excavations of Nikolai Marr between 1892 and 1917, early photographic archives, later Turkish excavations and current conservation projects have made Ani a major case study in archaeology, architectural history and the politics of cultural heritage.",
+          "sourceIds": [
+            "ani-unesco-book2019",
+            "ani-medvedeva2023",
+            "ani-pravilova2016",
+            "ani-watenpaugh2014"
+          ]
+        }
+      ],
+      "chronology": [
+        {
+          "text": "Bronze and Iron Age material demonstrates activity on the plateau and in its surrounding valleys long before the medieval city. Prehistoric and early occupation is especially associated with rock-cut areas around Bostanlar Creek and with early use of the citadel. These phases should not be treated as the direct urban form of later Ani.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kultur"
+          ],
+          "title": "Prehistoric and early occupation"
+        },
+        {
+          "text": "Settlement within the later walls became clearer around the citadel in Late Antiquity. Early medieval occupation associated with the Kamsarakan aristocracy preceded the great expansion of the Bagratid capital.",
+          "sourceIds": [
+            "ani-kultur",
+            "ani-unesco-book2019"
+          ],
+          "title": "Late Antique and early medieval settlement"
+        },
+        {
+          "text": "The transfer of the Bagratid capital to Ani under Ashot III in 961 transformed the city. During the 10th and 11th centuries walls were enlarged, major churches and public buildings were constructed and Ani became an important centre on the Silk Road networks.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-unesco-book2019"
+          ],
+          "title": "Bagratid capital"
+        },
+        {
+          "text": "Byzantine control began in 1045 and the city was conquered by the Seljuk sultan Alp Arslan in 1064. Under the Shaddadids, Islamic architecture and commercial structures became part of the urban fabric.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kultur"
+          ],
+          "title": "Byzantine and Seljuk periods"
+        },
+        {
+          "text": "During the 12th and 13th centuries Ani again flourished under Georgian and Zakarian authority. Buildings such as the Church of Tigran Honents and its rich painting programme reflect the vitality of this later phase.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kazaryan2022"
+          ],
+          "title": "12th and 13th centuries"
+        },
+        {
+          "text": "Mongol invasion, political fragmentation, shifting trade routes and the major earthquake of 1319 accelerated decline. The city was not instantly deserted, but population and urban functions contracted over the later medieval and early modern centuries.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-unesco-book2019"
+          ],
+          "title": "Decline and abandonment"
+        }
+      ],
+      "importance": [
+        {
+          "text": "Ani is an extraordinary archive of the development of medieval Armenian architecture within a single city. UNESCO emphasises that almost all major regional architectural types and innovations between the 7th and 13th centuries are represented at the site.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kazaryan2022"
+          ],
+          "title": "Medieval architectural history"
+        },
+        {
+          "text": "The city was a meeting place for Armenian, Byzantine, Georgian and Islamic architectural traditions. Cross-cultural interaction can be studied in design, masonry, decoration and urban organisation rather than only through dynastic history.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kultur"
+          ],
+          "title": "Cross-cultural interaction"
+        },
+        {
+          "text": "Its position on routes linking the Caucasus and Anatolia made commerce central to Ani's prosperity. The city should therefore be read through merchants, workshops and caravan movement as well as through kings and churches.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-unesco-book2019"
+          ],
+          "title": "Trade and the Silk Roads"
+        },
+        {
+          "text": "More than a century of excavation and conservation has also made Ani important for studying how archaeology and heritage become entangled with modern nationalism, memory and reconciliation.",
+          "sourceIds": [
+            "ani-pravilova2016",
+            "ani-watenpaugh2014",
+            "ani-medvedeva2023"
+          ],
+          "title": "Archaeology and heritage politics"
+        }
+      ],
+      "discoveries": [
+        {
+          "text": "Ani Cathedral is one of the major monuments of the Bagratid capital. Its later changes of use allow political and religious transformations of the city to be traced through one building.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kazaryan2022"
+          ],
+          "title": "Ani Cathedral"
+        },
+        {
+          "text": "The walls associated especially with Smbat II form a complex defensive system of towers and gates across the northern approach. Their chronology and later modifications remain an important field of study.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-walls1999"
+          ],
+          "title": "City walls"
+        },
+        {
+          "text": "The Church of Tigran Honents is especially important for its architecture and extensive wall paintings, which illuminate the economic and artistic life of Ani in the early 13th century.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kazaryan2022"
+          ],
+          "title": "Church of Tigran Honents"
+        },
+        {
+          "text": "The Menüçehr Mosque is a principal monument of Ani's Islamic architectural phase. Aspects of its dating and building history remain debated, but it is central to understanding Shaddadid and Seljuk-period urban change.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-unesco-book2019"
+          ],
+          "title": "Menüçehr Mosque"
+        },
+        {
+          "text": "The citadel preserves palatial and religious architecture important for understanding the administrative core of the city and its earlier phases.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-unesco-book2019"
+          ],
+          "title": "Citadel"
+        },
+        {
+          "text": "Rock-cut spaces on the slopes of Bostanlar Creek preserve domestic, religious and storage functions that broaden the picture beyond monumental stone architecture.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kultur"
+          ],
+          "title": "Rock-cut settlement"
+        },
+        {
+          "text": "Markets, shops, houses and the Seljuk bazaar are major priorities of current excavation and provide evidence for economic life and neighbourhood organisation.",
+          "sourceIds": [
+            "ani-arslan2022",
+            "ani-current-project",
+            "ani-2024"
+          ],
+          "title": "Bazaar and residential areas"
+        },
+        {
+          "text": "Coins, ceramics, glass and metalwork from excavation help trace consumption, exchange and craft activity across multiple political periods.",
+          "sourceIds": [
+            "ani-arslan2022",
+            "ani-2024"
+          ],
+          "title": "Portable finds"
+        }
+      ],
+      "excavationHistory": [
+        {
+          "text": "The first systematic archaeological campaigns were directed by Nikolai Marr in 1892-1893 and again from 1904 to 1917 under the Imperial Academy of Sciences. His teams investigated religious monuments, walls, palaces, domestic architecture, water systems and structures from different periods.",
+          "sourceIds": [
+            "ani-unesco-book2019",
+            "ani-medvedeva2023"
+          ]
+        },
+        {
+          "text": "The photographs, plans and publications created by Marr's expedition are now irreplaceable records for monuments that have since suffered further damage. Modern scholarship also studies how this archaeology was shaped by imperial and nationalist politics.",
+          "sourceIds": [
+            "ani-medvedeva2023",
+            "ani-pravilova2016"
+          ]
+        },
+        {
+          "text": "Turkish research later included work by Kılıç Kökten, Kemal Balkan and the long-running project directed by Beyhan Karamağaralı. The 1989-2005 campaigns examined the Menüçehr Mosque, Seljuk Palace, houses and shops along major streets.",
+          "sourceIds": [
+            "ani-unesco-book2019",
+            "ani-arslan2022"
+          ]
+        },
+        {
+          "text": "A new excavation and conservation programme began in 2019 through cooperation between the Kars Museum and Kafkas University. From 2021 the project continued under Muhammet Arslan with a focus including the Seljuk bazaar, residences, cemeteries and other parts of the city.",
+          "sourceIds": [
+            "ani-current-project",
+            "ani-arslan2022",
+            "ani-2024"
+          ]
+        },
+        {
+          "text": "At Ani archaeology cannot be separated from conservation. Fragile volcanic tuff, earthquakes, severe climate and periods of neglect make each excavation campaign simultaneously a programme of architectural preservation.",
+          "sourceIds": [
+            "ani-watenpaugh2014",
+            "ani-unesco"
+          ]
+        }
+      ],
+      "researchDebates": [
+        {
+          "text": "Ani carries strong symbolic meaning in several modern national narratives. A responsible archaeological account should neither erase the central role of the Armenian Bagratid city nor reduce the site to a single ethnicity or religion. Byzantine, Georgian, Seljuk, Shaddadid and broader Caucasian-Anatolian interactions are part of the same urban history.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-pravilova2016",
+            "ani-watenpaugh2014"
+          ],
+          "title": "How should Ani's multicultural heritage be narrated?"
+        },
+        {
+          "text": "Very high population figures are common in popular accounts of medieval Ani. UNESCO securely describes a major commercial and cultural centre, but an exact medieval population cannot be established with comparable confidence. The atlas should therefore avoid presenting a fixed figure such as 100,000 as an archaeological fact.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-unesco-book2019"
+          ],
+          "title": "Was Ani really a city of 100,000?"
+        },
+        {
+          "text": "The earthquake of 1319 was important, but the idea that Ani was destroyed and abandoned in a single event is too simple. Invasion, political fragmentation, changing trade networks and long-term economic contraction must be considered together.",
+          "sourceIds": [
+            "ani-unesco"
+          ],
+          "title": "Why did Ani decline?"
+        },
+        {
+          "text": "Conservation has itself become a major scholarly issue. The vulnerability of local stone and the legacy of earlier restoration campaigns require modern interventions to balance structural stability with material authenticity and the preservation of multiple historical phases.",
+          "sourceIds": [
+            "ani-watenpaugh2014",
+            "ani-unesco"
+          ],
+          "title": "Conservation and restoration"
+        }
+      ],
+      "currentStatus": [
+        {
+          "text": "Ani has been on the UNESCO World Heritage List since 2016 and is open as a large archaeological landscape on the Türkiye-Armenia border. The World Heritage property includes the citadel, walled city, major monuments and rock-cut spaces in the surrounding valleys.",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-muze"
+          ]
+        },
+        {
+          "text": "Excavation, conservation and site presentation continue. Current work gives particular attention to areas of civil and economic life such as the Seljuk bazaar and residential quarters.",
+          "sourceIds": [
+            "ani-current-project",
+            "ani-2024"
+          ]
+        }
+      ],
+      "keyFinds": [
+        {
+          "name": "Ani Cathedral",
+          "description": "A principal monument of the Bagratid capital and an important witness to later political and religious transformation.",
+          "period": "Bagratid / Byzantine period",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kazaryan2022"
+          ]
+        },
+        {
+          "name": "Walls of Smbat II",
+          "description": "The monumental towered defensive system protecting the northern approach to the city.",
+          "period": "10th century",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-walls1999"
+          ]
+        },
+        {
+          "name": "Church of Tigran Honents",
+          "description": "A major early 13th-century monument noted for architecture and extensive wall paintings.",
+          "period": "13th century",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kazaryan2022"
+          ]
+        },
+        {
+          "name": "Menüçehr Mosque",
+          "description": "One of the principal monuments of the Islamic urban phase at Ani.",
+          "period": "11th-12th centuries",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-unesco-book2019"
+          ]
+        },
+        {
+          "name": "Seljuk bazaar and houses",
+          "description": "Civil areas under current investigation that illuminate trade, storage and everyday urban life.",
+          "period": "Medieval",
+          "sourceIds": [
+            "ani-current-project",
+            "ani-2024"
+          ]
+        },
+        {
+          "name": "Rock-cut structures",
+          "description": "Extensive spaces around Bostanlar Creek used for domestic, religious and storage purposes.",
+          "period": "Medieval",
+          "sourceIds": [
+            "ani-unesco",
+            "ani-kultur"
+          ]
+        }
+      ],
+      "geography": {
+        "summary": "Ani lies approximately 42-45 km east of Kars on a triangular plateau west of the Akhurian River at the Türkiye-Armenia border.",
+        "distanceFromNearestCenter": "Approximately 42-45 km from central Kars.",
+        "landscape": "At roughly 1,500 metres elevation, the volcanic plateau is bounded by deep river gorges on two sides. Natural defences are completed by monumental walls across the northern approach.",
+        "gettingThere": "The archaeological site is reached by road from Kars toward Ocaklı and Ani.",
+        "sourceIds": [
+          "ani-unesco",
+          "ani-walls1999",
+          "ani-muze"
+        ]
+      },
+      "visit": {
+        "statusLabel": "UNESCO World Heritage Site open to visitors",
+        "address": "Ani / Ocaklı, Central District, Kars",
+        "visitorNote": "The site covers a very large open landscape. Weather, border-zone rules and seasonal opening arrangements should be checked through the official Turkish Museums page before visiting.",
+        "sourceIds": [
+          "ani-muze"
+        ]
+      },
+      "nearbyPlaces": [],
+      "participation": []
+    }
+  }
+}
