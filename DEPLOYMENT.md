@@ -1,27 +1,27 @@
-# Deployment without AI Studio
+# Cloud Run Deployment
 
-The repository is the source of truth. The React application and Express API can be deployed together as one Cloud Run service.
+The GitHub repository is source control only. Deployment is handled directly by Google Cloud Run; GitHub Actions is not part of the deployment or ingestion path.
 
-## Required runtime environment
+## Runtime
 
-- `ATLAS_INGESTION_TOKEN`: secret Bearer token for `/api/atlas/*`.
-- Cloud Run service identity must have the minimum IAM permissions required for:
+The React frontend and Express API run together in one Cloud Run service.
+
+Required runtime configuration:
+
+- `ATLAS_INGESTION_TOKEN`: Bearer token protecting `/api/atlas/*`.
+- Cloud Run service identity with the minimum permissions required for:
   - Firebase Storage object access on `hiddenfeed.firebasestorage.app`
-  - Firestore access to the configured database.
+  - Firestore access to the configured database
 
 Firebase client configuration in `firebase-applet-config.json` is browser configuration, not a privileged service-account credential.
 
-## Build
+## Container build
 
 ```bash
 docker build -t anadolu-tarih-atlas .
 ```
 
-## Cloud Run
-
-Use a user-managed service account and Application Default Credentials. Do not store a service-account JSON key in this repository.
-
-A later deployment can use GitHub Actions + Google Workload Identity Federation so no long-lived Google credential needs to be stored in GitHub.
+The production container serves both the built Vite frontend and the Express API.
 
 ## Data model
 
@@ -30,15 +30,8 @@ A later deployment can use GitHub Actions + Google Workload Identity Federation 
 - Firestore `research_queue`: private worker queue
 - Firestore `research_jobs`: private worker telemetry
 
-The frontend does not read archaeological monographs from the repository.
+The frontend does not read archaeological monographs from the GitHub repository.
 
-## Research ingestion branch
+## Deployment rule
 
-The optional `research-ingest` branch is a staging branch for researched JSON files. Its workflow sends the JSON through the authenticated production ingestion API. It is not deployed as frontend content.
-
-Required GitHub repository configuration:
-
-- Secret: `ATLAS_INGESTION_TOKEN`
-- Variable: `ATLAS_INGESTION_BASE_URL`
-
-Do not put either value into tracked files.
+Changes are committed directly to `main`. Cloud Run is the deployment target. No GitHub workflow, deployment branch, or GitHub-hosted runner is required.
