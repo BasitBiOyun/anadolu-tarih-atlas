@@ -52,7 +52,9 @@ All 10 fixtures pass the pre-existing validator. Ani and Aphrodisias use noncano
 
 Cloud Shell verification on 2026-09-28: npm clean install, all 18 unit tests, TypeScript checking, and both Firestore emulator integration tests passed. The integration run seeded 5,001 synthetic records and checked concurrent claims, chronological priority, hourly limits, capacity, fencing, recovery and duplicate rejection. This is queue verification, not evidence that live research quality or Drive publication has passed.
 
-## Cloud Shell pilot
+## Cloud Shell pilot — disabled: zero additional cost required
+
+The user requires a free research system. The three cloud deployment/execution scripts now stop before any cloud call. The Vertex implementation below is historical design documentation, not an approved rollout path. Queue tests remain valid; no free replacement runtime has yet been implemented or verified. Updating this repository does not stop any already-deployed cloud job.
 
 First run local unit/type checks and emulator integration. Select a currently available Vertex model (both model IDs are required in runtime configuration; no silent fallback).
 

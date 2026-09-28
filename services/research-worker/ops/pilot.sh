@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
+echo 'STOP: Zero additional cost required. Vertex/Cloud Run deployment is disabled pending a free-runtime redesign.' >&2
+exit 1
 # Run inside the reviewed repository. Never modifies existing Cloud Run services.
 : "${RESEARCH_MODEL:?Set a currently available Vertex model ID}"
 : "${CHECK_MODEL:=$RESEARCH_MODEL}"

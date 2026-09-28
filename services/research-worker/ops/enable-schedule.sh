@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
+echo 'STOP: Zero additional cost required. Paid research scheduling is disabled.' >&2
+exit 1
 cd "$(git rev-parse --show-toplevel)/services/research-worker"
 : "${DRIVE_OAUTH_SECRET:?Set the Secret Manager secret containing authorized_user JSON}"
 : "${DRIVE_OAUTH_FILE:?Set the local authorized_user JSON file for preflight (never paste its contents)}"
