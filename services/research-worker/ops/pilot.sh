@@ -18,6 +18,7 @@ npm run check
 npm run audit
 npx firebase emulators:exec --only firestore --project demo-atlas-research --config firebase.emulator.json 'npx tsx --test integration/queue.test.ts'
 gcloud services enable run.googleapis.com cloudbuild.googleapis.com artifactregistry.googleapis.com aiplatform.googleapis.com firestore.googleapis.com cloudscheduler.googleapis.com secretmanager.googleapis.com --project="$PROJECT"
+npx tsx src/model-preflight.ts
 if ! gcloud iam service-accounts describe "$RUNTIME" --project="$PROJECT" >/dev/null 2>&1; then
   gcloud iam service-accounts create atlas-research-worker --display-name='Atlas Research Worker' --project="$PROJECT"
 fi

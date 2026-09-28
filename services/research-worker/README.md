@@ -50,6 +50,8 @@ The integration test refuses to run without a localhost emulator and uses a demo
 
 All 10 fixtures pass the pre-existing validator. Ani and Aphrodisias use noncanonical legacy siteType values; the new worker reports them without modifying those originals.
 
+Cloud Shell verification on 2026-09-28: npm clean install, all 18 unit tests, TypeScript checking, and both Firestore emulator integration tests passed. The integration run seeded 5,001 synthetic records and checked concurrent claims, chronological priority, hourly limits, capacity, fencing, recovery and duplicate rejection. This is queue verification, not evidence that live research quality or Drive publication has passed.
+
 ## Cloud Shell pilot
 
 First run local unit/type checks and emulator integration. Select a currently available Vertex model (both model IDs are required in runtime configuration; no silent fallback).
@@ -61,6 +63,8 @@ bash services/research-worker/ops/pilot.sh
 ```
 
 This creates only new research resources and additive indexes/IAM grants. It seeds three candidate names, registers existing published identities, deploys one task, and disables publication. Confirm indexes are READY, then execute the displayed command. Use `npx tsx src/cli.ts status` and `export-pilot dursunlu` to inspect the result. No 5,000-entry production seed is fabricated; import a real candidate catalogue when the pilot passes.
+
+Before creating the worker resources, the installer probes structured output for both selected models and Google Search grounding using the deployer's credentials. An unavailable model or failed search stops installation. This does not prove the runtime service account's access; the first unpublished pilot checks that separately.
 
 ## Drive authorization (required for My Drive)
 
