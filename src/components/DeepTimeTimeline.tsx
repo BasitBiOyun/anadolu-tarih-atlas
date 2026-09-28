@@ -63,16 +63,13 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
   );
 
   const cursorPeriod = periods[cursorIndex] || periods[0];
-  const currentCount = cursorPeriod ? periodCounts[cursorPeriod.id] || 0 : 0;
-  const sliderProgress =
-    periods.length > 1 ? (cursorIndex / (periods.length - 1)) * 100 : 0;
 
   const periodGradient = periods
     .map((period, index) => {
       const start = (index / periods.length) * 100;
       const end = ((index + 1) / periods.length) * 100;
       const color = getThemeAccentColor(period.color, theme);
-      return `${color} ${start}%, ${color} ${end}%`;
+      return color + ' ' + start + '%, ' + color + ' ' + end + '%';
     })
     .join(', ');
 
@@ -82,8 +79,8 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
       return lang === 'tr' ? selectedConfigs[0].shortTr : selectedConfigs[0].shortEn;
     }
     return t(
-      `${selectedConfigs.length} dönem seçili`,
-      `${selectedConfigs.length} periods selected`
+      selectedConfigs.length + ' dönem seçili',
+      selectedConfigs.length + ' periods selected'
     );
   })();
 
@@ -111,46 +108,45 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
   return (
     <section
       aria-label={t('Derin Zaman Çizelgesi', 'Deep Time Timeline')}
-      className="pointer-events-auto absolute inset-x-3 bottom-3 z-20 mx-auto max-w-[1180px] border border-[#D9CEBC] bg-[#FAF7F2]/95 shadow-[0_22px_60px_-28px_rgba(32,23,17,0.45)] backdrop-blur-md sm:inset-x-5 sm:bottom-4"
+      className="pointer-events-auto absolute inset-x-3 bottom-3 z-20 mx-auto max-w-[1240px] overflow-hidden rounded-[14px] border border-[#D8CBB8] bg-[#FBF8F2]/97 shadow-[0_22px_58px_-28px_rgba(48,34,22,0.48),0_2px_8px_rgba(62,44,29,0.08)] ring-1 ring-white/70 backdrop-blur-md sm:inset-x-5 sm:bottom-4"
     >
-      <div className="flex items-center gap-3 border-b border-[#E8DFD0] px-3 py-2.5 sm:px-4">
-        <div className="hidden min-w-[118px] shrink-0 sm:block">
-          <div className="flex items-center gap-1.5 font-sans text-[9px] font-bold uppercase tracking-[0.18em] text-[#9A765C]">
-            <Clock size={13} />
+      <div className="flex items-center gap-3 px-3 py-2.5 sm:px-4">
+        <div className="hidden min-w-[122px] shrink-0 border-r border-[#E6DDCF] pr-4 sm:block">
+          <div className="flex items-center gap-1.5 font-sans text-[9px] font-bold uppercase tracking-[0.19em] text-[#98745B]">
+            <Clock size={13} weight="bold" />
             {t('Derin Zaman', 'Deep Time')}
           </div>
-          <div className="mt-0.5 font-serif text-xs font-semibold text-[#57493A]">
+          <div className="mt-0.5 font-serif text-[12px] font-semibold text-[#57493A]">
             {t('Kronolojik görünüm', 'Chronological view')}
           </div>
         </div>
 
         <div className="min-w-0 flex-1">
-          <div className="flex items-baseline gap-2">
+          <div className="flex min-w-0 items-baseline gap-2.5">
             <div
               aria-live="polite"
-              className="truncate font-serif text-sm font-bold text-[#1A1510] sm:text-base"
+              className="truncate font-serif text-[15px] font-bold leading-none text-[#1A1510] sm:text-[17px]"
             >
               {selectionLabel}
             </div>
-            <div className="hidden truncate font-mono text-[9px] text-[#8A7A68] min-[460px]:block sm:text-[10px]">
+            <div className="hidden truncate font-mono text-[9px] tracking-[0.02em] text-[#8A7A68] min-[460px]:block sm:text-[10px]">
               {selectionDateLabel}
             </div>
           </div>
 
-          <div className="mt-1 grid grid-cols-[32px_minmax(0,1fr)_32px] items-center gap-2">
+          <div className="mt-1.5 grid grid-cols-[30px_minmax(0,1fr)_30px] items-center gap-2">
             <button
               type="button"
               onClick={() => commitCursor(cursorIndex - 1)}
-              className="flex h-8 w-8 touch-manipulation items-center justify-center border border-[#D9CEBC] bg-[#F4EFE6] text-[#57493A] transition-colors hover:bg-[#EAE2D3]"
+              disabled={cursorIndex === 0}
+              className="flex h-[30px] w-[30px] touch-manipulation items-center justify-center rounded-[8px] border border-[#D8CBB8] bg-[#F6F0E7] text-[#5D4E3F] shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] transition-all hover:-translate-y-px hover:border-[#C8B69F] hover:bg-[#EFE6D8] disabled:cursor-default disabled:opacity-35 disabled:hover:translate-y-0"
               aria-label={t('Önceki döneme git', 'Go to previous period')}
             >
               <CaretLeft size={14} weight="bold" />
             </button>
 
             <input
-              className={`deep-time-range h-8 w-full touch-pan-x ${
-                isAllSelected ? 'deep-time-range--all' : ''
-              }`}
+              className={'deep-time-range h-8 w-full touch-pan-x ' + (isAllSelected ? 'deep-time-range--all' : '')}
               type="range"
               min={0}
               max={Math.max(0, periods.length - 1)}
@@ -160,8 +156,7 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
               aria-label={t('Zaman çizelgesinde gezin', 'Scrub through the timeline')}
               style={
                 {
-                  '--deep-time-gradient': `linear-gradient(90deg, ${periodGradient})`,
-                  '--deep-time-progress': `${sliderProgress}%`
+                  '--deep-time-gradient': 'linear-gradient(90deg, ' + periodGradient + ')'
                 } as React.CSSProperties
               }
             />
@@ -169,7 +164,8 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
             <button
               type="button"
               onClick={() => commitCursor(cursorIndex + 1)}
-              className="flex h-8 w-8 touch-manipulation items-center justify-center border border-[#D9CEBC] bg-[#F4EFE6] text-[#57493A] transition-colors hover:bg-[#EAE2D3]"
+              disabled={cursorIndex === periods.length - 1}
+              className="flex h-[30px] w-[30px] touch-manipulation items-center justify-center rounded-[8px] border border-[#D8CBB8] bg-[#F6F0E7] text-[#5D4E3F] shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] transition-all hover:-translate-y-px hover:border-[#C8B69F] hover:bg-[#EFE6D8] disabled:cursor-default disabled:opacity-35 disabled:hover:translate-y-0"
               aria-label={t('Sonraki döneme git', 'Go to next period')}
             >
               <CaretRight size={14} weight="bold" />
@@ -177,79 +173,94 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
           </div>
         </div>
 
-        <div className="hidden shrink-0 border-l border-[#E8DFD0] pl-4 text-right md:block">
-          <div className="font-serif text-base font-bold text-[#1A1510]">
+        <div className="hidden shrink-0 border-l border-[#E6DDCF] pl-4 text-right md:block">
+          <div className="font-serif text-[17px] font-bold leading-none text-[#1A1510]">
             {filteredCount}
-            <span className="font-normal text-[#8A7A68]"> / {totalCount}</span>
+            <span className="font-normal text-[#9A8A77]"> / {totalCount}</span>
           </div>
-          <div className="font-sans text-[8px] font-bold uppercase tracking-[0.12em] text-[#8A7A68]">
+          <div className="mt-1 font-sans text-[8px] font-bold uppercase tracking-[0.13em] text-[#8A7A68]">
             {t('Haritadaki yer', 'Sites on map')}
           </div>
         </div>
       </div>
 
-      <div className="flex touch-pan-x items-center gap-1 overflow-x-auto overscroll-x-contain px-3 py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:px-4">
-        <button
-          type="button"
-          onClick={onSelectAll}
-          className={`inline-flex min-h-8 shrink-0 touch-manipulation items-center gap-1.5 border px-2.5 font-sans text-[9px] font-bold uppercase tracking-[0.08em] transition-colors sm:text-[10px] ${
-            isAllSelected
-              ? 'border-[#8A4526] bg-[#8A4526] text-[#FAF7F2]'
-              : 'border-[#D9CEBC] bg-[#F4EFE6] text-[#57493A] hover:bg-[#EAE2D3]'
-          }`}
-          aria-pressed={isAllSelected}
-        >
-          <ArrowCounterClockwise size={12} />
-          <span>{t('Tüm Zamanlar', 'All Periods')}</span>
-        </button>
+      <div className="border-t border-[#E6DDCF] bg-[#F7F2E9]/78 px-2.5 py-2 sm:px-3">
+        <div className="flex min-w-0 items-stretch gap-2">
+          <button
+            type="button"
+            onClick={onSelectAll}
+            className={
+              'inline-flex w-[116px] shrink-0 touch-manipulation items-center justify-center gap-1.5 rounded-[9px] border px-2.5 font-sans text-[9px] font-bold uppercase leading-tight tracking-[0.07em] shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition-all hover:-translate-y-px sm:w-[126px] sm:text-[9.5px] ' +
+              (isAllSelected
+                ? 'border-[#8A4526] bg-[#8A4526] text-[#FFF9F2] shadow-[0_3px_10px_rgba(138,69,38,0.18)]'
+                : 'border-[#D8CBB8] bg-[#FFFDF8] text-[#57493A] hover:border-[#C8B69F] hover:bg-[#F6EFE4]')
+            }
+            aria-pressed={isAllSelected}
+          >
+            <ArrowCounterClockwise size={13} weight="bold" />
+            <span>{t('Tüm Zamanlar', 'All Periods')}</span>
+          </button>
 
-        <span className="h-5 w-px shrink-0 bg-[#E8DFD0]" aria-hidden="true" />
+          <div className="min-w-0 flex-1">
+            <div className="grid h-full grid-flow-col auto-cols-[minmax(132px,1fr)] snap-x snap-proximity gap-1.5 overflow-x-auto overscroll-x-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid-flow-row lg:grid-cols-7 lg:auto-cols-auto lg:overflow-visible">
+              {ERAS.map(era => {
+                const eraActive =
+                  era.periodIds.length === selectedPeriods.length &&
+                  era.periodIds.every(periodId => selectedPeriods.includes(periodId));
+                const firstPeriod = getPeriodConfig(era.periodIds[0]);
+                const count = era.periodIds.reduce(
+                  (sum, periodId) => sum + (periodCounts[periodId] || 0),
+                  0
+                );
+                const accent = getPeriodDotColor(firstPeriod.color, theme);
 
-        {ERAS.map(era => {
-          const eraActive =
-            era.periodIds.length === selectedPeriods.length &&
-            era.periodIds.every(periodId => selectedPeriods.includes(periodId));
-          const firstPeriod = getPeriodConfig(era.periodIds[0]);
-          const count = era.periodIds.reduce(
-            (sum, periodId) => sum + (periodCounts[periodId] || 0),
-            0
-          );
+                return (
+                  <button
+                    key={era.id}
+                    type="button"
+                    onClick={() => handleEraSelect(era.periodIds)}
+                    className={
+                      'relative min-w-0 snap-start overflow-hidden rounded-[9px] border px-2.5 pb-1.5 pt-2 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.76)] transition-all hover:-translate-y-px hover:shadow-[0_4px_12px_rgba(70,48,31,0.08)] ' +
+                      (eraActive
+                        ? 'text-[#1A1510] shadow-[0_4px_14px_rgba(78,51,31,0.09)]'
+                        : 'border-[#DED3C2] bg-[#FFFDF9] text-[#655646] hover:border-[#C9B8A1]')
+                    }
+                    style={{
+                      borderColor: eraActive ? firstPeriod.borderColor : undefined,
+                      backgroundColor: eraActive ? firstPeriod.bgLight : undefined
+                    }}
+                    aria-pressed={eraActive}
+                    aria-label={lang === 'tr' ? era.nameTr : era.nameEn}
+                    title={lang === 'tr' ? era.nameTr : era.nameEn}
+                  >
+                    <span
+                      className="absolute inset-x-2 top-0 h-[2px] rounded-b-full opacity-90"
+                      style={{ backgroundColor: accent }}
+                      aria-hidden="true"
+                    />
 
-          return (
-            <button
-              key={era.id}
-              type="button"
-              onClick={() => handleEraSelect(era.periodIds)}
-              className={`inline-flex min-h-8 shrink-0 touch-manipulation items-center gap-1.5 border px-2.5 font-serif text-[10px] font-semibold transition-all sm:text-[11px] ${
-                eraActive
-                  ? 'border-[#8A4526] bg-[#F1E7DA] text-[#1A1510]'
-                  : 'border-[#E2D8C7] bg-[#FCF9F3] text-[#6B5B4B] hover:border-[#C8B69F]'
-              }`}
-              aria-pressed={eraActive}
-              title={lang === 'tr' ? era.nameTr : era.nameEn}
-            >
-              <span
-                className="h-2 w-2 shrink-0 rounded-full"
-                style={{ backgroundColor: getPeriodDotColor(firstPeriod.color, theme) }}
-              />
-              <span>{lang === 'tr' ? era.shortTr : era.shortEn}</span>
-              <span className="font-mono text-[8px] opacity-65">{count}</span>
-            </button>
-          );
-        })}
+                    <div className="flex min-h-[25px] items-center gap-1.5">
+                      <span
+                        className="h-1.5 w-1.5 shrink-0 rounded-full"
+                        style={{ backgroundColor: accent }}
+                        aria-hidden="true"
+                      />
+                      <span className="min-w-0 whitespace-normal font-serif text-[10px] font-semibold leading-[1.05] sm:text-[10.5px]">
+                        {lang === 'tr' ? era.shortTr : era.shortEn}
+                      </span>
+                    </div>
 
-        {!isAllSelected && selectedConfigs.length === 1 && (
-          <div className="ml-auto hidden shrink-0 items-center gap-2 pl-2 text-right lg:flex">
-            <div>
-              <div className="font-serif text-[11px] font-bold text-[#2B231B]">
-                {lang === 'tr' ? cursorPeriod.shortTr : cursorPeriod.shortEn}
-              </div>
-              <div className="font-mono text-[8px] text-[#8A7A68]">
-                {currentCount} {t('yer', 'sites')}
-              </div>
+                    <div className="mt-0.5 flex items-center justify-end">
+                      <span className="rounded-full bg-[#F3EDE3]/85 px-1.5 py-0.5 font-mono text-[7.5px] leading-none text-[#8A7A68]">
+                        {count}
+                      </span>
+                    </div>
+                  </button>
+                );
+              })}
             </div>
           </div>
-        )}
+        </div>
       </div>
     </section>
   );
