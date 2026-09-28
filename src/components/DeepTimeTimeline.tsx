@@ -62,7 +62,6 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
     [periods, selectedPeriods]
   );
 
-  const cursorPeriod = periods[cursorIndex] || periods[0];
 
   const periodGradient = periods
     .map((period, index) => {
@@ -108,7 +107,7 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
   return (
     <section
       aria-label={t('Derin Zaman Çizelgesi', 'Deep Time Timeline')}
-      className="pointer-events-auto absolute inset-x-3 bottom-3 z-20 mx-auto max-w-[1240px] overflow-hidden rounded-[14px] border border-[#D8CBB8] bg-[#FBF8F2]/97 shadow-[0_22px_58px_-28px_rgba(48,34,22,0.48),0_2px_8px_rgba(62,44,29,0.08)] ring-1 ring-white/70 backdrop-blur-md sm:inset-x-5 sm:bottom-4"
+      className="pointer-events-auto absolute inset-x-3 bottom-3 z-20 mx-auto max-w-[1240px] overflow-hidden rounded-[14px] border border-[#D8CBB8] bg-[#FBF8F2]/[0.97] shadow-[0_22px_58px_-28px_rgba(48,34,22,0.48),0_2px_8px_rgba(62,44,29,0.08)] ring-1 ring-white/70 backdrop-blur-md sm:inset-x-5 sm:bottom-4"
     >
       <div className="flex items-center gap-3 px-3 py-2.5 sm:px-4">
         <div className="hidden min-w-[122px] shrink-0 border-r border-[#E6DDCF] pr-4 sm:block">
@@ -184,13 +183,13 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
         </div>
       </div>
 
-      <div className="border-t border-[#E6DDCF] bg-[#F7F2E9]/78 px-2.5 py-2 sm:px-3">
+      <div className="border-t border-[#E6DDCF] bg-[#F7F2E9]/[0.78] px-2.5 py-2 sm:px-3">
         <div className="flex min-w-0 items-stretch gap-2">
           <button
             type="button"
             onClick={onSelectAll}
             className={
-              'inline-flex w-[116px] shrink-0 touch-manipulation items-center justify-center gap-1.5 rounded-[9px] border px-2.5 font-sans text-[9px] font-bold uppercase leading-tight tracking-[0.07em] shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition-all hover:-translate-y-px sm:w-[126px] sm:text-[9.5px] ' +
+              'inline-flex w-[116px] shrink-0 touch-manipulation items-center justify-center gap-1.5 rounded-[9px] border px-2.5 font-sans text-[9px] font-bold uppercase leading-tight tracking-[0.07em] shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition-all hover:-translate-y-px sm:w-[126px] sm:text-[10px] ' +
               (isAllSelected
                 ? 'border-[#8A4526] bg-[#8A4526] text-[#FFF9F2] shadow-[0_3px_10px_rgba(138,69,38,0.18)]'
                 : 'border-[#D8CBB8] bg-[#FFFDF8] text-[#57493A] hover:border-[#C8B69F] hover:bg-[#F6EFE4]')
@@ -251,7 +250,7 @@ export const DeepTimeTimeline: React.FC<DeepTimeTimelineProps> = ({
                     </div>
 
                     <div className="mt-0.5 flex items-center justify-end">
-                      <span className="rounded-full bg-[#F3EDE3]/85 px-1.5 py-0.5 font-mono text-[7.5px] leading-none text-[#8A7A68]">
+                      <span className="rounded-full bg-[#F3EDE3]/[0.85] px-1.5 py-0.5 font-mono text-[7.5px] leading-none text-[#8A7A68]">
                         {count}
                       </span>
                     </div>
